@@ -29,6 +29,10 @@ struct ContentView: View {
         return amountPerPerson
     }
     
+   
+    
+   
+    
     
     var body: some View {
         
@@ -53,9 +57,10 @@ struct ContentView: View {
                         }
                     }.pickerStyle(SegmentedPickerStyle())
                 }
-                Section {
+                Section(header: Text("Amount per person")) {
                     Text("$\(totalPerPerson, specifier: "%.2f")")
                 }
+                
             }
         .navigationBarTitle("WeSplit")
         }
