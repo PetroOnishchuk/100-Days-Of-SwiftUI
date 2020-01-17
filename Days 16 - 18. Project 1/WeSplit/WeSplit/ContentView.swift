@@ -43,17 +43,18 @@ struct ContentView: View {
     var body: some View {
         
         NavigationView {
+            
             Form {
                 Section(header: Text("Order amount")) {
                     TextField("Amount", text: $checkAmount)
                         .keyboardType(.decimalPad)
                     
 
-                }
+                }.foregroundColor(.blue)
                 Section(header: Text("Number of people")){
-                    TextField("Number of people", text: $numberOfPeople)
+                    TextField("Number of people", text: $numberOfPeople).keyboardType(.decimalPad)
                     
-                }
+                }.foregroundColor(.orange)
                 // MARK: Section for select tip percentage
                 Section(header: Text("How much tip do you want to leave?")) {
                     
@@ -61,17 +62,22 @@ struct ContentView: View {
                     Picker("Tip percentage", selection: $tipPercentage) {
                         ForEach(0 ..< tipPercentages.count) {  Text("\(self.tipPercentages[$0])%")
                         }
-                    }.pickerStyle(SegmentedPickerStyle())
-                }
+                    }.pickerStyle(SegmentedPickerStyle()).colorMultiply(Color.green)
+                    
+                }.foregroundColor(.green)
+                
                 Section(header: Text("Amount per person")) {
                     Text("$\(totalPerPerson, specifier: "%.2f")")
-                }
+                }.foregroundColor(.red)
                 Section(header: Text("Total amount")) {
                     Text("$\(totalAmount, specifier: "%.2f" )")
-                }
+                }.foregroundColor(.black)
+                
             }
-        .navigationBarTitle("WeSplit")
-        }
+            .navigationBarTitle("WeSplit")
+            
+        }.background(Color.green)
+        
         
     }
 }
