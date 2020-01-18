@@ -71,12 +71,12 @@ struct ContentView: View {
                 }.foregroundColor(.red)
                 Section(header: Text("Total amount")) {
                     Text("$\(totalAmount, specifier: "%.2f" )")
-                }.foregroundColor(.black)
+                }.foregroundColor(.purple)
                 
             }
             .navigationBarTitle("WeSplit")
             
-        }.background(Color.green)
+        }
         
         
     }
