@@ -14,6 +14,8 @@ struct ContentView: View {
     
     @State private var scoreTitle = ""
     
+    @State private var score = 0
+    
     @State var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
     
     
@@ -48,27 +50,44 @@ struct ContentView: View {
                 }
                 
             }
+                HStack {
+                    Text("Your score is: ")
+                    .foregroundColor(.yellow)
+                    .font(.title)
+                    .fontWeight(.black)
+                    
+                    Text("\(self.score)")
+                    .foregroundColor(.red)
+                    .font(.title)
+                    .fontWeight(.black)
+                }
+                
                 Spacer()
             }
-        }.alert(isPresented: $showingScore) { () -> Alert in
-            Alert(title: Text(scoreTitle), message: Text("Your score is ???"), dismissButton: .default(Text("Continue")) {
+        }
+        .alert(isPresented: $showingScore) { () -> Alert in
+            Alert(title: Text(scoreTitle), message: Text("Your score is  \(self.score)"), dismissButton: .default(Text("Continue")) {
                 self.askQuestion()
             })
         }
+    
 }
     
     func flagTapped(_ number: Int) {
         if number  == correctAnswer {
             scoreTitle = "Correct"
+            self.score += 1
+            
         } else {
-            scoreTitle = "Wrong"
+            scoreTitle = "Wrong!!!. That's the flag of \(countries[number])"
+            self.score -= 1
         }
         
         showingScore = true
     }
     
     func askQuestion() {
-        countries.shuffled()
+        self.countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
 
