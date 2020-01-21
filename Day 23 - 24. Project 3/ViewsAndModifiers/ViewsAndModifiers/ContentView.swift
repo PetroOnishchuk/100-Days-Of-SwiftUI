@@ -10,17 +10,18 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var userRedText = false
-    
+    let motto1 = Text("Draco dormiens")
+    let motto2 = Text("nnuufgqq tiitiilsunds")
+    var motto3: some View { Text("Draco dormiens")}
     var body: some View {
         VStack {
-            Text("Gryffindor")
-                .font((.largeTitle))
-            Text("Hufflepuff")
-                .blur(radius: 0)
-            Text("Ravenclaw")
-            Text("Slytherin")
-        }.blur(radius: 5)
+            motto1
+                .foregroundColor(.red)
+            motto2
+                .foregroundColor(.blue)
+            motto3
+                .foregroundColor(.yellow)
+        }
     }
 }
 
