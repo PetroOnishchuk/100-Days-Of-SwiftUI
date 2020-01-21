@@ -13,12 +13,14 @@ struct ContentView: View {
     @State private var userRedText = false
     
     var body: some View {
-        Button(action: {
-            self.userRedText.toggle()
-        }) {
-            Text("Hello World")
-        }
-        .foregroundColor(userRedText ? .red: .blue)
+        VStack {
+            Text("Gryffindor")
+                .font((.largeTitle))
+            Text("Hufflepuff")
+                .blur(radius: 0)
+            Text("Ravenclaw")
+            Text("Slytherin")
+        }.blur(radius: 5)
     }
 }
 
