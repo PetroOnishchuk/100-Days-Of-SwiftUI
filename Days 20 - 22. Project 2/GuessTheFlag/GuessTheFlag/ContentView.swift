@@ -16,10 +16,26 @@ struct ContentView: View {
     
     @State private var score = 0
     
-    @State var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
+    @State var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "US"].shuffled()
     
     
     @State var correctAnswer = Int.random(in: 0...2)
+    
+    
+    // MARK: FlagImage for Day 24
+    struct FlagImage: View {
+        var image: String
+        
+        var body: some View {
+            Image(image)
+            .renderingMode(.original)
+            .clipShape(Capsule())
+            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+            .shadow(color: .black, radius: 2)
+            
+            
+        }
+    }
     
     var body: some View {
        
@@ -42,11 +58,8 @@ struct ContentView: View {
                 Button(action: {
                     self.flagTapped(number)
                 }) {
-                    Image(self.countries[number])
-                        .renderingMode(.original)
-                        .clipShape(Capsule())
-                        .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-                        .shadow(color: .black, radius: 2)
+//                    
+                    FlagImage(image: self.countries[number])
                 }
                 
             }
