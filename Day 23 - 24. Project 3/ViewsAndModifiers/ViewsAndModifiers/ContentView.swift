@@ -39,6 +39,22 @@ struct Title: ViewModifier {
             
     }
 }
+
+
+// MARK: TitlesView for challenge 1
+
+struct TitlesView: ViewModifier {
+    
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .font(.largeTitle)
+            .foregroundColor(Color.yellow)
+            .background(Color.blue)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+        
+    }
+}
 // MARK: Struct Watermark
 
 struct Watermark: ViewModifier {
@@ -79,7 +95,7 @@ struct GridStack<Content: View>: View {
     }
 }
 
-
+//
 
 
 
@@ -91,11 +107,9 @@ struct ContentView: View {
 
     var body: some View {
         
-        GridStack(rows: 4, columns: 4) { row, col in
-            Image(systemName: "\(row * 4 + col).circle")
-            Text("R:\(row) C \(col)")
-            
-        }
+        Text("Hacking with Swift")
+        .setTitlesView()
+        
     
         }
     
@@ -128,6 +142,11 @@ extension View {
     func watermarked(with text: String) -> some View {
         self.modifier(Watermark(text: text))
     }
-    
-    
+   
+}
+
+extension View {
+    func setTitlesView() -> some View {
+        self.modifier(TitlesView())
+    }
 }
