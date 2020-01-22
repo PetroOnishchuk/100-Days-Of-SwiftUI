@@ -68,11 +68,11 @@ struct ContentView: View {
                 
                 Section(header: Text("Amount per person")) {
                     Text("$\(totalPerPerson, specifier: "%.2f")")
-                }.foregroundColor(.red)
+                }.foregroundColor(.purple)
                 Section(header: Text("Total amount")) {
                     Text("$\(totalAmount, specifier: "%.2f" )")
-                }.foregroundColor(.purple)
-                
+                }.foregroundColor(tipPercentages[tipPercentage] == 0 ? .red: .black)
+                // MARK: Use conditional modifier for Day 24
             }
             .navigationBarTitle("WeSplit")
             
