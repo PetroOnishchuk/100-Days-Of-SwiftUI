@@ -81,24 +81,40 @@ struct GridStack<Content: View>: View {
 
 
 
+
+
+
+
+
 struct ContentView: View {
     
 
     var body: some View {
-        VStack {
-            Color.blue
-            .frame(width: 300, height: 300)
-            .watermarked(with: "Hacking with Swift")
+        
+        GridStack(rows: 4, columns: 4) { row, col in
+            Image(systemName: "\(row * 4 + col).circle")
+            Text("R:\(row) C \(col)")
             
         }
+    
+        }
+    
+     
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
+
+
+
+
+
+
 
 
 // MARK: extension View
