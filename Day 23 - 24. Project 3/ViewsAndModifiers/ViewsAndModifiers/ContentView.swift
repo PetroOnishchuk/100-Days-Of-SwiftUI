@@ -39,16 +39,17 @@ struct Title: ViewModifier {
             
     }
 }
+// MARK: Struct Watermark
 
 struct Watermark: ViewModifier {
     var text: String
     
     func body(content: Content) -> some View {
         GridStack(rows: 4, columns: 4) { row, col in
-            HStack {
+          //  HStack {
             Image(systemName: "\(row * 4 + col).circle")
                 Text("R:\(row) C \(col)")}
-        }
+      //  }
     }
 }
 
@@ -70,6 +71,11 @@ struct GridStack<Content: View>: View {
                 }
             }
         }
+    }
+    init(rows: Int, columns: Int, @ViewBuilder content: @escaping (Int, Int) -> Content) {
+        self.rows = rows
+        self.columns = columns
+        self.content = content
     }
 }
 
