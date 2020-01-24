@@ -100,6 +100,12 @@ struct ContentView: View {
                 }
                 Spacer()
             }
+        }.alert(isPresented: $showingScore) { () -> Alert in
+            Alert(title: Text("You WIN"), message: Text("You score is \(self.totalScore)"), dismissButton: .default(Text("New Game")) {
+                self.totalScore = 0
+                self.winOrLose = Bool.random()
+                self.randomComputeChoise = Int.random(in: 0...2)
+                })
         }
     }
     
@@ -122,7 +128,13 @@ struct ContentView: View {
         self.winOrLose = Bool.random()
         self.randomComputeChoise = Int.random(in: 0...2)
         
-        // run new game
+        runNewGame()
+    }
+    
+    func runNewGame() {
+        if self.totalScore == 10 {
+            self.showingScore = true
+        }
     }
 }
 
