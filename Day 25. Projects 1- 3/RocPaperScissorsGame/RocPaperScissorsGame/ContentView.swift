@@ -15,8 +15,6 @@ struct drawText: ViewModifier {
         content
             .font(font)
         
-    
-        
     }
 }
 
@@ -35,10 +33,6 @@ struct DrawHorisontalText: View {
             Text(textResult)
                 .modifier(drawText())
                 .foregroundColor(Color.red)
-            
-            
-            
-            
         }
     }
 }
@@ -49,10 +43,10 @@ struct DrawImageView: View  {
     
     var body: some View {
         Text("\(imageName)")
-        .padding()
-        .padding()
+            .padding()
+            .padding()
             .background(Color.yellow)
-        .cornerRadius(25)
+            .cornerRadius(25)
             .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.red, lineWidth: 2))
             .shadow(color: .blue, radius: 3)
             .font(.largeTitle)
