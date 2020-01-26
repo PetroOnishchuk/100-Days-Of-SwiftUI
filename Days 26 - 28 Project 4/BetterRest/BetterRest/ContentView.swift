@@ -9,7 +9,45 @@
 import SwiftUI
 
 
+struct drawText: ViewModifier {
+    let font = Font.system(size: 22, weight: .heavy, design: .default)
+    
+    func body(content: Content) -> some View {
+        content
+            .font(font)
+        
+    }
+}
 
+struct DrawTextForNavifationView {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .modifier(drawText())
+            .foregroundColor(Color.blue)
+    }
+    
+}
+
+
+struct DrawHorisontalText: View {
+    var text: String
+    var textResult: String
+    
+    
+    var body: some View {
+        HStack {
+            Text(text)
+                .modifier(drawText())
+                .foregroundColor(Color.green)
+            
+            Text(textResult)
+                .modifier(drawText())
+                .foregroundColor(Color.red)
+        }
+    }
+}
 
 
 struct ContentView: View {
@@ -29,19 +67,19 @@ struct ContentView: View {
     @State private var alertMessage = ""
     @State private var showingAlert = false
     
-   
+    
     
     let kindOfCoffe = 1...20
     
     var body: some View {
         NavigationView {
             Form {
-               
+                
                 Section(header: Text("When do you want to make up?"), content: {
-                        
-                        DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                    
+                    DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
                         .labelsHidden()
-                            .datePickerStyle(WheelDatePickerStyle())
+                        .datePickerStyle(WheelDatePickerStyle())
                     
                 })
                 
@@ -54,40 +92,35 @@ struct ContentView: View {
                 
                 Section(header: Text("Daily coffee intake")) {
                     
-                  Picker(selection: $coffeeAmount, label: Text("Daily coffee intake")) {
-                   
-                    ForEach(kindOfCoffe, id: \.self) {
-                         Text("\($0)")
+                    Picker(selection: $coffeeAmount, label: Text("Daily coffee intake")) {
+                        
+                        ForEach(kindOfCoffe, id: \.self) {
+                            Text("\($0)")
+                        }
                     }
-                                    }
                     
                 }
-               
-                    VStack( alignment: .center, spacing: 50, content: {
-                        Text("You ideal badtime is \(recomendedBadTime)")
-                    })
-                    VStack( alignment: .center, spacing: 50, content: {
-                        Text("You ideal badtime is \(recomendedBadTime)")
-                    })
-                    
-                    
+                
+                
+                DrawHorisontalText(text: "You ideal badtime is: ", textResult: "\(recomendedBadTime)")
+                
+                
                 
                 
                 
             }
             .navigationBarTitle("BetterRest")
-            
         }
         
     }
     
-
+    
     
     func runBadTime() -> String {
-       return "RunbadTime"
+        return "RunbadTime"
     }
     
-   static var defaultWakeTime: Date {
+    static var defaultWakeTime: Date {
         var components = DateComponents()
         components.hour = 7
         components.minute = 0
@@ -107,14 +140,14 @@ struct ContentView: View {
             
             let formatter = DateFormatter()
             formatter.timeStyle = .short
-        
             
-           return  formatter.string(from: sleepTime)
+            
+            return  formatter.string(from: sleepTime)
         } catch {
-
+            
             return "Sorry, there was a pronlem calculating your bedtime."
         }
-       
+        
     }
     
 }
