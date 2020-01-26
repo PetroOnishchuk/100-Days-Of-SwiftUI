@@ -19,16 +19,7 @@ struct drawText: ViewModifier {
     }
 }
 
-struct DrawTextForNavifationView {
-    var text: String
-    
-    var body: some View {
-        Text(text)
-            .modifier(drawText())
-            .foregroundColor(Color.blue)
-    }
-    
-}
+
 
 
 struct DrawHorisontalText: View {
@@ -69,7 +60,7 @@ struct ContentView: View {
     
     
     
-    let kindOfCoffe = 1...20
+    let rangeOfCoffee = 1...20
     
     var body: some View {
         NavigationView {
@@ -92,21 +83,17 @@ struct ContentView: View {
                 
                 Section(header: Text("Daily coffee intake")) {
                     
-                    Picker(selection: $coffeeAmount, label: Text("Daily coffee intake")) {
-                        
-                        ForEach(kindOfCoffe, id: \.self) {
-                            Text("\($0)")
+                    Picker(selection: $coffeeAmount, label: Text("Daily coffe intake")) {
+                        ForEach(rangeOfCoffee, id: \.self) {
+                            amount in
+                            Text(amount == 1 ? "1 cup" : "\(amount) cups")
                         }
                     }
                     
+                    
                 }
                 
-                
                 DrawHorisontalText(text: "You ideal badtime is: ", textResult: "\(recomendedBadTime)")
-                
-                
-                
-                
                 
             }
             .navigationBarTitle("BetterRest")
@@ -145,7 +132,7 @@ struct ContentView: View {
             return  formatter.string(from: sleepTime)
         } catch {
             
-            return "Sorry, there was a pronlem calculating your bedtime."
+            return "Error"
         }
         
     }
