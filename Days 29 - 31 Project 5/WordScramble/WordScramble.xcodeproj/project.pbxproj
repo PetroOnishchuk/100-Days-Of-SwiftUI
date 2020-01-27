@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98B9C08723DF3655005BE2E5 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 98B9C08623DF3655005BE2E5 /* start.txt */; };
 		98CAF98A23DE9DA8008DBC77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CAF98923DE9DA8008DBC77 /* AppDelegate.swift */; };
 		98CAF98C23DE9DA8008DBC77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CAF98B23DE9DA8008DBC77 /* SceneDelegate.swift */; };
 		98CAF98E23DE9DA8008DBC77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CAF98D23DE9DA8008DBC77 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		98B9C08623DF3655005BE2E5 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 		98CAF98623DE9DA8008DBC77 /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98CAF98923DE9DA8008DBC77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98CAF98B23DE9DA8008DBC77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				98CAF98F23DE9DA9008DBC77 /* Assets.xcassets */,
 				98CAF99423DE9DA9008DBC77 /* LaunchScreen.storyboard */,
 				98CAF99723DE9DA9008DBC77 /* Info.plist */,
+				98B9C08623DF3655005BE2E5 /* start.txt */,
 				98CAF99123DE9DA9008DBC77 /* Preview Content */,
 			);
 			path = WordScramble;
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98CAF99623DE9DA9008DBC77 /* LaunchScreen.storyboard in Resources */,
+				98B9C08723DF3655005BE2E5 /* start.txt in Resources */,
 				98CAF99323DE9DA9008DBC77 /* Preview Assets.xcassets in Resources */,
 				98CAF99023DE9DA9008DBC77 /* Assets.xcassets in Resources */,
 			);
