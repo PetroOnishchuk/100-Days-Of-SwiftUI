@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 struct DrawText: ViewModifier {
     let font = Font.system(size: 22, weight: .heavy, design: .default)
     
@@ -25,17 +24,15 @@ struct DrawHorisontalText: View {
     var body: some View {
         HStack {
             Text(text)
-                .modifier(DrawText())
+            .modifier(DrawText())
                 .foregroundColor(Color.green)
             
             Text(textResult)
-                .modifier(DrawText())
+            .modifier(DrawText())
                 .foregroundColor(Color.red)
-            
         }
     }
 }
-
 
 
 struct ContentView: View {
@@ -62,7 +59,9 @@ struct ContentView: View {
                     Image(systemName: "\($0.count).circle")
                     Text($0)
                 }
+                
                 DrawHorisontalText(text: "Score: ", textResult: "\(totalScore)")
+               
             }
         .navigationBarTitle(rootWord)
         .onAppear(perform: startGame)
@@ -106,6 +105,7 @@ struct ContentView: View {
             wordError(title: "Word is your Root Word", message: "Be more original")
             return
         }
+        
         totalScore += answer.count
         usedWords.insert(answer, at: 0)
         newWord = ""
@@ -124,7 +124,7 @@ struct ContentView: View {
                 rootWord = allWords.randomElement() ?? "silkworm"
                 
                 usedWords = []
-                totalScore = 0
+                totalScore = 0 
                 
                 // If we are here everything has worked, so we can exit
                 return
