@@ -9,7 +9,32 @@
 import SwiftUI
 
 
+struct DrawText: ViewModifier {
+    let font = Font.system(size: 22, weight: .heavy, design: .default)
+    
+    func body(content: Content) -> some View {
+        content
+        .font(font)
+    }
+}
 
+struct DrawHorisontalText: View {
+    var text: String
+    var textResult: String
+    
+    var body: some View {
+        HStack {
+            Text(text)
+                .modifier(DrawText())
+                .foregroundColor(Color.green)
+            
+            Text(textResult)
+                .modifier(DrawText())
+                .foregroundColor(Color.red)
+            
+        }
+    }
+}
 
 
 
@@ -22,9 +47,9 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var allWords = [String]()
     
-    
-    
+    @State private var totalScore = 0
     var body: some View {
         NavigationView {
             VStack {
@@ -37,12 +62,18 @@ struct ContentView: View {
                     Image(systemName: "\($0.count).circle")
                     Text($0)
                 }
+                DrawHorisontalText(text: "Score: ", textResult: "\(totalScore)")
             }
         .navigationBarTitle(rootWord)
         .onAppear(perform: startGame)
             .alert(isPresented: $showingError) { () -> Alert in
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             }
+            .navigationBarItems(leading: Button(action: startGame, label: {
+                Text("Start Game")
+            }), trailing: Button(action: setNewWord, label: {
+                Text("New Word")
+            }))
         }
        
     }
@@ -70,6 +101,12 @@ struct ContentView: View {
             wordError(title: "Word not possible", message: "That isn't real word")
             return
         }
+        
+        guard isRootWord(word: answer) else {
+            wordError(title: "Word is your Root Word", message: "Be more original")
+            return
+        }
+        totalScore += answer.count
         usedWords.insert(answer, at: 0)
         newWord = ""
     }
@@ -81,10 +118,13 @@ struct ContentView: View {
             // 2. Load start.txt into a string
             if let startWords = try? String(contentsOf: startWordURL) {
                 // 3. Split the string up into an array of string, splitting on line breaks
-                let allWord = startWords.components(separatedBy: "\n")
+                allWords = startWords.components(separatedBy: "\n")
                 
                 // 4. Pick one random word, or use "silkworm" as a sensible default
-                rootWord = allWord.randomElement() ?? "silkworm"
+                rootWord = allWords.randomElement() ?? "silkworm"
+                
+                usedWords = []
+                totalScore = 0
                 
                 // If we are here everything has worked, so we can exit
                 return
@@ -118,11 +158,18 @@ struct ContentView: View {
     
     // MARK: isReal
     func isReal(word: String) -> Bool {
+        guard word.count >= 3 else {  return false }
+        
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         
         return misspelledRange.location == NSNotFound
+    }
+    
+    //MARK: isRootWords
+    func isRootWord(word: String) -> Bool {
+        !(word == rootWord)
     }
     
     // MARK: wordError
@@ -131,6 +178,13 @@ struct ContentView: View {
         errorMessage = message
         showingError = true
     }
+    
+    // MARK: setNewWord
+    func setNewWord() {
+        rootWord = allWords.randomElement() ?? "silkworm"
+    }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
