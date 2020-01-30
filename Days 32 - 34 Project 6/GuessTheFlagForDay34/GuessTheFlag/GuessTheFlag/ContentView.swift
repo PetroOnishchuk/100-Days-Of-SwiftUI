@@ -8,6 +8,24 @@
 
 import SwiftUI
 
+
+// MARK: FlagImage for Day 24
+struct FlagImage: View {
+    
+    var image: String
+   
+    
+    var body: some View {
+        Image(image)
+        .renderingMode(.original)
+        .clipShape(Capsule())
+        .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+        .shadow(color: .black, radius: 2)
+        
+        
+    }
+}
+
 struct ContentView: View {
     
     @State private var showingScore = false
@@ -16,26 +34,19 @@ struct ContentView: View {
     
     @State private var score = 0
     
-    @State var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "US", "Canada"].shuffled()
+    @State var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "US"].shuffled()
     
     
     @State var correctAnswer = Int.random(in: 0...2)
     
     
-    // MARK: FlagImage for Day 24
-    struct FlagImage: View {
-        var image: String
-        
-        var body: some View {
-            Image(image)
-            .renderingMode(.original)
-            .clipShape(Capsule())
-            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-            .shadow(color: .black, radius: 2)
-            
-            
-        }
-    }
+    @State private var isCorrect = false
+    
+    @State private var isWrong = false
+    
+    @State private var selectetNumber = 0
+    
+    @State private var fadeOutOpacity = false
     
     var body: some View {
        
@@ -56,11 +67,21 @@ struct ContentView: View {
             
             ForEach(0 ..< 3) { number in
                 Button(action: {
-                    self.flagTapped(number)
+                    
+                    withAnimation {
+                        
+                        
+                        self.flagTapped(number)
+                    }
+                    
                 }) {
 //                    
                     FlagImage(image: self.countries[number])
+                        
                 }
+                .rotation3DEffect(.degrees(self.isCorrect && self.selectetNumber == number  ? 360 : 0), axis: (x: 0, y: 1, z: 0))
+                .opacity(self.fadeOutOpacity && !(self.selectetNumber == number) ? 0.25 : 1)
+                .rotation3DEffect(.degrees(self.isWrong && self.selectetNumber == number  ? 90 : 0), axis: (x: 0, y: 0, z: 0.5))
                 
             }
                 HStack {
@@ -87,21 +108,32 @@ struct ContentView: View {
 }
     
     func flagTapped(_ number: Int) {
+        self.selectetNumber = number
         if number  == correctAnswer {
             scoreTitle = "Correct"
             self.score += 1
+            isCorrect = true
+            fadeOutOpacity = true
             
         } else {
             scoreTitle = "Wrong!!!. That's the flag of \(countries[number])"
             self.score -= 1
+            fadeOutOpacity = true
+            isWrong = true
         }
         
-        showingScore = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.showingScore = true
+        }
+        
     }
     
     func askQuestion() {
         self.countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        isCorrect = false
+        fadeOutOpacity = false
+        isWrong = false
     }
 
 struct ContentView_Previews: PreviewProvider {
