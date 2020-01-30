@@ -7,38 +7,32 @@
 //
 
 
-// Days: 32 - 34. Project 6. Part 2. "Animating gestures" Done
+// Days: 32 - 34. Project 6. Part 2. "Showing and hiding views with transitions" Done
 import SwiftUI
 
 struct ContentView: View {
-   
-    let letters = Array("Hello SwiftUI")
-    @State private var enabled = false
-    @State private var dragAmount = CGSize.zero
+    
+    @State private var isShowingRed = false
     
     
     var body: some View {
-        HStack(spacing: 0) {
-            ForEach(0..<letters.count) { num in
-                Text(String(self.letters[num]))
-                .padding(5)
-                    .font(.title)
-                    .background(self.enabled ? Color.blue : Color.red)
-                    .offset(self.dragAmount)
-                    .animation(Animation.default.delay(Double(num) / 20))
+        VStack {
+            Button("Tap Me") {
+                withAnimation {
+                    self.isShowingRed.toggle()
+                }
+                
+            }
+            
+            if isShowingRed {
+                Rectangle()
+                    .fill(Color.red)
+                    .frame(width: 200, height: 200)
+                    .transition(.asymmetric(insertion: .scale, removal: .opacity))
             }
         }
-    .gesture(
-        DragGesture()
-        .onChanged { self.dragAmount = $0.translation }
-            .onEnded{ _ in
-                self.dragAmount = .zero
-                self.enabled.toggle()
-                
-        }
-        
-        )
     }
+    
     
     
 }
