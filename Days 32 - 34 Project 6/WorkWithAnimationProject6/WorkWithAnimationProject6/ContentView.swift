@@ -7,8 +7,17 @@
 //
 
 
-// Days: 32 - 34. Project 6. Part 2. "Showing and hiding views with transitions" Done
+// Days: 32 - 34. Project 6. Part 2. "Building custom transitions using ViewModifier" Done
 import SwiftUI
+
+struct CornerRoteteModifier: ViewModifier {
+    let amount: Double
+    let anchor: UnitPoint
+    
+    func body(content: Content) -> some View {
+        content.rotationEffect(.degrees(amount), anchor: anchor).clipped()
+    }
+}
 
 struct ContentView: View {
     
@@ -28,7 +37,7 @@ struct ContentView: View {
                 Rectangle()
                     .fill(Color.red)
                     .frame(width: 200, height: 200)
-                    .transition(.asymmetric(insertion: .scale, removal: .opacity))
+                    .transition(.pivot)
             }
         }
     }
@@ -43,3 +52,11 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+extension AnyTransition {
+    static var pivot: AnyTransition {
+        .modifier(active: CornerRoteteModifier(amount: -90, anchor: .topLeading), identity: CornerRoteteModifier(amount: 0, anchor: .topLeading))
+    }
+}
+
+
+
