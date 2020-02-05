@@ -17,6 +17,9 @@ struct AddView: View {
     @State private var type = "Personal"
     @State private var amount = ""
     
+    @State private var isShowAlert = false
+    @State private var messageForAllert = ""
+    
     static let types = ["Business", "Personal"]
     
     @ObservedObject var expenses: Expenses
@@ -39,8 +42,14 @@ struct AddView: View {
                     let item = ExpenseItem(name: self.name, type: self.type, amount: actualAmount)
                     self.expenses.items.append(item)
                     self.presentationMode.wrappedValue.dismiss()
+                } else {
+                    print("Error")
+                    self.isShowAlert = true
                 }
             })
+        }
+        .alert(isPresented: $isShowAlert) { () -> Alert in
+            Alert(title: Text("Entered Amount is  INCORRECT"), message: Text("For Amount you must enter Number for example: (1, 2, 3) not a LETTER \(messageForAllert)"), dismissButton: .default(Text("OK")))
         }
     }
 }

@@ -8,6 +8,35 @@
 
 import SwiftUI
 
+struct StyleOfAmount: ViewModifier {
+    var amount: Int
+    func body(content: Content) -> some View {
+        var font = Font.system(size: 22, weight: .heavy, design: .default)
+        var foregraundColor = Color.black
+        if amount < 10 {
+            foregraundColor = Color.blue
+            
+        } else if amount == 10 || amount < 100 {
+            
+            foregraundColor = Color.purple
+            font = Font.system(size: 25, weight: .medium, design: .monospaced)
+        } else {
+            foregraundColor = Color.red
+            font = Font.system(size: 30, weight: .bold, design: .rounded)
+            
+        }
+        return content
+            .foregroundColor(foregraundColor)
+            .font(font)
+    }
+}
+
+extension View {
+    func setStyleForAmount(_ amount: Int) -> some View {
+        self.modifier(StyleOfAmount(amount: amount))
+    }
+}
+
 struct ExpenseItem: Identifiable, Codable {
     let id = UUID()
     let name: String
@@ -59,6 +88,7 @@ struct ContentView: View {
                         
                         Spacer()
                         Text("$\(item.amount)")
+                            .setStyleForAmount(item.amount)
                     }
                     
                 }.onDelete(perform: removeItems(at:))
