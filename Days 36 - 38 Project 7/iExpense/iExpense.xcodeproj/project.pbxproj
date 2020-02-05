@@ -13,6 +13,7 @@
 		9861421223E9A4D500537BA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9861421123E9A4D500537BA0 /* Assets.xcassets */; };
 		9861421523E9A4D500537BA0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9861421423E9A4D500537BA0 /* Preview Assets.xcassets */; };
 		9861421823E9A4D500537BA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9861421623E9A4D500537BA0 /* LaunchScreen.storyboard */; };
+		98822AFF23EA7AFE00ABB63D /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98822AFE23EA7AFE00ABB63D /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9861421423E9A4D500537BA0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9861421723E9A4D500537BA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9861421923E9A4D500537BA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98822AFE23EA7AFE00ABB63D /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				9861420B23E9A4D400537BA0 /* AppDelegate.swift */,
 				9861420D23E9A4D400537BA0 /* SceneDelegate.swift */,
 				9861420F23E9A4D400537BA0 /* ContentView.swift */,
+				98822AFE23EA7AFE00ABB63D /* AddView.swift */,
 				9861421123E9A4D500537BA0 /* Assets.xcassets */,
 				9861421623E9A4D500537BA0 /* LaunchScreen.storyboard */,
 				9861421923E9A4D500537BA0 /* Info.plist */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98822AFF23EA7AFE00ABB63D /* AddView.swift in Sources */,
 				9861420C23E9A4D400537BA0 /* AppDelegate.swift in Sources */,
 				9861420E23E9A4D400537BA0 /* SceneDelegate.swift in Sources */,
 				9861421023E9A4D400537BA0 /* ContentView.swift in Sources */,
