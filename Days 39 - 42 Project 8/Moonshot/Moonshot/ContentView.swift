@@ -24,12 +24,19 @@ struct CustomText: View {
 struct ContentView: View {
     var body: some View {
        
-            List {
-                ForEach(0..<100) {
-                    CustomText("Item \($0)")
-                        .font(.title)
+        NavigationView {
+            VStack {
+                List(0..<100) {
+                    row in
+                    NavigationLink(destination: Text("Detai View \(row)")) {
+                        Text("Row \(row)")
+                    }
+
                 }
-            }
+                            }
+             .navigationBarTitle("SwiftUI")
+        }
+   
            
     }
 }
