@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9849CB1923EE705B00B4E0F4 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9849CB1823EE705B00B4E0F4 /* MissionView.swift */; };
 		984B287C23EDB0FD00DFD97F /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = 984B287A23EDB0FC00DFD97F /* missions.json */; };
 		984B287D23EDB0FD00DFD97F /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = 984B287B23EDB0FD00DFD97F /* astronauts.json */; };
 		984B287F23EDB2B700DFD97F /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B287E23EDB2B700DFD97F /* Astronaut.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9849CB1823EE705B00B4E0F4 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		984B287A23EDB0FC00DFD97F /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 		984B287B23EDB0FD00DFD97F /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
 		984B287E23EDB2B700DFD97F /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				98B4B36423EC9ADB008727D3 /* AppDelegate.swift */,
 				98B4B36623EC9ADB008727D3 /* SceneDelegate.swift */,
 				98B4B36823EC9ADB008727D3 /* ContentView.swift */,
+				9849CB1823EE705B00B4E0F4 /* MissionView.swift */,
 				98B4B36A23EC9ADD008727D3 /* Assets.xcassets */,
 				98B4B36F23EC9ADD008727D3 /* LaunchScreen.storyboard */,
 				98B4B37223EC9ADD008727D3 /* Info.plist */,
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9849CB1923EE705B00B4E0F4 /* MissionView.swift in Sources */,
 				984B288323EDB93F00DFD97F /* Mission.swift in Sources */,
 				98B4B36523EC9ADB008727D3 /* AppDelegate.swift in Sources */,
 				98B4B36723EC9ADB008727D3 /* SceneDelegate.swift in Sources */,
