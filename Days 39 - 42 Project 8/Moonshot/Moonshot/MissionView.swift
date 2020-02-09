@@ -32,6 +32,7 @@ struct MissionView: View {
                     .padding()
                     
                     ForEach(self.astronauts, id: \.role) { crewMember in
+                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
                         HStack {
                             Image(crewMember.astronaut.id)
                             .resizable()
@@ -48,6 +49,7 @@ struct MissionView: View {
                             
                         }
                         .padding(.horizontal)
+                        }.buttonStyle(PlainButtonStyle())
                     }
                     
                     Spacer(minLength: 25)
