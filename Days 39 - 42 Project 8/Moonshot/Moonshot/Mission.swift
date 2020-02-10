@@ -31,6 +31,13 @@ struct Mission: Codable, Identifiable {
         }
     }
     
+    var crewNames: String {
+        var names = String()
+        for i in crew {
+            names += i.name + " "
+        }
+        return names.capitalized
+    }
     
     let id: Int
     let launchDate: Date?
