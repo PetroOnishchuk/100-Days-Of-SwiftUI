@@ -335,6 +335,10 @@ struct ContentView4: View {
 
 // Day 46. Challenge 1.Create an Arrow shape made from a rectangle and a triangle – having it point straight up is fine.
 
+
+// Day 46. Challenge 2. Make the line thinckness of your Arrow shape
+
+
 struct Arrow: Shape {
     
     func path(in rect: CGRect) -> Path {
@@ -356,14 +360,21 @@ struct Arrow: Shape {
 
 
 struct ContentView: View {
+    @State private var lineWidth = 5.0
+    @State private var isShowBoldLine = false
     
     
     var body: some View {
         NavigationView {
             VStack {
                 Arrow()
-                    .stroke(Color.red, style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
+                    .stroke(Color.red, style: StrokeStyle(lineWidth: CGFloat(self.isShowBoldLine ? 20.0 : self.lineWidth), lineCap: .round, lineJoin: .round))
                     .frame(width: 150, height: 350)
+                    .onTapGesture {
+                        withAnimation {
+                            self.isShowBoldLine.toggle()
+                        }
+                }
             }
         }
         
