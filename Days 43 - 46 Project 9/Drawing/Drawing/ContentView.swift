@@ -359,10 +359,44 @@ struct Arrow: Shape {
 }
 
 
+// Day 46. Challenge 3. Create a ColorCyclingRectangle shape that is the rectangular cousin of ColorCyclingCircle, allowing us to control the position of the gradient using a property.
+
+
+struct ColorCyclingRectangle: View {
+    var amount = 0.0
+    var steps = 100
+    
+    var body: some View {
+        ZStack {
+            ForEach(0..<steps) {
+                value in
+                Rectangle()
+                .inset(by: CGFloat(value))
+                    .strokeBorder(LinearGradient(gradient: Gradient(colors: [self.color(for: value, brightness: 1),
+                        self.color(for: value, brightness: 0.5)]), startPoint: .top, endPoint: .bottom), lineWidth: 2)
+                
+            }
+        }
+        .drawingGroup()
+    }
+    
+    func color(for value: Int, brightness: Double) -> Color {
+        var targetHue = Double(value) / Double(self.steps) + self.amount
+        
+        if targetHue > 1 {
+            targetHue -= 1
+        }
+        
+        return Color(hue: targetHue, saturation: 1, brightness: brightness)
+    }
+    
+}
+
+
 struct ContentView: View {
     @State private var lineWidth = 5.0
     @State private var isShowBoldLine = false
-    
+    @State private var colorCycle = 0.0
     
     var body: some View {
         NavigationView {
@@ -375,6 +409,16 @@ struct ContentView: View {
                             self.isShowBoldLine.toggle()
                         }
                 }
+                .padding(.bottom, 50)
+                
+                ColorCyclingRectangle(amount: self.colorCycle)
+                    .frame(width: 300, height: 300)
+                
+                Slider(value: $colorCycle)
+                    .padding(.bottom, 50)
+               
+                
+                
             }
         }
         
