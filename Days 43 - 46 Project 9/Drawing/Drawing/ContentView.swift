@@ -111,6 +111,8 @@ struct ColorCyclingCircle: View  {
     }
 }
 
+// Day 45 //Special effects in SwiftUI: blurs, blending, and more
+
 struct ContentView2: View {
     @State private var amount: CGFloat = 0.0
     
@@ -148,7 +150,7 @@ struct ContentView2: View {
     
 }
 
-// Special effects in SwiftUI blurs, blending, and more
+//Day 45 Special effects in SwiftUI blurs, blending, and more
 
 struct ContentView3: View {
     @State private var colorCycle = 0.0
@@ -283,8 +285,8 @@ struct Spirograph: Shape {
 }
 
 
-
-struct ContentView: View {
+// Day 45. Creating a spinograph  with SwiftUI
+struct ContentView4: View {
     @State private var innerRadius = 125.0
     @State private var outherRadius = 75.0
     @State private var distance = 25.0
@@ -329,6 +331,49 @@ struct ContentView: View {
     }
     
 }
+
+
+// Day 46. Challenge 1.Create an Arrow shape made from a rectangle and a triangle – having it point straight up is fine.
+
+struct Arrow: Shape {
+    
+    func path(in rect: CGRect) -> Path {
+        
+        var path = Path()
+        
+        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY / 4))
+        path.addLine(to: CGPoint(x: rect.maxX / 3, y: rect.maxY / 4))
+        path.addLine(to: CGPoint(x: rect.maxX / 3, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX / 1.5, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX / 1.5, y: rect.maxY / 4))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY / 4))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.minY))
+        
+        return path
+    }
+}
+
+
+struct ContentView: View {
+    
+    
+    var body: some View {
+        NavigationView {
+            VStack {
+                Arrow()
+                    .stroke(Color.red, style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
+                    .frame(width: 150, height: 350)
+            }
+        }
+        
+    }
+    
+}
+
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

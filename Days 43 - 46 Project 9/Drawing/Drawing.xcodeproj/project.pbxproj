@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9808B40723F581930063C8FD /* DraftFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9808B40623F581930063C8FD /* DraftFile.swift */; };
 		985C937F23F1E19700E84DB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985C937E23F1E19700E84DB6 /* AppDelegate.swift */; };
 		985C938123F1E19700E84DB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985C938023F1E19700E84DB6 /* SceneDelegate.swift */; };
 		985C938323F1E19700E84DB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985C938223F1E19700E84DB6 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9808B40623F581930063C8FD /* DraftFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftFile.swift; sourceTree = "<group>"; };
 		985C937B23F1E19700E84DB6 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		985C937E23F1E19700E84DB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		985C938023F1E19700E84DB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				985C937E23F1E19700E84DB6 /* AppDelegate.swift */,
 				985C938023F1E19700E84DB6 /* SceneDelegate.swift */,
 				985C938223F1E19700E84DB6 /* ContentView.swift */,
+				9808B40623F581930063C8FD /* DraftFile.swift */,
 				985C938423F1E19900E84DB6 /* Assets.xcassets */,
 				985C938923F1E19900E84DB6 /* LaunchScreen.storyboard */,
 				985C938C23F1E19900E84DB6 /* Info.plist */,
@@ -149,6 +152,7 @@
 				985C937F23F1E19700E84DB6 /* AppDelegate.swift in Sources */,
 				985C938123F1E19700E84DB6 /* SceneDelegate.swift in Sources */,
 				985C938323F1E19700E84DB6 /* ContentView.swift in Sources */,
+				9808B40723F581930063C8FD /* DraftFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
