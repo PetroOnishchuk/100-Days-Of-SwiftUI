@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  RocPaperScissorsGame
+//  RockPaperScissorsGame
 //
-//  Created by Petro Onishchuk on 1/23/20.
+//  Created by Petro Onishchuk on 2/14/20.
 //  Copyright © 2020 Petro Onishchuk. All rights reserved.
 //
 
