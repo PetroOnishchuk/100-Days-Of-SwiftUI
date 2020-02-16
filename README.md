@@ -16,7 +16,7 @@ Lists of projects:
 
 ## 4. [Views and Modifiers](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Day%2023%20-%2024.%20Project%203) Project 3 (Days 23 - 24)
 
-## 5. [RockPaperScissorsGame](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Day%2025.%20Projects%201-%203/RockPaperScissorsGame) Projects 1 - 3 (Day 25)
+## 5. [RockPaperScissorsGame](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Day%2025.%20Projects%201-%203/RockPaperScissorsGame) Milestone: Projects 1 - 3 (Day 25)
 
 ## 6. [Better Rest](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2026%20-%2028%20Project%204) Project 4 (Days 26 - 28)
 
@@ -33,5 +33,5 @@ Lists of projects:
 ## 12. [Drawing](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2043%20-%2046%20Project%209/Drawing) Project 9 (Days 43 - 46)
 
 
-## 13. [Habit-tracking](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2047%20Milestone%20Projects%207%20-%209/Habit-tracking)
+## 13. [Habit-tracking](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2047%20Milestone%20Projects%207%20-%209/Habit-tracking) Milestone: Projects 7 - 9 (Day 47)
 
