@@ -48,6 +48,7 @@ struct ExpenseItem: Identifiable, Codable {
 class Expenses: ObservableObject {
     @Published var items = [ExpenseItem]() {
         didSet {
+            print(" items\(items)")
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(items) {
                 UserDefaults.standard.set(encoded, forKey: "Items")
@@ -60,6 +61,7 @@ class Expenses: ObservableObject {
             let decoder = JSONDecoder()
             
             if let decoded = try? decoder.decode([ExpenseItem].self, from: items) {
+                print("decoded \(decoded)")
                 self.items = decoded
             }
         }
