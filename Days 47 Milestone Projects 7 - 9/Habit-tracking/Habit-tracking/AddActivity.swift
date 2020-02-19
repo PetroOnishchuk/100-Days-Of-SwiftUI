@@ -36,12 +36,25 @@ struct AddActivity: View {
                     }
                 }
             }
-        .navigationBarTitle("Add new Activity")
+            .navigationBarTitle("Add new Activity")
             .navigationBarItems(trailing: Button(action: {
                 let item = Activity(name: self.name, description: self.decription, completedTimes: self.amount)
+               // MARK: V.1 For save activities
                 self.activities.items.append(item)
-                
                 self.activities.saveActivities()
+                
+                
+                // MARK: V.2 for save Activities
+                // V.2 If didSet don't run after "self.activities.items.append(tempActivities)
+                
+                
+                //                var tempArray = self.activities.items
+                
+                //                tempArray.append(item)
+                //
+                //                self.activities.items = tempArray
+                //
+                
                 
                 self.presentationMode.wrappedValue.dismiss()
             }, label: {

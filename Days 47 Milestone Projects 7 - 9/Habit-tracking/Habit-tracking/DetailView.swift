@@ -45,6 +45,18 @@ struct DetailView: View {
             item == self.activity
         }) {
             let tempActivity = Activity(name: self.activity.name, description: self.activity.description, completedTimes: self.completedTimes)
+            
+            //MARK: V2 for save Activities
+            
+            // V.2 If didSet don't run after "self.activities.items.insert(temoActiviti)
+            
+//            var tempActivities = self.activities.items
+//            tempActivities.remove(at: indexItem)
+//            tempActivities.insert(tempActivity, at: indexItem)
+//            self.activities.items = tempActivities
+//
+            // MARK: V.1 For save activities
+            
             self.activities.items.remove(at: indexItem)
             self.activities.items.insert(tempActivity, at: indexItem)
             
