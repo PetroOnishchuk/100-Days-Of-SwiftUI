@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9828164023FD8A9700003E65 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828163F23FD8A9700003E65 /* CheckoutView.swift */; };
+		9839CC9F23FD876D00846414 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9839CC9E23FD876D00846414 /* AddressView.swift */; };
+		98CFA64323FCF7B30067997A /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CFA64223FCF7B30067997A /* Order.swift */; };
 		98D135D923FBA94B0049FDA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D135D823FBA94B0049FDA9 /* AppDelegate.swift */; };
 		98D135DB23FBA94B0049FDA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D135DA23FBA94B0049FDA9 /* SceneDelegate.swift */; };
 		98D135DD23FBA94B0049FDA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D135DC23FBA94B0049FDA9 /* ContentView.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9828163F23FD8A9700003E65 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		9839CC9E23FD876D00846414 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		98CFA64223FCF7B30067997A /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		98D135D523FBA94B0049FDA9 /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D135D823FBA94B0049FDA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98D135DA23FBA94B0049FDA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +69,9 @@
 				98D135E323FBA94C0049FDA9 /* LaunchScreen.storyboard */,
 				98D135E623FBA94C0049FDA9 /* Info.plist */,
 				98D135E023FBA94C0049FDA9 /* Preview Content */,
+				98CFA64223FCF7B30067997A /* Order.swift */,
+				9839CC9E23FD876D00846414 /* AddressView.swift */,
+				9828163F23FD8A9700003E65 /* CheckoutView.swift */,
 			);
 			path = CupcakeCorner;
 			sourceTree = "<group>";
@@ -148,7 +157,10 @@
 			files = (
 				98D135D923FBA94B0049FDA9 /* AppDelegate.swift in Sources */,
 				98D135DB23FBA94B0049FDA9 /* SceneDelegate.swift in Sources */,
+				9828164023FD8A9700003E65 /* CheckoutView.swift in Sources */,
+				98CFA64323FCF7B30067997A /* Order.swift in Sources */,
 				98D135DD23FBA94B0049FDA9 /* ContentView.swift in Sources */,
+				9839CC9F23FD876D00846414 /* AddressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
