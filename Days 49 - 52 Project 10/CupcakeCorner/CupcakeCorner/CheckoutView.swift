@@ -13,7 +13,26 @@ struct CheckoutView: View {
     
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geo in
+            ScrollView {
+                VStack {
+                    Image("cupcakes")
+                    .resizable()
+                    .scaledToFit()
+                        .frame(width: geo.size.width)
+                    
+                    Text("You total is \(self.order.cost, specifier: "%.2f")")
+                        .font(.title)
+                    
+                    Button("Place Order") {
+                    // palce the order
+                    }
+                .padding()
+                }
+           
+            }
+        }
+        .navigationBarTitle("Check out", displayMode: .inline)
     }
 }
 
