@@ -25,7 +25,7 @@ struct CheckoutView: View {
                         .font(.title)
                     
                     Button("Place Order") {
-                    // palce the order
+                        self.placeOrder()
                     }
                 .padding()
                 }
@@ -33,6 +33,11 @@ struct CheckoutView: View {
             }
         }
         .navigationBarTitle("Check out", displayMode: .inline)
+    }
+    
+    
+    func placeOrder() {
+        
     }
 }
 
