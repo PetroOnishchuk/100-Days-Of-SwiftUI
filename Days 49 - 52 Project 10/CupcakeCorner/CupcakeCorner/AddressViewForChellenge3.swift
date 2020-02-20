@@ -9,25 +9,25 @@
 import SwiftUI
 
 struct AddressViewForChellenge3: View {
-     @ObservedObject var orderStruct: MyOrder
+     @ObservedObject var order: MyOrder
        
        
        
        var body: some View {
            Form {
                Section {
-                   TextField("Name", text: $orderStruct.orderStruct.name)
-                   TextField("Street Address", text: $orderStruct.orderStruct.streetAddress)
-                   TextField("City", text: $orderStruct.orderStruct.city)
-                   TextField("Zip", text: $orderStruct.orderStruct.zip)
+                   TextField("Name", text: $order.orderStruct.name)
+                   TextField("Street Address", text: $order.orderStruct.streetAddress)
+                   TextField("City", text: $order.orderStruct.city)
+                   TextField("Zip", text: $order.orderStruct.zip)
                }
                
                Section {
-                NavigationLink(destination: CheckoutViewForChellenge3(orderStruct: orderStruct)) {
+                NavigationLink(destination: CheckoutViewForChellenge3(order: order)) {
                        Text("Check out")
                    }
                }
-               .disabled(orderStruct.orderStruct.hasValidAdress == false)
+               .disabled(order.orderStruct.hasValidAdress == false)
            }
            .navigationBarTitle("Delivety details", displayMode: .inline)
        }
@@ -35,6 +35,6 @@ struct AddressViewForChellenge3: View {
 
 struct AddressViewForChellenge3_Previews: PreviewProvider {
     static var previews: some View {
-        AddressViewForChellenge3(orderStruct: MyOrder())
+        AddressViewForChellenge3(order: MyOrder())
     }
 }

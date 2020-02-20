@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CheckoutViewForChellenge3: View {
-    @ObservedObject var orderStruct: MyOrder
+    @ObservedObject var order: MyOrder
     
     // MARK: Challenge 2
     @State private var confirmationTitle = ""
@@ -27,7 +27,7 @@ struct CheckoutViewForChellenge3: View {
                     .scaledToFit()
                         .frame(width: geo.size.width)
                     
-                    Text("You total is \(self.orderStruct.orderStruct.cost, specifier: "%.2f")")
+                    Text("You total is \(self.order.orderStruct.cost, specifier: "%.2f")")
                         .font(.title)
                     
                     Button("Place Order") {
@@ -48,7 +48,7 @@ struct CheckoutViewForChellenge3: View {
     func placeOrder() {
         // 1. Convert our current order object into some JSON data that can be sent.
         
-        guard let encoded = try? JSONEncoder().encode(orderStruct.orderStruct) else {
+        guard let encoded = try? JSONEncoder().encode(order.orderStruct) else {
             print("Failed to encode order")
             return
         }
@@ -75,7 +75,7 @@ struct CheckoutViewForChellenge3: View {
             print("\(String(data: data, encoding: .utf8))")
             if let decodedOrder = try? JSONDecoder().decode(OrderStruct.self, from: data) {
                 self.confirmationTitle = "Thank You"
-                self.confirmationMessage = "Your order for \(decodedOrder.quantity)X \(OrderStruct.types[decodedOrder.type].lowercased()) cupcakes in on its way!"
+                self.confirmationMessage = "Your order for \(decodedOrder.quantity)x \(OrderStruct.types[decodedOrder.type].lowercased()) cupcakes in on its way!"
                 self.showingConfirmation = true
             } else {
                 print("Invalid response from server")
@@ -86,6 +86,6 @@ struct CheckoutViewForChellenge3: View {
 
 struct CheckoutViewForChellenge3_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutViewForChellenge3(orderStruct: MyOrder())
+        CheckoutViewForChellenge3(order: MyOrder())
     }
 }

@@ -11,36 +11,36 @@ import SwiftUI
 struct ContentViewForChallenge3: View {
    
         
-    @ObservedObject var orderStruct = MyOrder()
+    @ObservedObject var order = MyOrder()
         
        
         var body: some View {
             NavigationView {
                 Form {
                 Section {
-                    Picker("Select your cake type", selection: $orderStruct.orderStruct.type) {
+                    Picker("Select your cake type", selection: $order.orderStruct.type) {
                         ForEach(0..<OrderStruct.types.count, id: \.self) {
                             Text(OrderStruct.types[$0])
                         }
                     }
                     
-                    Stepper(value: $orderStruct.orderStruct.quantity, in: 3...20) {
-                        Text("Number of cakes: \(orderStruct.orderStruct.quantity)")
+                    Stepper(value: $order.orderStruct.quantity, in: 3...20) {
+                        Text("Number of cakes: \(order.orderStruct.quantity)")
                     }
                 }
                     
                 // second Section
                     Section {
-                        Toggle(isOn: $orderStruct.orderStruct.specialRequestEnabled.animation()) {
+                        Toggle(isOn: $order.orderStruct.specialRequestEnabled.animation()) {
                             Text("Any special requests?")
                         }
                         
-                        if orderStruct.orderStruct.specialRequestEnabled {
-                            Toggle(isOn: $orderStruct.orderStruct.extraFrosting) {
+                        if order.orderStruct.specialRequestEnabled {
+                            Toggle(isOn: $order.orderStruct.extraFrosting) {
                                 Text("Add extra frosting")
                             }
                             
-                            Toggle(isOn: $orderStruct.orderStruct.addSpinkles) {
+                            Toggle(isOn: $order.orderStruct.addSpinkles) {
                                 Text("Add extra sprinkles")
                             }
                         }
@@ -48,7 +48,7 @@ struct ContentViewForChallenge3: View {
                     }
                     
                     Section {
-                        NavigationLink(destination: AddressViewForChellenge3(orderStruct: orderStruct)) {
+                        NavigationLink(destination: AddressViewForChellenge3(order: order)) {
                             Text("Delivery details")
                         }
                     }
