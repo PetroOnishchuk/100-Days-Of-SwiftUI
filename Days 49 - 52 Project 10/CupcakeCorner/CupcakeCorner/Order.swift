@@ -25,6 +25,13 @@ class Order: ObservableObject, Codable {
     }
     
     var hasValidAdress: Bool {
+        // MARK: Chellenge 1
+        
+        let name = self.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        let streetAddress = self.streetAddress.trimmingCharacters(in: .whitespacesAndNewlines)
+        let city = self.city.trimmingCharacters(in: .whitespacesAndNewlines)
+        let zip = self.zip.trimmingCharacters(in: .whitespacesAndNewlines)
+        
         if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
             return false
         }
