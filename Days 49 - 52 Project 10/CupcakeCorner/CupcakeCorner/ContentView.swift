@@ -14,8 +14,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var order = Order()
     
-@ObservedObject var orderStruct = MyOrder()
-    
+
    
     var body: some View {
         NavigationView {

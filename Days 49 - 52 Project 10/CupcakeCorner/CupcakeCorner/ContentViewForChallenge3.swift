@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentViewForChallenge3: View {
-    @ObservedObject var order = Order()
+   
         
     @ObservedObject var orderStruct = MyOrder()
         
