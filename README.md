@@ -35,3 +35,5 @@ Lists of projects:
 
 ## 13. [Habit-tracking](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2047%20Milestone%20Projects%207%20-%209/Habit-tracking) Milestone: Projects 7 - 9 (Day 47)
 
+
+## 14. [Cupcake Corner](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2049%20-%2052%20Project%2010/CupcakeCorner) Project 10 (Days 49 - 52)
