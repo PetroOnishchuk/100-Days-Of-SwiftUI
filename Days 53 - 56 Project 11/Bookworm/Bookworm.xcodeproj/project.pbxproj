@@ -14,6 +14,7 @@
 		981533F02400246700793B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 981533EF2400246700793B36 /* Assets.xcassets */; };
 		981533F32400246700793B36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 981533F22400246700793B36 /* Preview Assets.xcassets */; };
 		981533F62400246700793B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981533F42400246700793B36 /* LaunchScreen.storyboard */; };
+		981533FE2400565B00793B36 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981533FD2400565B00793B36 /* AddBookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		981533F22400246700793B36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		981533F52400246700793B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		981533F72400246700793B36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		981533FD2400565B00793B36 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				981533E62400246500793B36 /* AppDelegate.swift */,
 				981533E82400246500793B36 /* SceneDelegate.swift */,
 				981533ED2400246500793B36 /* ContentView.swift */,
+				981533FD2400565B00793B36 /* AddBookView.swift */,
 				981533EF2400246700793B36 /* Assets.xcassets */,
 				981533F42400246700793B36 /* LaunchScreen.storyboard */,
 				981533F72400246700793B36 /* Info.plist */,
@@ -153,6 +156,7 @@
 				981533EC2400246500793B36 /* Bookworm.xcdatamodeld in Sources */,
 				981533EE2400246500793B36 /* ContentView.swift in Sources */,
 				981533E92400246500793B36 /* SceneDelegate.swift in Sources */,
+				981533FE2400565B00793B36 /* AddBookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
