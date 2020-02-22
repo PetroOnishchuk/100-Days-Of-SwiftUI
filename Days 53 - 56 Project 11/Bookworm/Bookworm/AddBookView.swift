@@ -45,7 +45,7 @@ struct AddBookView: View {
                             Text("\($0)")
                         }
                     }
-                    
+                    RatingView(rating: $rating)
                     TextField("Write a review", text: $review)
                 }
                 
