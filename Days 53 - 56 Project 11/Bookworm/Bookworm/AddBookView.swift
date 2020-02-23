@@ -23,7 +23,9 @@ struct AddBookView: View {
     
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
     
-    
+    // MARK: Challenge 3
+   
+    @State private var dateAdded = Date()
     
     var body: some View {
         NavigationView {
@@ -37,7 +39,10 @@ struct AddBookView: View {
                             Text($0)
                         }
                     }
+                    
                 }
+                
+                
                 
                 Section {
                     Picker("Raiting", selection: $rating) {
@@ -58,6 +63,8 @@ struct AddBookView: View {
                         newBook.rating = Int16(self.rating)
                         newBook.genre = self.genre
                         newBook.review = self.review
+                        // MARK: Challenge 3
+                        newBook.dateAdded = self.dateAdded
                         
                         try? self.moc.save()
                         
