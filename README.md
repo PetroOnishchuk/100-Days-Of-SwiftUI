@@ -38,4 +38,4 @@ Lists of projects:
 
 ## 14. [Cupcake Corner](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2049%20-%2052%20Project%2010/CupcakeCorner) Project 10 (Days 49 - 52)
 
-## 15. [Bookworm](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2053%20-%2056%20Project%2011/Bookworm) Project 11 (Days 53 - 56) Don't completed, yet.!!!!!!!!
+## 15. [Bookworm](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2053%20-%2056%20Project%2011/Bookworm) Project 11 (Days 53 - 56)

@@ -25,7 +25,8 @@ struct AddBookView: View {
     
     // MARK: Challenge 3
    
-    @State private var dateAdded = Date()
+    var dateAdded = Date()
+   
     
     var body: some View {
         NavigationView {
@@ -45,7 +46,7 @@ struct AddBookView: View {
                 
                 
                 Section {
-                    Picker("Raiting", selection: $rating) {
+                    Picker("Rating", selection: $rating) {
                         ForEach(0..<6) {
                             Text("\($0)")
                         }

@@ -1,5 +1,5 @@
 //
-//  EmojiRaitingView.swift
+//  EmojiRatingView.swift
 //  Bookworm
 //
 //  Created by Petro Onishchuk on 2/22/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct EmojiRaitingView: View {
+struct EmojiRatingView: View {
     let rating: Int16
     
     
@@ -28,8 +28,8 @@ struct EmojiRaitingView: View {
     }
 }
 
-struct EmojiRaitingView_Previews: PreviewProvider {
+struct EmojiRatingView_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiRaitingView(rating: 3)
+        EmojiRatingView(rating: 3)
     }
 }
