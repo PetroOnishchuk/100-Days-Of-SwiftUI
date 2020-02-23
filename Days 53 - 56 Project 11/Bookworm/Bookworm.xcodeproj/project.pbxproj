@@ -71,13 +71,13 @@
 				981533ED2400246500793B36 /* ContentView.swift */,
 				9835C8382400F6D90088B0C9 /* EmojiRaitingView.swift */,
 				981533FD2400565B00793B36 /* AddBookView.swift */,
+				9835C8362400E73F0088B0C9 /* RatingView.swift */,
 				981533EF2400246700793B36 /* Assets.xcassets */,
 				989E1A092401844E00FB0B82 /* DetailView.swift */,
 				981533F42400246700793B36 /* LaunchScreen.storyboard */,
 				981533F72400246700793B36 /* Info.plist */,
 				981533EA2400246500793B36 /* Bookworm.xcdatamodeld */,
 				981533F12400246700793B36 /* Preview Content */,
-				9835C8362400E73F0088B0C9 /* RatingView.swift */,
 			);
 			path = Bookworm;
 			sourceTree = "<group>";

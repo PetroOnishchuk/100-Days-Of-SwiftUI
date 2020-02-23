@@ -63,6 +63,8 @@ struct AddBookView: View {
                         
                         self.presentationMode.wrappedValue.dismiss()
                     }
+                // MARK: Challenge 1
+                        .disabled(self.genre.isEmpty)
                 }
                 
             }
