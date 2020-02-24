@@ -1,5 +1,5 @@
 //
-//  Movie+CoreDataClass.swift
+//  Singer+CoreDataClass.swift
 //  CoreDataProject
 //
 //  Created by Petro Onishchuk on 2/24/20.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Movie)
-public class Movie: NSManagedObject {
+@objc(Singer)
+public class Singer: NSManagedObject {
 
 }

@@ -16,49 +16,40 @@ struct ContentView: View {
     
     @Environment(\.managedObjectContext) var moc
     
-    let firstPredicate = NSPredicate(format: "universe == 'Star Wars'")
     
-    let secondPredicate = NSPredicate(format: "universe == %@", "Star Wars")
+    @State private var lastNameFilter = "A"
     
-    let thirdPredicate = NSPredicate(format: "name < %@", "F")
     
-    let fourstPredicate = NSPredicate(format: "universe IN %@", ["Aliens", "Firefly", "Star Trek"])
     
-    let fifthPredicate = NSPredicate(format: "name BEGINSWITH %@", "E")
-    
-    let sixth = NSPredicate(format: "name BEGINSWITH[c] %@", "e")
-    
-    let seventh = NSPredicate(format: "name CONTAINS[c] %@", "e")
-    
-    let eighth = NSPredicate(format: "NOT name BEGINSWITH[c] %@", "e")
-    @FetchRequest(entity: Ship.entity(), sortDescriptors: [], predicate: NSPredicate(format: "NOT name BEGINSWITH[c] %@ ", "e")) var ship: FetchedResults<Ship>
+  
     
     
     var body: some View {
         VStack {
-            List(ship, id: \.self) {
-                ship in
-                Text(ship.name ?? "Unknown name")
-            }
-            
+            // list of matching singers
+            FilteredList(filter: lastNameFilter)
             Button("Add Examples") {
-                let ship1 = Ship(context: self.moc)
-                ship1.name = "Enterpreise"
-                ship1.universe = "Star Trek"
+                let taylor = Singer(context: self.moc)
+                taylor.firstName = "Taylor"
+                taylor.lastName = "Swift"
                 
-                let ship2 = Ship(context: self.moc)
-                ship2.name = "Defiant"
-                ship2.universe = "Star Treck"
+                let ed = Singer(context: self.moc)
+                ed.firstName = "Ed"
+                ed.lastName = "Sheeran"
                 
-                let ship3 = Ship(context: self.moc)
-                ship3.name = "Millennium Falcon"
-                ship3.universe = "Star Wars"
-                
-                let ship4 = Ship(context: self.moc)
-                ship4.name = "Executor"
-                ship4.universe = "Star Wars"
+                let adele = Singer(context: self.moc)
+                adele.firstName = "Adele"
+                adele.lastName = "Adkins"
                 
                 try? self.moc.save()
+            }
+            
+            Button("Show A") {
+                self.lastNameFilter = "A"
+            }
+            
+            Button("Show S") {
+                self.lastNameFilter = "S"
             }
         }
     }
