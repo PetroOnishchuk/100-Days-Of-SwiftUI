@@ -20,17 +20,23 @@ struct ContentView: View {
     
     @FetchRequest(entity: Country.entity(), sortDescriptors: []) var countries: FetchedResults<Country>
     
+    //MARK:  Challenge 1.1. Create sortDescriptors variable
     
     let sortDescriptors = [NSSortDescriptor(keyPath: \Singer.lastName, ascending: true)]
   
-    @State private var filterinfStyle = FilterType.beginsWith
+  
+    // MARK: Challenege 3.3 Create @State private var filteringStyle
+    @State private var filteringStyle = FilterType.beginsWith
 
     
+     // MARK: Challenege 3.2 Create array of filteringStyle
+    let arrayOfFilterType: Array<FilterType> = FilterType.allCases
     
-    let test888: Array<FilterType> = FilterType.allCases
+    
     var body: some View {
         VStack {
-            FilteredList(filterKey: "lastName", filterValue: lastNameFilter, sortDescriptors: sortDescriptors, filteringType: FilterType.beginsWith ) { (singer: Singer)  in
+            // MARK: Challenege 1.2. Put sortDescriptors to the FilterList
+            FilteredList(filterKey: "lastName", filterValue: lastNameFilter, sortDescriptors: sortDescriptors, filteringType: filteringStyle ) { (singer: Singer)  in
                 Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
             }
 
@@ -78,26 +84,53 @@ struct ContentView: View {
                 try? self.moc.save()
             }
 
+            // MARK: Challenge 3.5 . Check letter with the Button, with func checkLetter
             Button("Show A") {
-                self.lastNameFilter = "A"
+                self.lastNameFilter = self.checkLetter(letter: "A")
             }
 
             Button("Show S") {
-                self.lastNameFilter = "S"
+                self.lastNameFilter = self.checkLetter(letter: "S")
             }
             
-            Text("\(filterinfStyle.rawValue)")
+            Text("\(filteringStyle.rawValue)")
             
-            Picker("Hello", selection: $filterinfStyle) {
-                ForEach(test888, id: \.self) {
-                    v in
-                    Text("\(v.rawValue)")
+            // MARK: Challenge 3.6 Create Picker for filteringStyle
+            
+            Picker("Hello", selection: $filteringStyle) {
+                ForEach(arrayOfFilterType, id: \.self) {
+                    filterType in
+                    Text("\(filterType.rawValue)")
                     
                 }
             }.pickerStyle(SegmentedPickerStyle())
             
         }
+        
     }
+    
+    
+    // MARK: Challenge 3.4 Create func checkLetters
+    func checkLetter(letter: String) -> String {
+        
+        switch filteringStyle {
+        case .beginsWith:
+            return letter.capitalized
+        case .beginsWithCaseInsensitive:
+        return letter.lowercased()
+        case .contains:
+        return letter
+        case .containsWithCaseInsensitive:
+        return letter.lowercased()
+        case .endsWith:
+        return letter.lowercased()
+        default:
+            return letter.lowercased()
+        }
+        
+        
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
