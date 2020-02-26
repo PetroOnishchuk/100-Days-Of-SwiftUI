@@ -14,8 +14,13 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="Singer" representedClassName="Singer" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Candy" positionX="-63" positionY="-18" width="128" height="73"/>
         <element name="Country" positionX="-54" positionY="0" width="128" height="88"/>
+        <element name="Singer" positionX="-63" positionY="18" width="128" height="73"/>
     </elements>
 </model>
