@@ -23,11 +23,14 @@ struct ContentView: View {
     
     let sortDescriptors = [NSSortDescriptor(keyPath: \Singer.lastName, ascending: true)]
   
+    @State private var filterinfStyle = FilterType.beginsWith
+
     
     
+    let test888: Array<FilterType> = FilterType.allCases
     var body: some View {
         VStack {
-            FilteredList(filterKey: "lastName", filterValue: lastNameFilter, sortDescriptors: sortDescriptors ) { (singer: Singer)  in
+            FilteredList(filterKey: "lastName", filterValue: lastNameFilter, sortDescriptors: sortDescriptors, filteringType: FilterType.beginsWith ) { (singer: Singer)  in
                 Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
             }
 
@@ -82,6 +85,17 @@ struct ContentView: View {
             Button("Show S") {
                 self.lastNameFilter = "S"
             }
+            
+            Text("\(filterinfStyle.rawValue)")
+            
+            Picker("Hello", selection: $filterinfStyle) {
+                ForEach(test888, id: \.self) {
+                    v in
+                    Text("\(v.rawValue)")
+                    
+                }
+            }.pickerStyle(SegmentedPickerStyle())
+            
         }
     }
 }

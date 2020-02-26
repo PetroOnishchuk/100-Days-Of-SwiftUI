@@ -11,6 +11,7 @@
 		9813D41A24057042001B3CAD /* Candy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9813D41624057042001B3CAD /* Candy+CoreDataProperties.swift */; };
 		9813D41B24057042001B3CAD /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9813D41724057042001B3CAD /* Country+CoreDataClass.swift */; };
 		9813D41C24057042001B3CAD /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9813D41824057042001B3CAD /* Country+CoreDataProperties.swift */; };
+		9829F6652406C657006910BF /* FilteringType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829F6642406C657006910BF /* FilteringType.swift */; };
 		98336BCF2403944F0048E48C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98336BCE2403944F0048E48C /* AppDelegate.swift */; };
 		98336BD12403944F0048E48C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98336BD02403944F0048E48C /* SceneDelegate.swift */; };
 		98336BD42403944F0048E48C /* CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98336BD22403944F0048E48C /* CoreDataProject.xcdatamodeld */; };
@@ -28,6 +29,7 @@
 		9813D41624057042001B3CAD /* Candy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9813D41724057042001B3CAD /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9813D41824057042001B3CAD /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9829F6642406C657006910BF /* FilteringType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringType.swift; sourceTree = "<group>"; };
 		98336BCB2403944F0048E48C /* CoreDataProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98336BCE2403944F0048E48C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98336BD02403944F0048E48C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				98336BD02403944F0048E48C /* SceneDelegate.swift */,
 				98336BD52403944F0048E48C /* ContentView.swift */,
 				98B24074240460B000F0A279 /* FilteredList.swift */,
+				9829F6642406C657006910BF /* FilteringType.swift */,
 				98336BD7240394510048E48C /* Assets.xcassets */,
 				98336BDC240394510048E48C /* LaunchScreen.storyboard */,
 				98336BDF240394510048E48C /* Info.plist */,
@@ -178,6 +181,7 @@
 				9813D41A24057042001B3CAD /* Candy+CoreDataProperties.swift in Sources */,
 				98336BD42403944F0048E48C /* CoreDataProject.xcdatamodeld in Sources */,
 				9813D41B24057042001B3CAD /* Country+CoreDataClass.swift in Sources */,
+				9829F6652406C657006910BF /* FilteringType.swift in Sources */,
 				98A79E9C24063B82008AFEE7 /* Singer+CoreDataClass.swift in Sources */,
 				9813D41924057042001B3CAD /* Candy+CoreDataClass.swift in Sources */,
 				9813D41C24057042001B3CAD /* Country+CoreDataProperties.swift in Sources */,
