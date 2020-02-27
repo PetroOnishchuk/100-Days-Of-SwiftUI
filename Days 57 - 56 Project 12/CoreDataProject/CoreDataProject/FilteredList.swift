@@ -27,12 +27,14 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
             singer in
             self.content(singer)
             }.onDelete(perform: removeSinger(at:))
+            
     }
+        
         
     }
     
     // MARK: Challenge 3.7. set parameter for : filteringType: FilterType
-    // MARK: Challenge 1.3. Set type [NSSortDescriptor] to the parameter: sortDescriptors:
+    // MARK: Challenge 1.2. Set type [NSSortDescriptor] to the parameter: sortDescriptors:
     init(filterKey: String, filterValue: String, sortDescriptors: [NSSortDescriptor], filteringType: FilterType, @ViewBuilder content: @escaping (T) -> Content) {
         fetchRequest = FetchRequest<T>(entity: T.entity(), sortDescriptors: sortDescriptors, predicate: NSPredicate(format: "%K \(filteringType.rawValue) %@", filterKey, filterValue))
         self.content = content

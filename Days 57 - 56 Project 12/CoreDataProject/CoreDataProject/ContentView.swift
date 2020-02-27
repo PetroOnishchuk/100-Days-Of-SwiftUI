@@ -24,22 +24,21 @@ struct ContentView: View {
     
     let sortDescriptors = [NSSortDescriptor(keyPath: \Singer.lastName, ascending: true)]
   
-  
     // MARK: Challenege 3.3 Create @State private var filteringStyle
     @State private var filteringStyle = FilterType.beginsWith
-
     
      // MARK: Challenege 3.2 Create array of filteringStyle
     let arrayOfFilterType: Array<FilterType> = FilterType.allCases
     
-    
     var body: some View {
+       
         VStack {
-            // MARK: Challenege 1.2. Put sortDescriptors to the FilterList
-            FilteredList(filterKey: "lastName", filterValue: lastNameFilter, sortDescriptors: sortDescriptors, filteringType: filteringStyle ) { (singer: Singer)  in
+            
+            // MARK: Challenege 1.3. Put sortDescriptors to the FilterList
+            FilteredList(filterKey: "lastName", filterValue: lastNameFilter, sortDescriptors: sortDescriptors, filteringType: filteringStyle){ (singer: Singer)  in
                 Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
             }
-
+            HStack() {
             Button("Add Examples") {
                 let taylor = Singer(context: self.moc)
                 taylor.firstName = "Taylor"
@@ -83,36 +82,42 @@ struct ContentView: View {
 
                 try? self.moc.save()
             }
+            .frame(maxWidth: .infinity)
 
             // MARK: Challenge 3.5 . Check letter with the Button, with func checkLetter
             Button("Show A") {
                 self.lastNameFilter = self.checkLetter(letter: "A")
             }
+                .frame(maxWidth: .infinity)
 
             Button("Show S") {
                 self.lastNameFilter = self.checkLetter(letter: "S")
             }
+                .frame(maxWidth: .infinity)
+            }
             
-            Text("\(filteringStyle.rawValue)")
             
             // MARK: Challenge 3.6 Create Picker for filteringStyle
-            
-            Picker("Hello", selection: $filteringStyle) {
+            Picker("For filtering Style", selection: $filteringStyle)  {
                 ForEach(arrayOfFilterType, id: \.self) {
                     filterType in
                     Text("\(filterType.rawValue)")
-                    
                 }
             }.pickerStyle(SegmentedPickerStyle())
+                .colorMultiply(Color.green)
+           
             
         }
+            
+        
+    
         
     }
     
     
     // MARK: Challenge 3.4 Create func checkLetters
-    func checkLetter(letter: String) -> String {
-        
+ func checkLetter(letter: String) -> String {
+ 
         switch filteringStyle {
         case .beginsWith:
             return letter.capitalized
@@ -127,8 +132,8 @@ struct ContentView: View {
         default:
             return letter.lowercased()
         }
-        
-        
+ 
+ 
     }
     
 }
