@@ -38,7 +38,8 @@ struct ContentView: View {
             FilteredList(filterKey: "lastName", filterValue: lastNameFilter, sortDescriptors: sortDescriptors, filteringType: filteringStyle){ (singer: Singer)  in
                 Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
             }
-            HStack() {
+          
+            HStack {
             Button("Add Examples") {
                 let taylor = Singer(context: self.moc)
                 taylor.firstName = "Taylor"
@@ -88,13 +89,14 @@ struct ContentView: View {
             Button("Show A") {
                 self.lastNameFilter = self.checkLetter(letter: "A")
             }
-                .frame(maxWidth: .infinity)
+              .frame(maxWidth: .infinity)
 
             Button("Show S") {
                 self.lastNameFilter = self.checkLetter(letter: "S")
             }
-                .frame(maxWidth: .infinity)
+               .frame(maxWidth: .infinity)
             }
+            
             
             
             // MARK: Challenge 3.6 Create Picker for filteringStyle

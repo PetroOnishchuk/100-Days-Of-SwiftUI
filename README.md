@@ -40,4 +40,4 @@ Lists of projects:
 
 ## 15. [Bookworm](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2053%20-%2056%20Project%2011/Bookworm) Project 11 (Days 53 - 56)
 
-## 16. [CoreDataProject](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2057%20-%2056%20Project%2012/CoreDataProject) Project 12 (Days 57 - 59) Not Completed YET!!!!!!!
+## 16. [CoreDataProject](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2057%20-%2056%20Project%2012/CoreDataProject) Project 12 (Days 57 - 59) 
