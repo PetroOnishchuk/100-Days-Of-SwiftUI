@@ -12,17 +12,18 @@ struct ContentView: View {
     
     @ObservedObject var users = Users()
      
-    @State private var secondUsers = [User]()
+    
     
     var body: some View {
         NavigationView {
             List(users.arrayOfUsers) {
                 user in
-                NavigationLink(destination: FriendView(friends: user.friends, users: self.users)) {
+                NavigationLink(destination: DetailUserView(user: user, users: self.users)) {
                     VStack(alignment: .leading, spacing: nil) {
                         Text(user.name)
                             .font(.headline)
                         Text("Age: \(user.age)")
+                        Text("Is Active: \(user.checkIsActive)")
                     }
                 }
                 
@@ -31,29 +32,7 @@ struct ContentView: View {
                 
             }
         }
-        .onAppear{
-            // V.2 for URLSession
-            let stringURL = "https://www.hackingwithswift.com/samples/friendface.json"
-            
-            guard let url = URL(string: stringURL) else { return }
-            
-            let request = URLRequest(url: url)
-            
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                
-                guard let data = data else { return }
-                
-                if let decoderUsers = try? JSONDecoder().decode([User].self, from: data) {
-                    
-                    self.secondUsers = decoderUsers
-                }
-            }.resume()
-            
-            
-            
-            
-            
-        }
+        
     }
     
     

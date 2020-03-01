@@ -12,18 +12,23 @@ struct DetailFriendView: View {
     
     var friend: Friend
     
-    var matchesFriend = User(id: "123", name: "FFF", age: 30, company: "fff", friends: [Friend(id: "123", name: "RonF")])
+  
+    var matchesUser = User(id: "123", name: "FFF", age: 30, company: "fff", isActive: true, friends: [Friend(id: "123", name: "RonF")])
     
     var users: Users
     
     var body: some View {
         VStack(alignment: .leading, spacing: nil) {
             
-            NavigationLink(destination: FriendView(friends: matchesFriend.friends, users: self.users)) {
-                Text(matchesFriend.name)
-                    .font(.headline)
-                Text("ID: \(matchesFriend.id)")
-            }
+//            NavigationLink(destination: FriendView(users: self.users, user: self.matchesUser)) {
+//                Text(matchesUser.name)
+//                    .font(.headline)
+//                Text("ID: \(matchesUser.id)")
+//            }
+            Text("Name: \(matchesUser.name)")
+                .font(.headline)
+            Text("Age: \(matchesUser.age)")
+            Spacer()
         }
     }
     
@@ -34,7 +39,7 @@ struct DetailFriendView: View {
         
         for user in users.arrayOfUsers {
             if user.id == friend.id {
-                self.matchesFriend = user
+                self.matchesUser = user
             }
         }
         

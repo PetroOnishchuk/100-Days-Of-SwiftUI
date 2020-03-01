@@ -8,16 +8,18 @@
 
 import SwiftUI
 
-struct FriendView: View {
+struct FriendsListView: View {
     
-    var friends: [Friend]
+   
     
     var users: Users
     
-    var machesFriend = [User]()
+    var user: User
+    
+   
     
     var body: some View {
-        List(friends) {
+        List(user.friends) {
             friend in
             NavigationLink(destination: DetailFriendView(friend: friend, users: self.users)) {
                 VStack(alignment: .leading, spacing: nil) {
@@ -26,7 +28,7 @@ struct FriendView: View {
                 }
             }
             
-        }
+        }.navigationBarTitle("\(self.user.name)'s friends")
         
     }
     
@@ -34,6 +36,6 @@ struct FriendView: View {
 
 struct FriendView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendView(friends: [Friend](),users: Users())
+        FriendsListView(users: Users(), user: User(id: "ID", name: "Nmae", age: 30, company: "Com", isActive: true, friends: [Friend]()))
     }
 }
