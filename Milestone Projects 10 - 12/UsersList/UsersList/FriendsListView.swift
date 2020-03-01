@@ -21,7 +21,7 @@ struct FriendsListView: View {
     var body: some View {
         List(user.friends) {
             friend in
-            NavigationLink(destination: DetailFriendView(friend: friend, user: self.users.findUser(string: friend.id), users: self.users)) {
+            NavigationLink(destination: DetailUserView(user: self.users.findUser(string: friend.id), users: self.users, isShowFriendList: false)) {
                 VStack(alignment: .leading, spacing: nil) {
                     Text(friend.name)
                     

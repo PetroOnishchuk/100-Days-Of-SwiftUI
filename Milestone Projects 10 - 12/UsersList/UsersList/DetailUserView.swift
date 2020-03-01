@@ -13,22 +13,38 @@ struct DetailUserView: View {
     
     var users: Users
     
+    var isShowFriendList = true
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Name: \(user.name)")
-                .font(.headline)
-            Text("Age: \(user.age)")
-            Text("Company: \(user.company)")
-            Text("Is Active: \(user.checkIsActive)")
-                .padding(.bottom, 30)
-            
-            NavigationLink(destination: FriendsListView(users: self.users, user: self.user)) {
-                Text("\(user.name)'s friends")
-                Spacer()
+        Form {
+            Section(header: Text("Name")) {
+                Text(user.name)
             }
-            Spacer()
-        }.padding(.leading, 10)
+            
+            Section(header: Text("Age")) {
+                Text("\(user.age)")
+            }
+            
+            Section(header: Text("Company")) {
+                Text(user.company)
+            }
+            
+            Section(header: Text("Is Activity")) {
+                Text(user.checkIsActive)
+            }
+            
+            if isShowFriendList {
+            Section(header: Text("\(user.name)'s friends")) {
+                NavigationLink(destination: FriendsListView(users: self.users, user: self.user)) {
+                    Text("Show \(user.name)'s friends")
+                }
+            }
+            }
+            
+            
+        }
+        .navigationBarTitle(Text("User: \(user.name)"), displayMode: .inline)
+
     }
 }
 

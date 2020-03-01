@@ -18,7 +18,6 @@
 		983B09302409A87900D601BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983B092E2409A87900D601BF /* LaunchScreen.storyboard */; };
 		9853FC2E240C12AA0008BEB1 /* DetailUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9853FC2D240C12AA0008BEB1 /* DetailUserView.swift */; };
 		98E89B94240B85B60039D410 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E89B93240B85B60039D410 /* FriendsListView.swift */; };
-		98E89B96240B87570039D410 /* DetailFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E89B95240B87570039D410 /* DetailFriendView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		983B09312409A87900D601BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9853FC2D240C12AA0008BEB1 /* DetailUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserView.swift; sourceTree = "<group>"; };
 		98E89B93240B85B60039D410 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
-		98E89B95240B87570039D410 /* DetailFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFriendView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +71,6 @@
 				983B09272409A87800D601BF /* ContentView.swift */,
 				9853FC2D240C12AA0008BEB1 /* DetailUserView.swift */,
 				98E89B93240B85B60039D410 /* FriendsListView.swift */,
-				98E89B95240B87570039D410 /* DetailFriendView.swift */,
 				98313C83240AF51D009C5B13 /* Users.swift */,
 				98313C81240AE2BA009C5B13 /* User.swift */,
 				983B09292409A87900D601BF /* Assets.xcassets */,
@@ -172,7 +169,6 @@
 				983B09232409A87800D601BF /* SceneDelegate.swift in Sources */,
 				9853FC2E240C12AA0008BEB1 /* DetailUserView.swift in Sources */,
 				98313C84240AF51D009C5B13 /* Users.swift in Sources */,
-				98E89B96240B87570039D410 /* DetailFriendView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
