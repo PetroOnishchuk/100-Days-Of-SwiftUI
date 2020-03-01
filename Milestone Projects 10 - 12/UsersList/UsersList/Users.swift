@@ -33,4 +33,14 @@ class Users: ObservableObject {
         }.resume()
         
     }
+    
+    func findUser(string: String) -> User {
+        guard let firstUser = self.arrayOfUsers.first(where: { (oneUser) -> Bool in
+            oneUser.id == string
+        }) else {
+            return self.arrayOfUsers.first!
+        }
+        return firstUser
+        
+    }
 }

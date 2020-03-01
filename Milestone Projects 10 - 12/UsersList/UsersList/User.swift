@@ -19,7 +19,7 @@ struct User: Codable, Identifiable {
    var friends: [Friend]
     
     var checkIsActive: String {
-        return self.isActive ? "✅" :"❌"
+        return self.isActive ? "🟢" :"🔴"
     }
 }
 
