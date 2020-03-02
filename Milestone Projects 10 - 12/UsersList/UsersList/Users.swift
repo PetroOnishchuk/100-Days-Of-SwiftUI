@@ -23,15 +23,13 @@ class Users: ObservableObject {
         URLSession.shared.dataTask(with: request) { data, response, error in
             
             guard let data = data else {
-                print("No data in response \(error?.localizedDescription)")
+                print("No data in response \(error?.localizedDescription ?? "No data response")")
                 return
             }
-            
             if let decoderUser = try? JSONDecoder().decode([User].self, from: data) {
                 self.arrayOfUsers = decoderUser
             }
         }.resume()
-        
     }
     
     func findUser(string: String) -> User {
@@ -41,6 +39,5 @@ class Users: ObservableObject {
             return self.arrayOfUsers.first!
         }
         return firstUser
-        
     }
 }

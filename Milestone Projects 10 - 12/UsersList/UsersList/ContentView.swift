@@ -12,13 +12,8 @@ struct ContentView: View {
     
     @ObservedObject var users = Users()
     
-    
-    
-    
-    
     var body: some View {
         NavigationView {
-            
             List(users.arrayOfUsers) {
                 user in
                 NavigationLink(destination: DetailUserView(user: user, users: self.users)) {
@@ -28,22 +23,13 @@ struct ContentView: View {
                             Text(user.name)
                                 .font(.headline)
                             Text("Age: \(user.age)")
-                            
                         }
-                        
                     }
-                    
                 }
-                
-                
             }
         .navigationBarTitle(Text("Users list"))
         }
-        
     }
-    
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
