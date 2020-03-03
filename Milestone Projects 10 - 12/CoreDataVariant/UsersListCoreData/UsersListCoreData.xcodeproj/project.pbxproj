@@ -14,9 +14,10 @@
 		980205D7240E20B50094B645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 980205D6240E20B50094B645 /* Assets.xcassets */; };
 		980205DA240E20B50094B645 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 980205D9240E20B50094B645 /* Preview Assets.xcassets */; };
 		980205DD240E20B50094B645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 980205DB240E20B50094B645 /* LaunchScreen.storyboard */; };
-		980205E5240E22EB0094B645 /* JSONUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980205E4240E22EB0094B645 /* JSONUser.swift */; };
+		980205E5240E22EB0094B645 /* LoadedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980205E4240E22EB0094B645 /* LoadedUser.swift */; };
 		980205EC240E2B2F0094B645 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980205EA240E2B2F0094B645 /* User+CoreDataClass.swift */; };
 		980205ED240E2B2F0094B645 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980205EB240E2B2F0094B645 /* User+CoreDataProperties.swift */; };
+		98F56658240EAE6500553B47 /* LoadedUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F56657240EAE6500553B47 /* LoadedUsers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +30,10 @@
 		980205D9240E20B50094B645 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		980205DC240E20B50094B645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		980205DE240E20B50094B645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		980205E4240E22EB0094B645 /* JSONUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUser.swift; sourceTree = "<group>"; };
+		980205E4240E22EB0094B645 /* LoadedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedUser.swift; sourceTree = "<group>"; };
 		980205EA240E2B2F0094B645 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		980205EB240E2B2F0094B645 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		98F56657240EAE6500553B47 /* LoadedUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedUsers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +76,8 @@
 				980205DE240E20B50094B645 /* Info.plist */,
 				980205D1240E20B40094B645 /* UsersListCoreData.xcdatamodeld */,
 				980205D8240E20B50094B645 /* Preview Content */,
-				980205E4240E22EB0094B645 /* JSONUser.swift */,
+				980205E4240E22EB0094B645 /* LoadedUser.swift */,
+				98F56657240EAE6500553B47 /* LoadedUsers.swift */,
 			);
 			path = UsersListCoreData;
 			sourceTree = "<group>";
@@ -163,8 +166,9 @@
 				980205EC240E2B2F0094B645 /* User+CoreDataClass.swift in Sources */,
 				980205ED240E2B2F0094B645 /* User+CoreDataProperties.swift in Sources */,
 				980205D5240E20B40094B645 /* ContentView.swift in Sources */,
-				980205E5240E22EB0094B645 /* JSONUser.swift in Sources */,
+				980205E5240E22EB0094B645 /* LoadedUser.swift in Sources */,
 				980205D0240E20B40094B645 /* SceneDelegate.swift in Sources */,
+				98F56658240EAE6500553B47 /* LoadedUsers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
