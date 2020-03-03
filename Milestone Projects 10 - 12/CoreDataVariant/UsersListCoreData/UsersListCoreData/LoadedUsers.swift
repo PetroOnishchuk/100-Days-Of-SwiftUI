@@ -13,15 +13,45 @@ import CoreData
 class Users {
     
     static func loadDataToCD(moc: NSManagedObjectContext) {
-        
+      
         loadDataFromJSON { (users) in
+            DispatchQueue.main.async {
+                
             
-            print("\(users.count)")
-            let user1 = User(context: moc)
-            user1.name = "Test1"
-            user1.age = Int16(30)
+            var tempUsers = [User]()
             
-            try? moc.save()
+            for user in users {
+                let newUser = User(context: moc)
+                newUser.name = user.name
+                newUser.id = user.id
+                
+                tempUsers.append(newUser)
+            }
+            
+            
+            for i in 0..<users.count {
+              
+                for friend in users[i].friends {
+                
+                    if let newFriend = tempUsers.first(where: { $0.id == friend.id}) {
+                       
+                        tempUsers[i].addToFriends(newFriend)
+                      
+                      
+                        
+                    }
+                }
+                
+                
+            }
+            
+            do {
+               // try moc.save()
+            } catch let error {
+                print("Could not save data: \(error.localizedDescription)")
+            }
+            
+            }
             
         }
     }

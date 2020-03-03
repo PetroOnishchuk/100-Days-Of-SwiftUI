@@ -9,6 +9,6 @@
         <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="friends" inverseEntity="User"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

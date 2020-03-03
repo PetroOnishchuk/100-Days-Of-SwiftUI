@@ -14,7 +14,7 @@ struct ContentView: View {
     
     @Environment(\.managedObjectContext) var moc
     
-    @FetchRequest(entity: User.entity(), sortDescriptors: []) var users: FetchedResults<User>
+    @FetchRequest(entity: User.entity(), sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)]) var users: FetchedResults<User>
     
     
     
@@ -22,9 +22,12 @@ struct ContentView: View {
         NavigationView {
             List{
                 ForEach(users, id: \.id) { user in
-                    Text("Name \(user.name ?? "Text")")
+                       NavigationLink(destination: DetailUserView(user: user)) {
+                                     Text("Name \(user.name ?? "Text")")
+                                }
+                    
                 }.onDelete(perform: removeUser(at:))
-                
+            
                 
             }
         }
@@ -33,6 +36,7 @@ struct ContentView: View {
                     print("Users is empty \(self.users)")
                     Users.loadDataToCD(moc: self.moc)
                 }
+               
         }
     }
     
@@ -46,7 +50,14 @@ struct ContentView: View {
             } catch {
                 print("Error save after delete")
             }
+            
         }
+        
+//        for allu in users {
+//            moc.delete(allu)
+//
+//        }
+//        try? moc.save()
     }
 }
 

@@ -23,6 +23,11 @@ extension User {
     @NSManaged public var age: Int16
     @NSManaged public var isActive: Bool
     @NSManaged public var friends: NSSet?
+    
+    public var friendsArray: [User] {
+        let set = friends as? Set<User> ?? []
+        return set.sorted { $0.name! < $1.name!}
+    }
 
 }
 
