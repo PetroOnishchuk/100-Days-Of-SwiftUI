@@ -17,19 +17,23 @@ struct ContentView: View {
     @FetchRequest(entity: User.entity(), sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)]) var users: FetchedResults<User>
     
     
-    
+    @State private var isShowFriendList = false
     var body: some View {
         NavigationView {
-            List{
-                ForEach(users, id: \.id) { user in
-                       NavigationLink(destination: DetailUserView(user: user)) {
-                                     Text("Name \(user.name ?? "Text")")
-                                }
-                    
-                }.onDelete(perform: removeUser(at:))
-            
-                
+            List(users, id: \.id) {
+                user in
+                NavigationLink(destination: DetailUserView(user: user)) {
+                    HStack {
+                        Text("\(user.checkIsActive)")
+                        VStack(alignment: .leading, spacing: nil) {
+                            Text(user.wrappedName)
+                                .font(.headline)
+                            Text("Age: \(user.age)")
+                        }
+                    }
+                }
             }
+
         }
             .onAppear {
                 if self.users.isEmpty {

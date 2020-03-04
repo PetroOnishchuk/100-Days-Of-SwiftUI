@@ -12,9 +12,9 @@ import SwiftUI
 struct LoadedUser: Codable, Identifiable {
     var id: String?
     var name: String?
-    var age: Int?
+    var age: Int
     var company: String?
-    var isActive: Bool?
+    var isActive: Bool
     var friends: [Friend]
     
 }

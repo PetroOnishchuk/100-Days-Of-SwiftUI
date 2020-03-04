@@ -24,10 +24,36 @@ extension User {
     @NSManaged public var isActive: Bool
     @NSManaged public var friends: NSSet?
     
+    public var wrappedId: String {
+        id ?? "Unknown Id"
+    }
+    
+    public var wrappedName: String {
+        name ?? "Unknown Name"
+    }
+    
+    public var wrappedCompany: String {
+        company ?? "Unknown Company"
+    }
+    
+    public var wrappedAge: Int16 {
+        age
+    }
+    
+    public var wrappedIsActive: Bool {
+        isActive
+    }
+    
+    public var checkIsActive: String {
+        return isActive ? "🟢" :"🔴"
+    }
+
     public var friendsArray: [User] {
         let set = friends as? Set<User> ?? []
         return set.sorted { $0.name! < $1.name!}
     }
+    
+    
 
 }
 

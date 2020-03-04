@@ -24,7 +24,9 @@ class Users {
                 let newUser = User(context: moc)
                 newUser.name = user.name
                 newUser.id = user.id
-                
+                newUser.company = user.company
+                newUser.isActive = user.isActive
+                newUser.age = Int16(user.age)
                 tempUsers.append(newUser)
             }
             
