@@ -1,8 +1,8 @@
 //
 //  LoadedUsers.swift
-//  UsersListCoreData
+//  UsersListCoreDataV2
 //
-//  Created by Petro Onishchuk on 3/3/20.
+//  Created by Petro Onishchuk on 3/4/20.
 //  Copyright © 2020 Petro Onishchuk. All rights reserved.
 //
 
@@ -33,14 +33,21 @@ class Users {
               
                 for friend in users[i].friends {
                 
-                    if let newFriend = tempUsers.first(where: { $0.id == friend.id}) {
-                       
-                        tempUsers[i].addToFriends(newFriend)
-                      
-                      
-                        
-                    }
+                    let newFriend = Friend(context: moc)
+                    newFriend.name = friend.name
+                    newFriend.id = friend.id
+                    
+                    tempUsers[i].addToFriends(newFriend)
+                    
+//                    if let newFriend = tempUsers.first(where: { $0.id == friend.id}) {
+//
+//                        tempUsers[i].addToFriends(newFriend)
+//
+//
+//
+//                    }
                 }
+                print("TTTTTTTT\(tempUsers[0].friendsArray)")
                 
                 
             }
