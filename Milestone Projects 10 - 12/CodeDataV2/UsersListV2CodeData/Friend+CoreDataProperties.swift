@@ -1,6 +1,6 @@
 //
 //  Friend+CoreDataProperties.swift
-//  UsersListCoreDataV2
+//  UsersListV2CodeData
 //
 //  Created by Petro Onishchuk on 3/4/20.
 //  Copyright © 2020 Petro Onishchuk. All rights reserved.
@@ -19,5 +19,13 @@ extension Friend {
 
     @NSManaged public var name: String?
     @NSManaged public var id: String?
+    @NSManaged public var user: User?
 
+    public var wrappedId: String {
+        id ?? "Unknown Id"
+    }
+    
+    public var wrappedName: String {
+        name ?? "Unknown Name"
+    }
 }

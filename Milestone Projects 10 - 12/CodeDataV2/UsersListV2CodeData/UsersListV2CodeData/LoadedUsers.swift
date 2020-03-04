@@ -1,6 +1,6 @@
 //
 //  LoadedUsers.swift
-//  UsersListCoreDataV2
+//  UsersListV2CodeData
 //
 //  Created by Petro Onishchuk on 3/4/20.
 //  Copyright © 2020 Petro Onishchuk. All rights reserved.
@@ -24,7 +24,9 @@ class Users {
                 let newUser = User(context: moc)
                 newUser.name = user.name
                 newUser.id = user.id
-                
+                newUser.company = user.company
+                newUser.isActive = user.isActive
+                newUser.age = Int16(user.age)
                 tempUsers.append(newUser)
             }
             
@@ -32,22 +34,19 @@ class Users {
             for i in 0..<users.count {
               
                 for friend in users[i].friends {
-                
+                    
                     let newFriend = Friend(context: moc)
                     newFriend.name = friend.name
                     newFriend.id = friend.id
                     
                     tempUsers[i].addToFriends(newFriend)
-                    
 //                    if let newFriend = tempUsers.first(where: { $0.id == friend.id}) {
 //
 //                        tempUsers[i].addToFriends(newFriend)
 //
 //
-//
 //                    }
                 }
-                print("TTTTTTTT\(tempUsers[0].friendsArray)")
                 
                 
             }

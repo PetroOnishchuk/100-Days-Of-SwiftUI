@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  UsersListCoreDataV2
+//  UsersListV2CodeData
 //
 //  Created by Petro Onishchuk on 3/4/20.
 //  Copyright © 2020 Petro Onishchuk. All rights reserved.
@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "UsersListCoreDataV2")
+        let container = NSPersistentContainer(name: "UsersListV2CodeData")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

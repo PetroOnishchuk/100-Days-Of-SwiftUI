@@ -1,5 +1,5 @@
 //
-//  JSONUser.swift
+//  LoadedUser.swift
 //  UsersListCoreData
 //
 //  Created by Petro Onishchuk on 3/3/20.
