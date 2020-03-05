@@ -38,6 +38,7 @@ struct ContentView: View {
             FilteredList(filterKey: "lastName", filterValue: lastNameFilter, sortDescriptors: sortDescriptors, filteringType: filteringStyle){ (singer: Singer)  in
                 Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
             }
+            
           
             HStack {
             Button("Add Examples") {
