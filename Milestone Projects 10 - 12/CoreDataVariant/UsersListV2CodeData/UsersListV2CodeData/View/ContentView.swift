@@ -36,6 +36,7 @@ struct ContentView: View {
             }
             .onDelete(perform: removeUser(at:))
             }
+            .navigationBarTitle(Text("UsersList + CoreData"), displayMode: .inline)
             
         }
         .onAppear {

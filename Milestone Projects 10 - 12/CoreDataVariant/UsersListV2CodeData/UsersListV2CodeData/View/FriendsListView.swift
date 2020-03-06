@@ -24,8 +24,6 @@ struct FriendsListView: View {
                     }
                 }
             }
-            
-            
         }
     }
     

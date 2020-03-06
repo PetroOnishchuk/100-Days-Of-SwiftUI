@@ -40,10 +40,7 @@ class Users {
                         newFriend.id = friend.id
                         
                         tempUsers[i].addToFriends(newFriend)
-                        
                     }
-                    
-                    
                 }
                 
                 do {
@@ -51,9 +48,7 @@ class Users {
                 } catch let error {
                     print("Could not save data: \(error.localizedDescription)")
                 }
-                
             }
-            
         }
     }
     
