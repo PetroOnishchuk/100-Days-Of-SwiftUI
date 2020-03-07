@@ -24,6 +24,11 @@ struct ContentView: View {
                         Text("MultipleOptionsWithActionSheet")
                     }
                 }
+                Section(header: Text("IntegratingCoreImageWithSwiftUI")) {
+                    NavigationLink(destination: IntegratingCoreImageWithSwiftUI()) {
+                        Text("IntegratingCoreImageWithSwiftUI")
+                    }
+                }
             }
         }
     }
