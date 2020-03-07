@@ -12,6 +12,8 @@ struct WrappingAUIViewControllerInASwiftUIView: View {
     @State private var image: Image?
     @State private var showingImagePicker = false
     
+    @State private var inputImage: UIImage?
+    
     var body: some View {
         VStack {
             image?
@@ -22,9 +24,14 @@ struct WrappingAUIViewControllerInASwiftUIView: View {
                 self.showingImagePicker = true
             }
         }
-        .sheet(isPresented: $showingImagePicker) { 
-            ImagePicker()
+        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) { 
+            ImagePicker(image: self.$inputImage)
         }
+    }
+    
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        image = Image(uiImage: inputImage)
     }
 }
 
