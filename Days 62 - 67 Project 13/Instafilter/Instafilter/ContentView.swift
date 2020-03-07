@@ -29,6 +29,11 @@ struct ContentView: View {
                         Text("IntegratingCoreImageWithSwiftUI")
                     }
                 }
+                Section(header: Text("WrappingAUIViewControllerInASwiftUIView")) {
+                    NavigationLink(destination: WrappingAUIViewControllerInASwiftUIView()) {
+                        Text("WrappingAUIViewControllerInASwiftUIView")
+                    }
+                }
             }
         }
     }
