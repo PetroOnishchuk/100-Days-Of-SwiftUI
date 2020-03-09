@@ -7,13 +7,33 @@
 //
 
 import SwiftUI
+import CoreImage
+import CoreImage.CIFilterBuiltins
+
 
 struct InstafilterView: View {
     @State private var image: Image?
     @State private var filterIntensity = 0.5
     
+    @State private var showingImagePicker = false
+    
+    @State private var inputImage: UIImage?
+    
+    @State private var currentFilter = CIFilter.sepiaTone()
+    let context = CIContext()
+    
+    
     var body: some View {
-        VStack {
+        let intensivity = Binding<Double> (
+            get: {
+        self.filterIntensity
+        },
+            set : {
+        self.filterIntensity = $0
+        self.applyProcessing()
+        }
+        )
+         return VStack {
             ZStack {
                 Rectangle()
                     .fill(Color.secondary)
@@ -29,12 +49,12 @@ struct InstafilterView: View {
                 }
             }
             .onTapGesture {
-                // select image
+                self.showingImagePicker = true
             }
             
             HStack {
                 Text("Intensity")
-                Slider(value: self.$filterIntensity)
+                Slider(value: intensivity)
             }.padding(.vertical)
             
             HStack {
@@ -51,6 +71,28 @@ struct InstafilterView: View {
         }
         .padding([.horizontal, .bottom])
     .navigationBarTitle("InstafilterView")
+        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+            InstafilterImagePicker(image: self.$inputImage)
+        }
+    }
+    
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        //image = Image(uiImage: inputImage)
+        
+        let beginImage = CIImage(image: inputImage)
+        currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        applyProcessing()
+    }
+    
+    func  applyProcessing() {
+        currentFilter.intensity = Float(filterIntensity)
+        guard let outputImage = currentFilter.outputImage else { return }
+        
+        if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
+            let uiImage = UIImage(cgImage: cgimg)
+            image = Image(uiImage: uiImage)
+        }
     }
 }
 
