@@ -23,7 +23,7 @@ struct InstafilterView: View {
     
     @State private var showingFilterSheet = false
     
-    
+    @State private var processedImage: UIImage?
     
     let context = CIContext()
     
@@ -71,6 +71,17 @@ struct InstafilterView: View {
                 
                 Button("Save") {
                     // save picture
+                    guard let processedImage = self.processedImage else { return }
+                    
+                    let imageSaver = InstafilterImageSaver()
+                    imageSaver.successHandler = {
+                        print("Success!")
+                    }
+                    
+                    imageSaver.errorHandler = {
+                        print("Oops: \($0.localizedDescription)")
+                    }
+                    imageSaver.writeToPhotoAlbum(image: processedImage)
                 }
             }
         }
@@ -113,6 +124,7 @@ struct InstafilterView: View {
         if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
             let uiImage = UIImage(cgImage: cgimg)
             image = Image(uiImage: uiImage)
+            processedImage = uiImage
         }
     }
     
