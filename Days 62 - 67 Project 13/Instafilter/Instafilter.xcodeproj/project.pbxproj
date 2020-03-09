@@ -18,6 +18,7 @@
 		98C337332413647A002F2B49 /* CustomBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C337322413647A002F2B49 /* CustomBinding.swift */; };
 		98C337362413661C002F2B49 /* MultipleOptionsWithActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C337352413661C002F2B49 /* MultipleOptionsWithActionSheet.swift */; };
 		98C3373824136AFF002F2B49 /* IntegratingCoreImageWithSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C3373724136AFF002F2B49 /* IntegratingCoreImageWithSwiftUI.swift */; };
+		98DC9C482416112400200275 /* InstafilterImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DC9C472416112400200275 /* InstafilterImagePicker.swift */; };
 		98F65F4C2413F89900D504F4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F65F4B2413F89900D504F4 /* ImagePicker.swift */; };
 		98F65F4E2413FABF00D504F4 /* WrappingAUIViewControllerInASwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F65F4D2413FABF00D504F4 /* WrappingAUIViewControllerInASwiftUIView.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		98C337322413647A002F2B49 /* CustomBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBinding.swift; sourceTree = "<group>"; };
 		98C337352413661C002F2B49 /* MultipleOptionsWithActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleOptionsWithActionSheet.swift; sourceTree = "<group>"; };
 		98C3373724136AFF002F2B49 /* IntegratingCoreImageWithSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegratingCoreImageWithSwiftUI.swift; sourceTree = "<group>"; };
+		98DC9C472416112400200275 /* InstafilterImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstafilterImagePicker.swift; sourceTree = "<group>"; };
 		98F65F4B2413F89900D504F4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		98F65F4D2413FABF00D504F4 /* WrappingAUIViewControllerInASwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappingAUIViewControllerInASwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 				98693E632412DE4100544D44 /* ContentView.swift */,
 				98C33734241365EE002F2B49 /* Views */,
 				98F65F4B2413F89900D504F4 /* ImagePicker.swift */,
+				98DC9C472416112400200275 /* InstafilterImagePicker.swift */,
 				98693E652412DE4400544D44 /* Assets.xcassets */,
 				98693E6A2412DE4400544D44 /* LaunchScreen.storyboard */,
 				98693E6D2412DE4400544D44 /* Info.plist */,
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98693E622412DE4100544D44 /* Instafilter.xcdatamodeld in Sources */,
+				98DC9C482416112400200275 /* InstafilterImagePicker.swift in Sources */,
 				98C3373824136AFF002F2B49 /* IntegratingCoreImageWithSwiftUI.swift in Sources */,
 				98F65F4E2413FABF00D504F4 /* WrappingAUIViewControllerInASwiftUIView.swift in Sources */,
 				98693E5D2412DE4100544D44 /* AppDelegate.swift in Sources */,
