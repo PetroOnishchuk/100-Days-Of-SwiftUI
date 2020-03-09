@@ -34,6 +34,11 @@ struct ContentView: View {
                         Text("WrappingAUIViewControllerInASwiftUIView")
                     }
                 }
+                Section(header: Text("InstafilterView")) {
+                    NavigationLink(destination: InstafilterView()) {
+                        Text("InstafilterView")
+                    }
+                }
             }
         }
     }
