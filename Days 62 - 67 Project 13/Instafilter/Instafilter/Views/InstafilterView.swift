@@ -54,7 +54,7 @@ struct InstafilterView: View {
         )
         // MARK: Challenge 3.2
         
-        let radiusIntensity = Binding<Double> (
+        let radius = Binding<Double> (
             get: {
                 self.filterRadius
         },
@@ -64,7 +64,7 @@ struct InstafilterView: View {
         }
         )
         
-        let scaleIntensity = Binding<Double> (
+        let scale = Binding<Double> (
             get: {
                 self.filterScale
         },
@@ -108,12 +108,12 @@ struct InstafilterView: View {
             //MARK: Challenge 3.3
                 HStack {
                     Text("Radius")
-                    Slider(value: radiusIntensity)
+                    Slider(value: radius)
                 }.padding(.vertical)
                 
             HStack {
                 Text("Scale")
-                Slider(value: scaleIntensity)
+                Slider(value: scale)
             }.padding(.vertical)
                 
                 
@@ -156,7 +156,7 @@ struct InstafilterView: View {
             ])
         }// MARK: Challenge 1.2
         .alert(isPresented: $showingEmptyImageAlert) { () -> Alert in
-            Alert(title: Text("ERROR!. You not selected image"), message: nil, dismissButton: .default(Text("OK")))
+            Alert(title: Text("ERROR!. You have not selected image"), message: nil, dismissButton: .default(Text("OK")))
         }
     }
     
