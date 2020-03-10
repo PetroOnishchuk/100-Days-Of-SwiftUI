@@ -25,6 +25,11 @@ struct InstafilterView: View {
     
     @State private var processedImage: UIImage?
     
+    @State private var changeFilterTitle = ""
+    
+    // MARK: Challenge 1
+    @State private var showingEmptyImageAlert = false
+    
     let context = CIContext()
     
     
@@ -62,8 +67,10 @@ struct InstafilterView: View {
                 Slider(value: intensivity)
             }.padding(.vertical)
             
+            
             HStack {
-                Button("Change Filter") {
+                // MARK: Challenge 2
+                Button(self.changeFilterTitle.isEmpty ?  "Change Filter" : "\(changeFilterTitle)") {
                     self.showingFilterSheet = true
                 }
                 
@@ -71,7 +78,9 @@ struct InstafilterView: View {
                 
                 Button("Save") {
                     // save picture
-                    guard let processedImage = self.processedImage else { return }
+                    guard let processedImage = self.processedImage else {
+                        self.showingEmptyImageAlert = true
+                        return }
                     
                     let imageSaver = InstafilterImageSaver()
                     imageSaver.successHandler = {
@@ -102,6 +111,9 @@ struct InstafilterView: View {
             .cancel()
             ])
         }
+         .alert(isPresented: $showingEmptyImageAlert) { () -> Alert in
+            Alert(title: Text("ERROR!. You not selected image"), message: nil, dismissButton: .default(Text("OK")))
+        }
     }
     
     func loadImage() {
@@ -130,6 +142,8 @@ struct InstafilterView: View {
     
     func setFilter(_ filter: CIFilter) {
         currentFilter = filter
+        // MARK: Challenge 2
+        self.changeFilterTitle = filter.name
         loadImage()
     }
 }
