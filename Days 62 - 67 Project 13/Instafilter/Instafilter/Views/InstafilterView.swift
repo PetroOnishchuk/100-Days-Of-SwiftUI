@@ -15,6 +15,12 @@ struct InstafilterView: View {
     @State private var image: Image?
     @State private var filterIntensity = 0.5
     
+    //MARK: Challenge 3.1
+    @State private var filterRadius = 0.5
+    @State private var filterScale = 0.5
+    
+    
+    
     @State private var showingImagePicker = false
     
     @State private var inputImage: UIImage?
@@ -27,6 +33,9 @@ struct InstafilterView: View {
     
     @State private var changeFilterTitle = ""
     
+   
+    
+    
     // MARK: Challenge 1
     @State private var showingEmptyImageAlert = false
     
@@ -36,23 +45,45 @@ struct InstafilterView: View {
     var body: some View {
         let intensivity = Binding<Double> (
             get: {
-        self.filterIntensity
+                self.filterIntensity
         },
             set : {
-        self.filterIntensity = $0
-        self.applyProcessing()
+                self.filterIntensity = $0
+                self.applyProcessing()
         }
         )
-         return VStack {
+        // MARK: Challenge 3.2
+        
+        let radiusIntensity = Binding<Double> (
+            get: {
+                self.filterRadius
+        },
+            set: {
+                self.filterRadius = $0
+                self.applyProcessing()
+        }
+        )
+        
+        let scaleIntensity = Binding<Double> (
+            get: {
+                self.filterScale
+        },
+            set: {
+                self.filterScale = $0
+                self.applyProcessing()
+        }
+        )
+        
+        return VStack {
             ZStack {
                 Rectangle()
                     .fill(Color.secondary)
                 
                 if image != nil {
                     image?
-                    .resizable()
-                    .scaledToFit()
-                    } else {
+                        .resizable()
+                        .scaledToFit()
+                } else {
                     Text("Tap to select a picture")
                         .foregroundColor(.white)
                         .font(.headline)
@@ -67,18 +98,31 @@ struct InstafilterView: View {
                 Slider(value: intensivity)
             }.padding(.vertical)
             
-            
             HStack {
                 // MARK: Challenge 2
-                Button(self.changeFilterTitle.isEmpty ?  "Change Filter" : "\(changeFilterTitle)") {
+                Button( "Filter's Name:  \(changeFilterTitle)") {
                     self.showingFilterSheet = true
                 }
+                }
+                
+            //MARK: Challenge 3.3
+                HStack {
+                    Text("Radius")
+                    Slider(value: radiusIntensity)
+                }.padding(.vertical)
+                
+            HStack {
+                Text("Scale")
+                Slider(value: scaleIntensity)
+            }.padding(.vertical)
+                
                 
                 Spacer()
                 
                 Button("Save") {
                     // save picture
                     guard let processedImage = self.processedImage else {
+                        // MARK: Challenge 1.1
                         self.showingEmptyImageAlert = true
                         return }
                     
@@ -92,26 +136,26 @@ struct InstafilterView: View {
                     }
                     imageSaver.writeToPhotoAlbum(image: processedImage)
                 }
-            }
+            
         }
         .padding([.horizontal, .bottom])
-    .navigationBarTitle("InstafilterView")
+        .navigationBarTitle("InstafilterView")
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
             InstafilterImagePicker(image: self.$inputImage)
         }
-         .actionSheet(isPresented: $showingFilterSheet) {
+        .actionSheet(isPresented: $showingFilterSheet) {
             ActionSheet(title: Text("Select a filter"), message: nil, buttons: [
-            .default(Text("Crystallize")) { self.setFilter(CIFilter.crystallize()) },
-            .default(Text("Edges")) { self.setFilter(CIFilter.edges()) },
-            .default(Text("Gaussian Blur")) { self.setFilter(CIFilter.gaussianBlur()) },
-            .default(Text("Pixellate")) { self.setFilter(CIFilter.pixellate()) },
-            .default(Text("Sepia Tone")) { self.setFilter(CIFilter.sepiaTone()) },
-            .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask()) },
-            .default(Text("Vignette")) { self.setFilter(CIFilter.vignette()) },
-            .cancel()
+                .default(Text("Crystallize")) { self.setFilter(CIFilter.crystallize()) },
+                .default(Text("Edges")) { self.setFilter(CIFilter.edges()) },
+                .default(Text("Gaussian Blur")) { self.setFilter(CIFilter.gaussianBlur()) },
+                .default(Text("Pixellate")) { self.setFilter(CIFilter.pixellate()) },
+                .default(Text("Sepia Tone")) { self.setFilter(CIFilter.sepiaTone()) },
+                .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask()) },
+                .default(Text("Vignette")) { self.setFilter(CIFilter.vignette()) },
+                .cancel()
             ])
-        }
-         .alert(isPresented: $showingEmptyImageAlert) { () -> Alert in
+        }// MARK: Challenge 1.2
+        .alert(isPresented: $showingEmptyImageAlert) { () -> Alert in
             Alert(title: Text("ERROR!. You not selected image"), message: nil, dismissButton: .default(Text("OK")))
         }
     }
@@ -122,15 +166,17 @@ struct InstafilterView: View {
         
         let beginImage = CIImage(image: inputImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        // MARK: Challenge 2.1
+        self.changeFilterTitle = currentFilter.name
         applyProcessing()
     }
     
     func  applyProcessing() {
         let inputKeys = currentFilter.inputKeys
-       if inputKeys.contains(kCIInputIntensityKey) { currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey) }
-        if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey) }
-        if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey) }
-//        currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey)
+        if inputKeys.contains(kCIInputIntensityKey) { currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey) }
+        if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(filterRadius * 200, forKey: kCIInputRadiusKey) }
+        if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(filterScale * 10, forKey: kCIInputScaleKey) }
+        //        currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey)
         guard let outputImage = currentFilter.outputImage else { return }
         
         if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
@@ -142,7 +188,7 @@ struct InstafilterView: View {
     
     func setFilter(_ filter: CIFilter) {
         currentFilter = filter
-        // MARK: Challenge 2
+        // MARK: Challenge 2.2
         self.changeFilterTitle = filter.name
         loadImage()
     }
