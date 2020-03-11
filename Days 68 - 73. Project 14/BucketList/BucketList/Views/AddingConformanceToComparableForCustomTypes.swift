@@ -9,9 +9,32 @@
 import SwiftUI
 
 struct AddingConformanceToComparableForCustomTypes: View {
+    
+    let users = [
+    User(firstName: "Arnold", lastName: "Rimmer"),
+    User(firstName: "Kristine", lastName: "Kochanski"),
+    User(firstName: "David", lastName: "Lister")
+        ].sorted()
+    
+    let values = [1, 5, 3, 6, 2, 9].sorted()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(users) { user in
+            Text("\(user.lastName), \(user.firstName)")
+        }
     }
+}
+
+
+struct User: Identifiable, Comparable {
+    static func < (lhs: User, rhs: User) -> Bool {
+        lhs.lastName < rhs.lastName
+    }
+    
+    let id = UUID()
+    let firstName: String
+    let lastName: String
+    
+    
 }
 
 struct AddingConformanceToComparableForCustomTypes_Previews: PreviewProvider {
