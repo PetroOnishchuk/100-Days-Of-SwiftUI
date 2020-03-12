@@ -24,6 +24,12 @@ struct ContentView: View {
                         Text("WritingDataToTheDocumentsDerectory")
                     }
                 }
+                
+                Section(header: Text("Switching view states with enums")) {
+                    NavigationLink(destination: SwitchingViewStatesWithEnums()) {
+                        Text("Switching view states with enums")
+                    }
+                }
             }
         }
     }
