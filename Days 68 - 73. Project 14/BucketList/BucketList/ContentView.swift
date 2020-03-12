@@ -36,6 +36,12 @@ struct ContentView: View {
                         Text("Integrating MapKit With SwiftUI")
                     }
                 }
+                
+                Section(header: Text("Using Touch ID And Face ID With SwiftUI")) {
+                    NavigationLink(destination: UsingTouchIDAndFaceIDWithSwiftUI()) {
+                        Text("Using Touch ID And Face ID With SwiftUI")
+                    }
+                }
             }
         }
     }
