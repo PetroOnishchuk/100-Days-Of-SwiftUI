@@ -18,6 +18,12 @@ struct ContentView: View {
                         Text("AddingConformanceToComparableForCustomTypes")
                     }
                 }
+                
+                Section(header: Text("Writing Data To The Documents Derectory")) {
+                    NavigationLink(destination: WritingDataToTheDocumentsDerectory()) {
+                        Text("WritingDataToTheDocumentsDerectory")
+                    }
+                }
             }
         }
     }
