@@ -30,6 +30,12 @@ struct ContentView: View {
                         Text("Switching view states with enums")
                     }
                 }
+                
+                Section(header: Text("Integrating MapKit With SwiftUI")) {
+                    NavigationLink(destination: IntegratingMapKitWithSwiftUI()) {
+                        Text("Integrating MapKit With SwiftUI")
+                    }
+                }
             }
         }
     }

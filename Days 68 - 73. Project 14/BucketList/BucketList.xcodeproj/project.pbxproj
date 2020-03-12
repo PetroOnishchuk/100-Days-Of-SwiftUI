@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9866F07A241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9866F079241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift */; };
+		9866F07C241A95E50049B335 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9866F07B241A95E50049B335 /* MapView.swift */; };
 		98BC6AC4241A01CB00F708F2 /* WritingDataToTheDocumentsDerectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC6AC3241A01CB00F708F2 /* WritingDataToTheDocumentsDerectory.swift */; };
 		98BC6AC6241A061700F708F2 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC6AC5241A061700F708F2 /* Bundle-Decodable.swift */; };
 		98BC6AC8241A0A1100F708F2 /* SwitchingViewStatesWithEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC6AC7241A0A1100F708F2 /* SwitchingViewStatesWithEnums.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9866F079241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegratingMapKitWithSwiftUI.swift; sourceTree = "<group>"; };
+		9866F07B241A95E50049B335 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		98BC6AC3241A01CB00F708F2 /* WritingDataToTheDocumentsDerectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDataToTheDocumentsDerectory.swift; sourceTree = "<group>"; };
 		98BC6AC5241A061700F708F2 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bundle-Decodable.swift"; path = "../../../Days 39 - 42 Project 8/Moonshot/Moonshot/Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		98BC6AC7241A0A1100F708F2 /* SwitchingViewStatesWithEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingViewStatesWithEnums.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				98C41D5E24194161007AAC78 /* AddingConformanceToComparableForCustomTypes.swift */,
 				98BC6AC3241A01CB00F708F2 /* WritingDataToTheDocumentsDerectory.swift */,
 				98BC6AC7241A0A1100F708F2 /* SwitchingViewStatesWithEnums.swift */,
+				9866F079241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift */,
+				9866F07B241A95E50049B335 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,10 +177,12 @@
 			files = (
 				98BC6AC8241A0A1100F708F2 /* SwitchingViewStatesWithEnums.swift in Sources */,
 				98BC6AC4241A01CB00F708F2 /* WritingDataToTheDocumentsDerectory.swift in Sources */,
+				9866F07A241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift in Sources */,
 				98C41D4724194045007AAC78 /* AppDelegate.swift in Sources */,
 				98C41D5F24194161007AAC78 /* AddingConformanceToComparableForCustomTypes.swift in Sources */,
 				98C41D4C24194045007AAC78 /* BucketList.xcdatamodeld in Sources */,
 				98C41D4E24194045007AAC78 /* ContentView.swift in Sources */,
+				9866F07C241A95E50049B335 /* MapView.swift in Sources */,
 				98BC6AC6241A061700F708F2 /* Bundle-Decodable.swift in Sources */,
 				98C41D4924194045007AAC78 /* SceneDelegate.swift in Sources */,
 			);
