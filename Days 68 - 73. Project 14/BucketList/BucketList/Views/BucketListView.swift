@@ -16,7 +16,7 @@ struct BucketListView: View {
     
     var body: some View {
         ZStack {
-            MapView(centerCoordinate:  $centerCoordinate)
+            MapView(centerCoordinate:  $centerCoordinate, annotations: locations)
                 .edgesIgnoringSafeArea(.all)
             Circle()
                 .fill(Color.blue)
