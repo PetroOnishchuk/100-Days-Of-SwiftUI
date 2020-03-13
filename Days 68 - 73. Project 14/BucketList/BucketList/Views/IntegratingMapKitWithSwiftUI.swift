@@ -13,7 +13,7 @@ struct IntegratingMapKitWithSwiftUI: View {
     
     
     var body: some View {
-        MapView()
+        MapViewday69()
             .edgesIgnoringSafeArea(.all)
     }
     

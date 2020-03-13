@@ -42,6 +42,12 @@ struct ContentView: View {
                         Text("Using Touch ID And Face ID With SwiftUI")
                     }
                 }
+                
+                Section(header: Text("BucketListView")) {
+                    NavigationLink(destination: BucketListView()) {
+                        Text("BucketListView")
+                    }
+                }
             }
         }
     }
