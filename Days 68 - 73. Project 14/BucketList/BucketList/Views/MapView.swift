@@ -20,7 +20,7 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        
+        print("Updating")
     }
     
     func makeCoordinator() -> Coordinator {
@@ -35,7 +35,7 @@ struct MapView: UIViewRepresentable {
         }
         
         func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-            <#code#>
+            
         }
     }
 }
