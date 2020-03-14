@@ -17,6 +17,8 @@ struct BucketListView: View {
     @State private var selectedPlace: MKPointAnnotation?
     @State private var showingPlaceDetails = false
     
+    @State private var showingEditScreen = false
+    
     var body: some View {
         ZStack {
             MapView(centerCoordinate:  $centerCoordinate,  selectedPlace: $selectedPlace, showingPlaceDetails: $showingPlaceDetails, annotations: locations)
@@ -35,6 +37,10 @@ struct BucketListView: View {
                         newLocation.coordinate = self.centerCoordinate
                         newLocation.title = "Example location"
                         self.locations.append(newLocation)
+                        
+                        self.selectedPlace = newLocation
+                        self.showingEditScreen = true
+                        
                     }) {
                         Image(systemName: "plus")
                     }
@@ -50,7 +56,13 @@ struct BucketListView: View {
         .alert(isPresented: $showingPlaceDetails) { () -> Alert in
             Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place infirmation."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
                 // edit this place
+                self.showingEditScreen = true
             })
+        }
+        .sheet(isPresented: $showingEditScreen) {
+            if self.selectedPlace != nil {
+                EditView(placemark: self.selectedPlace!)
+            }
         }
     }
 }
