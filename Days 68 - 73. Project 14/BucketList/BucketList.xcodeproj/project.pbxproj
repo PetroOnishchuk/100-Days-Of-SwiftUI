@@ -25,6 +25,7 @@
 		98C41D5F24194161007AAC78 /* AddingConformanceToComparableForCustomTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C41D5E24194161007AAC78 /* AddingConformanceToComparableForCustomTypes.swift */; };
 		98D70FA4241D31A200E97C34 /* MKPointAnnotation-ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D70FA3241D31A200E97C34 /* MKPointAnnotation-ObservableObject.swift */; };
 		98D70FA6241D32D900E97C34 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D70FA5241D32D900E97C34 /* EditView.swift */; };
+		98D70FA8241D661700E97C34 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D70FA7241D661700E97C34 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		98C41D5E24194161007AAC78 /* AddingConformanceToComparableForCustomTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingConformanceToComparableForCustomTypes.swift; sourceTree = "<group>"; };
 		98D70FA3241D31A200E97C34 /* MKPointAnnotation-ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-ObservableObject.swift"; sourceTree = "<group>"; };
 		98D70FA5241D32D900E97C34 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		98D70FA7241D661700E97C34 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				98844246241BDA1400CC746A /* BucketListView.swift */,
 				98844244241BD61100CC746A /* MapView.swift */,
 				98D70FA5241D32D900E97C34 /* EditView.swift */,
+				98D70FA7241D661700E97C34 /* Result.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				9866F07A241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift in Sources */,
 				98C41D4724194045007AAC78 /* AppDelegate.swift in Sources */,
 				98844247241BDA1400CC746A /* BucketListView.swift in Sources */,
+				98D70FA8241D661700E97C34 /* Result.swift in Sources */,
 				98C41D5F24194161007AAC78 /* AddingConformanceToComparableForCustomTypes.swift in Sources */,
 				98C41D4C24194045007AAC78 /* BucketList.xcdatamodeld in Sources */,
 				98C41D4E24194045007AAC78 /* ContentView.swift in Sources */,
