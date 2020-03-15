@@ -12,7 +12,7 @@ import MapKit
 
 struct BucketListView: View {
     @State private var centerCoordinate = CLLocationCoordinate2D()
-    @State private var locations = [MKPointAnnotation]()
+    @State private var locations = [CodableMKPointAnnotation]()
     
     @State private var selectedPlace: MKPointAnnotation?
     @State private var showingPlaceDetails = false
@@ -33,7 +33,7 @@ struct BucketListView: View {
                     Spacer()
                     Button(action: {
                         // create a new location
-                        let newLocation = MKPointAnnotation()
+                        let newLocation = CodableMKPointAnnotation()
                         newLocation.coordinate = self.centerCoordinate
                         newLocation.title = "Example location"
                         self.locations.append(newLocation)
@@ -59,10 +59,39 @@ struct BucketListView: View {
                 self.showingEditScreen = true
             })
         }
-        .sheet(isPresented: $showingEditScreen) {
+        .sheet(isPresented: $showingEditScreen, onDismiss: saveData) {
             if self.selectedPlace != nil {
                 EditView(placemark: self.selectedPlace!)
             }
+        }
+    .onAppear(perform: loadData)
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return path[0]
+    }
+    
+    func loadData() {
+        let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
+        
+        do {
+            let data = try Data(contentsOf: filename)
+            locations = try JSONDecoder().decode([CodableMKPointAnnotation].self, from: data)
+            print("LLLLLLLLLL1 \(locations.count)")
+        } catch {
+            print("Unable to load saved data.")
+        }
+    }
+    
+    func saveData() {
+        do {
+            let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
+            let data = try JSONEncoder().encode(self.locations)
+            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
+            print("llllllllllllllll\(locations.count)")
+        } catch {
+            print("Unable to save data.")
         }
     }
 }
