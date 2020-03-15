@@ -12,7 +12,7 @@ import MapKit
 class CodableMKPointAnnotation: MKPointAnnotation, Codable {
     
     enum CodingKeys: CodingKey {
-        case title, subtitle, lantitude, longitude
+        case title, subtitle, latitude, longitude
     }
     
     override init() {
@@ -26,7 +26,7 @@ class CodableMKPointAnnotation: MKPointAnnotation, Codable {
         title = try container.decode(String.self, forKey: .title)
         subtitle = try container.decode(String.self, forKey: .subtitle)
         
-        let latitude = try container.decode(CLLocationDegrees.self, forKey: .lantitude)
+        let latitude = try container.decode(CLLocationDegrees.self, forKey: .latitude)
         let longitude = try container.decode(CLLocationDegrees.self, forKey: .longitude)
         coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
@@ -36,7 +36,7 @@ class CodableMKPointAnnotation: MKPointAnnotation, Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(title, forKey: .title)
         try container.encode(subtitle, forKey: .subtitle)
-        try container.encode(coordinate.latitude, forKey: .lantitude)
+        try container.encode(coordinate.latitude, forKey: .latitude)
         try container.encode(coordinate.longitude, forKey: .longitude)
     }
 }
