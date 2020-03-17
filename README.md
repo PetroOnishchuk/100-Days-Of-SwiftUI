@@ -42,6 +42,8 @@ Lists of projects:
 
 ## 16. [CoreDataProject](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2057%20-%2056%20Project%2012/CoreDataProject) Project 12 (Days 57 - 59) 
 
-## 17.[UsersList](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Milestone%20Projects%2010%20-%2012) Milestone: Projects 10 -12 (Days 60 -61)
+## 17.[UsersList](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Milestone%20Projects%2010%20-%2012) Milestone: Projects 10 -12 (Days 60 - 61)
 
 ## 18.[Instafilter](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2062%20-%2067%20Project%2013/Instafilter) Project 13 (Days 62 - 67)
+
+## 19.[BucketList](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2068%20-%2073.%20Project%2014/BucketList) Project 14 ( Days 68 - 73 ) Not Completed Yet !!!!!!!!!!!!!!
