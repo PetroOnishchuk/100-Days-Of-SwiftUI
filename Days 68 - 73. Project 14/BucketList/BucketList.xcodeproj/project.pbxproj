@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9835EA6E2423CAD3005B7FF9 /* PlusButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9835EA6D2423CAD3005B7FF9 /* PlusButtonView.swift */; };
+		9835EA702423CC24005B7FF9 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9835EA6F2423CC24005B7FF9 /* CircleView.swift */; };
+		9835EA722423CDE3005B7FF9 /* UnlockButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9835EA712423CDE3005B7FF9 /* UnlockButtonView.swift */; };
+		9835EA742423D3A7005B7FF9 /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9835EA732423D3A7005B7FF9 /* UnlockView.swift */; };
 		984E9125241DFBF80054448F /* MKPointAnnotation-Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984E9124241DFBF80054448F /* MKPointAnnotation-Codable.swift */; };
 		9866F07A241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9866F079241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift */; };
 		9866F07C241A95E50049B335 /* MapViewday69.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9866F07B241A95E50049B335 /* MapViewday69.swift */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9835EA6D2423CAD3005B7FF9 /* PlusButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButtonView.swift; sourceTree = "<group>"; };
+		9835EA6F2423CC24005B7FF9 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		9835EA712423CDE3005B7FF9 /* UnlockButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockButtonView.swift; sourceTree = "<group>"; };
+		9835EA732423D3A7005B7FF9 /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
 		984E9124241DFBF80054448F /* MKPointAnnotation-Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-Codable.swift"; sourceTree = "<group>"; };
 		9866F079241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegratingMapKitWithSwiftUI.swift; sourceTree = "<group>"; };
 		9866F07B241A95E50049B335 /* MapViewday69.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewday69.swift; sourceTree = "<group>"; };
@@ -65,6 +73,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9835EA6C2423C89E005B7FF9 /* ViewsForChallengeD73 */ = {
+			isa = PBXGroup;
+			children = (
+				9835EA6D2423CAD3005B7FF9 /* PlusButtonView.swift */,
+				9835EA6F2423CC24005B7FF9 /* CircleView.swift */,
+				9835EA712423CDE3005B7FF9 /* UnlockButtonView.swift */,
+				9835EA732423D3A7005B7FF9 /* UnlockView.swift */,
+			);
+			path = ViewsForChallengeD73;
+			sourceTree = "<group>";
+		};
 		98C41D3A24194045007AAC78 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +107,7 @@
 				98C41D4824194045007AAC78 /* SceneDelegate.swift */,
 				98C41D4D24194045007AAC78 /* ContentView.swift */,
 				98C41D5D241940A9007AAC78 /* Views */,
+				9835EA6C2423C89E005B7FF9 /* ViewsForChallengeD73 */,
 				98C41D4F24194047007AAC78 /* Assets.xcassets */,
 				98D70FA3241D31A200E97C34 /* MKPointAnnotation-ObservableObject.swift */,
 				98BC6AC5241A061700F708F2 /* Bundle-Decodable.swift */,
@@ -198,10 +218,13 @@
 			files = (
 				98BC6AC8241A0A1100F708F2 /* SwitchingViewStatesWithEnums.swift in Sources */,
 				98844245241BD61100CC746A /* MapView.swift in Sources */,
+				9835EA742423D3A7005B7FF9 /* UnlockView.swift in Sources */,
+				9835EA702423CC24005B7FF9 /* CircleView.swift in Sources */,
 				98BC6AC4241A01CB00F708F2 /* WritingDataToTheDocumentsDerectory.swift in Sources */,
 				9866F07A241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift in Sources */,
 				98C41D4724194045007AAC78 /* AppDelegate.swift in Sources */,
 				98844247241BDA1400CC746A /* BucketListView.swift in Sources */,
+				9835EA6E2423CAD3005B7FF9 /* PlusButtonView.swift in Sources */,
 				98D70FA8241D661700E97C34 /* Result.swift in Sources */,
 				98C41D5F24194161007AAC78 /* AddingConformanceToComparableForCustomTypes.swift in Sources */,
 				98C41D4C24194045007AAC78 /* BucketList.xcdatamodeld in Sources */,
@@ -210,6 +233,7 @@
 				98D70FA4241D31A200E97C34 /* MKPointAnnotation-ObservableObject.swift in Sources */,
 				9866F07C241A95E50049B335 /* MapViewday69.swift in Sources */,
 				98D70FA6241D32D900E97C34 /* EditView.swift in Sources */,
+				9835EA722423CDE3005B7FF9 /* UnlockButtonView.swift in Sources */,
 				98BC6AC6241A061700F708F2 /* Bundle-Decodable.swift in Sources */,
 				98C41D4924194045007AAC78 /* SceneDelegate.swift in Sources */,
 				9866F07E241ACEA80049B335 /* UsingTouchIDAndFaceIDWithSwiftUI.swift in Sources */,
