@@ -8,12 +8,14 @@
 
 import SwiftUI
 
+// RatingView
 struct RatingView: View {
     
     @Binding var rating: Int
     
-    var label = ""
+    var textLabel = "TestLabel"
     
+    var label = ""
     var maximumRating = 5
     
    @State private var offImage: Image?
@@ -21,6 +23,8 @@ struct RatingView: View {
     
     var offColor = Color.gray
     var onColor = Color.yellow
+    
+    
     
     var body: some View {
         HStack {
