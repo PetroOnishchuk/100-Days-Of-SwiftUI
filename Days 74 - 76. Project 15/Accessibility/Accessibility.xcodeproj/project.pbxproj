@@ -15,7 +15,6 @@
 		9811518C24266E2600CA8E63 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811518B24266E2600CA8E63 /* DetailView.swift */; };
 		9811518E24266E5500CA8E63 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811518D24266E5500CA8E63 /* RatingView.swift */; };
 		9811519024266EC700CA8E63 /* Bookworm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811518F24266EC700CA8E63 /* Bookworm.swift */; };
-		981151922426759500CA8E63 /* SwiftUIViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981151912426759500CA8E63 /* SwiftUIViewTest.swift */; };
 		984604CD2425E9440009CCDD /* IdentifyingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984604CC2425E9440009CCDD /* IdentifyingView.swift */; };
 		984604CF2425EA4E0009CCDD /* HidingAndGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984604CE2425EA4E0009CCDD /* HidingAndGrouping.swift */; };
 		984604D12425ECA20009CCDD /* ReadingTheValueOfControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984604D02425ECA20009CCDD /* ReadingTheValueOfControls.swift */; };
@@ -37,7 +36,6 @@
 		9811518B24266E2600CA8E63 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9811518D24266E5500CA8E63 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		9811518F24266EC700CA8E63 /* Bookworm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookworm.swift; sourceTree = "<group>"; };
-		981151912426759500CA8E63 /* SwiftUIViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewTest.swift; sourceTree = "<group>"; };
 		984604CC2425E9440009CCDD /* IdentifyingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyingView.swift; sourceTree = "<group>"; };
 		984604CE2425EA4E0009CCDD /* HidingAndGrouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidingAndGrouping.swift; sourceTree = "<group>"; };
 		984604D02425ECA20009CCDD /* ReadingTheValueOfControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingTheValueOfControls.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				9811518924266DF800CA8E63 /* AddBookView.swift */,
 				9811518B24266E2600CA8E63 /* DetailView.swift */,
 				9811518D24266E5500CA8E63 /* RatingView.swift */,
-				981151912426759500CA8E63 /* SwiftUIViewTest.swift */,
 			);
 			path = Bookworm;
 			sourceTree = "<group>";
@@ -211,7 +208,6 @@
 				984604CF2425EA4E0009CCDD /* HidingAndGrouping.swift in Sources */,
 				9811518E24266E5500CA8E63 /* RatingView.swift in Sources */,
 				984604CD2425E9440009CCDD /* IdentifyingView.swift in Sources */,
-				981151922426759500CA8E63 /* SwiftUIViewTest.swift in Sources */,
 				9811519024266EC700CA8E63 /* Bookworm.swift in Sources */,
 				9811518A24266DF800CA8E63 /* AddBookView.swift in Sources */,
 				985BD9612425236A007B7A74 /* SceneDelegate.swift in Sources */,
