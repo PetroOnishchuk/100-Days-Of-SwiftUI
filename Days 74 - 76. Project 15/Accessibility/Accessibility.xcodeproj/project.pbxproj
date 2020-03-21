@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9811518124265B1700CA8E63 /* GuessTheFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811518024265B1700CA8E63 /* GuessTheFlag.swift */; };
+		98115183242667F800CA8E63 /* WordScamble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98115182242667F800CA8E63 /* WordScamble.swift */; };
+		981151852426684700CA8E63 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 981151842426684700CA8E63 /* start.txt */; };
+		9811518824266DAF00CA8E63 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811518724266DAF00CA8E63 /* EmojiRatingView.swift */; };
+		9811518A24266DF800CA8E63 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811518924266DF800CA8E63 /* AddBookView.swift */; };
+		9811518C24266E2600CA8E63 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811518B24266E2600CA8E63 /* DetailView.swift */; };
+		9811518E24266E5500CA8E63 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811518D24266E5500CA8E63 /* RatingView.swift */; };
+		9811519024266EC700CA8E63 /* Bookworm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811518F24266EC700CA8E63 /* Bookworm.swift */; };
 		984604CD2425E9440009CCDD /* IdentifyingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984604CC2425E9440009CCDD /* IdentifyingView.swift */; };
 		984604CF2425EA4E0009CCDD /* HidingAndGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984604CE2425EA4E0009CCDD /* HidingAndGrouping.swift */; };
 		984604D12425ECA20009CCDD /* ReadingTheValueOfControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984604D02425ECA20009CCDD /* ReadingTheValueOfControls.swift */; };
@@ -20,6 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9811518024265B1700CA8E63 /* GuessTheFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlag.swift; sourceTree = "<group>"; };
+		98115182242667F800CA8E63 /* WordScamble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScamble.swift; sourceTree = "<group>"; };
+		981151842426684700CA8E63 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = start.txt; path = "../../../Days 29 - 31 Project 5/WordScramble/WordScramble/start.txt"; sourceTree = "<group>"; };
+		9811518724266DAF00CA8E63 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
+		9811518924266DF800CA8E63 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		9811518B24266E2600CA8E63 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		9811518D24266E5500CA8E63 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		9811518F24266EC700CA8E63 /* Bookworm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookworm.swift; sourceTree = "<group>"; };
 		984604CC2425E9440009CCDD /* IdentifyingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyingView.swift; sourceTree = "<group>"; };
 		984604CE2425EA4E0009CCDD /* HidingAndGrouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidingAndGrouping.swift; sourceTree = "<group>"; };
 		984604D02425ECA20009CCDD /* ReadingTheValueOfControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingTheValueOfControls.swift; sourceTree = "<group>"; };
@@ -45,12 +61,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9811518624266D4E00CA8E63 /* Bookworm */ = {
+			isa = PBXGroup;
+			children = (
+				9811518F24266EC700CA8E63 /* Bookworm.swift */,
+				9811518724266DAF00CA8E63 /* EmojiRatingView.swift */,
+				9811518924266DF800CA8E63 /* AddBookView.swift */,
+				9811518B24266E2600CA8E63 /* DetailView.swift */,
+				9811518D24266E5500CA8E63 /* RatingView.swift */,
+			);
+			path = Bookworm;
+			sourceTree = "<group>";
+		};
 		984604CB2425E9080009CCDD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9811518624266D4E00CA8E63 /* Bookworm */,
 				984604CC2425E9440009CCDD /* IdentifyingView.swift */,
 				984604CE2425EA4E0009CCDD /* HidingAndGrouping.swift */,
 				984604D02425ECA20009CCDD /* ReadingTheValueOfControls.swift */,
+				9811518024265B1700CA8E63 /* GuessTheFlag.swift */,
+				98115182242667F800CA8E63 /* WordScamble.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -82,6 +113,7 @@
 				985BD96C2425236C007B7A74 /* LaunchScreen.storyboard */,
 				985BD96F2425236C007B7A74 /* Info.plist */,
 				985BD9622425236A007B7A74 /* Accessibility.xcdatamodeld */,
+				981151842426684700CA8E63 /* start.txt */,
 				985BD9692425236C007B7A74 /* Preview Content */,
 			);
 			path = Accessibility;
@@ -154,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				985BD96E2425236C007B7A74 /* LaunchScreen.storyboard in Resources */,
+				981151852426684700CA8E63 /* start.txt in Resources */,
 				985BD96B2425236C007B7A74 /* Preview Assets.xcassets in Resources */,
 				985BD9682425236C007B7A74 /* Assets.xcassets in Resources */,
 			);
@@ -166,13 +199,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9811518824266DAF00CA8E63 /* EmojiRatingView.swift in Sources */,
+				9811518C24266E2600CA8E63 /* DetailView.swift in Sources */,
 				984604D12425ECA20009CCDD /* ReadingTheValueOfControls.swift in Sources */,
 				985BD95F2425236A007B7A74 /* AppDelegate.swift in Sources */,
 				985BD9642425236A007B7A74 /* Accessibility.xcdatamodeld in Sources */,
 				985BD9662425236A007B7A74 /* ContentView.swift in Sources */,
 				984604CF2425EA4E0009CCDD /* HidingAndGrouping.swift in Sources */,
+				9811518E24266E5500CA8E63 /* RatingView.swift in Sources */,
 				984604CD2425E9440009CCDD /* IdentifyingView.swift in Sources */,
+				9811519024266EC700CA8E63 /* Bookworm.swift in Sources */,
+				9811518A24266DF800CA8E63 /* AddBookView.swift in Sources */,
 				985BD9612425236A007B7A74 /* SceneDelegate.swift in Sources */,
+				98115183242667F800CA8E63 /* WordScamble.swift in Sources */,
+				9811518124265B1700CA8E63 /* GuessTheFlag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

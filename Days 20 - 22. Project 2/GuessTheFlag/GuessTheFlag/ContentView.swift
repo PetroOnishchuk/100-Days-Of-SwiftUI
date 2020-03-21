@@ -103,11 +103,11 @@ struct ContentView: View {
         self.countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
-
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             
     }
 }
-}
+

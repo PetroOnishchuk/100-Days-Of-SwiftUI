@@ -31,6 +31,24 @@ struct ContentView: View {
                         Text("Reading the value of controls")
                     }
                 }
+                
+                Section {
+                    NavigationLink(destination: GuessTheFlag()) {
+                        Text("Guess the flag")
+                    }
+                }
+                
+                Section {
+                    NavigationLink(destination: WordScamble()) {
+                        Text("Word Scramble")
+                    }
+                }
+                
+                Section {
+                    NavigationLink(destination: Bookworm()) {
+                        Text("Bookwork")
+                    }
+                }
             }
         }
     }
