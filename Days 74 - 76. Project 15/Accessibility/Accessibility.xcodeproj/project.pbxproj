@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		984604CD2425E9440009CCDD /* IdentifyingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984604CC2425E9440009CCDD /* IdentifyingView.swift */; };
+		984604CF2425EA4E0009CCDD /* HidingAndGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984604CE2425EA4E0009CCDD /* HidingAndGrouping.swift */; };
+		984604D12425ECA20009CCDD /* ReadingTheValueOfControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984604D02425ECA20009CCDD /* ReadingTheValueOfControls.swift */; };
 		985BD95F2425236A007B7A74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BD95E2425236A007B7A74 /* AppDelegate.swift */; };
 		985BD9612425236A007B7A74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BD9602425236A007B7A74 /* SceneDelegate.swift */; };
 		985BD9642425236A007B7A74 /* Accessibility.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 985BD9622425236A007B7A74 /* Accessibility.xcdatamodeld */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		984604CC2425E9440009CCDD /* IdentifyingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyingView.swift; sourceTree = "<group>"; };
+		984604CE2425EA4E0009CCDD /* HidingAndGrouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidingAndGrouping.swift; sourceTree = "<group>"; };
+		984604D02425ECA20009CCDD /* ReadingTheValueOfControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingTheValueOfControls.swift; sourceTree = "<group>"; };
 		985BD95B2425236A007B7A74 /* Accessibility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accessibility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		985BD95E2425236A007B7A74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		985BD9602425236A007B7A74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		984604CB2425E9080009CCDD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				984604CC2425E9440009CCDD /* IdentifyingView.swift */,
+				984604CE2425EA4E0009CCDD /* HidingAndGrouping.swift */,
+				984604D02425ECA20009CCDD /* ReadingTheValueOfControls.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		985BD9522425236A007B7A74 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +77,7 @@
 				985BD95E2425236A007B7A74 /* AppDelegate.swift */,
 				985BD9602425236A007B7A74 /* SceneDelegate.swift */,
 				985BD9652425236A007B7A74 /* ContentView.swift */,
+				984604CB2425E9080009CCDD /* Views */,
 				985BD9672425236C007B7A74 /* Assets.xcassets */,
 				985BD96C2425236C007B7A74 /* LaunchScreen.storyboard */,
 				985BD96F2425236C007B7A74 /* Info.plist */,
@@ -149,9 +166,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				984604D12425ECA20009CCDD /* ReadingTheValueOfControls.swift in Sources */,
 				985BD95F2425236A007B7A74 /* AppDelegate.swift in Sources */,
 				985BD9642425236A007B7A74 /* Accessibility.xcdatamodeld in Sources */,
 				985BD9662425236A007B7A74 /* ContentView.swift in Sources */,
+				984604CF2425EA4E0009CCDD /* HidingAndGrouping.swift in Sources */,
+				984604CD2425E9440009CCDD /* IdentifyingView.swift in Sources */,
 				985BD9612425236A007B7A74 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
