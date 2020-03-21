@@ -13,7 +13,7 @@ struct RatingView: View {
     
     @Binding var rating: Int
     
-    var textLabel = "TestLabel"
+    
     
     var label = ""
     var maximumRating = 5

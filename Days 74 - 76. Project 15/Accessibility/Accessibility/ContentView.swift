@@ -49,6 +49,12 @@ struct ContentView: View {
                         Text("Bookwork")
                     }
                 }
+                
+                Section {
+                    NavigationLink(destination: CupcakeCorner()) {
+                        Text("CupcakeCorner")
+                    }
+                }
             }
         }
     }
