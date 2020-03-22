@@ -55,6 +55,12 @@ struct ContentView: View {
                         Text("CupcakeCorner")
                     }
                 }
+                
+                Section {
+                    NavigationLink(destination: BetterRest()) {
+                        Text("Better Rest")
+                    }
+                }
             }
         }
     }
