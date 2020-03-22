@@ -61,6 +61,12 @@ struct ContentView: View {
                         Text("Better Rest")
                     }
                 }
+                
+                Section {
+                    NavigationLink(destination: Moonshot()) {
+                        Text("Moonshot")
+                    }
+                }
             }
         }
     }

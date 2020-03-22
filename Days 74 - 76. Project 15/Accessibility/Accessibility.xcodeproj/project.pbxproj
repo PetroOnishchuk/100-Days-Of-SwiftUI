@@ -31,6 +31,14 @@
 		985BD96E2425236C007B7A74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985BD96C2425236C007B7A74 /* LaunchScreen.storyboard */; };
 		989306772427B490005988AD /* BetterRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989306762427B490005988AD /* BetterRest.swift */; };
 		989306792427B54B005988AD /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 989306782427B54B005988AD /* SleepCalculator.mlmodel */; };
+		9893067C2427C02C005988AD /* Moonshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893067B2427C02C005988AD /* Moonshot.swift */; };
+		9893067E2427C063005988AD /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893067D2427C063005988AD /* AstronautView.swift */; };
+		989306802427C0A9005988AD /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893067F2427C0A9005988AD /* MissionView.swift */; };
+		989306822427C0F4005988AD /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = 989306812427C0F4005988AD /* astronauts.json */; };
+		989306842427C0FD005988AD /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = 989306832427C0FD005988AD /* missions.json */; };
+		989306862427C11D005988AD /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989306852427C11D005988AD /* Mission.swift */; };
+		989306882427C14B005988AD /* Astrounaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989306872427C14B005988AD /* Astrounaut.swift */; };
+		9893068A2427C16E005988AD /*  Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989306892427C16E005988AD /*  Bundle-Decodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +68,14 @@
 		985BD96F2425236C007B7A74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		989306762427B490005988AD /* BetterRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterRest.swift; sourceTree = "<group>"; };
 		989306782427B54B005988AD /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SleepCalculator.mlmodel; path = "../../../../../Days 26 - 28 Project 4/SleepCalculator.mlmodel"; sourceTree = "<group>"; };
+		9893067B2427C02C005988AD /* Moonshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moonshot.swift; sourceTree = "<group>"; };
+		9893067D2427C063005988AD /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
+		9893067F2427C0A9005988AD /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
+		989306812427C0F4005988AD /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = astronauts.json; path = "../../../../../Days 39 - 42 Project 8/Moonshot/Moonshot/astronauts.json"; sourceTree = "<group>"; };
+		989306832427C0FD005988AD /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = missions.json; path = "../../../../../Days 39 - 42 Project 8/Moonshot/Moonshot/missions.json"; sourceTree = "<group>"; };
+		989306852427C11D005988AD /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		989306872427C14B005988AD /* Astrounaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astrounaut.swift; sourceTree = "<group>"; };
+		989306892427C16E005988AD /*  Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Bundle-Decodable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,7 @@
 		984604CB2425E9080009CCDD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9893067A2427BFD4005988AD /* Moonshot */,
 				989306752427B42E005988AD /* BetterRest */,
 				981151932426A4CD00CA8E63 /* CupcakeCorner */,
 				9811518624266D4E00CA8E63 /* Bookworm */,
@@ -159,6 +176,21 @@
 				989306782427B54B005988AD /* SleepCalculator.mlmodel */,
 			);
 			path = BetterRest;
+			sourceTree = "<group>";
+		};
+		9893067A2427BFD4005988AD /* Moonshot */ = {
+			isa = PBXGroup;
+			children = (
+				989306812427C0F4005988AD /* astronauts.json */,
+				989306832427C0FD005988AD /* missions.json */,
+				9893067B2427C02C005988AD /* Moonshot.swift */,
+				9893067D2427C063005988AD /* AstronautView.swift */,
+				9893067F2427C0A9005988AD /* MissionView.swift */,
+				989306852427C11D005988AD /* Mission.swift */,
+				989306872427C14B005988AD /* Astrounaut.swift */,
+				989306892427C16E005988AD /*  Bundle-Decodable.swift */,
+			);
+			path = Moonshot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +254,8 @@
 				985BD96E2425236C007B7A74 /* LaunchScreen.storyboard in Resources */,
 				981151852426684700CA8E63 /* start.txt in Resources */,
 				985BD96B2425236C007B7A74 /* Preview Assets.xcassets in Resources */,
+				989306822427C0F4005988AD /* astronauts.json in Resources */,
+				989306842427C0FD005988AD /* missions.json in Resources */,
 				985BD9682425236C007B7A74 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,9 +273,13 @@
 				981151972426A58700CA8E63 /* Order.swift in Sources */,
 				981151952426A55800CA8E63 /* CupcakeCorner.swift in Sources */,
 				984604D12425ECA20009CCDD /* ReadingTheValueOfControls.swift in Sources */,
+				9893067E2427C063005988AD /* AstronautView.swift in Sources */,
+				989306882427C14B005988AD /* Astrounaut.swift in Sources */,
 				985BD95F2425236A007B7A74 /* AppDelegate.swift in Sources */,
 				985BD9642425236A007B7A74 /* Accessibility.xcdatamodeld in Sources */,
+				9893068A2427C16E005988AD /*  Bundle-Decodable.swift in Sources */,
 				985BD9662425236A007B7A74 /* ContentView.swift in Sources */,
+				989306802427C0A9005988AD /* MissionView.swift in Sources */,
 				9811519B2426A5DE00CA8E63 /* CheckoutView.swift in Sources */,
 				984604CF2425EA4E0009CCDD /* HidingAndGrouping.swift in Sources */,
 				9811518E24266E5500CA8E63 /* RatingView.swift in Sources */,
@@ -249,6 +287,8 @@
 				9811519024266EC700CA8E63 /* Bookworm.swift in Sources */,
 				9811518A24266DF800CA8E63 /* AddBookView.swift in Sources */,
 				985BD9612425236A007B7A74 /* SceneDelegate.swift in Sources */,
+				989306862427C11D005988AD /* Mission.swift in Sources */,
+				9893067C2427C02C005988AD /* Moonshot.swift in Sources */,
 				989306772427B490005988AD /* BetterRest.swift in Sources */,
 				981151992426A5B900CA8E63 /* AddressView.swift in Sources */,
 				98115183242667F800CA8E63 /* WordScamble.swift in Sources */,
