@@ -29,6 +29,7 @@ struct AstronautView: View {
                             .font(self.font)
                         
                         List(self.missions) { mission in
+                            HStack {
                             Image(mission.image)
                             .resizable()
                             .scaledToFit()
@@ -37,9 +38,14 @@ struct AstronautView: View {
                                 Text(mission.displayName)
                                     .font(.headline)
                                 Text(mission.formattedLaunchDate)
+                                }
                             }
+                                //MARK: Day 76. Project 15. Challenege 
+                            .accessibilityElement(children: .combine)
+                            
                             
                         }
+                        
                     }
                    
                 }

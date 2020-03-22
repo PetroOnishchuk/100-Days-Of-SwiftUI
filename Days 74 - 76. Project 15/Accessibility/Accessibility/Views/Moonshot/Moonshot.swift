@@ -31,11 +31,14 @@ struct Moonshot: View {
                             HStack {
                                 Text("Crew Names: \(mission.crewNames)")
                             }
+                            
                         } else {
                             Text(mission.formattedLaunchDate)
+                                .accessibility(label: Text(mission.accessibleLaunchDate))
                         }
                     }
                 }
+                
                 
             }
             .navigationBarTitle("Moonshot")

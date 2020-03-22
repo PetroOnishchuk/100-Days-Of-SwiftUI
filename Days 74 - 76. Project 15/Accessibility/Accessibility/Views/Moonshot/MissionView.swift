@@ -52,6 +52,9 @@ struct MissionView: View {
                                 Spacer()
                                 
                             }
+                                //MARK: Day 76. Project 15. Challenge 3
+                                .accessibilityElement(children: .combine)
+                                .accessibility(label: Text("Name: \(crewMember.astronaut.name) Crew Member: \(crewMember.role)") )
                             .padding(.horizontal)
                             }.buttonStyle(PlainButtonStyle())
                         }
