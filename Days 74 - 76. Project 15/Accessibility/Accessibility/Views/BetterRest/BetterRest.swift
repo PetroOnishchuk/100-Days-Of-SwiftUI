@@ -38,7 +38,7 @@ struct drawText: ViewModifier {
 
 struct BetterRest: View {
     @State private var wakeUp = defaultWakeTime
-    @State private var sleepAmount = 8.0
+    @State private var sleepAmount = 8.25
     @State private var coffeeAmount = 2
     
     
@@ -76,7 +76,8 @@ struct BetterRest: View {
                     }
                     // MARK: Day 76. Project 15. Challenge 2.1
                         .accessibilityElement(children: .ignore)
-                    .accessibility(value: Text("\(Int(sleepAmount)) hours want to sleep"))
+                        .accessibility(value: Text("\(sleepAmount, specifier: "%g")) hours want to sleep"))
+                    
                 }
                 
                 Section(header: Text("Daily coffee intake")) {
