@@ -36,7 +36,8 @@ struct MissionView: View {
                             
                         Text(self.mission.description)
                         //MARK: Day 76. Project 15. Challenge 3.3
-                            .accessibility(label: Text("\(self.mission.displayName) description: \(self.mission.description) "))
+                            .accessibility(label: Text("\(self.mission.displayName) description: \(self.mission.description)"))
+                            
                         .padding()
                         
                         ForEach(self.astronauts, id: \.role) { crewMember in
@@ -58,7 +59,7 @@ struct MissionView: View {
                             }
                                 //MARK: Day 76. Project 15. Challenge 3.4
                                 .accessibilityElement(children: .combine)
-                                .accessibility(label: Text("Name: \(crewMember.astronaut.name)   Crew Member: \(crewMember.role)") )
+                                .accessibility(label: Text("Name: \(crewMember.astronaut.name)  Crew Member: \(crewMember.role)"))
                             .padding(.horizontal)
                             }.buttonStyle(PlainButtonStyle())
                         }

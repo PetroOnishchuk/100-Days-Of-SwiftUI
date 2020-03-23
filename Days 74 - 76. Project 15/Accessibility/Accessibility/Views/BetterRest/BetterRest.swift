@@ -76,7 +76,7 @@ struct BetterRest: View {
                     }
                     // MARK: Day 76. Project 15. Challenge 2.1
                         .accessibilityElement(children: .ignore)
-                        .accessibility(value: Text("\(sleepAmount, specifier: "%g")) hours want to sleep"))
+                    .accessibility(value: Text("\(sleepAmount, specifier: "%g")) hours want to sleep"))
                     
                 }
                 

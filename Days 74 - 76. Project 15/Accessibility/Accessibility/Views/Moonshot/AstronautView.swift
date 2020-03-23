@@ -41,7 +41,7 @@ struct AstronautView: View {
                                 }
                             }
                                 //MARK: Day 76. Project 15. Challenege 3.5
-                            .accessibilityElement(children: .combine)
+                                .accessibilityElement(children: .ignore)
                             
                             
                         }
