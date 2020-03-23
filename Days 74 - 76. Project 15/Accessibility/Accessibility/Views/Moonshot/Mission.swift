@@ -25,9 +25,9 @@ struct Mission: Codable, Identifiable {
         if let launchDate = launchDate {
             let formatter = DateFormatter()
             formatter.dateStyle = .long
-            return formatter.string(from: launchDate)
+            return "Launch Date: \(formatter.string(from: launchDate))"
         } else {
-            return " Date: N/A"
+            return "Launch date: N/A"
         }
     }
     
@@ -51,7 +51,7 @@ struct Mission: Codable, Identifiable {
     
     // Day 76. Project 15. Challenge 3
     var accessibleLaunchDate: String {
-        formattedLaunchDate.replacingOccurrences(of: "Date: N/A", with: "Date is not found")
+        formattedLaunchDate.replacingOccurrences(of: "Launch date: N/A", with: "Launch date is not found")
     }
 }
 

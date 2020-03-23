@@ -30,15 +30,19 @@ struct MissionView: View {
                             .frame(maxWidth: geometry.size.width * 0.7)
                             .padding(.top)
                         
-                        Text("Launch date: \(self.mission.formattedLaunchDate)")
-                        
+                        Text("\(self.mission.formattedLaunchDate)")
+                            // MARK: Day 76. Project 15.  Challenge 3.
+                            .accessibility(label: Text(self.mission.accessibleLaunchDate))
+                            
                         Text(self.mission.description)
+                        //MARK: Day 76. Project 15. Challenge 3.
+                            .accessibility(label: Text("\(self.mission.displayName) description: \(self.mission.description) "))
                         .padding()
                         
                         ForEach(self.astronauts, id: \.role) { crewMember in
                             NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, missions: self.missions)) {
                             HStack {
-                                Image(crewMember.astronaut.id)
+                                Image(decorative: crewMember.astronaut.id)
                                 .resizable()
                                     .frame(width: 83, height: 60)
                                 .clipShape(Capsule())
@@ -54,7 +58,7 @@ struct MissionView: View {
                             }
                                 //MARK: Day 76. Project 15. Challenge 3
                                 .accessibilityElement(children: .combine)
-                                .accessibility(label: Text("Name: \(crewMember.astronaut.name) Crew Member: \(crewMember.role)") )
+                                .accessibility(label: Text("Name: \(crewMember.astronaut.name)   Crew Member: \(crewMember.role)") )
                             .padding(.horizontal)
                             }.buttonStyle(PlainButtonStyle())
                         }
