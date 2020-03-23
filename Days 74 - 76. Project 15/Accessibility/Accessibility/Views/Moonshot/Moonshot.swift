@@ -34,6 +34,7 @@ struct Moonshot: View {
                             
                         } else {
                             Text(mission.formattedLaunchDate)
+                                // MARK: Day 76. Challenge 3.6
                                 .accessibility(label: Text(mission.accessibleLaunchDate))
                         }
                     }

@@ -49,7 +49,7 @@ struct Mission: Codable, Identifiable {
         let role: String
     }
     
-    // Day 76. Project 15. Challenge 3
+    //MARK:  Day 76. Project 15. Challenge 3.1
     var accessibleLaunchDate: String {
         formattedLaunchDate.replacingOccurrences(of: "Launch date: N/A", with: "Launch date is not found")
     }

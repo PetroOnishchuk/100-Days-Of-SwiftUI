@@ -31,11 +31,11 @@ struct MissionView: View {
                             .padding(.top)
                         
                         Text("\(self.mission.formattedLaunchDate)")
-                            // MARK: Day 76. Project 15.  Challenge 3.
+                            // MARK: Day 76. Project 15.  Challenge 3.2
                             .accessibility(label: Text(self.mission.accessibleLaunchDate))
                             
                         Text(self.mission.description)
-                        //MARK: Day 76. Project 15. Challenge 3.
+                        //MARK: Day 76. Project 15. Challenge 3.3
                             .accessibility(label: Text("\(self.mission.displayName) description: \(self.mission.description) "))
                         .padding()
                         
@@ -56,7 +56,7 @@ struct MissionView: View {
                                 Spacer()
                                 
                             }
-                                //MARK: Day 76. Project 15. Challenge 3
+                                //MARK: Day 76. Project 15. Challenge 3.4
                                 .accessibilityElement(children: .combine)
                                 .accessibility(label: Text("Name: \(crewMember.astronaut.name)   Crew Member: \(crewMember.role)") )
                             .padding(.horizontal)

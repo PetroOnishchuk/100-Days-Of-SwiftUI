@@ -23,10 +23,10 @@ struct CheckoutView: View {
             ScrollView {
                 VStack {
                     Image("cupcakes")
-                    .resizable()
-                    .scaledToFit()
+                        .resizable()
+                        .scaledToFit()
                         .frame(width: geo.size.width)
-                        //MARK: Challenge 2
+                        //MARK: Day 76. Project 15. Challenge 1.1
                         .accessibility(hidden: true)
                     
                     Text("You total is \(self.order.cost, specifier: "%.2f")")
@@ -35,9 +35,9 @@ struct CheckoutView: View {
                     Button("Place Order") {
                         self.placeOrder()
                     }
-                .padding()
+                    .padding()
                 }
-           
+                
             }
         }
         .navigationBarTitle("Check out", displayMode: .inline)
@@ -74,7 +74,7 @@ struct CheckoutView: View {
                 print("No data in response: \(error?.localizedDescription ?? "Unknown error"). ")
                 return
             }
-            print("\(String(data: data, encoding: .utf8))")
+           // print("\(String(data: data, encoding: .utf8))")
             if let decodedOrder = try? JSONDecoder().decode(Order.self, from: data) {
                 self.confirmationTitle = "Thank You"
                 self.confirmationMessage = "Your order for \(decodedOrder.quantity)X \(Order.types[decodedOrder.type].lowercased()) cupcakes in on its way!"
