@@ -13,30 +13,46 @@ struct ContentView: View {
     @State private var inputImage: UIImage?
     
     @State private var showingImagePicker = false
+    @State private var showingNameAlert = false
     
     @State private var pictures = [Picture]()
     
     
     var body: some View {
-        List(pictures) { picture in
-            Text(picture.pictureName)
-        }
-        .onTapGesture {
-            self.showingImagePicker = true
+        NavigationView {
+            List(pictures) { picture in
+                Text(picture.pictureName)
+            }
+            .onTapGesture {
+                print("\(self.pictures.count)")
+                
+                
+            }
+    .navigationBarTitle(Text("Photo Album"))
+        .navigationBarItems(trailing: Button(action: {
+            self.showingNameAlert = true
             
+        }, label: {
+            Image(systemName: "plus")
+        }))
+        .sheet(isPresented: $showingNameAlert, onDismiss: nil) {
+            EditPictureView(pictures: self.$pictures)
+           
+        }
+                
+           
             
-        }
-        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-            ImagePicker(image: self.$inputImage)
-        }
         .onAppear {
             self.loadPictures()
         }
     }
+        
+    }
     
-    func loadImage() {
+    func addNewImage() {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
+        
         savePictures()
         
     }
@@ -58,7 +74,7 @@ struct ContentView: View {
         let filename = getDocumentsDirectory().appendingPathComponent("Pictures")
         
         do {
-let data = try Data(contentsOf: filename)
+            let data = try Data(contentsOf: filename)
             pictures = try JSONDecoder().decode([Picture].self, from: data)
             
         } catch {
@@ -66,13 +82,15 @@ let data = try Data(contentsOf: filename)
         }
     }
     
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    
+}
 
-        // just send back the first one, which ought to be the only one
-        return paths[0]
-    }
+func getDocumentsDirectory() -> URL {
+    // find all possible documents directories for this user
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    
+    // just send back the first one, which ought to be the only one
+    return paths[0]
 }
 
 struct ContentView_Previews: PreviewProvider {
