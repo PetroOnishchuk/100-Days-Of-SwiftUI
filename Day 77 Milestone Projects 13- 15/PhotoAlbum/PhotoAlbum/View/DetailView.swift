@@ -15,13 +15,16 @@ struct DetailView: View {
     @State private var inputImage: UIImage?
     var body: some View {
         VStack {
+            DrawImageNameView(text: "Photo name: ", textResults: picture.pictureName)
+            
             if image != nil {
                 image?
                 .resizable()
+                .scaledToFit()
             } else {
                 Text("Image not found")
             }
-          
+          Spacer()
         }
         .onAppear {
             self.loadImage()
@@ -29,15 +32,12 @@ struct DetailView: View {
     }
     
     func loadImage() {
-        let fileName = getDocumentsDirectory().appendingPathComponent(picture.id.uuidString)
-        do {
-            let data = try Data(contentsOf: fileName)
-            self.inputImage =  UIImage(data: data)
-            self.image = Image(uiImage: inputImage!)
-        } catch {
-            print("Unable to load image")
+        let data = MenageData.loadImage(pathName: picture.id.uuidString)
+        guard  let loadedData = data else {
+            return
         }
-        
+            self.inputImage =  UIImage(data: loadedData)
+            self.image = Image(uiImage: inputImage!)
     }
 
 }

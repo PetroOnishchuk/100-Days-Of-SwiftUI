@@ -20,17 +20,15 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(pictures) { picture in
+            List {
+                ForEach(pictures) { picture in
                 NavigationLink(destination: DetailView(picture: picture)) {
                     Text(picture.pictureName)
                 }
                 
+                }.onDelete(perform: removeItems(at:))
             }
-//            .onTapGesture {
-//                print("\(self.pictures.count)")
-//                
-//                
-//            }
+
     .navigationBarTitle(Text("Photo Album"))
         .navigationBarItems(trailing: Button(action: {
             self.showingNameAlert = true
@@ -46,55 +44,27 @@ struct ContentView: View {
            
             
         .onAppear {
-            self.loadPictures()
+            self.pictures =  MenageData.loadPictures(pathName: "Pictures")
         }
     }
         
     }
     
-    func addNewImage() {
-        guard let inputImage = inputImage else { return }
-        image = Image(uiImage: inputImage)
+    func removeItems(at ofsetts: IndexSet) {
+        let image = pictures[ofsetts.first!]
+          print(image.pictureName)
         
-        savePictures()
+        MenageData.removeImage(pathName: image.id.uuidString)
+         pictures.remove(atOffsets: ofsetts)
         
+        MenageData.savedPictures(pathName: "Pictures", pictures: self.pictures)
     }
     
-    func savePictures() {
-        let picture = Picture(id: UUID(), pictureName: "FirstName")
-        self.pictures.append(picture)
-        do {
-            let fileName = getDocumentsDirectory().appendingPathComponent("Pictures")
-            let data = try JSONEncoder().encode(self.pictures)
-            try data.write(to: fileName, options: [.atomicWrite, .completeFileProtection] )
-        } catch {
-            print("Unable to save data")
-        }
-        
-    }
-    
-    func loadPictures() {
-        let filename = getDocumentsDirectory().appendingPathComponent("Pictures")
-        
-        do {
-            let data = try Data(contentsOf: filename)
-            pictures = try JSONDecoder().decode([Picture].self, from: data)
-            
-        } catch {
-            print("Unable to load saved data")
-        }
-    }
     
     
 }
 
-func getDocumentsDirectory() -> URL {
-    // find all possible documents directories for this user
-    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    
-    // just send back the first one, which ought to be the only one
-    return paths[0]
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

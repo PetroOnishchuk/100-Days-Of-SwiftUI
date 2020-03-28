@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98076810242F892B00AA9935 /* ModifiersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807680F242F892B00AA9935 /* ModifiersView.swift */; };
+		98076812242F963E00AA9935 /* ManageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98076811242F963E00AA9935 /* ManageData.swift */; };
 		98A13952242D333B00CDF443 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A13951242D333B00CDF443 /* AppDelegate.swift */; };
 		98A13954242D333B00CDF443 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A13953242D333B00CDF443 /* SceneDelegate.swift */; };
 		98A13957242D333B00CDF443 /* PhotoAlbum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98A13955242D333B00CDF443 /* PhotoAlbum.xcdatamodeld */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9807680F242F892B00AA9935 /* ModifiersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiersView.swift; sourceTree = "<group>"; };
+		98076811242F963E00AA9935 /* ManageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageData.swift; sourceTree = "<group>"; };
 		98A1394E242D333B00CDF443 /* PhotoAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoAlbum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A13951242D333B00CDF443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98A13953242D333B00CDF443 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				98A13958242D333B00CDF443 /* ContentView.swift */,
 				98A13971242E811200CDF443 /* EditPictureView.swift */,
 				98A1396A242D3DF400CDF443 /* DetailView.swift */,
+				9807680F242F892B00AA9935 /* ModifiersView.swift */,
+				98076811242F963E00AA9935 /* ManageData.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,10 +179,12 @@
 				98A1396B242D3DF400CDF443 /* DetailView.swift in Sources */,
 				98A13952242D333B00CDF443 /* AppDelegate.swift in Sources */,
 				98A13969242D338D00CDF443 /* ImagePicker.swift in Sources */,
+				98076812242F963E00AA9935 /* ManageData.swift in Sources */,
 				98A1396D242D3E6C00CDF443 /* Picture.swift in Sources */,
 				98A13972242E811200CDF443 /* EditPictureView.swift in Sources */,
 				98A13959242D333B00CDF443 /* ContentView.swift in Sources */,
 				98A13954242D333B00CDF443 /* SceneDelegate.swift in Sources */,
+				98076810242F892B00AA9935 /* ModifiersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
