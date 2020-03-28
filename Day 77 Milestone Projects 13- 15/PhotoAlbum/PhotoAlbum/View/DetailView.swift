@@ -10,16 +10,34 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @State private var picture:  Picture
-    @State private var image: Image
-    
+    var picture:  Picture
+    @State private var image: Image?
+    @State private var inputImage: UIImage?
     var body: some View {
         VStack {
-           image
+            if image != nil {
+                image?
+                .resizable()
+            } else {
+                Text("Image not found")
+            }
+          
         }
         .onAppear {
-            
+            self.loadImage()
         }
+    }
+    
+    func loadImage() {
+        let fileName = getDocumentsDirectory().appendingPathComponent(picture.id.uuidString)
+        do {
+            let data = try Data(contentsOf: fileName)
+            self.inputImage =  UIImage(data: data)
+            self.image = Image(uiImage: inputImage!)
+        } catch {
+            print("Unable to load image")
+        }
+        
     }
 
 }

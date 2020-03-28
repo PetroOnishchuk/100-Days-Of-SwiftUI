@@ -65,6 +65,17 @@ struct EditPictureView: View {
         let picture = Picture(id: UUID(), pictureName: self.imageName)
         self.pictures.append(picture)
         print("\(self.pictures.count)")
+        do {
+            let fileName = getDocumentsDirectory().appendingPathComponent(picture.id.uuidString)
+            if let jpegData = inputImage?.jpegData(compressionQuality: 0.8) {
+                try jpegData.write(to: fileName, options: [.atomicWrite, .completeFileProtection])
+            }
+        } catch {
+            print("Unable to save image")
+        }
+        
+        
+        
       do {
             let fileName = getDocumentsDirectory().appendingPathComponent("Pictures")
             let data = try JSONEncoder().encode(self.pictures)
@@ -75,6 +86,10 @@ struct EditPictureView: View {
         
         print("\(self.pictures.count)")
         self.presentationMode.wrappedValue.dismiss()
+    }
+    func saveImage() {
+        
+        
     }
 }
 

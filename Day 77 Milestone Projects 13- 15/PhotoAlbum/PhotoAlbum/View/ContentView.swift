@@ -21,13 +21,16 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(pictures) { picture in
-                Text(picture.pictureName)
-            }
-            .onTapGesture {
-                print("\(self.pictures.count)")
-                
+                NavigationLink(destination: DetailView(picture: picture)) {
+                    Text(picture.pictureName)
+                }
                 
             }
+//            .onTapGesture {
+//                print("\(self.pictures.count)")
+//                
+//                
+//            }
     .navigationBarTitle(Text("Photo Album"))
         .navigationBarItems(trailing: Button(action: {
             self.showingNameAlert = true
