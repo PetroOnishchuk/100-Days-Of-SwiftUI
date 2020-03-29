@@ -21,6 +21,7 @@ struct DetailView: View {
                 image?
                 .resizable()
                 .scaledToFit()
+                .cornerRadius(20)
             } else {
                 Text("Image not found")
             }

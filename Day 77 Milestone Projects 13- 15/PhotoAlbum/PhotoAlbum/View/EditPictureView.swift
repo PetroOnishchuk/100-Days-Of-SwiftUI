@@ -26,19 +26,37 @@ struct EditPictureView: View {
         VStack {
             HStack() {
             TextField("Name Field", text: $imageName)
+              .frame(width: 300, height: 50, alignment: .center)
+                .background(Color.gray)
+                .clipShape(Capsule())
+                .overlay(Capsule().stroke(Color.orange, lineWidth: 3))
+                //.foregroundColor(Color.red)
                 .multilineTextAlignment(.center)
+                
+                
+                
+                
+                
             }
             if image != nil {
                 image?
                 .resizable()
                 .scaledToFit()
             } else {
-                Text("Select image")
-                    .padding(.top, 100)
-                    .onTapGesture {
-                        self.showingImagePicker = true
+                Button(action: {
+                    self.showingImagePicker = true
+                }) {
+                    Text("Select image")
                 }
+                .frame(width: 250, height: 70, alignment: .center)
+            
+                .background(Color.yellow)
+                .cornerRadius(20)
+                .padding(.top, 100)
+            
+//               
             }
+            UnlockView()
             
             Spacer()
         }.padding(.top, 50)

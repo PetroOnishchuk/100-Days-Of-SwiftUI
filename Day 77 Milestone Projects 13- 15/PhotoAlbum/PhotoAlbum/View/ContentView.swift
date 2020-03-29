@@ -22,45 +22,45 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(pictures) { picture in
-                NavigationLink(destination: DetailView(picture: picture)) {
-                    Text(picture.pictureName)
-                }
-                
+                    NavigationLink(destination: DetailView(picture: picture)) {
+                        Text(picture.pictureName)
+                    }
+                    
                 }.onDelete(perform: removeItems(at:))
             }
-
-    .navigationBarTitle(Text("Photo Album"))
-        .navigationBarItems(trailing: Button(action: {
-            self.showingNameAlert = true
-            
-        }, label: {
-            Image(systemName: "plus")
-        }))
-        .sheet(isPresented: $showingNameAlert, onDismiss: nil) {
-            EditPictureView(pictures: self.$pictures)
-           
-        }
                 
-           
-            
-        .onAppear {
-            self.pictures =  MenageData.loadPictures(pathName: "Pictures")
+            .navigationBarTitle(Text("Photo Album"))
+            .navigationBarItems(leading: NavigationLink(destination: UnlockView(), label: {
+                Text("Current location")
+            }), trailing: Button(action: {
+                self.showingNameAlert = true
+                
+            }, label: {
+                Image(systemName: "plus")
+            }))
+                .sheet(isPresented: $showingNameAlert, onDismiss: nil) {
+                    EditPictureView(pictures: self.$pictures)
+                    
+            }
+                
+                
+                
+            .onAppear {
+                self.pictures =  MenageData.loadPictures(pathName: "Pictures")
+            }
         }
-    }
         
     }
     
     func removeItems(at ofsetts: IndexSet) {
         let image = pictures[ofsetts.first!]
-          print(image.pictureName)
+        print(image.pictureName)
         
         MenageData.removeImage(pathName: image.id.uuidString)
-         pictures.remove(atOffsets: ofsetts)
+        pictures.remove(atOffsets: ofsetts)
         
         MenageData.savedPictures(pathName: "Pictures", pictures: self.pictures)
     }
-    
-    
     
 }
 
