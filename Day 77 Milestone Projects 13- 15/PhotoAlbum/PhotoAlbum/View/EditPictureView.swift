@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import CoreLocation
+import MapKit
 
 struct EditPictureView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -21,6 +23,17 @@ struct EditPictureView: View {
     
     @State private var showingImagePicker = false
     
+    
+    @State private var centerCoordinate = CLLocationCoordinate2D()
+       @State private var locations = [CodableMKPointAnnotation]()
+       
+       @State private var selectedPlace: MKPointAnnotation?
+    
+    @State private var showingPlaceDetails = false
+    
+    @State private var showingEditScreen = false
+    
+    
     var body: some View {
         NavigationView{
         VStack {
@@ -32,10 +45,6 @@ struct EditPictureView: View {
                 .overlay(Capsule().stroke(Color.orange, lineWidth: 3))
                 //.foregroundColor(Color.red)
                 .multilineTextAlignment(.center)
-                
-                
-                
-                
                 
             }
             if image != nil {
@@ -56,10 +65,23 @@ struct EditPictureView: View {
             
 //               
             }
-            UnlockView()
+            Text("Select Locations for this photo")
+              ZStack {
+                      MapView(centerCoordinate:  $centerCoordinate,  selectedPlace: $selectedPlace, showingPlaceDetails: $showingPlaceDetails, annotations: locations)
+                      .edgesIgnoringSafeArea(.all)
+                      
+                      CircleView()
+                      VStack {
+                          Spacer()
+                          HStack {
+                              Spacer()
+                              PlusButtonView(locations: $locations, centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace)
+                          }
+                      }
+                  }
             
             Spacer()
-        }.padding(.top, 50)
+        }.padding(.top, 10)
 
         .sheet(isPresented: $showingImagePicker, onDismiss: addNewImage) {
             ImagePicker(image: self.$inputImage)
@@ -81,7 +103,7 @@ struct EditPictureView: View {
     }
     
     func savePictures() {
-        let picture = Picture(id: UUID(), pictureName: self.imageName)
+        let picture = Picture(id: UUID(), pictureName: self.imageName, locations: locations )
         self.pictures.append(picture)
         
         

@@ -31,17 +31,17 @@ struct UnlockView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    PlusButtonView(locations: $locations, centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace, showingEditScreen: $showingEditScreen)
+                    PlusButtonView(locations: $locations, centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace)
                 }
             }
         }
-        .alert(isPresented: $showingPlaceDetails) { () -> Alert in
-            
-            Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place infirmation."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
-                // edit this place
-                self.showingEditScreen = true
-                })
-        }
+//        .alert(isPresented: $showingPlaceDetails) { () -> Alert in
+//
+//            Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place infirmation."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
+//                // edit this place
+//                self.showingEditScreen = true
+//                })
+       // }
         .sheet(isPresented: $showingEditScreen, onDismiss: saveData) {
             if self.selectedPlace != nil {
                 EditView(placemark: self.selectedPlace!)

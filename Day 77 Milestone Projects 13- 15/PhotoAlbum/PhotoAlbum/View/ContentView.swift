@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
     @State private var image: Image?
@@ -16,6 +17,8 @@ struct ContentView: View {
     @State private var showingNameAlert = false
     
     @State private var pictures = [Picture]()
+    
+    
     
     
     var body: some View {
@@ -30,9 +33,7 @@ struct ContentView: View {
             }
                 
             .navigationBarTitle(Text("Photo Album"))
-            .navigationBarItems(leading: NavigationLink(destination: UnlockView(), label: {
-                Text("Current location")
-            }), trailing: Button(action: {
+            .navigationBarItems(trailing: Button(action: {
                 self.showingNameAlert = true
                 
             }, label: {

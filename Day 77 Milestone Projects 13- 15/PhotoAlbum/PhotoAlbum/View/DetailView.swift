@@ -7,25 +7,45 @@
 //
 
 import SwiftUI
+import MapKit
+
 
 struct DetailView: View {
     
     var picture:  Picture
     @State private var image: Image?
     @State private var inputImage: UIImage?
+    
+   @State private var centerCoordinate = CLLocationCoordinate2D()
+   @State private var locations = [CodableMKPointAnnotation]()
+   
+   @State private var selectedPlace: MKPointAnnotation?
+    
+    @State private var showingPlaceDetails = false
+    
     var body: some View {
+        
         VStack {
             DrawImageNameView(text: "Photo name: ", textResults: picture.pictureName)
             
             if image != nil {
                 image?
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(20)
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(20)
             } else {
                 Text("Image not found")
             }
-          Spacer()
+            ZStack {
+                MapView(centerCoordinate:  $centerCoordinate,  selectedPlace: $selectedPlace, showingPlaceDetails: $showingPlaceDetails, annotations: picture.locations)
+                    .edgesIgnoringSafeArea(.all)
+                
+                CircleView()
+                
+            }
+            
+            Text("\(picture.locations.count)")
+            Spacer()
         }
         .onAppear {
             self.loadImage()
@@ -37,10 +57,10 @@ struct DetailView: View {
         guard  let loadedData = data else {
             return
         }
-            self.inputImage =  UIImage(data: loadedData)
-            self.image = Image(uiImage: inputImage!)
+        self.inputImage =  UIImage(data: loadedData)
+        self.image = Image(uiImage: inputImage!)
     }
-
+    
 }
 
 //struct DetailView_Previews: PreviewProvider {

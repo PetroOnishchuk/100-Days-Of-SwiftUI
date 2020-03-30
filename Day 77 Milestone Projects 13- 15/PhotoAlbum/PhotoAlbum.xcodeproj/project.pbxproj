@@ -71,6 +71,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		986735472432262D001460E9 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				989F9A25243123550068BA4A /* CircleView.swift */,
+				989F9A2D243124D20068BA4A /* UnlockView.swift */,
+				989F9A29243123FC0068BA4A /* Result.swift */,
+				989F9A27243123B90068BA4A /* EditView.swift */,
+				989F9A1D243122880068BA4A /* CodableMKPointAnnotation.swift */,
+				989F9A2B243124810068BA4A /* MKPointAnnotation-ObservableObject.swift */,
+				989F9A192430E6170068BA4A /* CurrentLocation.swift */,
+				989F9A172430E5AC0068BA4A /* LocationFetcher.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		98A13945242D333B00CDF443 = {
 			isa = PBXGroup;
 			children = (
@@ -115,21 +130,14 @@
 		98A13970242E80BA00CDF443 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				986735472432262D001460E9 /* Map */,
 				98A13958242D333B00CDF443 /* ContentView.swift */,
 				98A13971242E811200CDF443 /* EditPictureView.swift */,
 				98A1396A242D3DF400CDF443 /* DetailView.swift */,
 				9807680F242F892B00AA9935 /* ModifiersView.swift */,
 				98076811242F963E00AA9935 /* ManageData.swift */,
-				989F9A172430E5AC0068BA4A /* LocationFetcher.swift */,
-				989F9A192430E6170068BA4A /* CurrentLocation.swift */,
-				989F9A1D243122880068BA4A /* CodableMKPointAnnotation.swift */,
 				989F9A1F243122CE0068BA4A /* MapView.swift */,
-				989F9A25243123550068BA4A /* CircleView.swift */,
 				989F9A21243123050068BA4A /* PlusButton.swift */,
-				989F9A27243123B90068BA4A /* EditView.swift */,
-				989F9A29243123FC0068BA4A /* Result.swift */,
-				989F9A2B243124810068BA4A /* MKPointAnnotation-ObservableObject.swift */,
-				989F9A2D243124D20068BA4A /* UnlockView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
