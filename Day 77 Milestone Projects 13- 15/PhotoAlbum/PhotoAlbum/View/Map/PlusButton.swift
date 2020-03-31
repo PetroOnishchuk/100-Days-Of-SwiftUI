@@ -13,8 +13,8 @@ struct PlusButtonView: View {
     
     @Binding var locations: [CodableMKPointAnnotation]
     @Binding var centerCoordinate: CLLocationCoordinate2D
-    @Binding var selectedPlace: MKPointAnnotation?
-    //@Binding var showingEditScreen: Bool
+    
+    
     
     
     var body: some View {
@@ -25,11 +25,7 @@ struct PlusButtonView: View {
                                 newLocation.title = "Example location"
                 newLocation.subtitle = "Example locations2"
                                 self.locations.append(newLocation)
-                
-//                newLocation.wrappedTitle = "Hello2"
-//                newLocation.wrappedSubtitle = "Hello3"
-                                self.selectedPlace = newLocation
-                             //   self.showingEditScreen = true
+                               
                 print("\(self.locations.count)")
                                 
                             }) {

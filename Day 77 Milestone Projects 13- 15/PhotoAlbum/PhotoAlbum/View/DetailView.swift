@@ -17,11 +17,8 @@ struct DetailView: View {
     @State private var inputImage: UIImage?
     
    @State private var centerCoordinate = CLLocationCoordinate2D()
-   @State private var locations = [CodableMKPointAnnotation]()
    
-   @State private var selectedPlace: MKPointAnnotation?
-    
-    @State private var showingPlaceDetails = false
+   
     
     var body: some View {
         
@@ -37,7 +34,7 @@ struct DetailView: View {
                 Text("Image not found")
             }
             ZStack {
-                MapView(centerCoordinate:  $centerCoordinate,  selectedPlace: $selectedPlace, showingPlaceDetails: $showingPlaceDetails, annotations: picture.locations)
+                MapView(centerCoordinate:  $centerCoordinate, annotations: picture.locations)
                     .edgesIgnoringSafeArea(.all)
                 
                 CircleView()

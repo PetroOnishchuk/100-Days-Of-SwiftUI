@@ -25,9 +25,9 @@ struct EditPictureView: View {
     
     
     @State private var centerCoordinate = CLLocationCoordinate2D()
-       @State private var locations = [CodableMKPointAnnotation]()
-       
-       @State private var selectedPlace: MKPointAnnotation?
+    @State private var locations = [CodableMKPointAnnotation]()
+    
+    @State private var selectedPlace: MKPointAnnotation?
     
     @State private var showingPlaceDetails = false
     
@@ -36,61 +36,60 @@ struct EditPictureView: View {
     
     var body: some View {
         NavigationView{
-        VStack {
-            HStack() {
-            TextField("Name Field", text: $imageName)
-              .frame(width: 300, height: 50, alignment: .center)
-                .background(Color.gray)
-                .clipShape(Capsule())
-                .overlay(Capsule().stroke(Color.orange, lineWidth: 3))
-                //.foregroundColor(Color.red)
-                .multilineTextAlignment(.center)
-                
-            }
-            if image != nil {
-                image?
-                .resizable()
-                .scaledToFit()
-            } else {
-                Button(action: {
-                    self.showingImagePicker = true
-                }) {
-                    Text("Select image")
+            VStack {
+                HStack() {
+                    TextField("Name Field", text: $imageName)
+                        .frame(width: 300, height: 50, alignment: .center)
+                        .background(Color.gray)
+                        .clipShape(Capsule())
+                        .overlay(Capsule().stroke(Color.orange, lineWidth: 3))
+                        .multilineTextAlignment(.center)
+                    
                 }
-                .frame(width: 250, height: 70, alignment: .center)
-            
-                .background(Color.yellow)
-                .cornerRadius(20)
-                .padding(.top, 100)
-            
-//               
+                if image != nil {
+                    image?
+                        .resizable()
+                        .scaledToFit()
+                } else {
+                    Button(action: {
+                        self.showingImagePicker = true
+                    }) {
+                        Text("Select image")
+                    }
+                    .frame(width: 250, height: 70, alignment: .center)
+                        
+                    .background(Color.yellow)
+                    .cornerRadius(20)
+                    .padding(.top, 100)
+                    
+                    //
+                }
+                Text("Select Locations for this photo")
+                ZStack {
+                    MapView(centerCoordinate:  $centerCoordinate, annotations: locations)
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    CircleView()
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            PlusButtonView(locations: $locations, centerCoordinate: $centerCoordinate)
+                        }
+                    }
+                }
+                
+                Spacer()
+            }.padding(.top, 10)
+                
+                .sheet(isPresented: $showingImagePicker, onDismiss: addNewImage) {
+                    ImagePicker(image: self.$inputImage)
             }
-            Text("Select Locations for this photo")
-              ZStack {
-                      MapView(centerCoordinate:  $centerCoordinate,  selectedPlace: $selectedPlace, showingPlaceDetails: $showingPlaceDetails, annotations: locations)
-                      .edgesIgnoringSafeArea(.all)
-                      
-                      CircleView()
-                      VStack {
-                          Spacer()
-                          HStack {
-                              Spacer()
-                              PlusButtonView(locations: $locations, centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace)
-                          }
-                      }
-                  }
-            
-            Spacer()
-        }.padding(.top, 10)
-
-        .sheet(isPresented: $showingImagePicker, onDismiss: addNewImage) {
-            ImagePicker(image: self.$inputImage)
-        }
-        .navigationBarItems(trailing: Button(action: {
-            self.savePictures()
-            
-        }, label: { Text("Save")
-        }))
+            .navigationBarItems(trailing: Button(action: {
+                self.savePictures()
+                
+            }, label: { Text("Save")
+            }))
         }
     }
     
@@ -111,7 +110,7 @@ struct EditPictureView: View {
         
         
         MenageData.savedPictures(pathName: "Pictures", pictures: self.pictures)
-    
+        
         self.presentationMode.wrappedValue.dismiss()
     }
     func saveImage() {

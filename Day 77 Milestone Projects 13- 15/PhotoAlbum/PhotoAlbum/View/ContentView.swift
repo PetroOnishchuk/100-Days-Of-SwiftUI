@@ -48,6 +48,7 @@ struct ContentView: View {
                 
             .onAppear {
                 self.pictures =  MenageData.loadPictures(pathName: "Pictures")
+                
             }
         }
         
