@@ -10,6 +10,7 @@ import SwiftUI
 import CoreLocation
 import MapKit
 
+
 struct EditPictureView: View {
     @Environment(\.presentationMode) var presentationMode
     
@@ -22,6 +23,7 @@ struct EditPictureView: View {
     
     
     @State private var showingImagePicker = false
+    @State private var showingSourseTypeAlert = false
     
     
     @State private var centerCoordinate = CLLocationCoordinate2D()
@@ -29,10 +31,7 @@ struct EditPictureView: View {
     
     @State private var selectedPlace: MKPointAnnotation?
     
-    @State private var showingPlaceDetails = false
-    
-    @State private var showingEditScreen = false
-    
+    @State private var pickerSourceType = UIImagePickerController.SourceType.camera
     
     var body: some View {
         NavigationView{
@@ -52,7 +51,8 @@ struct EditPictureView: View {
                         .scaledToFit()
                 } else {
                     Button(action: {
-                        self.showingImagePicker = true
+                        self.showingSourseTypeAlert = true 
+                        
                     }) {
                         Text("Select image")
                     }
@@ -61,8 +61,7 @@ struct EditPictureView: View {
                     .background(Color.yellow)
                     .cornerRadius(20)
                     .padding(.top, 100)
-                    
-                    //
+             
                 }
                 Text("Select Locations for this photo")
                 ZStack {
@@ -74,7 +73,7 @@ struct EditPictureView: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            PlusButtonView(locations: $locations, centerCoordinate: $centerCoordinate)
+                            PlusButtonView(locations: $locations, centerCoordinate: $centerCoordinate).disabled(pickerSourceType == .camera)
                         }
                     }
                 }
@@ -83,8 +82,17 @@ struct EditPictureView: View {
             }.padding(.top, 10)
                 
                 .sheet(isPresented: $showingImagePicker, onDismiss: addNewImage) {
-                    ImagePicker(image: self.$inputImage)
+                    ImagePicker(image: self.$inputImage, pickerSourceType: self.$pickerSourceType)
             }
+            .alert(isPresented: $showingSourseTypeAlert, content: { () -> Alert in
+                Alert(title: Text("Take photo from: "), message: nil, primaryButton: .default(Text("Photo Library"), action: {
+                    self.pickerSourceType = .photoLibrary
+                    self.showingImagePicker = true
+                }), secondaryButton: .default(Text("Camera"), action: {
+                    self.pickerSourceType = .camera
+                    self.showingImagePicker = true
+                }))
+            })
             .navigationBarItems(trailing: Button(action: {
                 self.savePictures()
                 
