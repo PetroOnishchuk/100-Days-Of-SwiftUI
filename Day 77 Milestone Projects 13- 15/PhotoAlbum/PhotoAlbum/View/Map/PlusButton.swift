@@ -14,8 +14,7 @@ struct PlusButtonView: View {
     @Binding var locations: [CodableMKPointAnnotation]
     @Binding var centerCoordinate: CLLocationCoordinate2D
     
-    
-    
+    var imageName: String
     
     
     
@@ -24,8 +23,8 @@ struct PlusButtonView: View {
                                 // create a new location
                                 let newLocation = CodableMKPointAnnotation()
                                 newLocation.coordinate = self.centerCoordinate
-                                newLocation.title = "Example location"
-                newLocation.subtitle = "Example locations2"
+                newLocation.title = "Location for Photo with name: \(self.imageName)"
+                newLocation.subtitle = "Location added: \(Date().description)"
                                 self.locations.append(newLocation)
                                
                 print("\(self.locations.count)")

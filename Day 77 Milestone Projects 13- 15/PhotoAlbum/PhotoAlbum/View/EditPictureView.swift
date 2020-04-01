@@ -27,7 +27,9 @@ struct EditPictureView: View {
     
     @State private var locationFeatcher = LocationFetcher()
     
-    @State private var pickerSourceType = UIImagePickerController.SourceType.camera
+    @State private var pickerSourceType = UIImagePickerController.SourceType.photoLibrary
+    
+    
     
     var body: some View {
         NavigationView{
@@ -47,6 +49,7 @@ struct EditPictureView: View {
                         .scaledToFit()
                 } else {
                     Button(action: {
+                
                         self.showingSourseTypeAlert = true 
                         
                     }) {
@@ -59,7 +62,7 @@ struct EditPictureView: View {
                     .padding(.top, 100)
              
                 }
-                Text("Select Locations for this photo")
+               
                 ZStack {
                     MapView(centerCoordinate:  $centerCoordinate, annotations: locations)
                         .edgesIgnoringSafeArea(.all)
@@ -69,8 +72,7 @@ struct EditPictureView: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            CurrentLocation()
-                            PlusButtonView(locations: $locations, centerCoordinate: $centerCoordinate).disabled(pickerSourceType == .camera)
+                            PlusButtonView(locations: $locations, centerCoordinate: $centerCoordinate, imageName: self.imageName).opacity(pickerSourceType == .camera ? 0 : 1)
                         }
                     }
                 }
@@ -85,13 +87,18 @@ struct EditPictureView: View {
                 self.locationFeatcher.start()
             }
             .alert(isPresented: $showingSourseTypeAlert, content: { () -> Alert in
-                Alert(title: Text("Take photo from: "), message: nil, primaryButton: .default(Text("Photo Library"), action: {
+                
+                if imageName.isEmpty {
+                  return  Alert(title: Text("Image Name is Empty"), message: Text("Please enter Imagename"), dismissButton: .default(Text("OK")))
+                } else {
+                 return Alert(title: Text("Take photo from: "), message: nil, primaryButton: .default(Text("Photo Library"), action: {
                     self.pickerSourceType = .photoLibrary
                     self.showingImagePicker = true
                 }), secondaryButton: .default(Text("Camera"), action: {
                     self.pickerSourceType = .camera
                     self.showingImagePicker = true
                 }))
+            }
             })
             .navigationBarItems(trailing: Button(action: {
                 self.savePictures()
@@ -112,8 +119,8 @@ struct EditPictureView: View {
             if let location = self.locationFeatcher.lastKnownLocation {
                 let newLocation = CodableMKPointAnnotation()
                 newLocation.coordinate = location
-                newLocation.title = "Example location Current"
-                newLocation.subtitle = "Example locations2 current"
+                newLocation.title = "Location for Photo with name: \(self.imageName)"
+                newLocation.subtitle = "Location added: \(Date().description)"
                 self.locations.append(newLocation)
             }
         }
