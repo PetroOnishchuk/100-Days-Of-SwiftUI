@@ -56,7 +56,8 @@ struct MapView: UIViewRepresentable {
                 // we didn't find one; make a new one
                 annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 
-                
+               // allow this to show pop up information
+                annotationView?.canShowCallout = true
                 
                
             } else {

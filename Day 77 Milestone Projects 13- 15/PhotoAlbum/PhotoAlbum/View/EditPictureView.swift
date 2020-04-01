@@ -15,7 +15,6 @@ struct EditPictureView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @Binding var pictures: [Picture]
-    
     @State private var image: Image?
     @State private var inputImage: UIImage?
     @State private var imageName = ""
@@ -24,9 +23,7 @@ struct EditPictureView: View {
     @State private var centerCoordinate = CLLocationCoordinate2D()
     @State private var locations = [CodableMKPointAnnotation]()
     @State private var selectedPlace: MKPointAnnotation?
-    
-    @State private var locationFeatcher = LocationFetcher()
-    
+    @State private var locationFeatcher = LocationFetcher() 
     @State private var pickerSourceType = UIImagePickerController.SourceType.photoLibrary
     
     
@@ -113,14 +110,16 @@ struct EditPictureView: View {
     func addNewImage() {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
-        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         if pickerSourceType == .camera {
             
             if let location = self.locationFeatcher.lastKnownLocation {
                 let newLocation = CodableMKPointAnnotation()
                 newLocation.coordinate = location
                 newLocation.title = "Location for Photo with name: \(self.imageName)"
-                newLocation.subtitle = "Location added: \(Date().description)"
+                
+                newLocation.subtitle = "Location added: \(formatter.string(from: Date()))"
                 self.locations.append(newLocation)
             }
         }
@@ -129,19 +128,12 @@ struct EditPictureView: View {
     func savePictures() {
         let picture = Picture(id: UUID(), pictureName: self.imageName, locations: locations )
         self.pictures.append(picture)
-        
-        
         MenageData.savesImage(pathName: picture.id.uuidString, inputImage: self.inputImage)
-        
-        
         MenageData.savedPictures(pathName: "Pictures", pictures: self.pictures)
         
         self.presentationMode.wrappedValue.dismiss()
     }
-    func saveImage() {
-        
-        
-    }
+   
 }
 
 //struct EditPictureView_Previews: PreviewProvider {

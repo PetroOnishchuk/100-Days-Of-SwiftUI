@@ -16,9 +16,9 @@ struct DetailView: View {
     @State private var image: Image?
     @State private var inputImage: UIImage?
     
-   @State private var centerCoordinate = CLLocationCoordinate2D()
-   
-   
+    @State private var centerCoordinate = CLLocationCoordinate2D()
+    
+    
     
     var body: some View {
         
@@ -36,12 +36,7 @@ struct DetailView: View {
             ZStack {
                 MapView(centerCoordinate:  $centerCoordinate, annotations: picture.locations)
                     .edgesIgnoringSafeArea(.all)
-                
-                CircleView()
-                
             }
-            
-            Text("\(picture.locations.count)")
             Spacer()
         }
         .onAppear {

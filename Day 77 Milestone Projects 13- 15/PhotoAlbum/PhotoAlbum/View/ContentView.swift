@@ -12,10 +12,8 @@ import MapKit
 struct ContentView: View {
     @State private var image: Image?
     @State private var inputImage: UIImage?
-    
     @State private var showingImagePicker = false
     @State private var showingNameAlert = false
-    
     @State private var pictures = [Picture]()
     
     
@@ -33,7 +31,7 @@ struct ContentView: View {
             }
                 
             .navigationBarTitle(Text("Photo Album"))
-            .navigationBarItems(trailing: Button(action: {
+            .navigationBarItems(leading: EditButton(), trailing: Button(action: {
                 self.showingNameAlert = true
                 
             }, label: {
@@ -43,15 +41,10 @@ struct ContentView: View {
                     EditPictureView(pictures: self.$pictures)
                     
             }
-                
-                
-                
             .onAppear {
                 self.pictures =  MenageData.loadPictures(pathName: "Pictures")
-                
             }
         }
-        
     }
     
     func removeItems(at ofsetts: IndexSet) {

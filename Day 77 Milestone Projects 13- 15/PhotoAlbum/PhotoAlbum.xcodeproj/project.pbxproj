@@ -10,7 +10,6 @@
 		98076810242F892B00AA9935 /* ModifiersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807680F242F892B00AA9935 /* ModifiersView.swift */; };
 		98076812242F963E00AA9935 /* ManageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98076811242F963E00AA9935 /* ManageData.swift */; };
 		989F9A182430E5AC0068BA4A /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989F9A172430E5AC0068BA4A /* LocationFetcher.swift */; };
-		989F9A1A2430E6170068BA4A /* CurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989F9A192430E6170068BA4A /* CurrentLocation.swift */; };
 		989F9A1E243122880068BA4A /* CodableMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989F9A1D243122880068BA4A /* CodableMKPointAnnotation.swift */; };
 		989F9A20243122CE0068BA4A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989F9A1F243122CE0068BA4A /* MapView.swift */; };
 		989F9A22243123050068BA4A /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989F9A21243123050068BA4A /* PlusButton.swift */; };
@@ -32,7 +31,6 @@
 		9807680F242F892B00AA9935 /* ModifiersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiersView.swift; sourceTree = "<group>"; };
 		98076811242F963E00AA9935 /* ManageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageData.swift; sourceTree = "<group>"; };
 		989F9A172430E5AC0068BA4A /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
-		989F9A192430E6170068BA4A /* CurrentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocation.swift; sourceTree = "<group>"; };
 		989F9A1D243122880068BA4A /* CodableMKPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableMKPointAnnotation.swift; sourceTree = "<group>"; };
 		989F9A1F243122CE0068BA4A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		989F9A21243123050068BA4A /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 			children = (
 				989F9A1F243122CE0068BA4A /* MapView.swift */,
 				989F9A25243123550068BA4A /* CircleView.swift */,
-				989F9A192430E6170068BA4A /* CurrentLocation.swift */,
 				989F9A21243123050068BA4A /* PlusButton.swift */,
 				989F9A172430E5AC0068BA4A /* LocationFetcher.swift */,
 			);
@@ -104,7 +101,6 @@
 				98A13962242D333E00CDF443 /* Info.plist */,
 				98A13955242D333B00CDF443 /* PhotoAlbum.xcdatamodeld */,
 				98A1395C242D333E00CDF443 /* Preview Content */,
-				98A13968242D338D00CDF443 /* ImagePicker.swift */,
 			);
 			path = PhotoAlbum;
 			sourceTree = "<group>";
@@ -120,12 +116,13 @@
 		98A13970242E80BA00CDF443 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				986735472432262D001460E9 /* Map */,
 				98A13958242D333B00CDF443 /* ContentView.swift */,
 				98A13971242E811200CDF443 /* EditPictureView.swift */,
 				98A1396A242D3DF400CDF443 /* DetailView.swift */,
-				9807680F242F892B00AA9935 /* ModifiersView.swift */,
 				98076811242F963E00AA9935 /* ManageData.swift */,
+				98A13968242D338D00CDF443 /* ImagePicker.swift */,
+				9807680F242F892B00AA9935 /* ModifiersView.swift */,
+				986735472432262D001460E9 /* Map */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,7 +198,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				989F9A1A2430E6170068BA4A /* CurrentLocation.swift in Sources */,
 				98A13957242D333B00CDF443 /* PhotoAlbum.xcdatamodeld in Sources */,
 				98A1396B242D3DF400CDF443 /* DetailView.swift in Sources */,
 				98A13952242D333B00CDF443 /* AppDelegate.swift in Sources */,

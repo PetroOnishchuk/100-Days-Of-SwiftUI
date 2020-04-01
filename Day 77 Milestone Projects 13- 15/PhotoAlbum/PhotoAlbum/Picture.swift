@@ -11,7 +11,6 @@ import Foundation
 struct Picture: Codable, Identifiable {
     var id: UUID
     var pictureName: String
-    
     var locations: [CodableMKPointAnnotation]
     
     }

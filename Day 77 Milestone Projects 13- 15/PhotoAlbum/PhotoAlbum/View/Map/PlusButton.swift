@@ -20,15 +20,14 @@ struct PlusButtonView: View {
     
     var body: some View {
             Button(action: {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                                 // create a new location
                                 let newLocation = CodableMKPointAnnotation()
                                 newLocation.coordinate = self.centerCoordinate
                 newLocation.title = "Location for Photo with name: \(self.imageName)"
-                newLocation.subtitle = "Location added: \(Date().description)"
+                newLocation.subtitle = "Location added: \(formatter.string(from: Date()))"
                                 self.locations.append(newLocation)
-                               
-                print("\(self.locations.count)")
-                                
                             }) {
                                 Image(systemName: "plus")
                             }
