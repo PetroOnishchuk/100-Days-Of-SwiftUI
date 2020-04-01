@@ -18,18 +18,14 @@ struct EditPictureView: View {
     
     @State private var image: Image?
     @State private var inputImage: UIImage?
-    
     @State private var imageName = ""
-    
-    
     @State private var showingImagePicker = false
     @State private var showingSourseTypeAlert = false
-    
-    
     @State private var centerCoordinate = CLLocationCoordinate2D()
     @State private var locations = [CodableMKPointAnnotation]()
-    
     @State private var selectedPlace: MKPointAnnotation?
+    
+    @State private var locationFeatcher = LocationFetcher()
     
     @State private var pickerSourceType = UIImagePickerController.SourceType.camera
     
@@ -73,6 +69,7 @@ struct EditPictureView: View {
                         Spacer()
                         HStack {
                             Spacer()
+                            CurrentLocation()
                             PlusButtonView(locations: $locations, centerCoordinate: $centerCoordinate).disabled(pickerSourceType == .camera)
                         }
                     }
@@ -83,6 +80,9 @@ struct EditPictureView: View {
                 
                 .sheet(isPresented: $showingImagePicker, onDismiss: addNewImage) {
                     ImagePicker(image: self.$inputImage, pickerSourceType: self.$pickerSourceType)
+            }
+            .onAppear{
+                self.locationFeatcher.start()
             }
             .alert(isPresented: $showingSourseTypeAlert, content: { () -> Alert in
                 Alert(title: Text("Take photo from: "), message: nil, primaryButton: .default(Text("Photo Library"), action: {
@@ -102,11 +102,21 @@ struct EditPictureView: View {
     }
     
     
+    
     func addNewImage() {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
         
-        
+        if pickerSourceType == .camera {
+            
+            if let location = self.locationFeatcher.lastKnownLocation {
+                let newLocation = CodableMKPointAnnotation()
+                newLocation.coordinate = location
+                newLocation.title = "Example location Current"
+                newLocation.subtitle = "Example locations2 current"
+                self.locations.append(newLocation)
+            }
+        }
     }
     
     func savePictures() {

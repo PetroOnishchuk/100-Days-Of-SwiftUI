@@ -13,7 +13,7 @@ struct CurrentLocation: View {
     
     let locationFetcher = LocationFetcher()
     
-    @Binding var secondCenter:  CLLocationCoordinate2D
+    
     
    var body: some View {
             VStack {
@@ -24,7 +24,7 @@ struct CurrentLocation: View {
 
                 Button("Read Location") {
                     if let location = self.locationFetcher.lastKnownLocation {
-                        self.secondCenter = location
+                        
                         print("Your location is \(location)")
                     } else {
                         print("Your location is unknown")
