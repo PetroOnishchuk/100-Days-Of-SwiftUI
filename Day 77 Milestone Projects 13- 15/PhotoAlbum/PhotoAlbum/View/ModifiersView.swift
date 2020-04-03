@@ -17,22 +17,35 @@ struct DrawImageNameView: View {
         HStack {
             Text(text)
                 .foregroundColor(Color.green)
-                .modifier(drawText())
+                .modifier(DrawText())
             
             Text(textResults)
-            .modifier(drawText())
+                .modifier(DrawText())
                 .foregroundColor(Color.red)
         }
     }
 }
 
 
-struct drawText: ViewModifier {
+struct DrawText: ViewModifier {
     let font = Font.system(size: 22, weight: .heavy, design: .default)
     
     func body(content: Content) -> some View {
         content
             .font(font)
         
+    }
+}
+
+struct DrawPlusButton: ViewModifier {
+    
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(Color.black.opacity(0.75))
+            .foregroundColor(.white)
+            .font(.title)
+            .clipShape(Circle())
+            .padding(.trailing)
     }
 }

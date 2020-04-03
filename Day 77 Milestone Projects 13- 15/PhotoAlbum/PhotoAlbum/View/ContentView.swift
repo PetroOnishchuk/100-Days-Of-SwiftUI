@@ -12,8 +12,7 @@ import MapKit
 struct ContentView: View {
     @State private var image: Image?
     @State private var inputImage: UIImage?
-    @State private var showingImagePicker = false
-    @State private var showingNameAlert = false
+    @State private var showingEditPictureView = false
     @State private var pictures = [Picture]()
     
     
@@ -32,12 +31,12 @@ struct ContentView: View {
                 
             .navigationBarTitle(Text("Photo Album"))
             .navigationBarItems(leading: EditButton(), trailing: Button(action: {
-                self.showingNameAlert = true
+                self.showingEditPictureView = true
                 
             }, label: {
                 Image(systemName: "plus")
             }))
-                .sheet(isPresented: $showingNameAlert, onDismiss: nil) {
+                .sheet(isPresented: $showingEditPictureView, onDismiss: nil) {
                     EditPictureView(pictures: self.$pictures)
                     
             }

@@ -27,7 +27,6 @@ struct EditPictureView: View {
     @State private var pickerSourceType = UIImagePickerController.SourceType.photoLibrary
     
     
-    
     var body: some View {
         NavigationView{
             VStack {
@@ -44,9 +43,10 @@ struct EditPictureView: View {
                     image?
                         .resizable()
                         .scaledToFit()
+                        .cornerRadius(20)
                 } else {
                     Button(action: {
-                
+                        
                         self.showingSourseTypeAlert = true 
                         
                     }) {
@@ -57,19 +57,19 @@ struct EditPictureView: View {
                     .background(Color.yellow)
                     .cornerRadius(20)
                     .padding(.top, 100)
-             
+                    
                 }
-               
+                
                 ZStack {
                     MapView(centerCoordinate:  $centerCoordinate, annotations: locations)
-                        .edgesIgnoringSafeArea(.all)
+                        .cornerRadius(20)
                     
                     CircleView()
                     VStack {
                         Spacer()
                         HStack {
                             Spacer()
-                            PlusButtonView(locations: $locations, centerCoordinate: $centerCoordinate, imageName: self.imageName).opacity(pickerSourceType == .camera ? 0 : 1)
+                            PlusButtonView(locations: $locations, centerCoordinate: $centerCoordinate, imageName: self.imageName).opacity(pickerSourceType == .camera || image == nil ? 0 : 1)
                         }
                     }
                 }
@@ -86,22 +86,22 @@ struct EditPictureView: View {
             .alert(isPresented: $showingSourseTypeAlert, content: { () -> Alert in
                 
                 if imageName.isEmpty {
-                  return  Alert(title: Text("Image Name is Empty"), message: Text("Please enter Imagename"), dismissButton: .default(Text("OK")))
+                    return  Alert(title: Text("Image Name is Empty"), message: Text("Please enter Imagename"), dismissButton: .default(Text("OK")))
                 } else {
-                 return Alert(title: Text("Take photo from: "), message: nil, primaryButton: .default(Text("Photo Library"), action: {
-                    self.pickerSourceType = .photoLibrary
-                    self.showingImagePicker = true
-                }), secondaryButton: .default(Text("Camera"), action: {
-                    self.pickerSourceType = .camera
-                    self.showingImagePicker = true
-                }))
-            }
+                    return Alert(title: Text("Take photo from: "), message: nil, primaryButton: .default(Text("Photo Library"), action: {
+                        self.pickerSourceType = .photoLibrary
+                        self.showingImagePicker = true
+                    }), secondaryButton: .default(Text("Camera"), action: {
+                        self.pickerSourceType = .camera
+                        self.showingImagePicker = true
+                    }))
+                }
             })
-            .navigationBarItems(trailing: Button(action: {
-                self.savePictures()
-                
-            }, label: { Text("Save")
-            }))
+                .navigationBarItems(trailing: Button(action: {
+                    self.savePictures()
+                    
+                }, label: { Text("Save")
+                }))
         }
     }
     
@@ -133,7 +133,7 @@ struct EditPictureView: View {
         
         self.presentationMode.wrappedValue.dismiss()
     }
-   
+    
 }
 
 //struct EditPictureView_Previews: PreviewProvider {

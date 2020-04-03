@@ -35,7 +35,7 @@ struct DetailView: View {
             }
             ZStack {
                 MapView(centerCoordinate:  $centerCoordinate, annotations: picture.locations)
-                    .edgesIgnoringSafeArea(.all)
+                .cornerRadius(20)
             }
             Spacer()
         }

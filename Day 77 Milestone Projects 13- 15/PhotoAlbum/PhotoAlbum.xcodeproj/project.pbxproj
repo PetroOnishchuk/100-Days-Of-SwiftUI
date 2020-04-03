@@ -61,12 +61,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		980FF99B2437348300583B6F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				989F9A1D243122880068BA4A /* CodableMKPointAnnotation.swift */,
+				98A1396C242D3E6C00CDF443 /* Picture.swift */,
+				98076811242F963E00AA9935 /* ManageData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		986735472432262D001460E9 /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				989F9A1F243122CE0068BA4A /* MapView.swift */,
-				989F9A25243123550068BA4A /* CircleView.swift */,
-				989F9A21243123050068BA4A /* PlusButton.swift */,
 				989F9A172430E5AC0068BA4A /* LocationFetcher.swift */,
 			);
 			path = Map;
@@ -93,9 +101,9 @@
 			children = (
 				98A13951242D333B00CDF443 /* AppDelegate.swift */,
 				98A13953242D333B00CDF443 /* SceneDelegate.swift */,
+				986735472432262D001460E9 /* Map */,
 				98A13970242E80BA00CDF443 /* View */,
-				98A1396C242D3E6C00CDF443 /* Picture.swift */,
-				989F9A1D243122880068BA4A /* CodableMKPointAnnotation.swift */,
+				980FF99B2437348300583B6F /* Model */,
 				98A1395A242D333E00CDF443 /* Assets.xcassets */,
 				98A1395F242D333E00CDF443 /* LaunchScreen.storyboard */,
 				98A13962242D333E00CDF443 /* Info.plist */,
@@ -119,10 +127,10 @@
 				98A13958242D333B00CDF443 /* ContentView.swift */,
 				98A13971242E811200CDF443 /* EditPictureView.swift */,
 				98A1396A242D3DF400CDF443 /* DetailView.swift */,
-				98076811242F963E00AA9935 /* ManageData.swift */,
 				98A13968242D338D00CDF443 /* ImagePicker.swift */,
 				9807680F242F892B00AA9935 /* ModifiersView.swift */,
-				986735472432262D001460E9 /* Map */,
+				989F9A25243123550068BA4A /* CircleView.swift */,
+				989F9A21243123050068BA4A /* PlusButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
