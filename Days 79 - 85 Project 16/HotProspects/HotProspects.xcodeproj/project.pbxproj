@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98354AF12439062D00321C67 /* ReadingCustomValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98354AF02439062D00321C67 /* ReadingCustomValues.swift */; };
+		98354AF3243911B100321C67 /* CreatingTabsWithTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98354AF2243911B100321C67 /* CreatingTabsWithTabView.swift */; };
 		983CA7BA2438CB2800286A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CA7B92438CB2800286A99 /* AppDelegate.swift */; };
 		983CA7BC2438CB2800286A99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CA7BB2438CB2800286A99 /* SceneDelegate.swift */; };
 		983CA7BF2438CB2800286A99 /* HotProspects.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 983CA7BD2438CB2800286A99 /* HotProspects.xcdatamodeld */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		98354AF02439062D00321C67 /* ReadingCustomValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingCustomValues.swift; sourceTree = "<group>"; };
+		98354AF2243911B100321C67 /* CreatingTabsWithTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingTabsWithTabView.swift; sourceTree = "<group>"; };
 		983CA7B62438CB2800286A99 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983CA7B92438CB2800286A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		983CA7BB2438CB2800286A99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98354AEF243902B200321C67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98354AF02439062D00321C67 /* ReadingCustomValues.swift */,
+				98354AF2243911B100321C67 /* CreatingTabsWithTabView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		983CA7AD2438CB2800286A99 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +71,7 @@
 		983CA7B82438CB2800286A99 /* HotProspects */ = {
 			isa = PBXGroup;
 			children = (
+				98354AEF243902B200321C67 /* View */,
 				983CA7B92438CB2800286A99 /* AppDelegate.swift */,
 				983CA7BB2438CB2800286A99 /* SceneDelegate.swift */,
 				983CA7C02438CB2800286A99 /* ContentView.swift */,
@@ -150,9 +164,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				983CA7BA2438CB2800286A99 /* AppDelegate.swift in Sources */,
+				98354AF3243911B100321C67 /* CreatingTabsWithTabView.swift in Sources */,
 				983CA7BC2438CB2800286A99 /* SceneDelegate.swift in Sources */,
 				983CA7C12438CB2800286A99 /* ContentView.swift in Sources */,
 				983CA7BF2438CB2800286A99 /* HotProspects.xcdatamodeld in Sources */,
+				98354AF12439062D00321C67 /* ReadingCustomValues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,31 @@
 
 import SwiftUI
 
+enum NetworkError: Error {
+    case badURL, requestFailed, unknown
+}
+
 struct ContentView: View {
+   
+  
+    
     var body: some View {
-        Text("Hello, World!")
+       Text("Hello, Word!")
+        .onAppear{
+            let url = URL(string: "https://www.apple.com")!
+            URLSession.shared.dataTask(with: url) {
+                data, response, error in
+                if data != nil {
+                    print("We got data!")
+                } else if let error = error {
+                    print(error.localizedDescription)
+                }
+            }.resume()
+        }
+    }
+    
+    func fetchData(from urlString: String, completion: @escaping (Result<String, NetworkError>) -> Void) {
+        completion(.failure(.badURL))
     }
 }
 
