@@ -9,14 +9,10 @@
 import SwiftUI
 
 
-
-
 struct ContentView: View {
-    @State private var backgroundColor = Color.red
-    
     
     var body: some View {
-        Text("Hello, Word")
+       Text("Hello, Word!.")
      
     }
    

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		983CA7C32438CB2900286A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983CA7C22438CB2900286A99 /* Assets.xcassets */; };
 		983CA7C62438CB2900286A99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983CA7C52438CB2900286A99 /* Preview Assets.xcassets */; };
 		983CA7C92438CB2900286A99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983CA7C72438CB2900286A99 /* LaunchScreen.storyboard */; };
+		98E0B0D2243A58C900974092 /* SchedulingLocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0B0D1243A58C900974092 /* SchedulingLocalNotifications.swift */; };
+		98E0B0D5243A637800974092 /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 98E0B0D4243A637800974092 /* SamplePackage */; };
+		98E0B0D7243A663100974092 /* AddingSwiftPackageDependenciesInXcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0B0D6243A663100974092 /* AddingSwiftPackageDependenciesInXcode.swift */; };
 		98FAC3E4243A11BB003F2AF0 /* Understanding Swift'sResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FAC3E3243A11BB003F2AF0 /* Understanding Swift'sResultType.swift */; };
 		98FAC3E6243A1549003F2AF0 /* ControllingImageInterpolationInSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FAC3E5243A1549003F2AF0 /* ControllingImageInterpolationInSwiftUI.swift */; };
 		98FAC3E8243A1E31003F2AF0 /* Manually publishing ObservableObjectChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FAC3E7243A1E31003F2AF0 /* Manually publishing ObservableObjectChanges.swift */; };
@@ -34,6 +37,8 @@
 		983CA7C52438CB2900286A99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		983CA7C82438CB2900286A99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		983CA7CA2438CB2900286A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98E0B0D1243A58C900974092 /* SchedulingLocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingLocalNotifications.swift; sourceTree = "<group>"; };
+		98E0B0D6243A663100974092 /* AddingSwiftPackageDependenciesInXcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingSwiftPackageDependenciesInXcode.swift; sourceTree = "<group>"; };
 		98FAC3E3243A11BB003F2AF0 /* Understanding Swift'sResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Understanding Swift'sResultType.swift"; sourceTree = "<group>"; };
 		98FAC3E5243A1549003F2AF0 /* ControllingImageInterpolationInSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllingImageInterpolationInSwiftUI.swift; sourceTree = "<group>"; };
 		98FAC3E7243A1E31003F2AF0 /* Manually publishing ObservableObjectChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Manually publishing ObservableObjectChanges.swift"; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98E0B0D5243A637800974092 /* SamplePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +66,8 @@
 				98FAC3E7243A1E31003F2AF0 /* Manually publishing ObservableObjectChanges.swift */,
 				98FAC3E5243A1549003F2AF0 /* ControllingImageInterpolationInSwiftUI.swift */,
 				98FAC3E9243A261F003F2AF0 /* CreatingContextMenu.swift */,
+				98E0B0D1243A58C900974092 /* SchedulingLocalNotifications.swift */,
+				98E0B0D6243A663100974092 /* AddingSwiftPackageDependenciesInXcode.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,6 +128,9 @@
 			dependencies = (
 			);
 			name = HotProspects;
+			packageProductDependencies = (
+				98E0B0D4243A637800974092 /* SamplePackage */,
+			);
 			productName = HotProspects;
 			productReference = 983CA7B62438CB2800286A99 /* HotProspects.app */;
 			productType = "com.apple.product-type.application";
@@ -148,6 +159,9 @@
 				Base,
 			);
 			mainGroup = 983CA7AD2438CB2800286A99;
+			packageReferences = (
+				98E0B0D3243A637800974092 /* XCRemoteSwiftPackageReference "SamplePackage" */,
+			);
 			productRefGroup = 983CA7B72438CB2800286A99 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -182,8 +196,10 @@
 				983CA7BC2438CB2800286A99 /* SceneDelegate.swift in Sources */,
 				983CA7C12438CB2800286A99 /* ContentView.swift in Sources */,
 				983CA7BF2438CB2800286A99 /* HotProspects.xcdatamodeld in Sources */,
+				98E0B0D7243A663100974092 /* AddingSwiftPackageDependenciesInXcode.swift in Sources */,
 				98FAC3E4243A11BB003F2AF0 /* Understanding Swift'sResultType.swift in Sources */,
 				98354AF12439062D00321C67 /* ReadingCustomValues.swift in Sources */,
+				98E0B0D2243A58C900974092 /* SchedulingLocalNotifications.swift in Sources */,
 				98FAC3E6243A1549003F2AF0 /* ControllingImageInterpolationInSwiftUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +394,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98E0B0D3243A637800974092 /* XCRemoteSwiftPackageReference "SamplePackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/SamplePackage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98E0B0D4243A637800974092 /* SamplePackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98E0B0D3243A637800974092 /* XCRemoteSwiftPackageReference "SamplePackage" */;
+			productName = SamplePackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		983CA7BD2438CB2800286A99 /* HotProspects.xcdatamodeld */ = {
