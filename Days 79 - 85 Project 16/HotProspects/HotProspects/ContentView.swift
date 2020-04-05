@@ -8,33 +8,21 @@
 
 import SwiftUI
 
-enum NetworkError: Error {
-    case badURL, requestFailed, unknown
-}
+
+
 
 struct ContentView: View {
-   
-  
+    @State private var backgroundColor = Color.red
+    
     
     var body: some View {
-       Text("Hello, Word!")
-        .onAppear{
-            let url = URL(string: "https://www.apple.com")!
-            URLSession.shared.dataTask(with: url) {
-                data, response, error in
-                if data != nil {
-                    print("We got data!")
-                } else if let error = error {
-                    print(error.localizedDescription)
-                }
-            }.resume()
-        }
+        Text("Hello, Word")
+     
     }
-    
-    func fetchData(from urlString: String, completion: @escaping (Result<String, NetworkError>) -> Void) {
-        completion(.failure(.badURL))
-    }
+   
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
