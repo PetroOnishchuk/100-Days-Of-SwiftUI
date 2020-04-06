@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import  SamplePackage
+
 
 struct AddingSwiftPackageDependenciesInXcode: View {
    let possinleNumber = Array(1...60)
