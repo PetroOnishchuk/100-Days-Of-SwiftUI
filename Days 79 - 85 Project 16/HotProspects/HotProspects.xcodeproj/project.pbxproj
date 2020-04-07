@@ -16,6 +16,7 @@
 		983CA7C32438CB2900286A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983CA7C22438CB2900286A99 /* Assets.xcassets */; };
 		983CA7C62438CB2900286A99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983CA7C52438CB2900286A99 /* Preview Assets.xcassets */; };
 		983CA7C92438CB2900286A99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983CA7C72438CB2900286A99 /* LaunchScreen.storyboard */; };
+		987D3A8C243D054A00EA9DAB /* IsContactedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987D3A8B243D054A00EA9DAB /* IsContactedImage.swift */; };
 		98B6BE78243B63C200A18E9E /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6BE77243B63C200A18E9E /* ProspectsView.swift */; };
 		98B6BE7A243B63DC00A18E9E /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6BE79243B63DC00A18E9E /* MeView.swift */; };
 		98B6BE7C243B9E7D00A18E9E /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6BE7B243B9E7D00A18E9E /* Prospect.swift */; };
@@ -41,6 +42,7 @@
 		983CA7C52438CB2900286A99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		983CA7C82438CB2900286A99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		983CA7CA2438CB2900286A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		987D3A8B243D054A00EA9DAB /* IsContactedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsContactedImage.swift; sourceTree = "<group>"; };
 		98B6BE77243B63C200A18E9E /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		98B6BE79243B63DC00A18E9E /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		98B6BE7B243B9E7D00A18E9E /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				983CA7C02438CB2800286A99 /* ContentView.swift */,
 				98B6BE77243B63C200A18E9E /* ProspectsView.swift */,
 				98B6BE79243B63DC00A18E9E /* MeView.swift */,
+				987D3A8B243D054A00EA9DAB /* IsContactedImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				983CA7BA2438CB2800286A99 /* AppDelegate.swift in Sources */,
 				98B6BE78243B63C200A18E9E /* ProspectsView.swift in Sources */,
 				98FAC3EA243A261F003F2AF0 /* CreatingContextMenu.swift in Sources */,
+				987D3A8C243D054A00EA9DAB /* IsContactedImage.swift in Sources */,
 				98FAC3E8243A1E31003F2AF0 /* Manually publishing ObservableObjectChanges.swift in Sources */,
 				98354AF3243911B100321C67 /* CreatingTabsWithTabView.swift in Sources */,
 				983CA7BC2438CB2800286A99 /* SceneDelegate.swift in Sources */,

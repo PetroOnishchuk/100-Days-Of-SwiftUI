@@ -16,13 +16,23 @@ class Prospects: ObservableObject {
     static let saveKey = "SavedData"
     
     init() {
-        if let data = UserDefaults.standard.data(forKey: Self.saveKey) {
-            if let decoder = try? JSONDecoder().decode([Prospect].self, from: data) {
-                self.people = decoder
-                return
-            }
+//        if let data = UserDefaults.standard.data(forKey: Self.saveKey) {
+//            if let decoder = try? JSONDecoder().decode([Prospect].self, from: data) {
+//                self.people = decoder
+//                return
+//            }
+//        }
+        let fileName = Self.getDocumentsDirectory().appendingPathComponent(Self.saveKey)
+        do {
+            let data = try Data(contentsOf: fileName)
+            let people = try JSONDecoder().decode([Prospect].self, from: data)
+            self.people = people
+        } catch {
+            print("Unable to load saved data")
+            self.people = []
         }
-        self.people = []
+        
+        
     }
     
     
@@ -31,16 +41,35 @@ class Prospects: ObservableObject {
         prospect.isContacted.toggle()
         save()
     }
+    // MARK: Save data with UserDefaults
     
-    private func save() {
+    private func save2() {
         if let encoded = try? JSONEncoder().encode(people) {
             UserDefaults.standard.set(encoded, forKey: Self.saveKey)
+        }
+    }
+    
+    private func save() {
+        let fileName = Self.getDocumentsDirectory().appendingPathComponent(Self.saveKey)
+        do {
+            let data = try JSONEncoder().encode(people)
+            try data.write(to: fileName, options: [.atomicWrite, .completeFileProtection])
+        } catch {
+            print("Unable to save data")
         }
     }
     
     func add(_ prospect: Prospect) {
         people.append(prospect)
         save()
+    }
+    
+    static func getDocumentsDirectory() -> URL {
+        // find all possible documents directories for this user
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        // just send back the first one, which ought to be the only one
+        return paths[0]
     }
 }
 

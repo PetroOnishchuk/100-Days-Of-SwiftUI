@@ -24,6 +24,8 @@ struct ProspectsView: View {
     
     @State private var isShowingScanner = false
     
+    @State private var isShowinSheet = false
+    
     var title: String {
         switch filter {
         case .none:
@@ -52,23 +54,27 @@ struct ProspectsView: View {
     }
     
     
+    
+    
     var body: some View {
         NavigationView {
             
             List {
                 ForEach(filteredProspects) { prospect in
+                    HStack {
+                        IsContactedImage(isContacted: prospect.isContacted)
                     VStack(alignment: .leading, spacing: nil) {
                         Text(prospect.name)
                             .font(.headline)
                         Text(prospect.emailAddress)
                             .foregroundColor(.secondary)
-                    }.contextMenu{
+                        }
+                    }.contextMenu {
                         Button(action: {
                             self.prospects.toggle(prospect)
                         }) {
                             Text(prospect.isContacted ? "Mark Uncontacted" : "Mark Contacted")
                         }
-                        
                         if !prospect.isContacted {
                             Button("Remind Me") {
                                 self.addNotification(for: prospect)
@@ -81,7 +87,11 @@ struct ProspectsView: View {
                 
                 
             .navigationBarTitle(title)
-            .navigationBarItems(trailing: Button(action: {
+            .navigationBarItems(leading: Button(action: {
+                
+            }, label: {
+                Text("Sorting")
+            }), trailing: Button(action: {
                 self.isShowingScanner = true
                 
             }, label: {
@@ -90,6 +100,11 @@ struct ProspectsView: View {
             }))
                 .sheet(isPresented: $isShowingScanner) {
                     CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan(result:))
+            }
+            .actionSheet(isPresented: $isShowinSheet) { () -> ActionSheet in
+                ActionSheet(title: Text("Select variant for sorting"), message: nil, buttons: [.default(Text("Name"), action: {
+                    //
+                })])
             }
         }
         
