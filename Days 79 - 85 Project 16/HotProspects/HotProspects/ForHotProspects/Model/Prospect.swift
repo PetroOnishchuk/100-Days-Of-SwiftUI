@@ -22,6 +22,8 @@ class Prospects: ObservableObject {
 //                return
 //            }
 //        }
+        
+        // MARK: Day 85. Challenege 2.3
         let fileName = Self.getDocumentsDirectory().appendingPathComponent(Self.saveKey)
         do {
             let data = try Data(contentsOf: fileName)
@@ -49,7 +51,14 @@ class Prospects: ObservableObject {
         }
     }
     
-    private func save() {
+    func add(_ prospect: Prospect) {
+           people.append(prospect)
+           save()
+       }
+    
+    
+   // MARK: Day 85. Challenege 2.2
+     func save() {
         let fileName = Self.getDocumentsDirectory().appendingPathComponent(Self.saveKey)
         do {
             let data = try JSONEncoder().encode(people)
@@ -59,11 +68,9 @@ class Prospects: ObservableObject {
         }
     }
     
-    func add(_ prospect: Prospect) {
-        people.append(prospect)
-        save()
-    }
+   
     
+   //  MARK: Day 85.  Challenge 2.1
     static func getDocumentsDirectory() -> URL {
         // find all possible documents directories for this user
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

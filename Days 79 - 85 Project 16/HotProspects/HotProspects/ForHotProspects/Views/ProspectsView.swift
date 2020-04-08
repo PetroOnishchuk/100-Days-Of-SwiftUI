@@ -53,6 +53,7 @@ struct ProspectsView: View {
         }
     }
     
+    // MARK: Day 85. Challenege 3.1
     enum SortedType {
         case name, dateAdded
     }
@@ -73,6 +74,7 @@ struct ProspectsView: View {
     }
     
     
+    // MARK: Day 85. Challenege 3.2
     
     enum CheckBoxType {
         case name, dateAdded
@@ -93,6 +95,7 @@ struct ProspectsView: View {
             
             List {
                 ForEach(sortedProspects) { prospect in
+                    // MARK: Challenge 1. Day 85
                     HStack {
                         IsContactedImage(isContacted: prospect.isContacted)
                         VStack(alignment: .leading, spacing: nil) {
@@ -114,10 +117,7 @@ struct ProspectsView: View {
                         }
                     }
                 }
-            }
-                
-                
-                
+            } 
             .navigationBarTitle(title)
             .navigationBarItems(leading: Button(action: {
                 self.isShowinSheet = true
@@ -133,6 +133,7 @@ struct ProspectsView: View {
                 .sheet(isPresented: $isShowingScanner) {
                     CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan(result:))
             }
+                //MARK: Day 85. Challenege 3.3
             .actionSheet(isPresented: $isShowinSheet) { () -> ActionSheet in
                 
                 ActionSheet(title: Text("Sort By:"), message: nil,  buttons: [.default(Text("Name \(checkBox(forType: .name))"), action: {
@@ -206,6 +207,8 @@ struct ProspectsView: View {
             }
         }
     }
+    
+   
 }
 
 struct ProspectsView_Previews: PreviewProvider {
