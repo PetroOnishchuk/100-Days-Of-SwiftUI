@@ -17,7 +17,7 @@ struct ProspectsView: View {
     enum FilterType {
         case none, contacted, uncontacted
     }
-    
+ 
     let filter: FilterType
     
     @EnvironmentObject var prospects: Prospects
@@ -53,14 +53,46 @@ struct ProspectsView: View {
         }
     }
     
+    enum SortedType {
+        case name, date
+    }
     
+    @State private var sortType = SortedType.name
     
+    var sortedProspects: [Prospect] {
+        switch sortType {
+        case .name:
+            return filteredProspects.sorted { (firstProspect, secondProspect) -> Bool in
+                return firstProspect.name < secondProspect.name
+            }
+        case .date:
+            return filteredProspects.sorted { (firstProspect, secondProspect) -> Bool in
+                return firstProspect.dateAdded < secondProspect.dateAdded
+            }
+        }
+    }
+    
+    var isSelectedName: String {
+        if sortType == .name {
+            return "✔️       "
+        } else {
+            return "        "
+        }
+    }
+    
+    var isSelectedDate: String {
+           if sortType == .date {
+               return "✔️       "
+           } else {
+               return "         "
+           }
+       }
     
     var body: some View {
         NavigationView {
             
             List {
-                ForEach(filteredProspects) { prospect in
+                ForEach(sortedProspects) { prospect in
                     HStack {
                         IsContactedImage(isContacted: prospect.isContacted)
                     VStack(alignment: .leading, spacing: nil) {
@@ -88,7 +120,7 @@ struct ProspectsView: View {
                 
             .navigationBarTitle(title)
             .navigationBarItems(leading: Button(action: {
-                
+                self.isShowinSheet = true
             }, label: {
                 Text("Sorting")
             }), trailing: Button(action: {
@@ -102,9 +134,13 @@ struct ProspectsView: View {
                     CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan(result:))
             }
             .actionSheet(isPresented: $isShowinSheet) { () -> ActionSheet in
-                ActionSheet(title: Text("Select variant for sorting"), message: nil, buttons: [.default(Text("Name"), action: {
-                    //
-                })])
+                
+                ActionSheet(title: Text("Sort By:"), message: nil,  buttons: [.default(Text("\(isSelectedName) Name"), action: {
+                    self.sortType = .name
+                }), .default(Text("\(isSelectedDate) Date Added"), action: {
+                    self.sortType = .date
+                }),
+                    .cancel()])
             }
         }
         
@@ -121,6 +157,8 @@ struct ProspectsView: View {
             let person = Prospect()
             person.name = details[0]
             person.emailAddress  = details[1]
+            person.dateAdded = Date()
+            
             
             //MARK: Save  to UserDefoults
             self.prospects.add(person)
@@ -128,7 +166,7 @@ struct ProspectsView: View {
             
             
         case .failure(let error):
-            print("Scanning failed")
+            print("Scanning failed \(error.localizedDescription)")
             
         }
     }
