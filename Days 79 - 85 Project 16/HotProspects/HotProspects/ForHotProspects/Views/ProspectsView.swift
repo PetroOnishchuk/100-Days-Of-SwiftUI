@@ -17,7 +17,7 @@ struct ProspectsView: View {
     enum FilterType {
         case none, contacted, uncontacted
     }
- 
+    
     let filter: FilterType
     
     @EnvironmentObject var prospects: Prospects
@@ -54,7 +54,7 @@ struct ProspectsView: View {
     }
     
     enum SortedType {
-        case name, date
+        case name, dateAdded
     }
     
     @State private var sortType = SortedType.name
@@ -65,28 +65,28 @@ struct ProspectsView: View {
             return filteredProspects.sorted { (firstProspect, secondProspect) -> Bool in
                 return firstProspect.name < secondProspect.name
             }
-        case .date:
+        case .dateAdded:
             return filteredProspects.sorted { (firstProspect, secondProspect) -> Bool in
                 return firstProspect.dateAdded < secondProspect.dateAdded
             }
         }
     }
     
-    var isSelectedName: String {
-        if sortType == .name {
-            return "✔️       "
-        } else {
-            return "        "
+    
+    
+    enum CheckBoxType {
+        case name, dateAdded
+    }
+    func checkBox(forType: CheckBoxType) -> String {
+        switch forType  {
+        case .name:
+            return sortType == .name ? "✔️" : ""
+        case .dateAdded:
+            return sortType == .dateAdded ? "✔️" : ""
         }
     }
     
-    var isSelectedDate: String {
-           if sortType == .date {
-               return "✔️       "
-           } else {
-               return "         "
-           }
-       }
+    
     
     var body: some View {
         NavigationView {
@@ -95,11 +95,11 @@ struct ProspectsView: View {
                 ForEach(sortedProspects) { prospect in
                     HStack {
                         IsContactedImage(isContacted: prospect.isContacted)
-                    VStack(alignment: .leading, spacing: nil) {
-                        Text(prospect.name)
-                            .font(.headline)
-                        Text(prospect.emailAddress)
-                            .foregroundColor(.secondary)
+                        VStack(alignment: .leading, spacing: nil) {
+                            Text(prospect.name)
+                                .font(.headline)
+                            Text(prospect.emailAddress)
+                                .foregroundColor(.secondary)
                         }
                     }.contextMenu {
                         Button(action: {
@@ -135,10 +135,10 @@ struct ProspectsView: View {
             }
             .actionSheet(isPresented: $isShowinSheet) { () -> ActionSheet in
                 
-                ActionSheet(title: Text("Sort By:"), message: nil,  buttons: [.default(Text("\(isSelectedName) Name"), action: {
+                ActionSheet(title: Text("Sort By:"), message: nil,  buttons: [.default(Text("Name \(checkBox(forType: .name))"), action: {
                     self.sortType = .name
-                }), .default(Text("\(isSelectedDate) Date Added"), action: {
-                    self.sortType = .date
+                }), .default(Text("Date Added \(checkBox(forType: .dateAdded))"), action: {
+                    self.sortType = .dateAdded
                 }),
                     .cancel()])
             }
@@ -183,8 +183,8 @@ struct ProspectsView: View {
             var dateComponents = DateComponents()
             dateComponents.hour = 9
             
-           // let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats:  false)
-             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            // let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats:  false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
             
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request, withCompletionHandler: nil)
