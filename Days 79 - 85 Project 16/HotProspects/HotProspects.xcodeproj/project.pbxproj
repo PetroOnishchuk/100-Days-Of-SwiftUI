@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		983502A8243E664400C85D4B /* TestPeople.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983502A7243E664400C85D4B /* TestPeople.swift */; };
 		98354AF12439062D00321C67 /* ReadingCustomValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98354AF02439062D00321C67 /* ReadingCustomValues.swift */; };
 		98354AF3243911B100321C67 /* CreatingTabsWithTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98354AF2243911B100321C67 /* CreatingTabsWithTabView.swift */; };
 		983CA7BA2438CB2800286A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CA7B92438CB2800286A99 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		983502A7243E664400C85D4B /* TestPeople.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPeople.swift; sourceTree = "<group>"; };
 		98354AF02439062D00321C67 /* ReadingCustomValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingCustomValues.swift; sourceTree = "<group>"; };
 		98354AF2243911B100321C67 /* CreatingTabsWithTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingTabsWithTabView.swift; sourceTree = "<group>"; };
 		983CA7B62438CB2800286A99 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				98B6BE7B243B9E7D00A18E9E /* Prospect.swift */,
+				983502A7243E664400C85D4B /* TestPeople.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				983502A8243E664400C85D4B /* TestPeople.swift in Sources */,
 				98B6BE7A243B63DC00A18E9E /* MeView.swift in Sources */,
 				98B6BE7C243B9E7D00A18E9E /* Prospect.swift in Sources */,
 				983CA7BA2438CB2800286A99 /* AppDelegate.swift in Sources */,
