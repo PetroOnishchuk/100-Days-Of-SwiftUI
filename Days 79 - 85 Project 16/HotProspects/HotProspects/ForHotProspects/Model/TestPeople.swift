@@ -9,7 +9,7 @@
 import Foundation
 
 
-class TextPeople {
+class TestPeople {
     
     static func createArray() -> [Prospect] {
     let person1 = Prospect()

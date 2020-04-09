@@ -88,8 +88,6 @@ struct ProspectsView: View {
         }
     }
     
-    
-    
     var body: some View {
         NavigationView {
             
@@ -134,14 +132,12 @@ struct ProspectsView: View {
                     CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan(result:))
             }
                 //MARK: Day 85. Challenege 3.3
-            .actionSheet(isPresented: $isShowinSheet) { () -> ActionSheet in
-                
-                ActionSheet(title: Text("Sort By:"), message: nil,  buttons: [.default(Text("Name \(checkBox(forType: .name))"), action: {
-                    self.sortType = .name
-                }), .default(Text("Date Added \(checkBox(forType: .dateAdded))"), action: {
-                    self.sortType = .dateAdded
-                }),
-                    .cancel()])
+                .actionSheet(isPresented: $isShowinSheet) { () -> ActionSheet in
+                    ActionSheet(title: Text("Sort By:"), message: nil,  buttons: [.default(Text("Name \(checkBox(forType: .name))"), action: {
+                        self.sortType = .name
+                    }), .default(Text("Date Added \(checkBox(forType: .dateAdded))"), action: {
+                        self.sortType = .dateAdded
+                    }), .cancel()])
             }
         }
         
@@ -159,8 +155,6 @@ struct ProspectsView: View {
             person.name = details[0]
             person.emailAddress  = details[1]
             person.dateAdded = Date()
-            
-            
             //MARK: Save  to UserDefoults
             self.prospects.add(person)
             
@@ -208,7 +202,7 @@ struct ProspectsView: View {
         }
     }
     
-   
+    
 }
 
 struct ProspectsView_Previews: PreviewProvider {

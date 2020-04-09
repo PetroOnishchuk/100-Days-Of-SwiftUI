@@ -28,8 +28,11 @@ class Prospects: ObservableObject {
         do {
             let data = try Data(contentsOf: fileName)
             let people = try JSONDecoder().decode([Prospect].self, from: data)
-            self.people = TextPeople.createArray()
-           // self.people = people
+            
+            // MARK: For Test data
+          // self.people = TestPeople.createArray()
+            
+          self.people = people
         } catch {
             print("Unable to load saved data")
             self.people = []
