@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		981A80222440C28B006DF8AC /* MagnificationGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A80212440C28B006DF8AC /* MagnificationGestureView.swift */; };
+		981A80242440E43E006DF8AC /* RotationEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A80232440E43E006DF8AC /* RotationEffectView.swift */; };
+		981A80262440E5C0006DF8AC /* HighPriorityGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A80252440E5C0006DF8AC /* HighPriorityGestureView.swift */; };
+		981A80282440E636006DF8AC /* SimultaneousGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A80272440E636006DF8AC /* SimultaneousGestureView.swift */; };
+		981A802A2440EF97006DF8AC /* GestureSequencingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A80292440EF97006DF8AC /* GestureSequencingView.swift */; };
+		981A802C2440FBD4006DF8AC /* MakingVibrationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A802B2440FBD4006DF8AC /* MakingVibrationsView.swift */; };
+		981A802E24410339006DF8AC /* HitTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A802D24410339006DF8AC /* HitTestingView.swift */; };
 		981CB88B243F9B250099756E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CB88A243F9B250099756E /* AppDelegate.swift */; };
 		981CB88D243F9B250099756E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CB88C243F9B250099756E /* SceneDelegate.swift */; };
 		981CB890243F9B250099756E /* Flashzilla.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 981CB88E243F9B250099756E /* Flashzilla.xcdatamodeld */; };
@@ -17,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		981A80212440C28B006DF8AC /* MagnificationGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnificationGestureView.swift; sourceTree = "<group>"; };
+		981A80232440E43E006DF8AC /* RotationEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationEffectView.swift; sourceTree = "<group>"; };
+		981A80252440E5C0006DF8AC /* HighPriorityGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighPriorityGestureView.swift; sourceTree = "<group>"; };
+		981A80272440E636006DF8AC /* SimultaneousGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimultaneousGestureView.swift; sourceTree = "<group>"; };
+		981A80292440EF97006DF8AC /* GestureSequencingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureSequencingView.swift; sourceTree = "<group>"; };
+		981A802B2440FBD4006DF8AC /* MakingVibrationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakingVibrationsView.swift; sourceTree = "<group>"; };
+		981A802D24410339006DF8AC /* HitTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTestingView.swift; sourceTree = "<group>"; };
 		981CB887243F9B250099756E /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		981CB88A243F9B250099756E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		981CB88C243F9B250099756E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +53,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		981A80202440C1E7006DF8AC /* TechiquesView */ = {
+			isa = PBXGroup;
+			children = (
+				981A80212440C28B006DF8AC /* MagnificationGestureView.swift */,
+				981A80232440E43E006DF8AC /* RotationEffectView.swift */,
+				981A80252440E5C0006DF8AC /* HighPriorityGestureView.swift */,
+				981A80272440E636006DF8AC /* SimultaneousGestureView.swift */,
+				981A80292440EF97006DF8AC /* GestureSequencingView.swift */,
+				981A802B2440FBD4006DF8AC /* MakingVibrationsView.swift */,
+				981A802D24410339006DF8AC /* HitTestingView.swift */,
+			);
+			path = TechiquesView;
+			sourceTree = "<group>";
+		};
 		981CB87E243F9B250099756E = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +86,7 @@
 		981CB889243F9B250099756E /* Flashzilla */ = {
 			isa = PBXGroup;
 			children = (
+				981A80202440C1E7006DF8AC /* TechiquesView */,
 				981CB88A243F9B250099756E /* AppDelegate.swift */,
 				981CB88C243F9B250099756E /* SceneDelegate.swift */,
 				981CB891243F9B250099756E /* ContentView.swift */,
@@ -149,10 +178,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				981A802C2440FBD4006DF8AC /* MakingVibrationsView.swift in Sources */,
 				981CB890243F9B250099756E /* Flashzilla.xcdatamodeld in Sources */,
 				981CB88B243F9B250099756E /* AppDelegate.swift in Sources */,
+				981A80222440C28B006DF8AC /* MagnificationGestureView.swift in Sources */,
+				981A802E24410339006DF8AC /* HitTestingView.swift in Sources */,
+				981A80282440E636006DF8AC /* SimultaneousGestureView.swift in Sources */,
+				981A80242440E43E006DF8AC /* RotationEffectView.swift in Sources */,
+				981A802A2440EF97006DF8AC /* GestureSequencingView.swift in Sources */,
 				981CB892243F9B250099756E /* ContentView.swift in Sources */,
 				981CB88D243F9B250099756E /* SceneDelegate.swift in Sources */,
+				981A80262440E5C0006DF8AC /* HighPriorityGestureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
