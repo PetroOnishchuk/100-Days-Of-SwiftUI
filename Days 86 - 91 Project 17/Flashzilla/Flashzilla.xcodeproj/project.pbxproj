@@ -26,6 +26,8 @@
 		989779B924420E8D00195DD4 /* differentiateWithoutColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779B824420E8D00195DD4 /* differentiateWithoutColorView.swift */; };
 		989779BB2442120600195DD4 /* ReduceMotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779BA2442120600195DD4 /* ReduceMotionView.swift */; };
 		989779BD2442137C00195DD4 /* ReduceTransparencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779BC2442137C00195DD4 /* ReduceTransparencyView.swift */; };
+		989779C02442411000195DD4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779BF2442411000195DD4 /* Card.swift */; };
+		989779C3244244E900195DD4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779C2244244E900195DD4 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		989779B824420E8D00195DD4 /* differentiateWithoutColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = differentiateWithoutColorView.swift; sourceTree = "<group>"; };
 		989779BA2442120600195DD4 /* ReduceMotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceMotionView.swift; sourceTree = "<group>"; };
 		989779BC2442137C00195DD4 /* ReduceTransparencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceTransparencyView.swift; sourceTree = "<group>"; };
+		989779BF2442411000195DD4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		989779C2244244E900195DD4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				981A80202440C1E7006DF8AC /* TechiquesView */,
+				989779BE244240F300195DD4 /* Model */,
+				989779C12442449B00195DD4 /* FlashzillaView */,
 				981CB88A243F9B250099756E /* AppDelegate.swift */,
 				981CB88C243F9B250099756E /* SceneDelegate.swift */,
-				981CB891243F9B250099756E /* ContentView.swift */,
 				981CB893243F9B260099756E /* Assets.xcassets */,
 				981CB898243F9B260099756E /* LaunchScreen.storyboard */,
 				981CB89B243F9B260099756E /* Info.plist */,
@@ -120,6 +125,23 @@
 				981CB896243F9B260099756E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		989779BE244240F300195DD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				989779BF2442411000195DD4 /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		989779C12442449B00195DD4 /* FlashzillaView */ = {
+			isa = PBXGroup;
+			children = (
+				981CB891243F9B250099756E /* ContentView.swift */,
+				989779C2244244E900195DD4 /* CardView.swift */,
+			);
+			path = FlashzillaView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +221,11 @@
 				981A80222440C28B006DF8AC /* MagnificationGestureView.swift in Sources */,
 				989779BD2442137C00195DD4 /* ReduceTransparencyView.swift in Sources */,
 				981A802E24410339006DF8AC /* HitTestingView.swift in Sources */,
+				989779C02442411000195DD4 /* Card.swift in Sources */,
 				981A80282440E636006DF8AC /* SimultaneousGestureView.swift in Sources */,
 				989779B52441F8AD00195DD4 /* TimerView.swift in Sources */,
 				989779B724420A4800195DD4 /* NotifictionCenterViewView.swift in Sources */,
+				989779C3244244E900195DD4 /* CardView.swift in Sources */,
 				981A80242440E43E006DF8AC /* RotationEffectView.swift in Sources */,
 				981A802A2440EF97006DF8AC /* GestureSequencingView.swift in Sources */,
 				989779B924420E8D00195DD4 /* differentiateWithoutColorView.swift in Sources */,
