@@ -21,6 +21,11 @@
 		981CB894243F9B260099756E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 981CB893243F9B260099756E /* Assets.xcassets */; };
 		981CB897243F9B260099756E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 981CB896243F9B260099756E /* Preview Assets.xcassets */; };
 		981CB89A243F9B260099756E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981CB898243F9B260099756E /* LaunchScreen.storyboard */; };
+		989779B52441F8AD00195DD4 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779B42441F8AD00195DD4 /* TimerView.swift */; };
+		989779B724420A4800195DD4 /* NotifictionCenterViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779B624420A4800195DD4 /* NotifictionCenterViewView.swift */; };
+		989779B924420E8D00195DD4 /* differentiateWithoutColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779B824420E8D00195DD4 /* differentiateWithoutColorView.swift */; };
+		989779BB2442120600195DD4 /* ReduceMotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779BA2442120600195DD4 /* ReduceMotionView.swift */; };
+		989779BD2442137C00195DD4 /* ReduceTransparencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779BC2442137C00195DD4 /* ReduceTransparencyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		981CB896243F9B260099756E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		981CB899243F9B260099756E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		981CB89B243F9B260099756E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		989779B42441F8AD00195DD4 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		989779B624420A4800195DD4 /* NotifictionCenterViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifictionCenterViewView.swift; sourceTree = "<group>"; };
+		989779B824420E8D00195DD4 /* differentiateWithoutColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = differentiateWithoutColorView.swift; sourceTree = "<group>"; };
+		989779BA2442120600195DD4 /* ReduceMotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceMotionView.swift; sourceTree = "<group>"; };
+		989779BC2442137C00195DD4 /* ReduceTransparencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceTransparencyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,11 @@
 				981A80292440EF97006DF8AC /* GestureSequencingView.swift */,
 				981A802B2440FBD4006DF8AC /* MakingVibrationsView.swift */,
 				981A802D24410339006DF8AC /* HitTestingView.swift */,
+				989779B42441F8AD00195DD4 /* TimerView.swift */,
+				989779B624420A4800195DD4 /* NotifictionCenterViewView.swift */,
+				989779B824420E8D00195DD4 /* differentiateWithoutColorView.swift */,
+				989779BA2442120600195DD4 /* ReduceMotionView.swift */,
+				989779BC2442137C00195DD4 /* ReduceTransparencyView.swift */,
 			);
 			path = TechiquesView;
 			sourceTree = "<group>";
@@ -182,13 +197,18 @@
 				981CB890243F9B250099756E /* Flashzilla.xcdatamodeld in Sources */,
 				981CB88B243F9B250099756E /* AppDelegate.swift in Sources */,
 				981A80222440C28B006DF8AC /* MagnificationGestureView.swift in Sources */,
+				989779BD2442137C00195DD4 /* ReduceTransparencyView.swift in Sources */,
 				981A802E24410339006DF8AC /* HitTestingView.swift in Sources */,
 				981A80282440E636006DF8AC /* SimultaneousGestureView.swift in Sources */,
+				989779B52441F8AD00195DD4 /* TimerView.swift in Sources */,
+				989779B724420A4800195DD4 /* NotifictionCenterViewView.swift in Sources */,
 				981A80242440E43E006DF8AC /* RotationEffectView.swift in Sources */,
 				981A802A2440EF97006DF8AC /* GestureSequencingView.swift in Sources */,
+				989779B924420E8D00195DD4 /* differentiateWithoutColorView.swift in Sources */,
 				981CB892243F9B250099756E /* ContentView.swift in Sources */,
 				981CB88D243F9B250099756E /* SceneDelegate.swift in Sources */,
 				981A80262440E5C0006DF8AC /* HighPriorityGestureView.swift in Sources */,
+				989779BB2442120600195DD4 /* ReduceMotionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

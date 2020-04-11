@@ -7,16 +7,16 @@
 //
 
 import SwiftUI
-import CoreHaptics
 
 struct ContentView: View {
-   
     
     var body: some View {
-        
         Text("Hello, World!")
+            
         
     }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
