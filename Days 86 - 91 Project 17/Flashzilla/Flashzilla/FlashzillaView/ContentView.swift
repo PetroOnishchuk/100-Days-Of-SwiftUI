@@ -9,11 +9,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @State private var cards = [Card](repeating: Card.example, count: 10)
     
     @State private var offset = CGSize.zero
     
     var body: some View {
+        
         ZStack {
             Image("background")
                 .resizable()
@@ -26,13 +29,34 @@ struct ContentView: View {
                             self.removeCard(at: index)
                         }
                     }
-                        .stacked(at: index, in: self.cards.count)
+                    .stacked(at: index, in: self.cards.count)
                         
                     }
                 }
             }
+            if !differentiateWithoutColor {
+               
+                VStack {
+                    
+                    Spacer()
+                    
+                    HStack {
+                        Image(systemName: "checkmark.circle")
+                            .padding()
+                            .background(Color.red.opacity(0.7))
+                            .clipShape(Circle())
+                       Spacer()
+                        Image(systemName: "checkmark.circle")
+                            .padding()
+                            .background(Color.black.opacity(0.7))
+                            .clipShape(Circle())
+                    }
+                    .foregroundColor(.white)
+                    .font(.largeTitle)
+                    .padding()
+                }
+            }
         }
-            
         
     }
     
