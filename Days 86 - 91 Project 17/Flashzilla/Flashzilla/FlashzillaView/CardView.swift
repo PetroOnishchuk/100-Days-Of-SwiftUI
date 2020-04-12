@@ -13,6 +13,10 @@ struct CardView: View {
     
     @State private var isShowingAnswer = false
     
+    @State private var offset = CGSize.zero
+    
+    var removal: (() -> Void)? = nil
+    
     
     var body: some View {
         ZStack {
@@ -34,9 +38,34 @@ struct CardView: View {
             .multilineTextAlignment(.center)
         }
         .frame(width: 450, height: 250)
+        .rotationEffect(.degrees(Double(offset.width / 5)))
+        .offset(x: offset.width * 5, y: 0)
+        .opacity(2 - Double(abs(offset.width / 50)))
+    .gesture(
+        DragGesture()
+            .onChanged({ (gesture) in
+                self.offset  = gesture.translation
+            })
+        
+            .onEnded({ (_) in
+                if abs(self.offset.width) > 100 {
+                    // remove the card
+                    self.removal?()
+                } else {
+                    self.offset = .zero
+                }
+            })
+        )
         .onTapGesture {
             self.isShowingAnswer.toggle()
         }
+    }
+}
+
+extension View {
+    func stacked(at position: Int, in total: Int) -> some View {
+        let offset = CGFloat(total - position)
+        return self.offset(CGSize(width: 0, height: offset * 10))
     }
 }
 
