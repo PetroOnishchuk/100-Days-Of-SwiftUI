@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @State private var cards = [Card](repeating: Card.example, count: 10)
     
@@ -20,10 +21,13 @@ struct ContentView: View {
     
     @State private var isActive = true
     
+@Environment(\.accessibilityEnabled) var accessibilityEnabled
+    
+    
     var body: some View {
         
         ZStack {
-            Image("background")
+            Image(decorative: "background")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -45,10 +49,13 @@ struct ContentView: View {
                         }
                     }
                     .stacked(at: index, in: self.cards.count)
-                        
+                       .allowsHitTesting(index == self.cards.count - 1)
+                    .accessibility(hidden: index < self.cards.count - 1)
                     }
+                   
                 }
-                .allowsHitTesting(timeRemaining > 0)
+                 .allowsHitTesting(timeRemaining > 0)
+                
                 if cards.isEmpty {
                     Button("Start Again", action: resetCards)
                         .padding()
@@ -57,22 +64,39 @@ struct ContentView: View {
                         .clipShape(Capsule())
                 }
             }
-            if !differentiateWithoutColor {
+            if !differentiateWithoutColor || accessibilityEnabled {
                 
                 VStack {
                     
                     Spacer()
                     
                     HStack {
-                        Image(systemName: "checkmark.circle")
-                            .padding()
-                            .background(Color.red.opacity(0.7))
-                            .clipShape(Circle())
+                        Button(action: {
+                            withAnimation {
+                                self.removeCard(at: self.cards.count - 1)
+                            }
+                        }) {
+                            Image(systemName: "xmark.circle")
+                                .padding()
+                                .background(Color.black.opacity(0.7))
+                                .clipShape(Circle())
+                        }
+                        .accessibility(label: Text("Wrong"))
+                        .accessibility(hint: Text("Mark your answer as being incorrect."))
                         Spacer()
-                        Image(systemName: "checkmark.circle")
-                            .padding()
-                            .background(Color.black.opacity(0.7))
-                            .clipShape(Circle())
+
+                        Button(action: {
+                            withAnimation {
+                                self.removeCard(at: self.cards.count - 1)
+                            }
+                        }) {
+                            Image(systemName: "checkmark.circle")
+                                .padding()
+                                .background(Color.black.opacity(0.7))
+                                .clipShape(Circle())
+                        }
+                        .accessibility(label: Text("Correct"))
+                        .accessibility(hint: Text("Mark your answer as being correct."))
                     }
                     .foregroundColor(.white)
                     .font(.largeTitle)
@@ -92,12 +116,15 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { (_) in
             if self.cards.isEmpty == false {
             self.isActive = true
-            }
+        }
         }
         
     }
     
     func removeCard(at index: Int) {
+        guard index >= 0 else {
+            return
+        }
         cards.remove(at: index)
         if cards.isEmpty {
             isActive = false
