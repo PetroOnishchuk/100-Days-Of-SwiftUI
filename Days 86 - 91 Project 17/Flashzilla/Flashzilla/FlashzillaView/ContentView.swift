@@ -34,9 +34,9 @@ struct ContentView: View {
                     .padding(.horizontal, 20)
                     .padding(.vertical, 5)
                     .background(
-                Capsule()
-                    .fill(Color.black)
-                    .opacity(0.75)
+                        Capsule()
+                            .fill(Color.black)
+                            .opacity(0.75)
                 )
                 ZStack {
                     ForEach(0..<cards.count, id: \.self) { index in CardView(card: self.cards[index]) {
@@ -48,9 +48,17 @@ struct ContentView: View {
                         
                     }
                 }
+                .allowsHitTesting(timeRemaining > 0)
+                if cards.isEmpty {
+                    Button("Start Again", action: resetCards)
+                        .padding()
+                        .background(Color.white)
+                        .foregroundColor(.black)
+                        .clipShape(Capsule())
+                }
             }
             if !differentiateWithoutColor {
-               
+                
                 VStack {
                     
                     Spacer()
@@ -60,7 +68,7 @@ struct ContentView: View {
                             .padding()
                             .background(Color.red.opacity(0.7))
                             .clipShape(Circle())
-                       Spacer()
+                        Spacer()
                         Image(systemName: "checkmark.circle")
                             .padding()
                             .background(Color.black.opacity(0.7))
@@ -82,13 +90,24 @@ struct ContentView: View {
             self.isActive = false
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { (_) in
+            if self.cards.isEmpty == false {
             self.isActive = true
+            }
         }
         
     }
     
     func removeCard(at index: Int) {
         cards.remove(at: index)
+        if cards.isEmpty {
+            isActive = false
+        }
+    }
+    
+    func resetCards() {
+        cards = [Card](repeating: Card.example, count: 10)
+        timeRemaining = 100
+        isActive = true
     }
     
     
