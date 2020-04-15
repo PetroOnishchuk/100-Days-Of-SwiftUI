@@ -22,6 +22,9 @@ struct ContentView: View {
     @State private var isActive = true
     @State private var showingEditScreen = false
     
+    //MARK: Day 91. Challenge 1.2
+    @State private var isTimeIsOver = false
+    
     var body: some View {
         
         ZStack {
@@ -31,14 +34,16 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("Time: \(timeRemaining)")
+                    .frame(width: 220)
                     .font(.largeTitle)
                     .foregroundColor(.white)
-                    .padding(.horizontal, 20)
+                    .padding(.horizontal, 25)
                     .padding(.vertical, 5)
                     .background(
                         Capsule()
                             .fill(Color.black)
                             .opacity(0.75)
+                        
                 )
                 ZStack {
                     ForEach(0..<cards.count, id: \.self) { index in CardView(card: self.cards[index]) {
@@ -53,6 +58,17 @@ struct ContentView: View {
                     
                 }
                 .allowsHitTesting(timeRemaining > 0)
+                //MARK: Day 91. Challenge 1.2
+                if isTimeIsOver {
+                    Text("Your Time Is Over")
+                        .font(.title)
+                        .padding()
+                        .background(Color.white)
+                        .foregroundColor(.red)
+                        .clipShape(Capsule())
+                        .padding(.vertical, 20)
+                        .frame(width: 250)
+                }
                 
                 if cards.isEmpty {
                     Button("Start Again", action: resetCards)
@@ -126,6 +142,13 @@ struct ContentView: View {
                 if self.timeRemaining > 0 {
                     self.timeRemaining -= 1
                 }
+                
+                //MARK: Day 91. Challenge 1.3
+                if self.timeRemaining == 0 {
+                    self.isTimeIsOver = true
+                    self.cards = []
+                    self.isActive = false
+                }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { (_) in
             self.isActive = false
@@ -146,6 +169,7 @@ struct ContentView: View {
         }
     }
     func resetCards() {
+        isTimeIsOver = false
         timeRemaining = 100
         isActive = true
         loadData()

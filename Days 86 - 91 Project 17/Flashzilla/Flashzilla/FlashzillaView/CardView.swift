@@ -30,6 +30,7 @@ struct CardView: View {
                 .background(
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
                         .fill(offset.width > 0 ? Color.green : Color.red)
+                    
             )
                 .shadow(radius: 10)
             VStack {
@@ -42,9 +43,11 @@ struct CardView: View {
                         .font(.largeTitle)
                         .foregroundColor(.black)
                     if isShowingAnswer {
+                       
                         Text(card.answer)
                             .font(.title)
                             .foregroundColor(.gray)
+                        
                     }
                 }
             }
@@ -61,6 +64,7 @@ struct CardView: View {
                 .onChanged({ (gesture) in
                     self.offset  = gesture.translation
                     self.feedback.prepare()
+                    print("Offset.Width: \(self.offset.width)")
                 })
                 .onEnded({ (_) in
                     if abs(self.offset.width) > 100 {
@@ -69,6 +73,7 @@ struct CardView: View {
                         } else {
                             self.feedback.notificationOccurred(.error)
                         }
+                        
                         // remove the card
                         self.removal?()
                     } else {
