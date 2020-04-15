@@ -12,17 +12,15 @@ struct ContentView: View {
     
     
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
-    @State private var cards = [Card](repeating: Card.example, count: 10)
+    @Environment(\.accessibilityEnabled) var accessibilityEnabled
     
+    
+    @State private var cards = [Card]()
     @State private var offset = CGSize.zero
-    
     @State private var timeRemaining = 100
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
     @State private var isActive = true
-    
-@Environment(\.accessibilityEnabled) var accessibilityEnabled
-    
+    @State private var showingEditScreen = false
     
     var body: some View {
         
@@ -49,12 +47,12 @@ struct ContentView: View {
                         }
                     }
                     .stacked(at: index, in: self.cards.count)
-                       .allowsHitTesting(index == self.cards.count - 1)
+                    .allowsHitTesting(index == self.cards.count - 1)
                     .accessibility(hidden: index < self.cards.count - 1)
                     }
-                   
+                    
                 }
-                 .allowsHitTesting(timeRemaining > 0)
+                .allowsHitTesting(timeRemaining > 0)
                 
                 if cards.isEmpty {
                     Button("Start Again", action: resetCards)
@@ -64,12 +62,27 @@ struct ContentView: View {
                         .clipShape(Capsule())
                 }
             }
-            if !differentiateWithoutColor || accessibilityEnabled {
-                
-                VStack {
-                    
+            VStack {
+                HStack {
                     Spacer()
                     
+                    Button(action: {
+                        self.showingEditScreen = true
+                    }) {
+                        Image(systemName: "plus.circle")
+                            .padding()
+                            .background(Color.black.opacity(0.7))
+                            .clipShape(Circle())
+                    }
+                }
+                Spacer()
+            }
+            .foregroundColor(.white)
+            .font(.largeTitle)
+            .padding()
+            if !differentiateWithoutColor || accessibilityEnabled {
+                VStack {
+                    Spacer()
                     HStack {
                         Button(action: {
                             withAnimation {
@@ -84,7 +97,7 @@ struct ContentView: View {
                         .accessibility(label: Text("Wrong"))
                         .accessibility(hint: Text("Mark your answer as being incorrect."))
                         Spacer()
-
+                        
                         Button(action: {
                             withAnimation {
                                 self.removeCard(at: self.cards.count - 1)
@@ -104,23 +117,25 @@ struct ContentView: View {
                 }
             }
         }
-        .onReceive(timer) { (time) in
-            guard self.isActive else { return }
-            if self.timeRemaining > 0 {
-                self.timeRemaining -= 1
-            }
+        .sheet(isPresented: $showingEditScreen, onDismiss: resetCards, content: {
+            EditCards()
+        })
+            .onAppear(perform: resetCards)
+            .onReceive(timer) { (time) in
+                guard self.isActive else { return }
+                if self.timeRemaining > 0 {
+                    self.timeRemaining -= 1
+                }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { (_) in
             self.isActive = false
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { (_) in
             if self.cards.isEmpty == false {
-            self.isActive = true
+                self.isActive = true
+            }
         }
-        }
-        
     }
-    
     func removeCard(at index: Int) {
         guard index >= 0 else {
             return
@@ -130,14 +145,18 @@ struct ContentView: View {
             isActive = false
         }
     }
-    
     func resetCards() {
-        cards = [Card](repeating: Card.example, count: 10)
         timeRemaining = 100
         isActive = true
+        loadData()
     }
-    
-    
+    func loadData() {
+        if let data = UserDefaults.standard.data(forKey: "Cards") {
+            if let decoded  = try? JSONDecoder().decode([Card].self, from: data) {
+                self.cards = decoded
+            }
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
