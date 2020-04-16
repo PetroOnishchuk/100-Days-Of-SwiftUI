@@ -14,10 +14,14 @@ struct CardView: View {
     @Environment(\.accessibilityEnabled) var accessibilitiEnabled
     
     let card: Card
+    var isAddWrongAnswers: Bool
+    
     @State private var isShowingAnswer = false
     @State private var offset = CGSize.zero
     var removal: ((_ correct: Bool) -> Void)? = nil
     @State private var feedback = UINotificationFeedbackGenerator()
+    
+   
     
     var body: some View {
         
@@ -75,8 +79,14 @@ struct CardView: View {
                         }
                         
                         // remove the card
+                        
                         self.removal?(self.offset.width > 0)
+                        if self.isAddWrongAnswers  && !(self.offset.width > 0) {
+                            
+                           // self.offset = .zero
+                        }
                     } else {
+                        
                         self.offset = .zero
                     }
                 })
@@ -95,8 +105,8 @@ extension View {
     }
 }
 
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(card: Card.example)
-    }
-}
+//struct CardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardView(card: Card.example)
+//    }
+//}

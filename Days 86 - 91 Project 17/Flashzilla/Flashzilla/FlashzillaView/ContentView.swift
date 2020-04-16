@@ -35,7 +35,7 @@ struct ContentView: View {
     
     @State private var isAddWrongAnswers = false
     
-    @State private var wrongAnswers = [Card]()
+    @State private var wrongCard = Card(prompt: "Test", answer: "Test2")
     
     var body: some View {
         
@@ -61,11 +61,38 @@ struct ContentView: View {
                         
                 )
                 ZStack {
-                    ForEach(0..<cards.count, id: \.self) { index in CardView(card: self.cards[index]) { (correct) in
+                    ForEach(0..<cards.count, id: \.self) { index in CardView(card: self.cards[index], isAddWrongAnswers: self.isAddWrongAnswers) { (correct) in
+                       
+                        if !correct && self.isAddWrongAnswers {
+//                           DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                            self.retractCard(at: index)
+//                            print("All CARDS \(self.cards)")
+//                           }
+                            // self.removeCard(at: index)
+                        } else {
+                        
                         withAnimation {
                             print("Removvv \(correct)")
+                           
                             self.removeCard(at: index)
+                            
+                            }
+                            
                         }
+                       
+                            if !correct && self.isAddWrongAnswers {
+                                self.wrongCard = self.cards[index]
+                                self.removeCard(at: index)
+                                var array = self.cards
+                                
+                                
+                                array.insert(self.wrongCard, at: 0)
+ DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                self.cards = array
+                                print("\(self.cards)!!!")
+                            }
+                            }
+                        
                     }
                     .stacked(at: index, in: self.cards.count)
                     .allowsHitTesting(index == self.cards.count - 1)
@@ -165,9 +192,9 @@ struct ContentView: View {
             if self.typeOfSheet  == .settingsScreen  {
                 SettingsScreen(isAddWrongAnswers: self.$isAddWrongAnswers)
             } else if self.typeOfSheet == .editCards {
-                 EditCards()
+                EditCards()
             }
-               
+            
             
             
         })
@@ -198,10 +225,32 @@ struct ContentView: View {
         guard index >= 0 else {
             return
         }
+        let card = self.cards[index]
+        
         cards.remove(at: index)
+//        if isAddWrongAnswers {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            self.cards.insert(card, at: 0)
+//        }
+//        }
         if cards.isEmpty {
             isActive = false
         }
+    }
+    
+    func retractCard(at index: Int) {
+        guard index >= 0 else {
+            return }
+        let card = self.cards[index]
+        
+        print("Card \(self.cards[index])")
+            self.cards.remove(at: index)
+        var array = self.cards
+        array.insert(card, at: 0)
+        print("Card \(card)")
+        self.cards = array
+        
+            
     }
     func resetCards() {
         isTimeIsOver = false
@@ -218,8 +267,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
