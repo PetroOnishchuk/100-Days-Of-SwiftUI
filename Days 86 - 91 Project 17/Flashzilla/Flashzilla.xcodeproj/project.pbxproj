@@ -22,6 +22,7 @@
 		981CB897243F9B260099756E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 981CB896243F9B260099756E /* Preview Assets.xcassets */; };
 		981CB89A243F9B260099756E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981CB898243F9B260099756E /* LaunchScreen.storyboard */; };
 		98401C8124474843009F7E21 /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98401C8024474843009F7E21 /* EditCards.swift */; };
+		9896B69924487B9900D4BCBF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896B69824487B9900D4BCBF /* SettingsScreen.swift */; };
 		989779B52441F8AD00195DD4 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779B42441F8AD00195DD4 /* TimerView.swift */; };
 		989779B724420A4800195DD4 /* NotifictionCenterViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779B624420A4800195DD4 /* NotifictionCenterViewView.swift */; };
 		989779B924420E8D00195DD4 /* differentiateWithoutColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779B824420E8D00195DD4 /* differentiateWithoutColorView.swift */; };
@@ -49,6 +50,7 @@
 		981CB899243F9B260099756E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		981CB89B243F9B260099756E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98401C8024474843009F7E21 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
+		9896B69824487B9900D4BCBF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		989779B42441F8AD00195DD4 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		989779B624420A4800195DD4 /* NotifictionCenterViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifictionCenterViewView.swift; sourceTree = "<group>"; };
 		989779B824420E8D00195DD4 /* differentiateWithoutColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = differentiateWithoutColorView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				981CB891243F9B250099756E /* ContentView.swift */,
 				989779C2244244E900195DD4 /* CardView.swift */,
 				98401C8024474843009F7E21 /* EditCards.swift */,
+				9896B69824487B9900D4BCBF /* SettingsScreen.swift */,
 			);
 			path = FlashzillaView;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				981A802E24410339006DF8AC /* HitTestingView.swift in Sources */,
 				989779C02442411000195DD4 /* Card.swift in Sources */,
 				981A80282440E636006DF8AC /* SimultaneousGestureView.swift in Sources */,
+				9896B69924487B9900D4BCBF /* SettingsScreen.swift in Sources */,
 				989779B52441F8AD00195DD4 /* TimerView.swift in Sources */,
 				989779B724420A4800195DD4 /* NotifictionCenterViewView.swift in Sources */,
 				98401C8124474843009F7E21 /* EditCards.swift in Sources */,

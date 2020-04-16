@@ -16,7 +16,7 @@ struct CardView: View {
     let card: Card
     @State private var isShowingAnswer = false
     @State private var offset = CGSize.zero
-    var removal: (() -> Void)? = nil
+    var removal: ((_ correct: Bool) -> Void)? = nil
     @State private var feedback = UINotificationFeedbackGenerator()
     
     var body: some View {
@@ -75,7 +75,7 @@ struct CardView: View {
                         }
                         
                         // remove the card
-                        self.removal?()
+                        self.removal?(self.offset.width > 0)
                     } else {
                         self.offset = .zero
                     }

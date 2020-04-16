@@ -10,6 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
     
+    enum TypeOfSheet {
+        case editCards
+        case settingsScreen
+    }
+    
     
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @Environment(\.accessibilityEnabled) var accessibilityEnabled
@@ -20,10 +25,17 @@ struct ContentView: View {
     @State private var timeRemaining = 100
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var isActive = true
-    @State private var showingEditScreen = false
+    @State private var showingSheet = false
     
     //MARK: Day 91. Challenge 1.2
     @State private var isTimeIsOver = false
+    
+    //MARK: Day 91. Challenge 2.1
+    @State private var typeOfSheet = TypeOfSheet.editCards
+    
+    @State private var isAddWrongAnswers = false
+    
+    @State private var wrongAnswers = [Card]()
     
     var body: some View {
         
@@ -32,6 +44,8 @@ struct ContentView: View {
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
+            
+            
             VStack {
                 Text("Time: \(timeRemaining)")
                     .frame(width: 220)
@@ -44,10 +58,12 @@ struct ContentView: View {
                             .fill(Color.black)
                             .opacity(0.75)
                         
+                        
                 )
                 ZStack {
-                    ForEach(0..<cards.count, id: \.self) { index in CardView(card: self.cards[index]) {
+                    ForEach(0..<cards.count, id: \.self) { index in CardView(card: self.cards[index]) { (correct) in
                         withAnimation {
+                            print("Removvv \(correct)")
                             self.removeCard(at: index)
                         }
                     }
@@ -79,11 +95,23 @@ struct ContentView: View {
                 }
             }
             VStack {
+                // MARK: Day 91. Challeneg 2. Adding SettingScreen to ContentView
+                
                 HStack {
+                    Button(action: {
+                        self.typeOfSheet = .settingsScreen
+                        self.showingSheet = true
+                    }) {
+                        Image(systemName: "gear")
+                            .padding()
+                            .background(Color.black.opacity(0.7))
+                            .clipShape(Circle())
+                    }
                     Spacer()
                     
                     Button(action: {
-                        self.showingEditScreen = true
+                        self.typeOfSheet = .editCards
+                        self.showingSheet = true
                     }) {
                         Image(systemName: "plus.circle")
                             .padding()
@@ -133,8 +161,15 @@ struct ContentView: View {
                 }
             }
         }
-        .sheet(isPresented: $showingEditScreen, onDismiss: resetCards, content: {
-            EditCards()
+        .sheet(isPresented: $showingSheet, onDismiss: resetCards, content: {
+            if self.typeOfSheet  == .settingsScreen  {
+                SettingsScreen(isAddWrongAnswers: self.$isAddWrongAnswers)
+            } else if self.typeOfSheet == .editCards {
+                 EditCards()
+            }
+               
+            
+            
         })
             .onAppear(perform: resetCards)
             .onReceive(timer) { (time) in
@@ -170,7 +205,7 @@ struct ContentView: View {
     }
     func resetCards() {
         isTimeIsOver = false
-        timeRemaining = 100
+        timeRemaining = 30
         isActive = true
         loadData()
     }
