@@ -62,36 +62,30 @@ struct ContentView: View {
                 )
                 ZStack {
                     ForEach(0..<cards.count, id: \.self) { index in CardView(card: self.cards[index], isAddWrongAnswers: self.isAddWrongAnswers) { (correct) in
-                       
-                        if !correct && self.isAddWrongAnswers {
-//                           DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                            self.retractCard(at: index)
-//                            print("All CARDS \(self.cards)")
-//                           }
-                            // self.removeCard(at: index)
-                        } else {
                         
-                        withAnimation {
-                            print("Removvv \(correct)")
-                           
+                        if !correct && self.isAddWrongAnswers {
+                                                        self.wrongCard = self.cards[index]
                             self.removeCard(at: index)
+                            var array = self.cards
                             
-                            }
                             
-                        }
-                       
-                            if !correct && self.isAddWrongAnswers {
-                                self.wrongCard = self.cards[index]
-                                self.removeCard(at: index)
-                                var array = self.cards
-                                
-                                
-                                array.insert(self.wrongCard, at: 0)
- DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            array.insert(self.wrongCard, at: 0)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 self.cards = array
                                 print("\(self.cards)!!!")
                             }
+                        } else {
+                            
+                            withAnimation {
+                                print("Removvv \(correct)")
+                                
+                                self.removeCard(at: index)
+                                
                             }
+                            
+                        }
+                        
+                        
                         
                     }
                     .stacked(at: index, in: self.cards.count)
@@ -225,33 +219,14 @@ struct ContentView: View {
         guard index >= 0 else {
             return
         }
-        let card = self.cards[index]
         
         cards.remove(at: index)
-//        if isAddWrongAnswers {
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            self.cards.insert(card, at: 0)
-//        }
-//        }
+        
         if cards.isEmpty {
             isActive = false
         }
     }
     
-    func retractCard(at index: Int) {
-        guard index >= 0 else {
-            return }
-        let card = self.cards[index]
-        
-        print("Card \(self.cards[index])")
-            self.cards.remove(at: index)
-        var array = self.cards
-        array.insert(card, at: 0)
-        print("Card \(card)")
-        self.cards = array
-        
-            
-    }
     func resetCards() {
         isTimeIsOver = false
         timeRemaining = 30
