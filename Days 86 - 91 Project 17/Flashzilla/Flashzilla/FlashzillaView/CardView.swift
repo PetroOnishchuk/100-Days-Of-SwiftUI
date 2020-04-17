@@ -14,6 +14,8 @@ struct CardView: View {
     @Environment(\.accessibilityEnabled) var accessibilitiEnabled
     
     let card: Card
+     //MARK: Day 91. Challenge 2.3
+    
     var isAddWrongAnswers: Bool
     
     @State private var isShowingAnswer = false
@@ -68,7 +70,6 @@ struct CardView: View {
                 .onChanged({ (gesture) in
                     self.offset  = gesture.translation
                     self.feedback.prepare()
-                    print("Offset.Width: \(self.offset.width)")
                 })
                 .onEnded({ (_) in
                     if abs(self.offset.width) > 100 {
@@ -79,12 +80,8 @@ struct CardView: View {
                         }
                         
                         // remove the card
-                        
                         self.removal?(self.offset.width > 0)
-                        if self.isAddWrongAnswers  && !(self.offset.width > 0) {
-                            
-                           // self.offset = .zero
-                        }
+                       
                     } else {
                         
                         self.offset = .zero

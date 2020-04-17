@@ -11,14 +11,14 @@ import SwiftUI
 struct SettingsScreen: View {
     @Environment(\.presentationMode) var presentationMode
     
-    @Binding  var isAddWrongAnswers: Bool
+    @Binding  var isReinsertWrongAnswers: Bool
     
     var body: some View {
         NavigationView {
             List {
                 Section {
-                    Toggle(isOn: $isAddWrongAnswers) {
-                        Text("Add wrong answers")
+                    Toggle(isOn: $isReinsertWrongAnswers) {
+                        Text("Reinsert wrong answers")
                     }
                     
                 }

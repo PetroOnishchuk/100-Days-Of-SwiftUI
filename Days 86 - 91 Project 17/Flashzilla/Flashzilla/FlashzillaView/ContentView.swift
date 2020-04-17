@@ -25,17 +25,16 @@ struct ContentView: View {
     @State private var timeRemaining = 100
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var isActive = true
-    @State private var showingSheet = false
+    
+    
     
     //MARK: Day 91. Challenge 1.2
     @State private var isTimeIsOver = false
     
-    //MARK: Day 91. Challenge 2.1
+    //MARK: Day 91. Challenege 2.1
+    @State private var showingSheet = false
     @State private var typeOfSheet = TypeOfSheet.editCards
-    
-    @State private var isAddWrongAnswers = false
-    
-    @State private var wrongCard = Card(prompt: "Test", answer: "Test2")
+    @State private var isReinsertWrongAnswers = false
     
     var body: some View {
         
@@ -57,36 +56,12 @@ struct ContentView: View {
                         Capsule()
                             .fill(Color.black)
                             .opacity(0.75)
-                        
-                        
                 )
                 ZStack {
-                    ForEach(0..<cards.count, id: \.self) { index in CardView(card: self.cards[index], isAddWrongAnswers: self.isAddWrongAnswers) { (correct) in
-                        
-                        if !correct && self.isAddWrongAnswers {
-                                                        self.wrongCard = self.cards[index]
-                            self.removeCard(at: index)
-                            var array = self.cards
-                            
-                            
-                            array.insert(self.wrongCard, at: 0)
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                self.cards = array
-                                print("\(self.cards)!!!")
-                            }
-                        } else {
-                            
-                            withAnimation {
-                                print("Removvv \(correct)")
-                                
-                                self.removeCard(at: index)
-                                
-                            }
-                            
+                    ForEach(0..<cards.count, id: \.self) { index in CardView(card: self.cards[index], isAddWrongAnswers: self.isReinsertWrongAnswers) { (correct) in
+                        withAnimation {
+                            self.removeCard(at: index, isSuccess: correct)
                         }
-                        
-                        
-                        
                     }
                     .stacked(at: index, in: self.cards.count)
                     .allowsHitTesting(index == self.cards.count - 1)
@@ -117,7 +92,6 @@ struct ContentView: View {
             }
             VStack {
                 // MARK: Day 91. Challeneg 2. Adding SettingScreen to ContentView
-                
                 HStack {
                     Button(action: {
                         self.typeOfSheet = .settingsScreen
@@ -151,7 +125,7 @@ struct ContentView: View {
                     HStack {
                         Button(action: {
                             withAnimation {
-                                self.removeCard(at: self.cards.count - 1)
+                                self.removeCard(at: self.cards.count - 1, isSuccess: false)
                             }
                         }) {
                             Image(systemName: "xmark.circle")
@@ -165,7 +139,7 @@ struct ContentView: View {
                         
                         Button(action: {
                             withAnimation {
-                                self.removeCard(at: self.cards.count - 1)
+                                self.removeCard(at: self.cards.count - 1, isSuccess: true)
                             }
                         }) {
                             Image(systemName: "checkmark.circle")
@@ -184,7 +158,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingSheet, onDismiss: resetCards, content: {
             if self.typeOfSheet  == .settingsScreen  {
-                SettingsScreen(isAddWrongAnswers: self.$isAddWrongAnswers)
+                SettingsScreen(isReinsertWrongAnswers: self.$isReinsertWrongAnswers)
             } else if self.typeOfSheet == .editCards {
                 EditCards()
             }
@@ -215,12 +189,19 @@ struct ContentView: View {
             }
         }
     }
-    func removeCard(at index: Int) {
+    func removeCard(at index: Int, isSuccess: Bool) {
         guard index >= 0 else {
             return
         }
         
-        cards.remove(at: index)
+        //MARK: Day 91. Challenge 2.2
+        let card = cards.remove(at: index)
+        
+        if isReinsertWrongAnswers && !isSuccess {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.cards.insert(card, at: 0)
+            }
+        }
         
         if cards.isEmpty {
             isActive = false
