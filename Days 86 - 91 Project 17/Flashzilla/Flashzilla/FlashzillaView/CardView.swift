@@ -35,7 +35,8 @@ struct CardView: View {
             )
                 .background(
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(offset.width > 0 ? Color.green : Color.red)
+                        //MARK: Day 91. Challenge 3.1
+                        .fill(self.setColor(for: offset.width))
                     
             )
                 .shadow(radius: 10)
@@ -92,6 +93,23 @@ struct CardView: View {
                 self.isShowingAnswer.toggle()
         }
         .animation(.spring())
+    }
+    //MARK: Day 91. Challenge 3.1
+    func setColor(for offset: CGFloat) -> Color {
+        switch offset {
+        case let a where a > 0:
+            return .green
+        case let b where b < 0:
+            return .red
+        default:
+            return .white
+        }
+//        if offset > 0 {
+//            return .green
+//        } else if offset < 0 {
+//            return .red
+//        }
+//        return .white
     }
 }
 
