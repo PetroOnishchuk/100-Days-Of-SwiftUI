@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+     //MARK: Day 91. Challenge 2.1
     enum TypeOfSheet {
         case editCards
         case settingsScreen
@@ -28,10 +29,10 @@ struct ContentView: View {
     
     
     
-    //MARK: Day 91. Challenge 1.2
+    //MARK: Day 91. Challenge 1.1
     @State private var isTimeIsOver = false
     
-    //MARK: Day 91. Challenege 2.1
+    //MARK: Day 91. Challenge 2.2
     @State private var showingSheet = false
     @State private var typeOfSheet = TypeOfSheet.editCards
     @State private var isReinsertWrongAnswers = false
@@ -58,8 +59,11 @@ struct ContentView: View {
                             .opacity(0.75)
                 )
                 ZStack {
-                    ForEach(0..<cards.count, id: \.self) { index in CardView(card: self.cards[index], isAddWrongAnswers: self.isReinsertWrongAnswers) { (correct) in
+                    ForEach(0..<cards.count, id: \.self) { index in CardView(card: self.cards[index],
+                            //MARK: Day 91. Challenge 2.10
+                        isReinsertWrongAnswers: self.isReinsertWrongAnswers) { (correct) in
                         withAnimation {
+                            //MARK: Day 91. Challenge 2.13
                             self.removeCard(at: index, isSuccess: correct)
                         }
                     }
@@ -91,9 +95,10 @@ struct ContentView: View {
                 }
             }
             VStack {
-                // MARK: Day 91. Challeneg 2. Adding SettingScreen to ContentView
+                // MARK: Day 91. Challenge 2. Adding SettingScreen to ContentView
                 HStack {
                     Button(action: {
+                        //MARK: Day 91. Challenge 2.4
                         self.typeOfSheet = .settingsScreen
                         self.showingSheet = true
                     }) {
@@ -105,6 +110,7 @@ struct ContentView: View {
                     Spacer()
                     
                     Button(action: {
+                         //MARK: Day 91. Challenge 2.5
                         self.typeOfSheet = .editCards
                         self.showingSheet = true
                     }) {
@@ -125,6 +131,7 @@ struct ContentView: View {
                     HStack {
                         Button(action: {
                             withAnimation {
+                                //MARK: Day 91. Challenge 2.14
                                 self.removeCard(at: self.cards.count - 1, isSuccess: false)
                             }
                         }) {
@@ -139,6 +146,7 @@ struct ContentView: View {
                         
                         Button(action: {
                             withAnimation {
+                                //MARK: Day 91. Challenge 2.15
                                 self.removeCard(at: self.cards.count - 1, isSuccess: true)
                             }
                         }) {
@@ -157,6 +165,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showingSheet, onDismiss: resetCards, content: {
+                  //MARK: Day 91. Challenge 2.6
             if self.typeOfSheet  == .settingsScreen  {
                 SettingsScreen(isReinsertWrongAnswers: self.$isReinsertWrongAnswers)
             } else if self.typeOfSheet == .editCards {
@@ -173,7 +182,7 @@ struct ContentView: View {
                     self.timeRemaining -= 1
                 }
                 
-                //MARK: Day 91. Challenge 1.3
+                //MARK: Day 91. Challenge 1.4
                 if self.timeRemaining == 0 {
                     self.isTimeIsOver = true
                     self.cards = []
@@ -189,12 +198,13 @@ struct ContentView: View {
             }
         }
     }
+     //MARK: Day 91. Challenge 2.11
     func removeCard(at index: Int, isSuccess: Bool) {
         guard index >= 0 else {
             return
         }
         
-        //MARK: Day 91. Challenge 2.2
+        //MARK: Day 91. Challenge 2.12
         let card = cards.remove(at: index)
         
         if isReinsertWrongAnswers && !isSuccess {
@@ -209,6 +219,7 @@ struct ContentView: View {
     }
     
     func resetCards() {
+        //MARK: Day 91. Challenge 1.3
         isTimeIsOver = false
         timeRemaining = 30
         isActive = true

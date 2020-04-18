@@ -14,12 +14,12 @@ struct CardView: View {
     @Environment(\.accessibilityEnabled) var accessibilitiEnabled
     
     let card: Card
-     //MARK: Day 91. Challenge 2.3
-    
-    var isAddWrongAnswers: Bool
+     //MARK: Day 91. Challenge 2.7
+    var isReinsertWrongAnswers: Bool
     
     @State private var isShowingAnswer = false
     @State private var offset = CGSize.zero
+    //MARK: Day 91. Challenge 2.8
     var removal: ((_ correct: Bool) -> Void)? = nil
     @State private var feedback = UINotificationFeedbackGenerator()
     
@@ -81,6 +81,7 @@ struct CardView: View {
                         }
                         
                         // remove the card
+                        //MARK: Day 91. Challenge 2.9
                         self.removal?(self.offset.width > 0)
                        
                     } else {
@@ -94,7 +95,7 @@ struct CardView: View {
         }
         .animation(.spring())
     }
-    //MARK: Day 91. Challenge 3.1
+    //MARK: Day 91. Challenge 3.2
     func setColor(for offset: CGFloat) -> Color {
         switch offset {
         case let a where a > 0:
@@ -104,6 +105,7 @@ struct CardView: View {
         default:
             return .white
         }
+        //V.2 for Day 91. Challenge 3.1
 //        if offset > 0 {
 //            return .green
 //        } else if offset < 0 {
@@ -111,6 +113,7 @@ struct CardView: View {
 //        }
 //        return .white
     }
+    
 }
 
 extension View {
