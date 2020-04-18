@@ -50,15 +50,15 @@ struct CardView: View {
                         .font(.largeTitle)
                         .foregroundColor(.black)
                     if isShowingAnswer {
-                       
                         Text(card.answer)
                             .font(.title)
                             .foregroundColor(.gray)
+                           // .frame(width: 200)
                         
                     }
                 }
             }
-            .padding()
+            .padding(25)
             .multilineTextAlignment(.center)
         }
         .frame(width: 450, height: 250)
