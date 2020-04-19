@@ -14,7 +14,7 @@ struct CardView: View {
     @Environment(\.accessibilityEnabled) var accessibilitiEnabled
     
     let card: Card
-     //MARK: Day 91. Challenge 2.7
+    //MARK: Day 91. Challenge 2.7
     var isReinsertWrongAnswers: Bool
     
     @State private var isShowingAnswer = false
@@ -23,7 +23,7 @@ struct CardView: View {
     var removal: ((_ correct: Bool) -> Void)? = nil
     @State private var feedback = UINotificationFeedbackGenerator()
     
-   
+    
     
     var body: some View {
         
@@ -42,9 +42,18 @@ struct CardView: View {
                 .shadow(radius: 10)
             VStack {
                 if accessibilitiEnabled {
-                    Text(isShowingAnswer ? card.answer : card.prompt)
+                    Text(card.prompt)
                         .font(.largeTitle)
                         .foregroundColor(.black)
+                    if isShowingAnswer {
+                        Text(card.answer)
+                            .font(.title)
+                            .foregroundColor(.gray)
+                        
+                        
+                    }
+                    
+                    
                 } else {
                     Text(card.prompt)
                         .font(.largeTitle)
@@ -53,12 +62,12 @@ struct CardView: View {
                         Text(card.answer)
                             .font(.title)
                             .foregroundColor(.gray)
-                           // .frame(width: 200)
+                        
                         
                     }
                 }
             }
-            .padding(25)
+            .padding(10)
             .multilineTextAlignment(.center)
         }
         .frame(width: 450, height: 250)
@@ -83,7 +92,7 @@ struct CardView: View {
                         // remove the card
                         //MARK: Day 91. Challenge 2.9
                         self.removal?(self.offset.width > 0)
-                       
+                        
                     } else {
                         
                         self.offset = .zero
@@ -106,12 +115,12 @@ struct CardView: View {
             return .white
         }
         //V.2 for Day 91. Challenge 3.1
-//        if offset > 0 {
-//            return .green
-//        } else if offset < 0 {
-//            return .red
-//        }
-//        return .white
+        //        if offset > 0 {
+        //            return .green
+        //        } else if offset < 0 {
+        //            return .red
+        //        }
+        //        return .white
     }
     
 }
