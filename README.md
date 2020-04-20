@@ -54,4 +54,6 @@ Lists of projects:
 
 ## 22. [HotProspects](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2079%20-%2085%20Project%2016) Project 16 (Days 79 - 85) 
 
-## 23. [Flashzilla](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2086%20-%2091%20Project%2017/Flashzilla) Project 17 (Days 86 - 91) Not Completed YET!!!
+## 23. [Flashzilla](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2086%20-%2091%20Project%2017/Flashzilla) Project 17 (Days 86 - 91) 
+
+## 24. [LayoutAndGeometry](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2092%20-%2094%20Project%2018/LayoutAndGeometry) Project 18 (Days 92 - 94)
