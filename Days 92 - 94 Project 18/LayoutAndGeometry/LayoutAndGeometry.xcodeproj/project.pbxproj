@@ -14,6 +14,7 @@
 		984A20FC244DDF7F002301BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 984A20FB244DDF7F002301BF /* Assets.xcassets */; };
 		984A20FF244DDF7F002301BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 984A20FE244DDF7F002301BF /* Preview Assets.xcassets */; };
 		984A2102244DDF7F002301BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 984A2100244DDF7F002301BF /* LaunchScreen.storyboard */; };
+		985EC0FD244F401300F07B2A /* GeometryReaderBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985EC0FC244F401300F07B2A /* GeometryReaderBasic.swift */; };
 		98DA9D47244E23FF00788F06 /* AlignmentAndAlignmentGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DA9D46244E23FF00788F06 /* AlignmentAndAlignmentGuides.swift */; };
 		98DA9D49244E2A8200788F06 /* CustomAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DA9D48244E2A8200788F06 /* CustomAlignment.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		984A20FE244DDF7F002301BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		984A2101244DDF7F002301BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		984A2103244DDF7F002301BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		985EC0FC244F401300F07B2A /* GeometryReaderBasic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderBasic.swift; sourceTree = "<group>"; };
 		98DA9D46244E23FF00788F06 /* AlignmentAndAlignmentGuides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentAndAlignmentGuides.swift; sourceTree = "<group>"; };
 		98DA9D48244E2A8200788F06 /* CustomAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlignment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 			children = (
 				98DA9D46244E23FF00788F06 /* AlignmentAndAlignmentGuides.swift */,
 				98DA9D48244E2A8200788F06 /* CustomAlignment.swift */,
+				985EC0FC244F401300F07B2A /* GeometryReaderBasic.swift */,
 			);
 			path = AlignmentAndAlignmentGuides;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				98DA9D49244E2A8200788F06 /* CustomAlignment.swift in Sources */,
 				984A20F8244DDF7E002301BF /* LayoutAndGeometry.xcdatamodeld in Sources */,
 				984A20F3244DDF7E002301BF /* AppDelegate.swift in Sources */,
+				985EC0FD244F401300F07B2A /* GeometryReaderBasic.swift in Sources */,
 				98DA9D47244E23FF00788F06 /* AlignmentAndAlignmentGuides.swift in Sources */,
 				984A20FA244DDF7E002301BF /* ContentView.swift in Sources */,
 				984A20F5244DDF7E002301BF /* SceneDelegate.swift in Sources */,
