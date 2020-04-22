@@ -21,12 +21,15 @@ struct VerticalScrollView: View {
                             .frame(width: fullView.size.width)
                             .background(self.colors[index % 7])
                            // .rotation3DEffect(.degrees(Double(geo.frame(in: .global).minY - fullView.size.height / 2) / 5), axis: (x: 0, y: 1, z: 0))
-                        .scaleEffect(max(0.8, min(1.0, geo.frame(in: .global).minY / (fullView.size.height / 5))))
+                      //  .scaleEffect(max(0.8, min(1.0, geo.frame(in: .global).minY / (fullView.size.height / 5))))
+                            .offset(x: max(0, (geo.frame(in: .global).maxY / fullView.size.height) * (geo.frame(in: .global).maxY) - 850), y: 0)
+                            
                             .onTapGesture {
-                                print("Geo global \(geo.frame(in: .global).minY)")
-                                print("FullView size.height /10 \(fullView.size.height / 5)")
-                                print("Min 1.0 and :  \(geo.frame(in: .global).minY / (fullView.size.height / 5))")
-                                print("Max 0.8 and \(min(1.0, geo.frame(in: .global).minY / (fullView.size.height / 5)))")
+                                print("geo.frame(in: .global).maxY \(geo.frame(in: .global).maxY)")
+                                print("geo.frame(in: .global).minY \(geo.frame(in: .global).minY)")
+                                print("fullView.size.height:  \(fullView.size.height)")
+                                print("1 /2  \(geo.frame(in: .global).maxY / fullView.size.height)")
+                                print("\((geo.frame(in: .global).maxY / fullView.size.height) * 2000 - 2000)")
                         }
                     }
                     .frame(height: 40)

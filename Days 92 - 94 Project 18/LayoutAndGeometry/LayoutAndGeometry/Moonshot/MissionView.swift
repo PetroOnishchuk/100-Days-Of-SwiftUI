@@ -28,11 +28,17 @@ let mission: Mission
                      Image(self.mission.image)
                      .resizable()
                      .scaledToFit()
-                         .frame(maxWidth: geo.size.width )
-                         .scaleEffect(max(0.8, min(1.0, geo.frame(in: .global).minY / (geometry.size.height / 10))))
-                        
+                         .frame(maxWidth: geometry.size.width )
+                         //MARK: Day 94
+                        .scaleEffect(max(0.8, min(1.6, geo.frame(in: .global).minY / (geometry.size.height / 8.8))))
+                        //.scaleEffect(min(1.6, max(1.0, geo.frame(in: .global).minY / (geometry.size.height / 10))))
+                        .onTapGesture {
+                            print("\(geo.frame(in: .global).minY / (geometry.size.height / 8.8))")
+                            print("geometry size height \(geometry.size.height )")
+                            print("Equal \(max(0.8, min(1.6, geo.frame(in: .global).minY / (geometry.size.height / 8.7)))) ")
+                     }
                          .padding(.top)
-                    //MARK: Day 94
+                   
                         
                     }
                      Text("\(self.mission.formattedLaunchDate)")
