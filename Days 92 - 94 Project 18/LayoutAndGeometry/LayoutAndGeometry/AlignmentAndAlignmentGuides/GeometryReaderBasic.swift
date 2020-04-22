@@ -22,6 +22,7 @@ struct OuterView: View {
     var body: some View {
         VStack {
             Text("Top")
+                .frame(height: 40)
             InnerView()
                 .background(Color.green)
             Text("Bottom")

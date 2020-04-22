@@ -15,7 +15,7 @@ struct Moonshot: View {
     @State private var isShowCrewNames = true
     var body: some View {
         
-        NavigationView {
+     //   NavigationView {
             List(missions) { mission in
                 NavigationLink(destination: MissionView(mission: mission, astronauts: self.astronauts, missions: self.missions)) {
                     
@@ -46,7 +46,7 @@ struct Moonshot: View {
             .navigationBarItems(trailing: Toggle(isOn: $isShowCrewNames, label: {
                 Text("Crew Names")
             }))
-        }
+      //  }
         
         
     }
