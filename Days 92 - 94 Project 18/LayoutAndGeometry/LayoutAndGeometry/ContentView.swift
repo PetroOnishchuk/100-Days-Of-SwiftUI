@@ -20,8 +20,24 @@ struct ContentView: View {
                     }
                 }
                 Section {
-                    NavigationLink(destination: TestingView()) {
-                        Text("TestingView")
+                    NavigationLink(destination: WordScramble()) {
+                        Text("WordScramble")
+                    }
+                }
+                
+                Section {
+                    NavigationLink(destination: AlignmentAndAlignmentGuides()) {
+                        Text("AlignmentAndAlignmentGuides")
+                    }
+                }
+                Section {
+                    NavigationLink(destination: CustomAlignment()) {
+                        Text("CustomAlignment")
+                    }
+                }
+                Section {
+                    NavigationLink(destination: GeometryReaderBasic()) {
+                        Text("GeometryReaderBasic")
                     }
                 }
                 Section {
@@ -30,10 +46,12 @@ struct ContentView: View {
                     }
                 }
                 Section {
-                    NavigationLink(destination: GeometryReaderBasic()) {
-                        Text("GeometryReaderBasic")
+                    NavigationLink(destination: HorizontalScrollView()) {
+                        Text("HorizontalScrollView")
                     }
                 }
+               
+                
             }
         }
     }
