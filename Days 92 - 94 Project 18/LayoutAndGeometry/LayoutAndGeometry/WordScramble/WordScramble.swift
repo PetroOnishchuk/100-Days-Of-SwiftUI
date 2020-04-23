@@ -13,7 +13,7 @@ struct DrawText: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-        .font(font)
+            .font(font)
     }
 }
 
@@ -24,11 +24,11 @@ struct DrawHorisontalText: View {
     var body: some View {
         HStack {
             Text(text)
-            .modifier(DrawText())
+                .modifier(DrawText())
                 .foregroundColor(Color.green)
             
             Text(textResult)
-            .modifier(DrawText())
+                .modifier(DrawText())
                 .foregroundColor(Color.red)
         }
     }
@@ -48,36 +48,36 @@ struct WordScramble: View {
     @State private var totalScore = 0
     var body: some View {
         
-        NavigationView {
+       // NavigationView {
             VStack {
                 TextField("Enter your word", text: $newWord, onCommit: addNewWord)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     .autocapitalization(.none)
-                // MARK: Day 94. Challenge 2 and 3
+                // MARK: Day 94. Challenge 2.1
                 GeometryReader { fullView in
                     List(self.usedWords, id: \.self) { word in
+                        // MARK: Day 94. Challenge 2.2
                         GeometryReader { geo in
                             HStack() {
-                    Image(systemName: "\(word.count).circle")
-                        // MARK: Day 94. Challenge 2 and 3
-                                .foregroundColor(Color(red: Double((geo.frame(in: .global).maxY) / 800), green: 0.6, blue: 0.4))
-                            Text(word)
+                                Image(systemName: "\(word.count).circle")
+                                    // MARK: Day 94. Challenge  3.1
+                                    .foregroundColor(Color(red: Double((geo.frame(in: .global).maxY) / 800), green: 0.6, blue: 0.4))
+                                Text(word)
+                                Spacer()
                             }
-                              // MARK: Day 94. Challenge 2 and 3
-                             .offset(x: max(0, (geo.frame(in: .global).maxY / fullView.size.height) * (geo.frame(in: .global).maxY) - 850), y: 0)
-                            Spacer()
-                        
+                                // MARK: Day 94. Challenge 2.3
+                                .offset(x: max(0, (geo.frame(in: .global).maxY / fullView.size.height) * (geo.frame(in: .global).maxY) - 850), y: 0)
+                            
                         }
                         
-                    
                     }
                 }
                 DrawHorisontalText(text: "Score: ", textResult: "\(totalScore)")
-               
+                
             }
-        .navigationBarTitle(rootWord)
-        .onAppear(perform: startGame)
+            .navigationBarTitle(rootWord)
+            .onAppear(perform: startGame)
             .alert(isPresented: $showingError) { () -> Alert in
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             }
@@ -86,8 +86,8 @@ struct WordScramble: View {
             }), trailing: Button(action: setNewWord, label: {
                 Text("New Word")
             }))
-        }
-       
+       // }
+        
     }
     // MARK: addNewWord()
     func addNewWord() {
@@ -196,7 +196,7 @@ struct WordScramble: View {
     // MARK: setNewWord
     func setNewWord() {
         rootWord = allWords.randomElement() ?? "silkworm"
-       // usedWords = self.allWords
+        
     }
     
     
