@@ -30,6 +30,7 @@ let mission: Mission
                      .scaledToFit()
                          .frame(maxWidth: geometry.size.width )
                          //MARK: Day 94
+                        
                         .scaleEffect(max(0.8, min(1.6, geo.frame(in: .global).minY / (geometry.size.height / 8.8))))
                         //.scaleEffect(min(1.6, max(1.0, geo.frame(in: .global).minY / (geometry.size.height / 10))))
                         .onTapGesture {

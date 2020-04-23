@@ -19,13 +19,16 @@ struct VerticalScrollView: View {
                         Text("Row #\(index)")
                             .font(.title)
                             .frame(width: fullView.size.width)
-                            .background(self.colors[index % 7])
+                           // .background(self.colors[index % 7])
                            // .rotation3DEffect(.degrees(Double(geo.frame(in: .global).minY - fullView.size.height / 2) / 5), axis: (x: 0, y: 1, z: 0))
                       //  .scaleEffect(max(0.8, min(1.0, geo.frame(in: .global).minY / (fullView.size.height / 5))))
+                           
+                            .background(Color(red: Double((geo.frame(in: .global).maxY) / 800), green: 0.6, blue: 0.4))
                             .offset(x: max(0, (geo.frame(in: .global).maxY / fullView.size.height) * (geo.frame(in: .global).maxY) - 850), y: 0)
-                            
+                           
                             .onTapGesture {
-                                print("geo.frame(in: .global).maxY \(geo.frame(in: .global).maxY)")
+                                print("(geo.frame(in: .global).maxY) / 800) \((geo.frame(in: .global).maxY) / 800) ")
+                                
                                 print("geo.frame(in: .global).minY \(geo.frame(in: .global).minY)")
                                 print("fullView.size.height:  \(fullView.size.height)")
                                 print("1 /2  \(geo.frame(in: .global).maxY / fullView.size.height)")
