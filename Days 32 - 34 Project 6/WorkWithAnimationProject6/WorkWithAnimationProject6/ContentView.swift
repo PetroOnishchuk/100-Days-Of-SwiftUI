@@ -10,7 +10,7 @@
 // Days: 32 - 34. Project 6. Part 2. "Building custom transitions using ViewModifier" Done
 import SwiftUI
 
-struct CornerRoteteModifier: ViewModifier {
+struct CornerRotateModifier: ViewModifier {
     let amount: Double
     let anchor: UnitPoint
     
@@ -54,7 +54,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 extension AnyTransition {
     static var pivot: AnyTransition {
-        .modifier(active: CornerRoteteModifier(amount: -90, anchor: .topLeading), identity: CornerRoteteModifier(amount: 0, anchor: .topLeading))
+        .modifier(active: CornerRotateModifier(amount: -90, anchor: .topLeading), identity: CornerRotateModifier(amount: 0, anchor: .topLeading))
     }
 }
 

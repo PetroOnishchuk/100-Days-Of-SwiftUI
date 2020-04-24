@@ -37,7 +37,7 @@
 		989306822427C0F4005988AD /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = 989306812427C0F4005988AD /* astronauts.json */; };
 		989306842427C0FD005988AD /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = 989306832427C0FD005988AD /* missions.json */; };
 		989306862427C11D005988AD /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989306852427C11D005988AD /* Mission.swift */; };
-		989306882427C14B005988AD /* Astrounaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989306872427C14B005988AD /* Astrounaut.swift */; };
+		989306882427C14B005988AD /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989306872427C14B005988AD /* Astronaut.swift */; };
 		9893068A2427C16E005988AD /*  Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989306892427C16E005988AD /*  Bundle-Decodable.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +74,7 @@
 		989306812427C0F4005988AD /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = astronauts.json; path = "../../../../../Days 39 - 42 Project 8/Moonshot/Moonshot/astronauts.json"; sourceTree = "<group>"; };
 		989306832427C0FD005988AD /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = missions.json; path = "../../../../../Days 39 - 42 Project 8/Moonshot/Moonshot/missions.json"; sourceTree = "<group>"; };
 		989306852427C11D005988AD /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
-		989306872427C14B005988AD /* Astrounaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astrounaut.swift; sourceTree = "<group>"; };
+		989306872427C14B005988AD /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
 		989306892427C16E005988AD /*  Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Bundle-Decodable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,7 +187,7 @@
 				9893067D2427C063005988AD /* AstronautView.swift */,
 				9893067F2427C0A9005988AD /* MissionView.swift */,
 				989306852427C11D005988AD /* Mission.swift */,
-				989306872427C14B005988AD /* Astrounaut.swift */,
+				989306872427C14B005988AD /* Astronaut.swift */,
 				989306892427C16E005988AD /*  Bundle-Decodable.swift */,
 			);
 			path = Moonshot;
@@ -274,7 +274,7 @@
 				981151952426A55800CA8E63 /* CupcakeCorner.swift in Sources */,
 				984604D12425ECA20009CCDD /* ReadingTheValueOfControls.swift in Sources */,
 				9893067E2427C063005988AD /* AstronautView.swift in Sources */,
-				989306882427C14B005988AD /* Astrounaut.swift in Sources */,
+				989306882427C14B005988AD /* Astronaut.swift in Sources */,
 				985BD95F2425236A007B7A74 /* AppDelegate.swift in Sources */,
 				985BD9642425236A007B7A74 /* Accessibility.xcdatamodeld in Sources */,
 				9893068A2427C16E005988AD /*  Bundle-Decodable.swift in Sources */,

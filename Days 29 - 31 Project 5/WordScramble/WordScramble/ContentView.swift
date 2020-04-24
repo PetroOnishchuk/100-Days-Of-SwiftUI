@@ -17,7 +17,7 @@ struct DrawText: ViewModifier {
     }
 }
 
-struct DrawHorisontalText: View {
+struct DrawHorizontalText: View {
     var text: String
     var textResult: String
     
@@ -60,7 +60,7 @@ struct ContentView: View {
                     Text($0)
                 }
                 
-                DrawHorisontalText(text: "Score: ", textResult: "\(totalScore)")
+                DrawHorizontalText(text: "Score: ", textResult: "\(totalScore)")
                
             }
         .navigationBarTitle(rootWord)
@@ -78,7 +78,7 @@ struct ContentView: View {
     }
     // MARK: addNewWord()
     func addNewWord() {
-        // lowercase and trim the word, to make sure we don't add dublicate words case differences
+        // lowercase and trim the word, to make sure we don't add duplicate words case differences
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         
         // exit if the remaining string is empty

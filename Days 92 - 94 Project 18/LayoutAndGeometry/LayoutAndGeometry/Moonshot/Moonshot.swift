@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct Moonshot: View {
-    let astronauts: [Astrounaut] = Bundle.main.decode("astronauts.json")
+    let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     let missions: [Mission] = Bundle.main.decode("missions.json")
     
     @State private var isShowCrewNames = true

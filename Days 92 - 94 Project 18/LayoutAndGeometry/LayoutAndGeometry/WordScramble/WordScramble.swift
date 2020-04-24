@@ -17,7 +17,7 @@ struct DrawText: ViewModifier {
     }
 }
 
-struct DrawHorisontalText: View {
+struct DrawHorizontalText: View {
     var text: String
     var textResult: String
     
@@ -73,7 +73,7 @@ struct WordScramble: View {
                         
                     }
                 }
-                DrawHorisontalText(text: "Score: ", textResult: "\(totalScore)")
+                DrawHorizontalText(text: "Score: ", textResult: "\(totalScore)")
                 
             }
             .navigationBarTitle(rootWord)

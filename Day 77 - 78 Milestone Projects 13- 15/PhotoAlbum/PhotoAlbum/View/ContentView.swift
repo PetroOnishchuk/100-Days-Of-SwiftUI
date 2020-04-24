@@ -46,12 +46,12 @@ struct ContentView: View {
         }
     }
     
-    func removeItems(at ofsetts: IndexSet) {
-        let image = pictures[ofsetts.first!]
+    func removeItems(at offsets: IndexSet) {
+        let image = pictures[offsets.first!]
         print(image.pictureName)
         
         MenageData.removeImage(pathName: image.id.uuidString)
-        pictures.remove(atOffsets: ofsetts)
+        pictures.remove(atOffsets: offsets)
         
         MenageData.savedPictures(pathName: "Pictures", pictures: self.pictures)
     }

@@ -1,5 +1,5 @@
 //
-//  Astrounaut.swift
+//  Astronaut.swift
 //  LayoutAndGeometry
 //
 //  Created by Petro Onishchuk on 4/21/20.
@@ -12,7 +12,7 @@ import Foundation
 
 
 
-struct Astrounaut: Codable, Identifiable {
+struct Astronaut: Codable, Identifiable {
     let id: String
     let name: String
     let description: String

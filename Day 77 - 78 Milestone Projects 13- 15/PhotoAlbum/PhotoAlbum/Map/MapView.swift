@@ -50,7 +50,7 @@ struct MapView: UIViewRepresentable {
             // this is our unique identifier for view reuse
             let identifier = "Placemark"
             
-            // attmpt to find a cell we can recycle
+            // attempt to find a cell we can recycle
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
             
             if annotationView == nil {

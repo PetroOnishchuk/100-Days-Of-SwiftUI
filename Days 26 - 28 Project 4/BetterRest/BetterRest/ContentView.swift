@@ -22,7 +22,7 @@ struct drawText: ViewModifier {
 
 
 
-struct DrawHorisontalText: View {
+struct DrawHorizontalText: View {
     var text: String
     var textResult: String
     
@@ -49,7 +49,7 @@ struct ContentView: View {
     @State private var coffeeAmount = 2
     
     
-    var recomendedBadTime: String {
+    var recommendedBadTime: String {
         calculateBedtime()
     }
     
@@ -93,7 +93,7 @@ struct ContentView: View {
                     
                 }
                 
-                DrawHorisontalText(text: "You ideal badtime is: ", textResult: "\(recomendedBadTime)")
+                DrawHorizontalText(text: "You ideal bedtime is: ", textResult: "\(recommendedBadTime)")
                 
             }
             .navigationBarTitle("BetterRest")

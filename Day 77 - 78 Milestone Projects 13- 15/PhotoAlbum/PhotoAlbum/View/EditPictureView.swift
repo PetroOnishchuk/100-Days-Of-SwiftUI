@@ -19,11 +19,11 @@ struct EditPictureView: View {
     @State private var inputImage: UIImage?
     @State private var imageName = ""
     @State private var showingImagePicker = false
-    @State private var showingSourseTypeAlert = false
+    @State private var showingSourceTypeAlert = false
     @State private var centerCoordinate = CLLocationCoordinate2D()
     @State private var locations = [CodableMKPointAnnotation]()
     @State private var selectedPlace: MKPointAnnotation?
-    @State private var locationFeatcher = LocationFetcher() 
+    @State private var locationFetcher = LocationFetcher() 
     @State private var pickerSourceType = UIImagePickerController.SourceType.photoLibrary
     
     
@@ -47,7 +47,7 @@ struct EditPictureView: View {
                 } else {
                     Button(action: {
                         
-                        self.showingSourseTypeAlert = true 
+                        self.showingSourceTypeAlert = true 
                         
                     }) {
                         Text("Select image")
@@ -81,9 +81,9 @@ struct EditPictureView: View {
                     ImagePicker(image: self.$inputImage, pickerSourceType: self.$pickerSourceType)
             }
             .onAppear{
-                self.locationFeatcher.start()
+                self.locationFetcher.start()
             }
-            .alert(isPresented: $showingSourseTypeAlert, content: { () -> Alert in
+            .alert(isPresented: $showingSourceTypeAlert, content: { () -> Alert in
                 
                 if imageName.isEmpty {
                     return  Alert(title: Text("Image Name is Empty"), message: Text("Please enter Imagename"), dismissButton: .default(Text("OK")))
@@ -114,7 +114,7 @@ struct EditPictureView: View {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         if pickerSourceType == .camera {
             
-            if let location = self.locationFeatcher.lastKnownLocation {
+            if let location = self.locationFetcher.lastKnownLocation {
                 let newLocation = CodableMKPointAnnotation()
                 newLocation.coordinate = location
                 newLocation.title = "Location for Photo with name: \(self.imageName)"

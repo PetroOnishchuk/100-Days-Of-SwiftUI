@@ -19,7 +19,7 @@ struct drawText: ViewModifier {
 }
 
 
-struct DrawHorisontalText: View {
+struct DrawHorizontalText: View {
     var text: String
     var textResult: String
     
@@ -57,12 +57,12 @@ struct DrawImageView: View  {
 
 
 struct ContentView: View {
-    @State var currentChoise = 0
+    @State var currentChoice = 0
     @State var winOrLose = Bool.random()
     @State var totalScore = 0
     @State var showingScore = false
     
-    @State var randomComputeChoise = Int.random(in: 0...2)
+    @State var randomComputeChoice = Int.random(in: 0...2)
     
     let possibleMoves = ["🗿", "📃", "✂️"]
     
@@ -76,11 +76,11 @@ struct ContentView: View {
                     .modifier(drawText())
                 VStack(spacing: 50) {
                     
-                    DrawHorisontalText(text: "You score is: ", textResult: "\(totalScore)")
+                    DrawHorizontalText(text: "You score is: ", textResult: "\(totalScore)")
                     
-                    DrawImageView(imageName: "\(possibleMoves[randomComputeChoise])")
+                    DrawImageView(imageName: "\(possibleMoves[randomComputeChoice])")
                     
-                    DrawHorisontalText(text: "You must: ", textResult: winOrLose ? "Win" : "Lose")
+                    DrawHorizontalText(text: "You must: ", textResult: winOrLose ? "Win" : "Lose")
                     
                     HStack {
                         ForEach(0 ..< possibleMoves.count) { number in
@@ -98,19 +98,19 @@ struct ContentView: View {
             Alert(title: Text("You WIN"), message: Text("You score is \(self.totalScore)"), dismissButton: .default(Text("New Game")) {
                 self.totalScore = 0
                 self.winOrLose = Bool.random()
-                self.randomComputeChoise = Int.random(in: 0...2)
+                self.randomComputeChoice = Int.random(in: 0...2)
                 })
         }
     }
     
     func checkToWin(selectedName: String) {
-        guard let index = possibleMoves.firstIndex(where: { return $0 == possibleMoves[randomComputeChoise]}) else { return }
+        guard let index = possibleMoves.firstIndex(where: { return $0 == possibleMoves[randomComputeChoice]}) else { return }
         let prefixArray = possibleMoves.prefix(upTo: index)
         let suffixArray = possibleMoves.suffix(from: index)
         
         let wrappedArray  = suffixArray + prefixArray
         
-        guard let computedIndex = wrappedArray.firstIndex(where: { return $0 == possibleMoves[randomComputeChoise]}) else { return }
+        guard let computedIndex = wrappedArray.firstIndex(where: { return $0 == possibleMoves[randomComputeChoice]}) else { return }
         guard let selectedIndex = wrappedArray.firstIndex(where: { return $0 == selectedName }) else { return }
         
         if winOrLose {
@@ -120,7 +120,7 @@ struct ContentView: View {
         }
         
         self.winOrLose = Bool.random()
-        self.randomComputeChoise = Int.random(in: 0...2)
+        self.randomComputeChoice = Int.random(in: 0...2)
         
         runNewGame()
     }

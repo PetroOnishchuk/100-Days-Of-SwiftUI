@@ -14,20 +14,20 @@ struct ContentView: View {
     @State var selectedKindOfUnit = 1
     @State var selectedKindOfResultUnit = 1
     
-    let mililitresInUnit = ["Litre": 1000, "Cup": 240, "Pint": 473.176, "Gallon": 3785.41, "Mililitre": 1]
+    let millilitersInUnit = ["Liter": 1000, "Cup": 240, "Pint": 473.176, "Gallon": 3785.41, "Milliliter": 1]
     
-    let kindOfUnit = ["Mililitre", "Cup", "Pint", "Litre", "Gallon"]
+    let kindOfUnit = ["Milliliter", "Cup", "Pint", "Liter", "Gallon"]
     
     var enteredValueInMl: Double {
         let unitAmount = Double(checkAmount) ?? 0
-        let mililitresInOneUnit = mililitresInUnit[kindOfUnit[selectedKindOfUnit]] ?? 0
-        let mililitresInUnits = unitAmount * mililitresInOneUnit
+        let millilitersInOneUnit = millilitersInUnit[kindOfUnit[selectedKindOfUnit]] ?? 0
+        let millilitersInUnits = unitAmount * millilitersInOneUnit
         
-        return mililitresInUnits
+        return millilitersInUnits
     }
     
     var resultValue: Double {
-        let kindOfResultUnit = mililitresInUnit[kindOfUnit[selectedKindOfResultUnit]] ?? 0
+        let kindOfResultUnit = millilitersInUnit[kindOfUnit[selectedKindOfResultUnit]] ?? 0
         let result = enteredValueInMl / kindOfResultUnit
         
         

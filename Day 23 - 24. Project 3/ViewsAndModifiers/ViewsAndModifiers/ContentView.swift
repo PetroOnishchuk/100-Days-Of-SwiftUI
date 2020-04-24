@@ -24,7 +24,7 @@ struct CapsuleText: View {
 }
 
 
-//MARK: Custom modefiers
+//MARK: Custom modifiers
 
 struct Title: ViewModifier {
     

@@ -17,7 +17,7 @@ struct MissionView: View {
     
     struct CrewMember  {
         let role: String
-        let astronaut: Astrounaut
+        let astronaut: Astronaut 
     }
     
     var body: some View {
@@ -32,12 +32,14 @@ struct MissionView: View {
                             .scaledToFit()
                              //MARK: Day 94.  Challenge 1.3
                             .frame(maxWidth: geometry.size.width)
-                            .scaleEffect(max(0.8, min(1.6, geo.frame(in: .global).minY / (geometry.size.height / 8.8))))
+                            .scaleEffect(max(0.8, min(1.0, geo.frame(in: .global).minY / (geometry.size.height / 8.8))))
                             .padding(.top)
+                           
                     }
                     Text("\(self.mission.formattedLaunchDate)")
                         // MARK: Day 76. Project 15.  Challenge 3.2
                         .accessibility(label: Text(self.mission.accessibleLaunchDate))
+                        .padding(.top)
                     
                     Text(self.mission.description)
                         //MARK: Day 76. Project 15. Challenge 3.3
@@ -77,7 +79,7 @@ struct MissionView: View {
         }
     }
     
-    init(mission: Mission, astronauts: [Astrounaut], missions: [Mission]) {
+    init(mission: Mission, astronauts: [Astronaut], missions: [Mission]) {
         self.mission = mission
         self.missions = missions
         
@@ -96,7 +98,7 @@ struct MissionView: View {
 
 struct MissionView_Previews: PreviewProvider {
     static let missions: [Mission] = Bundle.main.decode("missions.json")
-    static let astronauts: [Astrounaut] = Bundle.main.decode("astronauts.json")
+    static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     static var previews: some View {
         MissionView(mission: missions[0], astronauts: astronauts, missions: missions)
     }

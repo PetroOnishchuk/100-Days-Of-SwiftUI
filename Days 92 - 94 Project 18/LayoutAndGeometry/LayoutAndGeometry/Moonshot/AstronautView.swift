@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AstronautView: View {
-let astronaut: Astrounaut
+let astronaut: Astronaut
     let font = Font.system(size: 22, weight: .bold, design: .default)
     var missions: [Mission]
     
@@ -40,7 +40,7 @@ let astronaut: Astrounaut
                             Text(mission.formattedLaunchDate)
                             }
                         }
-                            //MARK: Day 76. Project 15. Challenege 3.5
+                            //MARK: Day 76. Project 15. Challenge 3.5
                             .accessibilityElement(children: .ignore)
                         
                         
@@ -54,14 +54,14 @@ let astronaut: Astrounaut
         
     }
     
-    init(astronaut: Astrounaut, missions: [Mission]) {
+    init(astronaut: Astronaut, missions: [Mission]) {
         self.astronaut = astronaut
         self.missions = missions
         
         var matches = [Mission]()
         
         for mission in missions {
-            if let match = mission.crew.first(where: {$0.name == self.astronaut.id}) {
+            if mission.crew.first(where: {$0.name == self.astronaut.id}) != nil {
                 matches.append(mission)
             }
         }
@@ -70,7 +70,7 @@ let astronaut: Astrounaut
 }
 
 struct AstronautView_Previews: PreviewProvider {
-    static let astronauts: [Astrounaut] = Bundle.main.decode("astronauts.json")
+    static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     static let missions: [Mission] = Bundle.main.decode("missions.json")
     static var previews: some View {
         AstronautView(astronaut: astronauts[0], missions: missions)

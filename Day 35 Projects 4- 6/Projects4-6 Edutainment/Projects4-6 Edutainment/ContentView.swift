@@ -127,7 +127,7 @@ extension View {
     }
 }
 
-struct DrawHorisontalText: View {
+struct DrawHorizontalText: View {
     var text: String
     var textResult: String
     
@@ -152,7 +152,7 @@ struct ContentView: View {
     
     @State private var imagesName = ["parrot", "duck", "dog", "horse", "rabbit", "whale", "rhino", "elephant", "zebra", "chicken", "cow", "panda", "hippo", "gorilla", "owl", "penguin", "sloth", "frog", "narwhal", "buffalo", "monkey", "giraffe", "moose", "pig", "snake", "bear", "chick", "walrus", "goat", "crocodile"]
     
-    @State private var gameIsRuning = false
+    @State private var gameIsRunning = false
     @State private var multiplicationTable = 1
     let allMultiplicationTables = Range(1...12)
     @State private var countOfQuestions = "5"
@@ -192,7 +192,7 @@ struct ContentView: View {
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
-                if gameIsRuning {
+                if gameIsRunning {
                 VStack {
                     Text("\(arrayOfQuestions[currentQuestion].text) ")
                         .drawGameLabel()
@@ -222,14 +222,14 @@ struct ContentView: View {
                         }
                     }
                     Button(action: {
-                        self.gameIsRuning = false
+                        self.gameIsRunning = false
                     }) {
                         Text("End Game")
-                        .drawStartAndEndButton(whatColor: gameIsRuning)
+                        .drawStartAndEndButton(whatColor: gameIsRunning)
                     }
                     VStack {
-                        DrawHorisontalText(text: "Total score: ", textResult: "\(totalScore)")
-                        DrawHorisontalText(text: "Questions remained: ", textResult: "\(remainingQuestions)")
+                        DrawHorizontalText(text: "Total score: ", textResult: "\(totalScore)")
+                        DrawHorizontalText(text: "Questions remained: ", textResult: "\(remainingQuestions)")
                     }
                     
                     
@@ -242,7 +242,7 @@ struct ContentView: View {
                             .drawGameLabel()
                         
                         
-                        Picker("Pick multiplication table to prectice", selection: $multiplicationTable) {
+                        Picker("Pick multiplication table to practice", selection: $multiplicationTable) {
                             ForEach(allMultiplicationTables, id: \.self) {
                                 Text("\($0)")
                             }
@@ -263,7 +263,7 @@ struct ContentView: View {
                             
                         }) {
                             Text("Start Game")
-                            .drawStartAndEndButton(whatColor: gameIsRuning)
+                            .drawStartAndEndButton(whatColor: gameIsRunning)
                         }
                         Spacer()
                     }
@@ -321,7 +321,7 @@ struct ContentView: View {
     }
     
     func newGame() {
-        self.gameIsRuning = true
+        self.gameIsRunning = true
         self.arrayOfQuestions = []
         self.createArrayOfQuestions()
         self.currentQuestion = 0
