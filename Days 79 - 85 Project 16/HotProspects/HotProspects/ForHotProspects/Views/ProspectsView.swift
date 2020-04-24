@@ -24,12 +24,12 @@ struct ProspectsView: View {
     
     @State private var isShowingScanner = false
     
-    @State private var isShowinSheet = false
+    @State private var isShowingSheet = false
     
     var title: String {
         switch filter {
         case .none:
-            return "Evetyone"
+            return "Everyone"
         case .contacted:
             return "Contacted people"
         case .uncontacted:
@@ -53,7 +53,7 @@ struct ProspectsView: View {
         }
     }
     
-    // MARK: Day 85. Challenege 3.1
+    // MARK: Day 85. Challenge 3.1
     enum SortedType {
         case name, dateAdded
     }
@@ -74,7 +74,7 @@ struct ProspectsView: View {
     }
     
     
-    // MARK: Day 85. Challenege 3.2
+    // MARK: Day 85. Challenge 3.2
     
     enum CheckBoxType {
         case name, dateAdded
@@ -118,7 +118,7 @@ struct ProspectsView: View {
             } 
             .navigationBarTitle(title)
             .navigationBarItems(leading: Button(action: {
-                self.isShowinSheet = true
+                self.isShowingSheet = true
             }, label: {
                 Text("Sorting")
             }), trailing: Button(action: {
@@ -131,8 +131,8 @@ struct ProspectsView: View {
                 .sheet(isPresented: $isShowingScanner) {
                     CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan(result:))
             }
-                //MARK: Day 85. Challenege 3.3
-                .actionSheet(isPresented: $isShowinSheet) { () -> ActionSheet in
+                //MARK: Day 85. Challenge 3.3
+                .actionSheet(isPresented: $isShowingSheet) { () -> ActionSheet in
                     ActionSheet(title: Text("Sort By:"), message: nil,  buttons: [.default(Text("Name \(checkBox(forType: .name))"), action: {
                         self.sortType = .name
                     }), .default(Text("Date Added \(checkBox(forType: .dateAdded))"), action: {
@@ -155,7 +155,7 @@ struct ProspectsView: View {
             person.name = details[0]
             person.emailAddress  = details[1]
             person.dateAdded = Date()
-            //MARK: Save  to UserDefoults
+            //MARK: Save  to UserDefaults
             self.prospects.add(person)
             
             

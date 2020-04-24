@@ -23,7 +23,7 @@ class Prospects: ObservableObject {
 //            }
 //        }
         
-        // MARK: Day 85. Challenege 2.3
+        // MARK: Day 85. Challenge 2.3
         let fileName = Self.getDocumentsDirectory().appendingPathComponent(Self.saveKey)
         do {
             let data = try Data(contentsOf: fileName)
@@ -61,7 +61,7 @@ class Prospects: ObservableObject {
        }
     
     
-   // MARK: Day 85. Challenege 2.2
+   // MARK: Day 85. Challenge 2.2
      func save() {
         let fileName = Self.getDocumentsDirectory().appendingPathComponent(Self.saveKey)
         do {

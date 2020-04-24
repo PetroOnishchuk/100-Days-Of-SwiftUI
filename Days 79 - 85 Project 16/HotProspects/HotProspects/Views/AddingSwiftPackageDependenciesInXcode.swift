@@ -11,11 +11,11 @@ import  SamplePackage
 
 
 struct AddingSwiftPackageDependenciesInXcode: View {
-   let possinleNumber = Array(1...60)
+   let possibleNumber = Array(1...60)
     
     var results: String {
         // more code to come
-        let selected = possinleNumber.random(7).sorted()
+        let selected = possibleNumber.random(7).sorted()
         let strings = selected.map(String.init)
         return strings.joined(separator: ", ")
     }

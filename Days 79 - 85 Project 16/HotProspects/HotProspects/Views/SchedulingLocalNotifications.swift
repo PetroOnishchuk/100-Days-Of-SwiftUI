@@ -30,15 +30,15 @@ struct SchedulingLocalNotifications: View {
                        content.subtitle = "It looks hungry"
                        content.sound = UNNotificationSound.default
                        
-                       // show thi notification five seconds from now
+                       // show this notification five seconds from now
                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
                        
-                       // shoose a random identifier
+                       // choose a random identifier
                        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                        
-                       // ad our ntification request
+                       // ad our notification request
                        UNUserNotificationCenter.current().add(request) { (error) in
-                           print("Completion hundler in NotificationCenter")
+                           print("Completion handler in NotificationCenter")
                        }
                    }) {
                        Text("Schedule Notification")
