@@ -37,7 +37,7 @@ struct LoadingView: View {
 
 struct SuccessView: View {
     var body: some View {
-        Text("Seccess!")
+        Text("Success!")
     }
 }
 

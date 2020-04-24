@@ -11,7 +11,6 @@ import SwiftUI
 struct ReadingTheValueOfControls: View {
     
     @State private var estimate = 25.0
-    
     @State private var rating = 3
     
     var body: some View {

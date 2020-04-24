@@ -24,8 +24,8 @@ class Order: ObservableObject, Codable {
         }
     }
     
-    var hasValidAdress: Bool {
-        // MARK: Chellenge 1
+    var hasValidAddress: Bool {
+        // MARK: Challenge 1
         
         let name = self.name.trimmingCharacters(in: .whitespacesAndNewlines)
         let streetAddress = self.streetAddress.trimmingCharacters(in: .whitespacesAndNewlines)

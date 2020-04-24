@@ -12,21 +12,21 @@ struct StyleOfAmount: ViewModifier {
     var amount: Int
     func body(content: Content) -> some View {
         var font = Font.system(size: 22, weight: .heavy, design: .default)
-        var foregraundColor = Color.black
+        var foregroundColor = Color.black
         if amount < 10 {
-            foregraundColor = Color.blue
+            foregroundColor = Color.blue
             
         } else if amount == 10 || amount < 100 {
             
-            foregraundColor = Color.purple
+            foregroundColor = Color.purple
             font = Font.system(size: 25, weight: .medium, design: .monospaced)
         } else {
-            foregraundColor = Color.red
+            foregroundColor = Color.red
             font = Font.system(size: 30, weight: .bold, design: .rounded)
             
         }
         return content
-            .foregroundColor(foregraundColor)
+            .foregroundColor(foregroundColor)
             .font(font)
     }
 }
@@ -109,8 +109,8 @@ struct ContentView: View {
         }
     }
     
-    func removeItems(at ofsetts: IndexSet) {
-        expenses.items.remove(atOffsets: ofsetts)
+    func removeItems(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
     }
     
     

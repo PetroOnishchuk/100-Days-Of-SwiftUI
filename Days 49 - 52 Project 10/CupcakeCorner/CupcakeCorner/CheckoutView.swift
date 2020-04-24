@@ -72,7 +72,7 @@ struct CheckoutView: View {
                 print("No data in response: \(error?.localizedDescription ?? "Unknown error"). ")
                 return
             }
-            print("\(String(data: data, encoding: .utf8))")
+            
             if let decodedOrder = try? JSONDecoder().decode(Order.self, from: data) {
                 self.confirmationTitle = "Thank You"
                 self.confirmationMessage = "Your order for \(decodedOrder.quantity)X \(Order.types[decodedOrder.type].lowercased()) cupcakes in on its way!"

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct WritingDataToTheDocumentsDerectory: View {
+struct WritingDataToTheDocumentsDirectory: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             .onTapGesture {
@@ -27,7 +27,7 @@ struct WritingDataToTheDocumentsDerectory: View {
     
 
     func getDocumentDirectory() -> URL {
-        // find all possible decoments directory for thie user
+        // find all possible documents directory for this user
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
         // just send back the first one, which ought to be the only one
@@ -37,8 +37,8 @@ struct WritingDataToTheDocumentsDerectory: View {
 
 
 
-struct WritingDataToTheDocumentsDerectory_Previews: PreviewProvider {
+struct WritingDataToTheDocumentsDirectory_Previews: PreviewProvider {
     static var previews: some View {
-        WritingDataToTheDocumentsDerectory()
+        WritingDataToTheDocumentsDirectory()
     }
 }

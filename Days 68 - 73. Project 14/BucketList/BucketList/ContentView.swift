@@ -20,7 +20,7 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Writing Data To The Documents Derectory")) {
-                    NavigationLink(destination: WritingDataToTheDocumentsDerectory()) {
+                    NavigationLink(destination: WritingDataToTheDocumentsDirectory()) {
                         Text("WritingDataToTheDocumentsDerectory")
                     }
                 }

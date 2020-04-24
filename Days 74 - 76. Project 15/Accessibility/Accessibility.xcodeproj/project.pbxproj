@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9811518124265B1700CA8E63 /* GuessTheFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811518024265B1700CA8E63 /* GuessTheFlag.swift */; };
-		98115183242667F800CA8E63 /* WordScamble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98115182242667F800CA8E63 /* WordScamble.swift */; };
+		98115183242667F800CA8E63 /* WordScramble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98115182242667F800CA8E63 /* WordScramble.swift */; };
 		981151852426684700CA8E63 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 981151842426684700CA8E63 /* start.txt */; };
 		9811518824266DAF00CA8E63 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811518724266DAF00CA8E63 /* EmojiRatingView.swift */; };
 		9811518A24266DF800CA8E63 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811518924266DF800CA8E63 /* AddBookView.swift */; };
@@ -43,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		9811518024265B1700CA8E63 /* GuessTheFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlag.swift; sourceTree = "<group>"; };
-		98115182242667F800CA8E63 /* WordScamble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScamble.swift; sourceTree = "<group>"; };
+		98115182242667F800CA8E63 /* WordScramble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScramble.swift; sourceTree = "<group>"; };
 		981151842426684700CA8E63 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = start.txt; path = "../../../Days 29 - 31 Project 5/WordScramble/WordScramble/start.txt"; sourceTree = "<group>"; };
 		9811518724266DAF00CA8E63 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
 		9811518924266DF800CA8E63 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 				984604CE2425EA4E0009CCDD /* HidingAndGrouping.swift */,
 				984604D02425ECA20009CCDD /* ReadingTheValueOfControls.swift */,
 				9811518024265B1700CA8E63 /* GuessTheFlag.swift */,
-				98115182242667F800CA8E63 /* WordScamble.swift */,
+				98115182242667F800CA8E63 /* WordScramble.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 				9893067C2427C02C005988AD /* Moonshot.swift in Sources */,
 				989306772427B490005988AD /* BetterRest.swift in Sources */,
 				981151992426A5B900CA8E63 /* AddressView.swift in Sources */,
-				98115183242667F800CA8E63 /* WordScamble.swift in Sources */,
+				98115183242667F800CA8E63 /* WordScramble.swift in Sources */,
 				9811518124265B1700CA8E63 /* GuessTheFlag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

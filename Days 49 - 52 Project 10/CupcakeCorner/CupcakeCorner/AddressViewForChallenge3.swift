@@ -1,5 +1,5 @@
 //
-//  AddressViewForChellenge3.swift
+//  AddressViewForChallenge3.swift
 //  CupcakeCorner
 //
 //  Created by Petro Onishchuk on 2/20/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AddressViewForChellenge3: View {
+struct AddressViewForChallenge3: View {
      @ObservedObject var order: MyOrder
        
        
@@ -23,18 +23,18 @@ struct AddressViewForChellenge3: View {
                }
                
                Section {
-                NavigationLink(destination: CheckoutViewForChellenge3(order: order)) {
+                NavigationLink(destination: CheckoutViewForChallenge3(order: order)) {
                        Text("Check out")
                    }
                }
-               .disabled(order.orderStruct.hasValidAdress == false)
+               .disabled(order.orderStruct.hasValidAddress == false)
            }
            .navigationBarTitle("Delivety details", displayMode: .inline)
        }
 }
 
-struct AddressViewForChellenge3_Previews: PreviewProvider {
+struct AddressViewForChallenge3_Previews: PreviewProvider {
     static var previews: some View {
-        AddressViewForChellenge3(order: MyOrder())
+        AddressViewForChallenge3(order: MyOrder())
     }
 }

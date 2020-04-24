@@ -18,7 +18,7 @@ struct AddView: View {
     @State private var amount = ""
     
     @State private var isShowAlert = false
-    @State private var messageForAllert = ""
+    @State private var messageForAlert = ""
     
     static let types = ["Business", "Personal"]
     
@@ -49,7 +49,7 @@ struct AddView: View {
             })
         }
         .alert(isPresented: $isShowAlert) { () -> Alert in
-            Alert(title: Text("Entered Amount is  INCORRECT"), message: Text("For Amount you must enter Number for example: (1, 2, 3) not a LETTER \(messageForAllert)"), dismissButton: .default(Text("OK")))
+            Alert(title: Text("Entered Amount is  INCORRECT"), message: Text("For Amount you must enter Number for example: (1, 2, 3) not a LETTER \(messageForAlert)"), dismissButton: .default(Text("OK")))
         }
     }
 }

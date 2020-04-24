@@ -48,7 +48,7 @@ class Users {
             }
             
             do {
-               // try moc.save()
+                try moc.save()
             } catch let error {
                 print("Could not save data: \(error.localizedDescription)")
             }

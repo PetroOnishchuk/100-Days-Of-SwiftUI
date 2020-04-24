@@ -67,14 +67,14 @@ struct CheckoutView: View {
             data, response, error in
             // handle the result here.
             guard let data = data else {
-                // MARK: Chellenge 2
+                // MARK: Challenge 2
                 self.confirmationTitle = "WARNING!!!"
                 self.confirmationMessage = "No data in response: \(error?.localizedDescription ?? "Unknown")"
                 self.showingConfirmation = true
                 print("No data in response: \(error?.localizedDescription ?? "Unknown error"). ")
                 return
             }
-           // print("\(String(data: data, encoding: .utf8))")
+           
             if let decodedOrder = try? JSONDecoder().decode(Order.self, from: data) {
                 self.confirmationTitle = "Thank You"
                 self.confirmationMessage = "Your order for \(decodedOrder.quantity)X \(Order.types[decodedOrder.type].lowercased()) cupcakes in on its way!"

@@ -11,7 +11,6 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var activities = Activities()
-    
     @State private var showingAddActivity = false
     
     

@@ -48,7 +48,7 @@ struct ContentViewForChallenge3: View {
                     }
                     
                     Section {
-                        NavigationLink(destination: AddressViewForChellenge3(order: order)) {
+                        NavigationLink(destination: AddressViewForChallenge3(order: order)) {
                             Text("Delivery details")
                         }
                     }

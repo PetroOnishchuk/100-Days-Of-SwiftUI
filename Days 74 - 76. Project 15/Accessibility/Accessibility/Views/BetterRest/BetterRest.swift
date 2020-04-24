@@ -18,23 +18,7 @@ struct drawText: ViewModifier {
     }
 }
 
-//struct DrawHorisontalText: View {
-//    var text: String
-//    var textResult: String
-//    
-//    
-//    var body: some View {
-//        HStack {
-//            Text(text)
-//                .modifier(drawText())
-//                .foregroundColor(Color.green)
-//            
-//            Text(textResult)
-//                .modifier(drawText())
-//                .foregroundColor(Color.red)
-//        }
-//    }
-//}
+
 
 struct BetterRest: View {
     @State private var wakeUp = defaultWakeTime
@@ -42,7 +26,7 @@ struct BetterRest: View {
     @State private var coffeeAmount = 2
     
     
-    var recomendedBadTime: String {
+    var recommendedBedTime: String {
         calculateBedtime()
     }
     
@@ -82,7 +66,7 @@ struct BetterRest: View {
                 
                 Section(header: Text("Daily coffee intake")) {
                     
-                    Picker(selection: $coffeeAmount, label: Text("Daily coffe intake")) {
+                    Picker(selection: $coffeeAmount, label: Text("Daily coffee intake")) {
                         ForEach(rangeOfCoffee, id: \.self) {
                             amount in
                             Text(amount == 1 ? "1 cup" : "\(amount) cups")
@@ -92,7 +76,7 @@ struct BetterRest: View {
                     
                 }
                 
-                DrawHorisontalText(text: "You ideal badtime is: ", textResult: "\(recomendedBadTime)")
+                DrawHorizontalText(text: "You ideal bedtime is: ", textResult: "\(recommendedBedTime)")
                 
             }
             .navigationBarTitle("BetterRest")
@@ -103,7 +87,7 @@ struct BetterRest: View {
     
     
     func runBadTime() -> String {
-        return "RunbadTime"
+        return "RunBadTime"
     }
     
     static var defaultWakeTime: Date {

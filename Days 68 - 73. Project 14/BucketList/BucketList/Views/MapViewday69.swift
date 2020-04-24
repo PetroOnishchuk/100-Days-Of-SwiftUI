@@ -11,8 +11,8 @@ import MapKit
 
 
 
-struct MapViewday69: UIViewRepresentable {
-    func makeUIView(context: UIViewRepresentableContext<MapViewday69>) -> MKMapView {
+struct MapViewDay69: UIViewRepresentable {
+    func makeUIView(context: UIViewRepresentableContext<MapViewDay69>) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
         
@@ -25,14 +25,14 @@ struct MapViewday69: UIViewRepresentable {
         return mapView
     }
     
-    func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapViewday69>) {
+    func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapViewDay69>) {
         
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
-        var parent: MapViewday69
+        var parent: MapViewDay69
         
-        init(_ parent: MapViewday69) {
+        init(_ parent: MapViewDay69) {
             self.parent = parent
         }
         

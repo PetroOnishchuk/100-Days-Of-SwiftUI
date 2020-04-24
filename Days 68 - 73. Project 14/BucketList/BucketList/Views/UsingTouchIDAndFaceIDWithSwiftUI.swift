@@ -31,14 +31,14 @@ struct UsingTouchIDAndFaceIDWithSwiftUI: View {
         let context = LAContext()
         var error: NSError?
         
-        // check whether biometric authentication is posible
+        // check whether biometric authentication is possible
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             // it's possible, so go ahead and use it
             
-            let reson = "We need to unlock your data."
+            let reason = "We need to unlock your data."
             
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reson) { success, authenticationError in
-                // authentication has now copmleted
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+                // authentication has now completed
                 DispatchQueue.main.async {
                     if success {
                         // authenticated successfully

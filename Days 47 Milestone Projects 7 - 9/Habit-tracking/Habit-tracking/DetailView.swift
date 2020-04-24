@@ -48,7 +48,7 @@ struct DetailView: View {
             
             //MARK: V2 for save Activities
             
-            // V.2 If didSet don't run after "self.activities.items.insert(temoActiviti)
+            // V.2 If didSet don't run after "self.activities.items.insert( tempActiviti )
             
 //            var tempActivities = self.activities.items
 //            tempActivities.remove(at: indexItem)

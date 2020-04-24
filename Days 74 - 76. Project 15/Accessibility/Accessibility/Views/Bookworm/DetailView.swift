@@ -21,10 +21,10 @@ struct DetailView: View {
     // MARK: Challenge 3
  
     var dateFormatter: DateFormatter {
-        let formater = DateFormatter()
-        formater.dateStyle = .medium
-        formater.timeStyle = .medium
-        return formater
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        return formatter
     }
     
     
@@ -100,7 +100,7 @@ struct DetailView_Previews: PreviewProvider {
         book.author = "Test author"
         book.genre = "Fantasy"
         book.rating = 4
-        book.review = "This was a gread book: I really enjoyed it"
+        book.review = "This was a great book: I really enjoyed it"
         // MARK: Challenge 3
         book.dateAdded = Date()
         

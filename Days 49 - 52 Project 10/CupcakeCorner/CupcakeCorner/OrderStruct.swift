@@ -29,7 +29,7 @@ struct OrderStruct: Codable {
            }
        }
        
-       var hasValidAdress: Bool {
+       var hasValidAddress: Bool {
            if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
                return false
            }

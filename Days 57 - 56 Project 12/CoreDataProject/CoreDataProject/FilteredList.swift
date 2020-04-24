@@ -15,7 +15,7 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
     var fetchRequest: FetchRequest<T>
     var singers: FetchedResults<T> { fetchRequest.wrappedValue }
     
-    // MARK: If i wanr delete singer from CoreData
+    // MARK: If i want delete singer from CoreData
     @Environment(\.managedObjectContext) var moc
     // this is our content closure; we'll call this once for each item in the  list
     

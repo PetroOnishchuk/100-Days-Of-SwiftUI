@@ -1,5 +1,5 @@
 //
-//  CheckoutViewForChellenge3.swift
+//  CheckoutViewForChallenge3.swift
 //  CupcakeCorner
 //
 //  Created by Petro Onishchuk on 2/20/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CheckoutViewForChellenge3: View {
+struct CheckoutViewForChallenge3: View {
     @ObservedObject var order: MyOrder
     
     // MARK: Challenge 2
@@ -72,7 +72,7 @@ struct CheckoutViewForChellenge3: View {
                 print("No data in response: \(error?.localizedDescription ?? "Unknown error"). ")
                 return
             }
-            print("\(String(data: data, encoding: .utf8))")
+            
             if let decodedOrder = try? JSONDecoder().decode(OrderStruct.self, from: data) {
                 self.confirmationTitle = "Thank You"
                 self.confirmationMessage = "Your order for \(decodedOrder.quantity)x \(OrderStruct.types[decodedOrder.type].lowercased()) cupcakes in on its way!"
@@ -84,8 +84,8 @@ struct CheckoutViewForChellenge3: View {
     }
 }
 
-struct CheckoutViewForChellenge3_Previews: PreviewProvider {
+struct CheckoutViewForChallenge3_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutViewForChellenge3(order: MyOrder())
+        CheckoutViewForChallenge3(order: MyOrder())
     }
 }

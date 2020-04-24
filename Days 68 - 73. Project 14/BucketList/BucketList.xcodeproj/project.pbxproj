@@ -13,11 +13,11 @@
 		9835EA742423D3A7005B7FF9 /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9835EA732423D3A7005B7FF9 /* UnlockView.swift */; };
 		984E9125241DFBF80054448F /* MKPointAnnotation-Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984E9124241DFBF80054448F /* MKPointAnnotation-Codable.swift */; };
 		9866F07A241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9866F079241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift */; };
-		9866F07C241A95E50049B335 /* MapViewday69.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9866F07B241A95E50049B335 /* MapViewday69.swift */; };
+		9866F07C241A95E50049B335 /* MapViewDay69.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9866F07B241A95E50049B335 /* MapViewDay69.swift */; };
 		9866F07E241ACEA80049B335 /* UsingTouchIDAndFaceIDWithSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9866F07D241ACEA80049B335 /* UsingTouchIDAndFaceIDWithSwiftUI.swift */; };
 		98844245241BD61100CC746A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98844244241BD61100CC746A /* MapView.swift */; };
 		98844247241BDA1400CC746A /* BucketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98844246241BDA1400CC746A /* BucketListView.swift */; };
-		98BC6AC4241A01CB00F708F2 /* WritingDataToTheDocumentsDerectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC6AC3241A01CB00F708F2 /* WritingDataToTheDocumentsDerectory.swift */; };
+		98BC6AC4241A01CB00F708F2 /* WritingDataToTheDocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC6AC3241A01CB00F708F2 /* WritingDataToTheDocumentsDirectory.swift */; };
 		98BC6AC6241A061700F708F2 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC6AC5241A061700F708F2 /* Bundle-Decodable.swift */; };
 		98BC6AC8241A0A1100F708F2 /* SwitchingViewStatesWithEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC6AC7241A0A1100F708F2 /* SwitchingViewStatesWithEnums.swift */; };
 		98C41D4724194045007AAC78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C41D4624194045007AAC78 /* AppDelegate.swift */; };
@@ -40,11 +40,11 @@
 		9835EA732423D3A7005B7FF9 /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
 		984E9124241DFBF80054448F /* MKPointAnnotation-Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-Codable.swift"; sourceTree = "<group>"; };
 		9866F079241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegratingMapKitWithSwiftUI.swift; sourceTree = "<group>"; };
-		9866F07B241A95E50049B335 /* MapViewday69.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewday69.swift; sourceTree = "<group>"; };
+		9866F07B241A95E50049B335 /* MapViewDay69.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDay69.swift; sourceTree = "<group>"; };
 		9866F07D241ACEA80049B335 /* UsingTouchIDAndFaceIDWithSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingTouchIDAndFaceIDWithSwiftUI.swift; sourceTree = "<group>"; };
 		98844244241BD61100CC746A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		98844246241BDA1400CC746A /* BucketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListView.swift; sourceTree = "<group>"; };
-		98BC6AC3241A01CB00F708F2 /* WritingDataToTheDocumentsDerectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDataToTheDocumentsDerectory.swift; sourceTree = "<group>"; };
+		98BC6AC3241A01CB00F708F2 /* WritingDataToTheDocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDataToTheDocumentsDirectory.swift; sourceTree = "<group>"; };
 		98BC6AC5241A061700F708F2 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bundle-Decodable.swift"; path = "../../../Days 39 - 42 Project 8/Moonshot/Moonshot/Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		98BC6AC7241A0A1100F708F2 /* SwitchingViewStatesWithEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingViewStatesWithEnums.swift; sourceTree = "<group>"; };
 		98C41D4324194045007AAC78 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,11 +134,11 @@
 			isa = PBXGroup;
 			children = (
 				98C41D5E24194161007AAC78 /* AddingConformanceToComparableForCustomTypes.swift */,
-				98BC6AC3241A01CB00F708F2 /* WritingDataToTheDocumentsDerectory.swift */,
+				98BC6AC3241A01CB00F708F2 /* WritingDataToTheDocumentsDirectory.swift */,
 				98BC6AC7241A0A1100F708F2 /* SwitchingViewStatesWithEnums.swift */,
 				9866F079241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift */,
 				9866F07D241ACEA80049B335 /* UsingTouchIDAndFaceIDWithSwiftUI.swift */,
-				9866F07B241A95E50049B335 /* MapViewday69.swift */,
+				9866F07B241A95E50049B335 /* MapViewDay69.swift */,
 				98844244241BD61100CC746A /* MapView.swift */,
 				98D70FA5241D32D900E97C34 /* EditView.swift */,
 			);
@@ -220,7 +220,7 @@
 				98844245241BD61100CC746A /* MapView.swift in Sources */,
 				9835EA742423D3A7005B7FF9 /* UnlockView.swift in Sources */,
 				9835EA702423CC24005B7FF9 /* CircleView.swift in Sources */,
-				98BC6AC4241A01CB00F708F2 /* WritingDataToTheDocumentsDerectory.swift in Sources */,
+				98BC6AC4241A01CB00F708F2 /* WritingDataToTheDocumentsDirectory.swift in Sources */,
 				9866F07A241A94B70049B335 /* IntegratingMapKitWithSwiftUI.swift in Sources */,
 				98C41D4724194045007AAC78 /* AppDelegate.swift in Sources */,
 				98844247241BDA1400CC746A /* BucketListView.swift in Sources */,
@@ -231,7 +231,7 @@
 				98C41D4E24194045007AAC78 /* ContentView.swift in Sources */,
 				984E9125241DFBF80054448F /* MKPointAnnotation-Codable.swift in Sources */,
 				98D70FA4241D31A200E97C34 /* MKPointAnnotation-ObservableObject.swift in Sources */,
-				9866F07C241A95E50049B335 /* MapViewday69.swift in Sources */,
+				9866F07C241A95E50049B335 /* MapViewDay69.swift in Sources */,
 				98D70FA6241D32D900E97C34 /* EditView.swift in Sources */,
 				9835EA722423CDE3005B7FF9 /* UnlockButtonView.swift in Sources */,
 				98BC6AC6241A061700F708F2 /* Bundle-Decodable.swift in Sources */,

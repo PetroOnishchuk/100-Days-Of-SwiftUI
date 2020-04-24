@@ -18,8 +18,8 @@
 		98D135E523FBA94C0049FDA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D135E323FBA94C0049FDA9 /* LaunchScreen.storyboard */; };
 		98F1401623FECCF200BB9DE1 /* OrderStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1401523FECCF200BB9DE1 /* OrderStruct.swift */; };
 		98F1401823FED1B400BB9DE1 /* ContentViewForChallenge3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1401723FED1B400BB9DE1 /* ContentViewForChallenge3.swift */; };
-		98F1401A23FED5A600BB9DE1 /* AddressViewForChellenge3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1401923FED5A600BB9DE1 /* AddressViewForChellenge3.swift */; };
-		98F1401C23FED6F900BB9DE1 /* CheckoutViewForChellenge3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1401B23FED6F900BB9DE1 /* CheckoutViewForChellenge3.swift */; };
+		98F1401A23FED5A600BB9DE1 /* AddressViewForChallenge3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1401923FED5A600BB9DE1 /* AddressViewForChallenge3.swift */; };
+		98F1401C23FED6F900BB9DE1 /* CheckoutViewForChallenge3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1401B23FED6F900BB9DE1 /* CheckoutViewForChallenge3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +36,8 @@
 		98D135E623FBA94C0049FDA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98F1401523FECCF200BB9DE1 /* OrderStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStruct.swift; sourceTree = "<group>"; };
 		98F1401723FED1B400BB9DE1 /* ContentViewForChallenge3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewForChallenge3.swift; sourceTree = "<group>"; };
-		98F1401923FED5A600BB9DE1 /* AddressViewForChellenge3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewForChellenge3.swift; sourceTree = "<group>"; };
-		98F1401B23FED6F900BB9DE1 /* CheckoutViewForChellenge3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewForChellenge3.swift; sourceTree = "<group>"; };
+		98F1401923FED5A600BB9DE1 /* AddressViewForChallenge3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewForChallenge3.swift; sourceTree = "<group>"; };
+		98F1401B23FED6F900BB9DE1 /* CheckoutViewForChallenge3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewForChallenge3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +74,8 @@
 				98D135DA23FBA94B0049FDA9 /* SceneDelegate.swift */,
 				98D135DC23FBA94B0049FDA9 /* ContentView.swift */,
 				98F1401723FED1B400BB9DE1 /* ContentViewForChallenge3.swift */,
-				98F1401923FED5A600BB9DE1 /* AddressViewForChellenge3.swift */,
-				98F1401B23FED6F900BB9DE1 /* CheckoutViewForChellenge3.swift */,
+				98F1401923FED5A600BB9DE1 /* AddressViewForChallenge3.swift */,
+				98F1401B23FED6F900BB9DE1 /* CheckoutViewForChallenge3.swift */,
 				98F1401523FECCF200BB9DE1 /* OrderStruct.swift */,
 				98D135DE23FBA94C0049FDA9 /* Assets.xcassets */,
 				98D135E323FBA94C0049FDA9 /* LaunchScreen.storyboard */,
@@ -170,8 +170,8 @@
 				98D135D923FBA94B0049FDA9 /* AppDelegate.swift in Sources */,
 				98D135DB23FBA94B0049FDA9 /* SceneDelegate.swift in Sources */,
 				98F1401623FECCF200BB9DE1 /* OrderStruct.swift in Sources */,
-				98F1401A23FED5A600BB9DE1 /* AddressViewForChellenge3.swift in Sources */,
-				98F1401C23FED6F900BB9DE1 /* CheckoutViewForChellenge3.swift in Sources */,
+				98F1401A23FED5A600BB9DE1 /* AddressViewForChallenge3.swift in Sources */,
+				98F1401C23FED6F900BB9DE1 /* CheckoutViewForChallenge3.swift in Sources */,
 				9828164023FD8A9700003E65 /* CheckoutView.swift in Sources */,
 				98F1401823FED1B400BB9DE1 /* ContentViewForChallenge3.swift in Sources */,
 				98CFA64323FCF7B30067997A /* Order.swift in Sources */,

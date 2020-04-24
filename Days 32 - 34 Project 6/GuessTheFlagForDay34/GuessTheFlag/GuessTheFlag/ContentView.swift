@@ -29,22 +29,13 @@ struct FlagImage: View {
 struct ContentView: View {
     
     @State private var showingScore = false
-    
     @State private var scoreTitle = ""
-    
     @State private var score = 0
-    
     @State  private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "US"].shuffled()
-    
-    
     @State private var correctAnswer = Int.random(in: 0...2)
-    
-    
     @State private var isCorrect = false
-    
     @State private var isWrong = false
-    
-    @State private var selectetNumber = 0
+    @State private var selectedNumber = 0
     
     @State private var fadeOutOpacity = false
     
@@ -79,9 +70,9 @@ struct ContentView: View {
                     FlagImage(image: self.countries[number])
                         
                 }
-                .rotation3DEffect(.degrees(self.isCorrect && self.selectetNumber == number  ? 360 : 0), axis: (x: 0, y: 1, z: 0))
-                .opacity(self.fadeOutOpacity && !(self.selectetNumber == number) ? 0.25 : 1)
-                .rotation3DEffect(.degrees(self.isWrong && self.selectetNumber == number  ? 90 : 0), axis: (x: 0, y: 0, z: 0.5))
+                .rotation3DEffect(.degrees(self.isCorrect && self.selectedNumber == number  ? 360 : 0), axis: (x: 0, y: 1, z: 0))
+                .opacity(self.fadeOutOpacity && !(self.selectedNumber == number) ? 0.25 : 1)
+                .rotation3DEffect(.degrees(self.isWrong && self.selectedNumber == number  ? 90 : 0), axis: (x: 0, y: 0, z: 0.5))
                 
             }
                 HStack {
@@ -108,7 +99,7 @@ struct ContentView: View {
 }
     
     func flagTapped(_ number: Int) {
-        self.selectetNumber = number
+        self.selectedNumber = number
         if number  == correctAnswer {
             scoreTitle = "Correct"
             self.score += 1

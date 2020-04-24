@@ -28,7 +28,7 @@ struct IntegratingCoreImageWithSwiftUI: View {
         guard let inputImage = UIImage(named: "Example") else { return }
         let beginImage = CIImage(image: inputImage)
        
-        let contect = CIContext()
+        let context = CIContext()
         
 //        let currentFilter = CIFilter.sepiaTone()
 //
@@ -50,7 +50,7 @@ struct IntegratingCoreImageWithSwiftUI: View {
         }
         
         // attempt to get our CGImage from our CIImage
-        if let cgimg = contect.createCGImage(outputImage, from: outputImage.extent) {
+        if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
             // convert that to a UIImage
             let uiImage = UIImage(cgImage: cgimg)
             

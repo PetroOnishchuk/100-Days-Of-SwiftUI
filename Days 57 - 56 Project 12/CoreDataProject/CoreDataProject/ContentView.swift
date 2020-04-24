@@ -24,17 +24,17 @@ struct ContentView: View {
     
     let sortDescriptors = [NSSortDescriptor(keyPath: \Singer.lastName, ascending: true)]
   
-    // MARK: Challenege 3.3 Create @State private var filteringStyle
+    // MARK: Challenge 3.3 Create @State private var filteringStyle
     @State private var filteringStyle = FilterType.beginsWith
     
-     // MARK: Challenege 3.2 Create array of filteringStyle
+     // MARK: Challenge 3.2 Create array of filteringStyle
     let arrayOfFilterType: Array<FilterType> = FilterType.allCases
     
     var body: some View {
        
         VStack {
             
-            // MARK: Challenege 1.3. Put sortDescriptors to the FilterList
+            // MARK: Challenge 1.3. Put sortDescriptors to the FilterList
             FilteredList(filterKey: "lastName", filterValue: lastNameFilter, sortDescriptors: sortDescriptors, filteringType: filteringStyle){ (singer: Singer)  in
                 Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
             }

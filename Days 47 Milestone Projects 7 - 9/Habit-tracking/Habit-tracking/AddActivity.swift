@@ -15,7 +15,7 @@ struct AddActivity: View {
     @ObservedObject var activities: Activities
     
     @State private var name = ""
-    @State private var decription = ""
+    @State private var description = ""
     @State private var amount = 0
     
     
@@ -27,7 +27,7 @@ struct AddActivity: View {
                 }
                 
                 Section(header: Text("Enter description of habit")) {
-                    TextField("Descriptions", text: $decription)
+                    TextField("Descriptions", text: $description)
                 }
                 
                 Section(header: Text("Completed times")) {
@@ -38,7 +38,7 @@ struct AddActivity: View {
             }
             .navigationBarTitle("Add new Activity")
             .navigationBarItems(trailing: Button(action: {
-                let item = Activity(name: self.name, description: self.decription, completedTimes: self.amount)
+                let item = Activity(name: self.name, description: self.description, completedTimes: self.amount)
                // MARK: V.1 For save activities
                 self.activities.items.append(item)
                 self.activities.saveActivities()

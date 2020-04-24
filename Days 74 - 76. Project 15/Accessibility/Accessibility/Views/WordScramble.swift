@@ -17,7 +17,7 @@ struct DrawText: ViewModifier {
     }
 }
 
-struct DrawHorisontalText: View {
+struct DrawHorizontalText: View {
     var text: String
     var textResult: String
     
@@ -34,7 +34,7 @@ struct DrawHorisontalText: View {
     }
 }
 
-struct WordScamble: View {
+struct WordScramble: View {
     @State private var usedWords = [String]()
     @State private var rootWord = ""
     @State private var newWord = ""
@@ -44,7 +44,6 @@ struct WordScamble: View {
     @State private var showingError = false
     
     @State private var allWords = [String]()
-    
     @State private var totalScore = 0
     var body: some View {
         NavigationView {
@@ -63,7 +62,7 @@ struct WordScamble: View {
                     .accessibility(label: Text("\(word), \(word.count) letters"))
                 }
                 
-                DrawHorisontalText(text: "Score: ", textResult: "\(totalScore)")
+                DrawHorizontalText(text: "Score: ", textResult: "\(totalScore)")
                
             }
         .navigationBarTitle(rootWord)
@@ -81,7 +80,7 @@ struct WordScamble: View {
     }
     // MARK: addNewWord()
     func addNewWord() {
-        // lowercase and trim the word, to make sure we don't add dublicate words case differences
+        // lowercase and trim the word, to make sure we don't add duplicate words case differences
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         
         // exit if the remaining string is empty
@@ -189,8 +188,8 @@ struct WordScamble: View {
     
 }
 
-struct WordScamble_Previews: PreviewProvider {
+struct WordScramble_Previews: PreviewProvider {
     static var previews: some View {
-        WordScamble()
+        WordScramble()
     }
 }

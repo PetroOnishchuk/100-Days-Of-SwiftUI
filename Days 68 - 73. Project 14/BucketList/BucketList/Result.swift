@@ -22,7 +22,7 @@ struct Page: Codable, Comparable {
     let terms: [String: [String]]?
     
     var description: String {
-        terms?["description"]?.first ?? "No futher information"
+        terms?["description"]?.first ?? "No further information"
     }
     
     static func < (lhs: Page, rhs: Page) -> Bool {

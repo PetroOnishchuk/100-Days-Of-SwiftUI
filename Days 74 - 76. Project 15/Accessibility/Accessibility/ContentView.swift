@@ -39,7 +39,7 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    NavigationLink(destination: WordScamble()) {
+                    NavigationLink(destination: WordScramble()) {
                         Text("Word Scramble")
                     }
                 }

@@ -26,21 +26,21 @@ struct Arc: InsettableShape {
     var endAngle: Angle
     var clockwise: Bool
     
-    var inserAmount: CGFloat = 0
+    var insertAmount: CGFloat = 0
     
     func inset(by amount: CGFloat) -> some InsettableShape {
         var arc = self
-        arc.inserAmount += amount
+        arc.insertAmount += amount
         return arc
     }
     func path(in rect: CGRect) -> Path {
-        let rotationAjustment = Angle.degrees(90)
-        let modifiedStart = startAngle - rotationAjustment
-        let modifiedEnd = endAngle - rotationAjustment
+        let rotationAdjustment = Angle.degrees(90)
+        let modifiedStart = startAngle - rotationAdjustment
+        let modifiedEnd = endAngle - rotationAdjustment
        
         var path = Path()
         
-        path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: rect.width / 2 - inserAmount, startAngle: modifiedStart, endAngle: modifiedEnd, clockwise: !clockwise)
+        path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: rect.width / 2 - insertAmount, startAngle: modifiedStart, endAngle: modifiedEnd, clockwise: !clockwise)
         
         return path
     }
@@ -285,10 +285,10 @@ struct Spirograph: Shape {
 }
 
 
-// Day 45. Creating a spinograph  with SwiftUI
+// Day 45. Creating a Spirograph  with SwiftUI
 struct ContentView4: View {
     @State private var innerRadius = 125.0
-    @State private var outherRadius = 75.0
+    @State private var otherRadius = 75.0
     @State private var distance = 25.0
     @State private var amount: CGFloat = 1.0
     @State private var hue = 0.6
@@ -300,7 +300,7 @@ struct ContentView4: View {
         VStack(spacing: 0) {
             Spacer()
             
-            Spirograph(innerRadius: Int(innerRadius), outerRadius: Int(outherRadius), distance: Int(distance), amount: amount)
+            Spirograph(innerRadius: Int(innerRadius), outerRadius: Int(otherRadius), distance: Int(distance), amount: amount)
             .stroke(Color(hue: hue, saturation: 1, brightness: 1), lineWidth: 1)
                 .frame(width: 300, height: 300)
             
@@ -311,8 +311,8 @@ struct ContentView4: View {
                 Slider(value: $innerRadius, in: 10...150, step: 1)
                     .padding([.horizontal, .bottom])
                 
-                Text("Outer radius: \(Int(outherRadius))")
-                Slider(value: $outherRadius, in: 10...150, step: 1)
+                Text("Outer radius: \(Int(otherRadius))")
+                Slider(value: $otherRadius, in: 10...150, step: 1)
                 .padding([.horizontal, .bottom])
                 
                 Text("Distance: \(Int(distance))")

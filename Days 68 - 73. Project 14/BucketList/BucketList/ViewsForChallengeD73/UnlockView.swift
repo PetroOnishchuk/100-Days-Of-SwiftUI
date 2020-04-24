@@ -37,7 +37,7 @@ struct UnlockView: View {
         }
         .alert(isPresented: $showingPlaceDetails) { () -> Alert in
             
-            Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place infirmation."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
+            Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place information."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
                 // edit this place
                 self.showingEditScreen = true
                 })
@@ -61,7 +61,7 @@ struct UnlockView: View {
            do {
                let data = try Data(contentsOf: filename)
                locations = try JSONDecoder().decode([CodableMKPointAnnotation].self, from: data)
-               print("LLLLLLLLLL1 \(locations.count)")
+              
            } catch {
                print("Unable to load saved data.")
            }
