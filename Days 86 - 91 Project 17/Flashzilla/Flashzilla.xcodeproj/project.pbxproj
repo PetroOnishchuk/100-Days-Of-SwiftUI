@@ -24,7 +24,7 @@
 		98401C8124474843009F7E21 /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98401C8024474843009F7E21 /* EditCards.swift */; };
 		9896B69924487B9900D4BCBF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896B69824487B9900D4BCBF /* SettingsScreen.swift */; };
 		989779B52441F8AD00195DD4 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779B42441F8AD00195DD4 /* TimerView.swift */; };
-		989779B724420A4800195DD4 /* NotifictionCenterViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779B624420A4800195DD4 /* NotifictionCenterViewView.swift */; };
+		989779B724420A4800195DD4 /* NotificationCenterViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779B624420A4800195DD4 /* NotificationCenterViewView.swift */; };
 		989779B924420E8D00195DD4 /* differentiateWithoutColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779B824420E8D00195DD4 /* differentiateWithoutColorView.swift */; };
 		989779BB2442120600195DD4 /* ReduceMotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779BA2442120600195DD4 /* ReduceMotionView.swift */; };
 		989779BD2442137C00195DD4 /* ReduceTransparencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989779BC2442137C00195DD4 /* ReduceTransparencyView.swift */; };
@@ -52,7 +52,7 @@
 		98401C8024474843009F7E21 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
 		9896B69824487B9900D4BCBF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		989779B42441F8AD00195DD4 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		989779B624420A4800195DD4 /* NotifictionCenterViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifictionCenterViewView.swift; sourceTree = "<group>"; };
+		989779B624420A4800195DD4 /* NotificationCenterViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterViewView.swift; sourceTree = "<group>"; };
 		989779B824420E8D00195DD4 /* differentiateWithoutColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = differentiateWithoutColorView.swift; sourceTree = "<group>"; };
 		989779BA2442120600195DD4 /* ReduceMotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceMotionView.swift; sourceTree = "<group>"; };
 		989779BC2442137C00195DD4 /* ReduceTransparencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceTransparencyView.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 				981A802B2440FBD4006DF8AC /* MakingVibrationsView.swift */,
 				981A802D24410339006DF8AC /* HitTestingView.swift */,
 				989779B42441F8AD00195DD4 /* TimerView.swift */,
-				989779B624420A4800195DD4 /* NotifictionCenterViewView.swift */,
+				989779B624420A4800195DD4 /* NotificationCenterViewView.swift */,
 				989779B824420E8D00195DD4 /* differentiateWithoutColorView.swift */,
 				989779BA2442120600195DD4 /* ReduceMotionView.swift */,
 				989779BC2442137C00195DD4 /* ReduceTransparencyView.swift */,
@@ -231,7 +231,7 @@
 				981A80282440E636006DF8AC /* SimultaneousGestureView.swift in Sources */,
 				9896B69924487B9900D4BCBF /* SettingsScreen.swift in Sources */,
 				989779B52441F8AD00195DD4 /* TimerView.swift in Sources */,
-				989779B724420A4800195DD4 /* NotifictionCenterViewView.swift in Sources */,
+				989779B724420A4800195DD4 /* NotificationCenterViewView.swift in Sources */,
 				98401C8124474843009F7E21 /* EditCards.swift in Sources */,
 				989779C3244244E900195DD4 /* CardView.swift in Sources */,
 				981A80242440E43E006DF8AC /* RotationEffectView.swift in Sources */,

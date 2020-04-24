@@ -20,7 +20,7 @@ struct EditCards: View {
                 Section(header: Text("Add new card")) {
                     TextField("Prompt", text: $newPrompt)
                     TextField("Answer", text: $newAnswer)
-                    Button("Add card", action: addcard )
+                    Button("Add card", action: addCard )
                 }
                 Section {
                     ForEach(0..<cards.count, id: \.self) { index in
@@ -53,7 +53,7 @@ struct EditCards: View {
             }
         }
     }
-    func addcard() {
+    func addCard() {
         let trimmedPrompt = newPrompt.trimmingCharacters(in: .whitespaces)
         let trimmedAnswer = newAnswer.trimmingCharacters(in: .whitespaces)
         guard trimmedPrompt.isEmpty == false && trimmedPrompt.isEmpty == false else { return }

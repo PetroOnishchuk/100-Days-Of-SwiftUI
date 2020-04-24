@@ -32,7 +32,7 @@ struct HitTestingView: View {
                 }
             .contentShape(Rectangle())
                 .onTapGesture {
-                    print("Vstack tapped")
+                    print("VStack tapped")
                 }
             
             }

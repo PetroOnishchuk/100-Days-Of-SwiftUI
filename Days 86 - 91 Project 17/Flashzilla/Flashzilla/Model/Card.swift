@@ -13,6 +13,6 @@ struct Card: Codable {
     let answer: String
     
     static var example: Card {
-        Card(prompt: "Who palyed the 13th Doctor in Doctor Who?", answer: "Jodie Whittaker")
+        Card(prompt: "Who played the 13th Doctor in Doctor Who?", answer: "Jodie Whittaker")
     }
 }

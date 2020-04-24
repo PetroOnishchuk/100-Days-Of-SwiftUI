@@ -1,5 +1,5 @@
 //
-//  NotifictionCenterViewView.swift
+//  NotificationCenterViewView.swift
 //  Flashzilla
 //
 //  Created by Petro Onishchuk on 4/11/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct NotifictionCenterViewView: View {
+struct NotificationCenterViewView: View {
     @State private var inputText = ""
     
     var body: some View {
@@ -41,8 +41,8 @@ struct NotifictionCenterViewView: View {
     }
 }
 
-struct NotifictionCenterViewView_Previews: PreviewProvider {
+struct NotificationCenterViewView_Previews: PreviewProvider {
     static var previews: some View {
-        NotifictionCenterViewView()
+        NotificationCenterViewView()
     }
 }
