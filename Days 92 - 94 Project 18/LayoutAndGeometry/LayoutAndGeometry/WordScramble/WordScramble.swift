@@ -62,15 +62,15 @@ struct WordScramble: View {
                             HStack() {
                                 Image(systemName: "\(word.count).circle")
                                     // MARK: Day 94. Challenge  3.1
-                                    .foregroundColor(Color(red: Double((geo.frame(in: .global).maxY) / 800), green: 0.6, blue: 0.4))
+                                    .foregroundColor(Color(red: Double((geo.frame(in: .global).maxY) / 800 ), green: 0.6, blue: 0.4))
                                 Text(word)
                                 Spacer()
                             }
                                 // MARK: Day 94. Challenge 2.3
                                 .offset(x: max(0, (geo.frame(in: .global).maxY / fullView.size.height) * (geo.frame(in: .global).maxY) - 850), y: 0)
                             
+                      
                         }
-                        
                     }
                 }
                 DrawHorizontalText(text: "Score: ", textResult: "\(totalScore)")

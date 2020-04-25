@@ -21,6 +21,9 @@ struct HorizontalScrollView: View {
                             .fill(self.colors[index % 7])
                             .frame(height: 150)
                             .rotation3DEffect(.degrees(-Double(geo.frame(in: .global).minX - fullView.size.height / 2) / 10), axis: (x: 0, y: 1, z: 0))
+                            .onTapGesture {
+                                
+                        }
                     }
                     .frame(width: 150)
                 }

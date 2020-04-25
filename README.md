@@ -24,7 +24,7 @@ Lists of projects:
 
 ## 8. [Animation](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2032%20-%2034%20Project%206) Project 6 (Days 32 - 34)
 
-## 9. [Edutaiment](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Day%2035%20Projects%204-%206) Projects 4 - 6 (Day 35)
+## 9. [Edutainment](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Day%2035%20Projects%204-%206) Projects 4 - 6 (Day 35)
 
 ## 10. [iExpense](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2036%20-%2038%20Project%207) Project 7 (Days 36 - 38)
 
@@ -56,4 +56,4 @@ Lists of projects:
 
 ## 23. [Flashzilla](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2086%20-%2091%20Project%2017/Flashzilla) Project 17 (Days 86 - 91) 
 
-## 24. [LayoutAndGeometry](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2092%20-%2094%20Project%2018/LayoutAndGeometry) Project 18 (Days 92 - 94) Not Completed YET!!!
+## 24. [LayoutAndGeometry](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2092%20-%2094%20Project%2018/LayoutAndGeometry) Project 18 (Days 92 - 94) 

@@ -32,7 +32,7 @@ struct MissionView: View {
                             .scaledToFit()
                              //MARK: Day 94.  Challenge 1.3
                             .frame(maxWidth: geometry.size.width)
-                            .scaleEffect(max(0.8, min(1.0, geo.frame(in: .global).minY / (geometry.size.height / 8.8))))
+                            .scaleEffect(max(0.0, min(1.0, geo.frame(in: .global).minY / (geometry.size.height / 0.8))))
                             .padding(.top)
                            
                     }
