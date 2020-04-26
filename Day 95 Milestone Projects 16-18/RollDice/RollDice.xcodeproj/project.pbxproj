@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		989B371624560CA800BE7288 /* Result+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B371224560CA700BE7288 /* Result+CoreDataClass.swift */; };
+		989B371724560CA800BE7288 /* Result+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B371324560CA800BE7288 /* Result+CoreDataProperties.swift */; };
+		989B371824560CA800BE7288 /* Dice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B371424560CA800BE7288 /* Dice+CoreDataClass.swift */; };
+		989B371924560CA800BE7288 /* Dice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B371524560CA800BE7288 /* Dice+CoreDataProperties.swift */; };
 		98A0A3AF2455C0DA00282BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A3AE2455C0DA00282BED /* AppDelegate.swift */; };
 		98A0A3B12455C0DA00282BED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A3B02455C0DA00282BED /* SceneDelegate.swift */; };
 		98A0A3B42455C0DA00282BED /* RollDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A3B22455C0DA00282BED /* RollDice.xcdatamodeld */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		989B371224560CA700BE7288 /* Result+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		989B371324560CA800BE7288 /* Result+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		989B371424560CA800BE7288 /* Dice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dice+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		989B371524560CA800BE7288 /* Dice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dice+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		98A0A3AB2455C0DA00282BED /* RollDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A0A3AE2455C0DA00282BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98A0A3B02455C0DA00282BED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +47,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		989B371124560C4200BE7288 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				989B371224560CA700BE7288 /* Result+CoreDataClass.swift */,
+				989B371324560CA800BE7288 /* Result+CoreDataProperties.swift */,
+				989B371424560CA800BE7288 /* Dice+CoreDataClass.swift */,
+				989B371524560CA800BE7288 /* Dice+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		98A0A3A22455C0DA00282BED = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +77,7 @@
 		98A0A3AD2455C0DA00282BED /* RollDice */ = {
 			isa = PBXGroup;
 			children = (
+				989B371124560C4200BE7288 /* CoreData */,
 				98A0A3AE2455C0DA00282BED /* AppDelegate.swift */,
 				98A0A3B02455C0DA00282BED /* SceneDelegate.swift */,
 				98A0A3B52455C0DA00282BED /* ContentView.swift */,
@@ -149,8 +169,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				989B371724560CA800BE7288 /* Result+CoreDataProperties.swift in Sources */,
+				989B371924560CA800BE7288 /* Dice+CoreDataProperties.swift in Sources */,
 				98A0A3AF2455C0DA00282BED /* AppDelegate.swift in Sources */,
 				98A0A3B12455C0DA00282BED /* SceneDelegate.swift in Sources */,
+				989B371624560CA800BE7288 /* Result+CoreDataClass.swift in Sources */,
+				989B371824560CA800BE7288 /* Dice+CoreDataClass.swift in Sources */,
 				98A0A3B62455C0DA00282BED /* ContentView.swift in Sources */,
 				98A0A3B42455C0DA00282BED /* RollDice.xcdatamodeld in Sources */,
 			);
