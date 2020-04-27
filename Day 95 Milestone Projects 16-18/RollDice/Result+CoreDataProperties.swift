@@ -26,7 +26,7 @@ extension Result {
         date ?? Date()
     }
     
-    var wrappedID: UUID {
+    var wrappedId: UUID {
         id ?? UUID()
     }
     

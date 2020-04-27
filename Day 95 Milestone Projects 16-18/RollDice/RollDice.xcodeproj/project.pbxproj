@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		986C30DF245720DC00CA3BF7 /* RollDiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C30DE245720DC00CA3BF7 /* RollDiceView.swift */; };
+		986C30E12457210D00CA3BF7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C30E02457210D00CA3BF7 /* MainView.swift */; };
+		986C30E3245721A700CA3BF7 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C30E2245721A700CA3BF7 /* ResultsView.swift */; };
 		989B371624560CA800BE7288 /* Result+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B371224560CA700BE7288 /* Result+CoreDataClass.swift */; };
 		989B371724560CA800BE7288 /* Result+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B371324560CA800BE7288 /* Result+CoreDataProperties.swift */; };
 		989B371824560CA800BE7288 /* Dice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B371424560CA800BE7288 /* Dice+CoreDataClass.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		986C30DE245720DC00CA3BF7 /* RollDiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDiceView.swift; sourceTree = "<group>"; };
+		986C30E02457210D00CA3BF7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		986C30E2245721A700CA3BF7 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		989B371224560CA700BE7288 /* Result+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		989B371324560CA800BE7288 /* Result+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		989B371424560CA800BE7288 /* Dice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dice+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -47,6 +53,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		986C30DB2457203400CA3BF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98A0A3B52455C0DA00282BED /* ContentView.swift */,
+				986C30E02457210D00CA3BF7 /* MainView.swift */,
+				986C30DE245720DC00CA3BF7 /* RollDiceView.swift */,
+				986C30E2245721A700CA3BF7 /* ResultsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		986C30E4245724CE00CA3BF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		989B371124560C4200BE7288 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,10 +101,11 @@
 		98A0A3AD2455C0DA00282BED /* RollDice */ = {
 			isa = PBXGroup;
 			children = (
+				986C30E4245724CE00CA3BF7 /* Model */,
+				986C30DB2457203400CA3BF7 /* View */,
 				989B371124560C4200BE7288 /* CoreData */,
 				98A0A3AE2455C0DA00282BED /* AppDelegate.swift */,
 				98A0A3B02455C0DA00282BED /* SceneDelegate.swift */,
-				98A0A3B52455C0DA00282BED /* ContentView.swift */,
 				98A0A3B72455C0DD00282BED /* Assets.xcassets */,
 				98A0A3BC2455C0DD00282BED /* LaunchScreen.storyboard */,
 				98A0A3BF2455C0DD00282BED /* Info.plist */,
@@ -172,9 +197,12 @@
 				989B371724560CA800BE7288 /* Result+CoreDataProperties.swift in Sources */,
 				989B371924560CA800BE7288 /* Dice+CoreDataProperties.swift in Sources */,
 				98A0A3AF2455C0DA00282BED /* AppDelegate.swift in Sources */,
+				986C30E12457210D00CA3BF7 /* MainView.swift in Sources */,
 				98A0A3B12455C0DA00282BED /* SceneDelegate.swift in Sources */,
+				986C30E3245721A700CA3BF7 /* ResultsView.swift in Sources */,
 				989B371624560CA800BE7288 /* Result+CoreDataClass.swift in Sources */,
 				989B371824560CA800BE7288 /* Dice+CoreDataClass.swift in Sources */,
+				986C30DF245720DC00CA3BF7 /* RollDiceView.swift in Sources */,
 				98A0A3B62455C0DA00282BED /* ContentView.swift in Sources */,
 				98A0A3B42455C0DA00282BED /* RollDice.xcdatamodeld in Sources */,
 			);
