@@ -20,34 +20,29 @@ struct RollDiceView: View {
     @State private var firstDice = 0
     @State private var secondDice = 0
     
-    let timer = Timer.publish(every: 0.5 , on: .main, in: .common)
+    @State var timer = Timer.publish(every: 0.5 , on: .main, in: .common)
+    
+    
     
     @State private var numberOfCall = 0
-    @State private var timeToRun = 2.0
+    @State private var numberOfAfter = 0
+    @State private var timeToRun = 0.0
+    
+    @State private var numberAngle = 0.0
     
     var body: some View {
         VStack {
+            VStack {
             Text("First Dice \(firstDice)")
-                .frame(width: 250)
+                
                 .onReceive(timer) { (time) in
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + self.timeToRun) {
-                        print("Hello \(Date())")
-                       // withAnimation {
-                            self.firstDice = Int.random(in: 1...20)
-                            self.secondDice = Int.random(in: 1...20)
-                       // }
-                        
-                        self.numberOfCall += 1
-                        self.timeToRun += 1
-                        if self.numberOfCall == 10 {
-                            self.timer.connect().cancel()
-                        }
-                    }
+                    self.runTimer2()
                     
             }
             Text("Second Dice \(secondDice)")
-            .frame(width: 250)
+            }
+            .rotationEffect(Angle(degrees: numberAngle))
+            
             Button(action: {
                 self.timer.connect()
                 
@@ -57,6 +52,38 @@ struct RollDiceView: View {
                 Text("Add new Results")
             }
         }
+    }
+    
+    func runTimer2() {
+        self.numberOfCall += 1
+         print("Number \(self.numberOfCall)")
+         if self.numberOfCall == 6 {
+             self.timer.connect().cancel()
+             self.numberOfCall = 0
+             self.timer = Timer.publish(every: 0.5 , on: .main, in: .common)
+             
+         }
+         DispatchQueue.main.asyncAfter(deadline: .now() + self.timeToRun) {
+             
+             print("Hello \(Date())")
+            withAnimation {
+                self.numberAngle += 180
+            }
+            
+            
+             self.firstDice = Int.random(in: 1...20)
+             self.secondDice = Int.random(in: 1...20)
+        
+             self.numberOfAfter += 1
+             if self.numberOfAfter == 6 {
+                 self.numberOfAfter = 0
+                 self.timeToRun = 0
+             }
+             // self.numberOfCall += 1
+             self.timeToRun += 1
+             
+             //
+         }
     }
 }
 
