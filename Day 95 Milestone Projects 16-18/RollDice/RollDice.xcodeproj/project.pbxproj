@@ -21,6 +21,7 @@
 		98A0A3B82455C0DD00282BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A0A3B72455C0DD00282BED /* Assets.xcassets */; };
 		98A0A3BB2455C0DD00282BED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A0A3BA2455C0DD00282BED /* Preview Assets.xcassets */; };
 		98A0A3BE2455C0DD00282BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A0A3BC2455C0DD00282BED /* LaunchScreen.storyboard */; };
+		98EBA7212458AE76001FAED4 /* EditDiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EBA7202458AE76001FAED4 /* EditDiceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		98A0A3BA2455C0DD00282BED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98A0A3BD2455C0DD00282BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98A0A3BF2455C0DD00282BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98EBA7202458AE76001FAED4 /* EditDiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDiceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				986C30E02457210D00CA3BF7 /* MainView.swift */,
 				986C30DE245720DC00CA3BF7 /* RollDiceView.swift */,
 				986C30E2245721A700CA3BF7 /* ResultsView.swift */,
+				98EBA7202458AE76001FAED4 /* EditDiceView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				98A0A3B12455C0DA00282BED /* SceneDelegate.swift in Sources */,
 				986C30E3245721A700CA3BF7 /* ResultsView.swift in Sources */,
 				989B371624560CA800BE7288 /* Result+CoreDataClass.swift in Sources */,
+				98EBA7212458AE76001FAED4 /* EditDiceView.swift in Sources */,
 				989B371824560CA800BE7288 /* Dice+CoreDataClass.swift in Sources */,
 				986C30DF245720DC00CA3BF7 /* RollDiceView.swift in Sources */,
 				98A0A3B62455C0DA00282BED /* ContentView.swift in Sources */,

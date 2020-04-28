@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct MainView: View {
+    @FetchRequest(entity: Result.entity(), sortDescriptors: []) var results: FetchedResults<Result>
+    
+    
     var body: some View {
         TabView {
            RollDiceView()
@@ -17,11 +20,12 @@ struct MainView: View {
                 Text("Roll Dice")
             }
             
-//            ResultsView()
-//                .tabItem {
-//                    Image(systemName: "list.number")
-//                    Text("Results")
-//            }
+            ResultsView()
+                .tabItem {
+                     Text("Results")
+                    Image(systemName: "list.number")
+                   
+            }
             
         }
         

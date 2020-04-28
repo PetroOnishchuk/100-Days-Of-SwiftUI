@@ -9,64 +9,122 @@
 import SwiftUI
 import CoreData
 
+struct DrawDiceView: View {
+    var dice: Int
+    
+    var body: some View {
+        Text("\(dice)")
+            .frame(width: 100, height: 100)
+            .background(Color.yellow)
+            .foregroundColor(.blue)
+            .cornerRadius(25)
+            .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.red, lineWidth: 2))
+            .shadow(color: .blue, radius: 3)
+            .font(.largeTitle)
+        
+    }
+}
+
+struct DrawDiceRollButtonView: View {
+    var dice: Int
+    
+    var runFunction: (()-> Void)
+    
+    var body: some View {
+//        Text("\(dice)")
+//            .frame(width: 100, height: 100)
+//            .background(Color.yellow)
+//            .foregroundColor(.blue)
+//            .cornerRadius(25)
+//            .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.red, lineWidth: 2))
+//            .shadow(color: .blue, radius: 3)
+//            .font(.largeTitle)
+        Button(action: {
+            self.runFunction()
+        }) {
+            Text("Button with closure")
+        }
+        
+    }
+}
 
 
 struct RollDiceView: View {
     
     @Environment(\.managedObjectContext) var moc
     
-    @FetchRequest(entity: Result.entity(), sortDescriptors: []) var results: FetchedResults<Result>
+    @State private var timer = Timer.publish(every: 0.5 , on: .main, in: .common)
+       
     
     @State private var firstDice = 0
     @State private var secondDice = 0
     @State private var diceType = 18
     
-    @State var timer = Timer.publish(every: 0.5 , on: .main, in: .common)
-    
+   
     
     
     @State private var numberOfCall = 0
     @State private var numberOfAfter = 0
     @State private var timeToRun = 0.0
-    
     @State private var numberAngle = 0.0
     
+    @State private var showingEditView = false
+    
+    
     var body: some View {
-        VStack {
+        NavigationView {
             VStack {
-            Text("First Dice \(firstDice)")
-                
-                .onReceive(timer) { (time) in
-                    self.runTimer2()
+                HStack {
+                    DrawDiceView(dice: self.firstDice)
+                        .rotationEffect(Angle(degrees: numberAngle))
                     
+                    
+                    DrawDiceView(dice: self.secondDice) .rotationEffect(Angle(degrees: numberAngle))
+                }
+                
+                //.rotationEffect(Angle(degrees: numberAngle))
+                Spacer()
+                DrawDiceRollButtonView(dice: self.diceType) {
+                    self.timer.connect()
+                }
+//                Button(action: {
+//                    self.timer.connect()
+//                    
+//                    
+//                    
+//                }) {
+//                    Text("Add new Results")
+//                }
             }
-            Text("Second Dice \(secondDice)")
-            }
-            .rotationEffect(Angle(degrees: numberAngle))
-            Spacer()
+        .navigationBarItems(trailing:
             Button(action: {
-                self.timer.connect()
-                
-                
-                
-            }) {
-                Text("Add new Results")
+                self.showingEditView.toggle()
+            }, label: {
+                Text("Setting")
+            }))
+                .sheet(isPresented: $showingEditView) {
+                    Text("Hello")
             }
+            
+        }
+        .onReceive(timer) { (time) in
+            self.runTimer2()
+            
         }
     }
     
     func runTimer2() {
         self.numberOfCall += 1
-         print("Number \(self.numberOfCall)")
-         if self.numberOfCall == 6 {
-             self.timer.connect().cancel()
-             self.numberOfCall = 0
-             self.timer = Timer.publish(every: 0.5 , on: .main, in: .common)
-             
-         }
-         DispatchQueue.main.asyncAfter(deadline: .now() + self.timeToRun) {
-             
-             print("Hello \(Date())")
+        print("Number \(self.numberOfCall)")
+        if self.numberOfCall == 6 {
+            self.timer.connect().cancel()
+            self.numberOfCall = 0
+            self.timer = Timer.publish(every: 0.5 , on: .main, in: .common)
+            
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + self.timeToRun) {
+            
+            print("Hello \(Date())")
             withAnimation {
                 self.numberAngle += 180
             }
@@ -74,19 +132,19 @@ struct RollDiceView: View {
             
             self.firstDice = Int.random(in: 0...self.diceType)
             self.secondDice = Int.random(in: 0...self.diceType)
-        
-             self.numberOfAfter += 1
-             if self.numberOfAfter == 6 {
-                 self.numberOfAfter = 0
-                 self.timeToRun = 0
+            
+            self.numberOfAfter += 1
+            if self.numberOfAfter == 6 {
+                self.numberOfAfter = 0
+                self.timeToRun = 0
                 //MARK: Save to CoreData
                 self.saveToCoreData()
-             }
-             // self.numberOfCall += 1
-             self.timeToRun += 1
-             
-             //
-         }
+            } else {
+            
+            self.timeToRun += 1
+            }
+            //
+        }
     }
     
     func saveToCoreData() {
@@ -96,11 +154,11 @@ struct RollDiceView: View {
         firstDice.result = Int16(self.firstDice)
         firstDice.type = Int16(self.diceType)
         
-    let secondDice = Dice(context: self.moc)
-       secondDice.date = Date()
-       secondDice.id = UUID()
-       secondDice.result = Int16(self.secondDice)
-       secondDice.type = Int16(self.diceType)
+        let secondDice = Dice(context: self.moc)
+        secondDice.date = Date()
+        secondDice.id = UUID()
+        secondDice.result = Int16(self.secondDice)
+        secondDice.type = Int16(self.diceType)
         
         
         let firstResult = Result(context: self.moc)
