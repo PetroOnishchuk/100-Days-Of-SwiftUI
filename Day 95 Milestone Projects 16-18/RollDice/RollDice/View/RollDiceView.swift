@@ -19,6 +19,7 @@ struct RollDiceView: View {
     
     @State private var firstDice = 0
     @State private var secondDice = 0
+    @State private var diceType = 18
     
     @State var timer = Timer.publish(every: 0.5 , on: .main, in: .common)
     
@@ -42,7 +43,7 @@ struct RollDiceView: View {
             Text("Second Dice \(secondDice)")
             }
             .rotationEffect(Angle(degrees: numberAngle))
-            
+            Spacer()
             Button(action: {
                 self.timer.connect()
                 
@@ -71,19 +72,45 @@ struct RollDiceView: View {
             }
             
             
-             self.firstDice = Int.random(in: 1...20)
-             self.secondDice = Int.random(in: 1...20)
+            self.firstDice = Int.random(in: 0...self.diceType)
+            self.secondDice = Int.random(in: 0...self.diceType)
         
              self.numberOfAfter += 1
              if self.numberOfAfter == 6 {
                  self.numberOfAfter = 0
                  self.timeToRun = 0
+                //MARK: Save to CoreData
+                self.saveToCoreData()
              }
              // self.numberOfCall += 1
              self.timeToRun += 1
              
              //
          }
+    }
+    
+    func saveToCoreData() {
+        let firstDice = Dice(context: self.moc)
+        firstDice.date = Date()
+        firstDice.id = UUID()
+        firstDice.result = Int16(self.firstDice)
+        firstDice.type = Int16(self.diceType)
+        
+    let secondDice = Dice(context: self.moc)
+       secondDice.date = Date()
+       secondDice.id = UUID()
+       secondDice.result = Int16(self.secondDice)
+       secondDice.type = Int16(self.diceType)
+        
+        
+        let firstResult = Result(context: self.moc)
+        firstResult.id = UUID()
+        firstResult.date = Date()
+        firstResult.totalResult = Int16(firstDice.wrappedResult + secondDice.wrappedResult)
+        firstResult.addToDices(firstDice)
+        firstResult.addToDices(secondDice)
+        
+        try? self.moc.save()
     }
 }
 

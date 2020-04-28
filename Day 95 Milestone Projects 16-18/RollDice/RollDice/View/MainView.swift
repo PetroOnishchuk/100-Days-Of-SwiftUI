@@ -17,11 +17,11 @@ struct MainView: View {
                 Text("Roll Dice")
             }
             
-            ResultsView()
-                .tabItem {
-                    Image(systemName: "list.number")
-                    Text("Results")
-            }
+//            ResultsView()
+//                .tabItem {
+//                    Image(systemName: "list.number")
+//                    Text("Results")
+//            }
             
         }
         
