@@ -19,7 +19,7 @@ struct DrawDiceView: View {
             .foregroundColor(.blue)
             .cornerRadius(25)
             .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.red, lineWidth: 2))
-            .shadow(color: .blue, radius: 3)
+           // .shadow(color: .red, radius: 3)
             .font(.largeTitle)
         
     }
@@ -31,19 +31,20 @@ struct DrawDiceRollButtonView: View {
     var runFunction: (()-> Void)
     
     var body: some View {
-//        Text("\(dice)")
-//            .frame(width: 100, height: 100)
-//            .background(Color.yellow)
-//            .foregroundColor(.blue)
-//            .cornerRadius(25)
-//            .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.red, lineWidth: 2))
-//            .shadow(color: .blue, radius: 3)
-//            .font(.largeTitle)
+        
         Button(action: {
             self.runFunction()
         }) {
-            Text("Button with closure")
+            Text("Roll Dice")
         }
+        .frame(width: 250, height: 80)
+        .background(Color.purple)
+        .foregroundColor(.black)
+        .cornerRadius(25)
+        .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.blue, lineWidth: 2))
+       // .shadow(color: .yellow, radius: 3)
+        .font(.largeTitle)
+        
         
     }
 }
@@ -54,13 +55,15 @@ struct RollDiceView: View {
     @Environment(\.managedObjectContext) var moc
     
     @State private var timer = Timer.publish(every: 0.5 , on: .main, in: .common)
-       
+    
     
     @State private var firstDice = 0
     @State private var secondDice = 0
+    @State private var thirdDice = 0
+    
     @State private var diceType = 18
     
-   
+    
     
     
     @State private var numberOfCall = 0
@@ -70,41 +73,55 @@ struct RollDiceView: View {
     
     @State private var showingEditView = false
     
+    @State private var numberOfRolls = 3
+    
+    func selectDice(at number: Int) -> Int {
+        switch number {
+        case 1:
+            return self.firstDice
+        case 2:
+            return self.secondDice
+        case 3:
+            return self.thirdDice
+        default:
+            return 0
+        }
+    }
     
     var body: some View {
         NavigationView {
             VStack {
+                
                 HStack {
-                    DrawDiceView(dice: self.firstDice)
-                        .rotationEffect(Angle(degrees: numberAngle))
                     
+                    ForEach((1...self.numberOfRolls), id: \.self){ number in
+                        DrawDiceView(dice: self.selectDice(at: number))
+                            .rotationEffect(Angle(degrees: self.numberAngle))
+                        .padding( 10)
+                    }
+
                     
-                    DrawDiceView(dice: self.secondDice) .rotationEffect(Angle(degrees: numberAngle))
                 }
+                .padding(.top, 170)
                 
                 //.rotationEffect(Angle(degrees: numberAngle))
                 Spacer()
                 DrawDiceRollButtonView(dice: self.diceType) {
                     self.timer.connect()
                 }
-//                Button(action: {
-//                    self.timer.connect()
-//                    
-//                    
-//                    
-//                }) {
-//                    Text("Add new Results")
-//                }
+                .padding(.bottom, 20)
+                
             }
-        .navigationBarItems(trailing:
-            Button(action: {
-                self.showingEditView.toggle()
-            }, label: {
-                Text("Setting")
-            }))
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.showingEditView.toggle()
+                }, label: {
+                    Text("Setting")
+                }))
                 .sheet(isPresented: $showingEditView) {
                     Text("Hello")
             }
+            .navigationBarTitle(Text("Roll Dice"))
             
         }
         .onReceive(timer) { (time) in
@@ -132,7 +149,7 @@ struct RollDiceView: View {
             
             self.firstDice = Int.random(in: 0...self.diceType)
             self.secondDice = Int.random(in: 0...self.diceType)
-            
+            self.thirdDice = Int.random(in: 0...self.diceType)
             self.numberOfAfter += 1
             if self.numberOfAfter == 6 {
                 self.numberOfAfter = 0
@@ -140,8 +157,8 @@ struct RollDiceView: View {
                 //MARK: Save to CoreData
                 self.saveToCoreData()
             } else {
-            
-            self.timeToRun += 1
+                
+                self.timeToRun += 1
             }
             //
         }
@@ -154,21 +171,45 @@ struct RollDiceView: View {
         firstDice.result = Int16(self.firstDice)
         firstDice.type = Int16(self.diceType)
         
+        
         let secondDice = Dice(context: self.moc)
         secondDice.date = Date()
         secondDice.id = UUID()
         secondDice.result = Int16(self.secondDice)
         secondDice.type = Int16(self.diceType)
         
+        if self.numberOfRolls == 3 {
+        let thirdDice = Dice(context: self.moc)
+           thirdDice.date = Date()
+           thirdDice.id = UUID()
+           thirdDice.result = Int16(self.thirdDice)
+           thirdDice.type = Int16(self.diceType)
+        }
         
         let firstResult = Result(context: self.moc)
         firstResult.id = UUID()
         firstResult.date = Date()
-        firstResult.totalResult = Int16(firstDice.wrappedResult + secondDice.wrappedResult)
+        firstResult.totalResult = self.countTotalResult(at: self.numberOfRolls)
         firstResult.addToDices(firstDice)
         firstResult.addToDices(secondDice)
+        firstResult.numbersOfDice = Int16(self.numberOfRolls)
+        
+        
         
         try? self.moc.save()
+    }
+    
+    func countTotalResult(at number: Int) -> Int16 {
+        switch number {
+        case 1:
+            return Int16(self.firstDice)
+        case 2:
+            return Int16(self.firstDice + self.secondDice)
+        case 3:
+            return Int16(self.firstDice + self.secondDice + self.thirdDice)
+        default:
+             return Int16(0)
+        }
     }
 }
 
@@ -178,33 +219,4 @@ struct RollDiceView_Previews: PreviewProvider {
     }
 }
 
-
-//Button(action: {
-//    let firstDice = Dice(context: self.moc)
-//    firstDice.date = Date()
-//    firstDice.id = UUID()
-//    firstDice.result = 10
-//    firstDice.type = 12
-//
-//let secondDice = Dice(context: self.moc)
-//    secondDice.date = Date()
-//    secondDice.id = UUID()
-//    secondDice.result = 12
-//    secondDice.type = 12
-//
-//let thirdDice = Dice(context: self.moc)
-//   thirdDice.date = Date()
-//   thirdDice.id = UUID()
-//   thirdDice.result = 14
-//   thirdDice.type = 12
-//
-//    let firstResult = Result(context: self.moc)
-//    firstResult.addToDices(firstDice)
-//    firstResult.addToDices(secondDice)
-//    firstResult.addToDices(thirdDice)
-//    firstResult.id = UUID()
-//    firstResult.date = Date()
-//    firstResult.totalResult = Int16(firstDice.wrappedResult + secondDice.wrappedResult) + thirdDice.result
-//
-//    try? self.moc.save()
 

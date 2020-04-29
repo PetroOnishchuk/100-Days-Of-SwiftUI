@@ -2,7 +2,7 @@
 //  Result+CoreDataProperties.swift
 //  RollDice
 //
-//  Created by Petro Onishchuk on 4/26/20.
+//  Created by Petro Onishchuk on 4/29/20.
 //  Copyright © 2020 Petro Onishchuk. All rights reserved.
 //
 //
@@ -20,8 +20,9 @@ extension Result {
     @NSManaged public var date: Date?
     @NSManaged public var id: UUID?
     @NSManaged public var totalResult: Int16
+    @NSManaged public var numbersOfDice: Int16
     @NSManaged public var dices: NSSet?
-
+    
     var wrappedDate: Date {
         date ?? Date()
     }
@@ -34,11 +35,16 @@ extension Result {
         Int(totalResult)
     }
     
+    var wrappedNumbersOfDice: Int {
+        Int(numbersOfDice)
+    }
+    
     var dicesArray: [Dice] {
         let set = dices as? Set<Dice> ?? []
         return Array(set)
     }
-    
+
+
 }
 
 // MARK: Generated accessors for dices

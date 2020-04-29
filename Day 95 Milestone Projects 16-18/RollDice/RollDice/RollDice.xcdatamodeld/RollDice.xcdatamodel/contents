@@ -7,14 +7,19 @@
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="results" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Result" inverseName="dices" inverseEntity="Result"/>
     </entity>
+    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
     <entity name="Result" representedClassName="Result" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="numbersOfDice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="totalResult" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="dices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dice" inverseName="results" inverseEntity="Dice"/>
     </entity>
+    <entity name="Result2" representedClassName="Result2" syncable="YES" codeGenerationType="class"/>
     <elements>
         <element name="Dice" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="Result" positionX="-54" positionY="27" width="128" height="103"/>
+        <element name="Entity" positionX="-63" positionY="45" width="128" height="43"/>
+        <element name="Result" positionX="-54" positionY="27" width="128" height="118"/>
+        <element name="Result2" positionX="-63" positionY="45" width="128" height="43"/>
     </elements>
 </model>

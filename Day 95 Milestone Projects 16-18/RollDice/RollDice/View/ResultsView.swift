@@ -22,6 +22,7 @@ struct ResultsView: View {
                 ForEach(results, id: \.wrappedId) { result in
                     VStack {
                         Text("Result \(result.wrappedTotalResult)")
+                        Text("Number of Dice \(result.wrappedNumbersOfDice)")
                         
                     }
                     

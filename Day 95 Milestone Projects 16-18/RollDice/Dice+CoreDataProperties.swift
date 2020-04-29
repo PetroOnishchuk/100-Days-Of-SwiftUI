@@ -2,7 +2,7 @@
 //  Dice+CoreDataProperties.swift
 //  RollDice
 //
-//  Created by Petro Onishchuk on 4/26/20.
+//  Created by Petro Onishchuk on 4/29/20.
 //  Copyright © 2020 Petro Onishchuk. All rights reserved.
 //
 //
@@ -35,10 +35,8 @@ extension Dice {
         Int(result)
     }
     
-    var wrapppedType: Int {
+    var wrappedType: Int {
         Int(type)
     }
-    
-    
 
 }
