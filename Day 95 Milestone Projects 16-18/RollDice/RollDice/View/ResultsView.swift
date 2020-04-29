@@ -20,16 +20,24 @@ struct ResultsView: View {
         NavigationView {
             List {
                 ForEach(results, id: \.wrappedId) { result in
-                    VStack {
-                        Text("Result \(result.wrappedTotalResult)")
-                        Text("Number of Dice \(result.wrappedNumbersOfDice)")
+                    //VStack {
+                        HStack {
+                            ForEach((0..<result.wrappedNumbersOfDice)) { number in
+                                DrawDiceView(dice: result.dicesArray[number].wrappedResult, width: 44, height: 44, cornerRadius: CGFloat(6))
+                            }
+                            Text("Result: \(result.wrappedTotalResult)")
+                                .font(.largeTitle)
+                           
+                        }
                         
-                    }
+                        
+                    //}
                     
                 }
             .onDelete(perform: removeResult(at:))
             //delete
             }
+        .navigationBarTitle(Text("Roll Dice Results"))
         }
     }
     

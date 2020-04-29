@@ -61,17 +61,10 @@
 				98A0A3B52455C0DA00282BED /* ContentView.swift */,
 				986C30E02457210D00CA3BF7 /* MainView.swift */,
 				986C30DE245720DC00CA3BF7 /* RollDiceView.swift */,
-				986C30E2245721A700CA3BF7 /* ResultsView.swift */,
 				98EBA7202458AE76001FAED4 /* EditDiceView.swift */,
+				986C30E2245721A700CA3BF7 /* ResultsView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		986C30E4245724CE00CA3BF7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		989B371124560C4200BE7288 /* CoreData */ = {
@@ -104,9 +97,8 @@
 		98A0A3AD2455C0DA00282BED /* RollDice */ = {
 			isa = PBXGroup;
 			children = (
-				986C30E4245724CE00CA3BF7 /* Model */,
-				986C30DB2457203400CA3BF7 /* View */,
 				989B371124560C4200BE7288 /* CoreData */,
+				986C30DB2457203400CA3BF7 /* View */,
 				98A0A3AE2455C0DA00282BED /* AppDelegate.swift */,
 				98A0A3B02455C0DA00282BED /* SceneDelegate.swift */,
 				98A0A3B72455C0DD00282BED /* Assets.xcassets */,

@@ -11,14 +11,17 @@ import CoreData
 
 struct DrawDiceView: View {
     var dice: Int
+    var width: CGFloat
+    var height: CGFloat
+    var cornerRadius: CGFloat = 0
     
     var body: some View {
         Text("\(dice)")
-            .frame(width: 100, height: 100)
+            .frame(width: self.width, height: self.height)
             .background(Color.yellow)
             .foregroundColor(.blue)
-            .cornerRadius(25)
-            .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.red, lineWidth: 2))
+            .cornerRadius(cornerRadius)
+            .overlay(RoundedRectangle(cornerRadius: cornerRadius).stroke(Color.red, lineWidth: 2))
            // .shadow(color: .red, radius: 3)
             .font(.largeTitle)
         
@@ -73,7 +76,7 @@ struct RollDiceView: View {
     
     @State private var showingEditView = false
     
-    @State private var numberOfRolls = 3
+    @State private var numberOfDices = 3
     
     func selectDice(at number: Int) -> Int {
         switch number {
@@ -94,9 +97,10 @@ struct RollDiceView: View {
                 
                 HStack {
                     
-                    ForEach((1...self.numberOfRolls), id: \.self){ number in
-                        DrawDiceView(dice: self.selectDice(at: number))
+                    ForEach((1...self.numberOfDices), id: \.self){ number in
+                        DrawDiceView(dice: self.selectDice(at: number), width: 100, height: 100, cornerRadius: 25)
                             .rotationEffect(Angle(degrees: self.numberAngle))
+                           
                         .padding( 10)
                     }
 
@@ -165,6 +169,8 @@ struct RollDiceView: View {
     }
     
     func saveToCoreData() {
+         let firstResult = Result(context: self.moc)
+        
         let firstDice = Dice(context: self.moc)
         firstDice.date = Date()
         firstDice.id = UUID()
@@ -178,21 +184,27 @@ struct RollDiceView: View {
         secondDice.result = Int16(self.secondDice)
         secondDice.type = Int16(self.diceType)
         
-        if self.numberOfRolls == 3 {
+       
+        
+        if self.numberOfDices == 3 {
         let thirdDice = Dice(context: self.moc)
            thirdDice.date = Date()
            thirdDice.id = UUID()
            thirdDice.result = Int16(self.thirdDice)
            thirdDice.type = Int16(self.diceType)
+            firstResult.addToDices(thirdDice)
         }
         
-        let firstResult = Result(context: self.moc)
+        
         firstResult.id = UUID()
         firstResult.date = Date()
-        firstResult.totalResult = self.countTotalResult(at: self.numberOfRolls)
+        firstResult.totalResult = self.countTotalResult(at: self.numberOfDices)
+        
         firstResult.addToDices(firstDice)
         firstResult.addToDices(secondDice)
-        firstResult.numbersOfDice = Int16(self.numberOfRolls)
+        
+        
+        firstResult.numbersOfDice = Int16(self.numberOfDices)
         
         
         
