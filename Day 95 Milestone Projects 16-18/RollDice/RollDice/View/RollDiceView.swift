@@ -76,7 +76,7 @@ struct RollDiceView: View {
     
     @State private var showingEditView = false
     
-    @State private var numberOfDices = 3
+    @State private var numberOfDices = 1
     
     func selectDice(at number: Int) -> Int {
         switch number {
@@ -169,47 +169,66 @@ struct RollDiceView: View {
     }
     
     func saveToCoreData() {
-         let firstResult = Result(context: self.moc)
-        
-        let firstDice = Dice(context: self.moc)
-        firstDice.date = Date()
-        firstDice.id = UUID()
-        firstDice.result = Int16(self.firstDice)
-        firstDice.type = Int16(self.diceType)
-        
-        
-        let secondDice = Dice(context: self.moc)
-        secondDice.date = Date()
-        secondDice.id = UUID()
-        secondDice.result = Int16(self.secondDice)
-        secondDice.type = Int16(self.diceType)
-        
-       
-        
-        if self.numberOfDices == 3 {
-        let thirdDice = Dice(context: self.moc)
-           thirdDice.date = Date()
-           thirdDice.id = UUID()
-           thirdDice.result = Int16(self.thirdDice)
-           thirdDice.type = Int16(self.diceType)
-            firstResult.addToDices(thirdDice)
-        }
-        
-        
+        print("1")
+        let firstResult = Result(context: self.moc)
         firstResult.id = UUID()
         firstResult.date = Date()
         firstResult.totalResult = self.countTotalResult(at: self.numberOfDices)
+        for i in 1...self.numberOfDices {
+            print("Loop 2")
+            let newDice = Dice(context: self.moc)
+            newDice.date = Date()
+            newDice.id = UUID()
+            newDice.result = Int16(selectDice(at: i))
+            print("New Dive \(Int16(selectDice(at: i))) ")
+            newDice.type = Int16(self.diceType)
+            firstResult.addToDices(newDice)
+        }
         
-        firstResult.addToDices(firstDice)
-        firstResult.addToDices(secondDice)
+        
+          
+         
+          
+          
+          firstResult.numbersOfDice = Int16(self.numberOfDices)
+          print("New result \(firstResult.dicesArray)")
+          
+          print("3")
+          try? self.moc.save()
+        print("4")
+//        if self.numberOfDices > 1 {
+//        let firstDice = Dice(context: self.moc)
+//        firstDice.date = Date()
+//        firstDice.id = UUID()
+//        firstDice.result = Int16(self.firstDice)
+//        firstDice.type = Int16(self.diceType)
+//            firstResult.addToDices(firstDice)
+//        }
+        
+//        if self.numberOfDices >= 1 {
+//        let secondDice = Dice(context: self.moc)
+//        secondDice.date = Date()
+//        secondDice.id = UUID()
+//        secondDice.result = Int16(self.secondDice)
+//        secondDice.type = Int16(self.diceType)
+//            firstResult.addToDices(secondDice)
+//
+//        }
+        
+//        if self.numberOfDices == 3 {
+//        let thirdDice = Dice(context: self.moc)
+//           thirdDice.date = Date()
+//           thirdDice.id = UUID()
+//           thirdDice.result = Int16(self.thirdDice)
+//           thirdDice.type = Int16(self.diceType)
+//            firstResult.addToDices(thirdDice)
+//        }
         
         
-        firstResult.numbersOfDice = Int16(self.numberOfDices)
-        
-        
-        
-        try? self.moc.save()
+  
     }
+    
+    
     
     func countTotalResult(at number: Int) -> Int16 {
         switch number {

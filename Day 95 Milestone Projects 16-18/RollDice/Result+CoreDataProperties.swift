@@ -41,7 +41,10 @@ extension Result {
     
     var dicesArray: [Dice] {
         let set = dices as? Set<Dice> ?? []
-        return Array(set)
+        let array = set.sorted { (firstDice, secondDice) -> Bool in
+            firstDice.wrappedResult > secondDice.wrappedResult
+        }
+        return array
     }
 
 
