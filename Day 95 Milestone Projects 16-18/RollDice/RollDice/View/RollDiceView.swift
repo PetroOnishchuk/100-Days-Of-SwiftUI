@@ -15,6 +15,8 @@ struct DrawDiceView: View {
     var height: CGFloat
     var cornerRadius: CGFloat = 0
     
+    
+    
     var body: some View {
         Text("\(dice)")
             .frame(width: self.width, height: self.height)
@@ -32,6 +34,7 @@ struct DrawDiceRollButtonView: View {
     
     
     var runFunction: (()-> Void)
+    var webString = "I am learning software development for Apple Inc. platforms . (macOS, iOS, iPadOS, watchOS, tvOS and beyond). Swift development."
     
     var body: some View {
         
@@ -39,6 +42,7 @@ struct DrawDiceRollButtonView: View {
             self.runFunction()
         }) {
             Text("Roll Dice")
+            Text("\(self.webString.count)")
         }
         .frame(width: 250, height: 80)
         .background(Color.purple)
