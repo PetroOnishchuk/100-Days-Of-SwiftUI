@@ -25,7 +25,7 @@ struct ResultsView: View {
                     HStack {
                         
                         ForEach(result.dicesArray, id: \.result) { newDice in
-                            DrawDiceView(dice: newDice.wrappedResult, width: 44, height: 44, cornerRadius: 6)
+                            DrawDiceView(dice: newDice.wrappedResult, width: 58, height: 58, cornerRadius: 6)
                             
                         }
                         Text("Result: \(result.wrappedTotalResult)")

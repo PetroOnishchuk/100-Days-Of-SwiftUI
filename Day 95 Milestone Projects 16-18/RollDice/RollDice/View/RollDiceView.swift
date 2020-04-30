@@ -29,7 +29,7 @@ struct DrawDiceView: View {
 }
 
 struct DrawDiceRollButtonView: View {
-    var dice: Int
+    
     
     var runFunction: (()-> Void)
     
@@ -45,7 +45,6 @@ struct DrawDiceRollButtonView: View {
         .foregroundColor(.black)
         .cornerRadius(25)
         .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.blue, lineWidth: 2))
-       // .shadow(color: .yellow, radius: 3)
         .font(.largeTitle)
         
         
@@ -60,11 +59,11 @@ struct RollDiceView: View {
     @State private var timer = Timer.publish(every: 0.5 , on: .main, in: .common)
     
     
-    @State private var firstDice = 0
-    @State private var secondDice = 0
-    @State private var thirdDice = 0
+    @State private var firstDice = 8
+    @State private var secondDice = 8
+    @State private var thirdDice = 8
     
-    @State private var diceType = 18
+    @State private var diceType = 8
     
     
     
@@ -76,7 +75,7 @@ struct RollDiceView: View {
     
     @State private var showingEditView = false
     
-    @State private var numberOfDices = 1
+    @State private var numberOfDices = 2
     
     func selectDice(at number: Int) -> Int {
         switch number {
@@ -108,9 +107,9 @@ struct RollDiceView: View {
                 }
                 .padding(.top, 170)
                 
-                //.rotationEffect(Angle(degrees: numberAngle))
+               
                 Spacer()
-                DrawDiceRollButtonView(dice: self.diceType) {
+                DrawDiceRollButtonView() {
                     self.timer.connect()
                 }
                 .padding(.bottom, 20)
@@ -123,7 +122,7 @@ struct RollDiceView: View {
                     Text("Setting")
                 }))
                 .sheet(isPresented: $showingEditView) {
-                    Text("Hello")
+                    EditDiceView(numberOfDices: self.$numberOfDices, diceType: self.$diceType)
             }
             .navigationBarTitle(Text("Roll Dice"))
             
