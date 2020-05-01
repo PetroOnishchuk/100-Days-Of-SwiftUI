@@ -25,13 +25,17 @@ struct ResultsView: View {
                             DieView(die: newDie.wrappedResult, width: 58, height: 58, cornerRadius: 6)
                         }
                        Spacer()
-                        HorizontalText(text: "Result:", textResult: "\(result.wrappedTotalResult)", fontSize: 25, resultsWidth: 50)
+                        VStack {
+                        HorizontalText(text: "Result:", textResult: "\(result.wrappedTotalResult)", fontSize: 20, resultsWidth: 55)
+                            Text("\(result.wrappedDate)")
+                        }
                     }
                 }
                 .onDelete(perform: removeResult(at:))
             }
             .navigationBarTitle(Text("Roll Dice Results"))
         }
+    .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func removeResult(at offsets: IndexSet) {

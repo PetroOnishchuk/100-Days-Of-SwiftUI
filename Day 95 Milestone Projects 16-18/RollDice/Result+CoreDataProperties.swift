@@ -23,8 +23,17 @@ extension Result {
     @NSManaged public var numbersOfDice: Int16
     @NSManaged public var dices: NSSet?
     
-    var wrappedDate: Date {
-        date ?? Date()
+    var wrappedDate: String {
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        if let  date = date {
+            return formatter.string(from: date)
+        } else {
+            return formatter.string(from: Date())
+        }
+        
     }
     
     var wrappedId: UUID {

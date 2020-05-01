@@ -81,7 +81,10 @@ struct RollDiceView: View {
     
     var body: some View {
         NavigationView {
+            GeometryReader { fullView in
+            ScrollView {
             VStack {
+                Spacer()
                 HStack {
                     ForEach((1...self.numberOfDice), id: \.self){ number in
                         DieView(die: self.selectDie(at: number), width: 100, height: 100, cornerRadius: 25)
@@ -89,7 +92,7 @@ struct RollDiceView: View {
                         .padding( 10)
                     }
                 }
-                .padding(.top, 170)
+              
                 Spacer()
                 HorizontalText(text: "Result:", textResult: "\(self.countTotalResult(at: self.numberOfDice))", fontSize: 35, resultsWidth: 70)
                 Spacer()
@@ -97,23 +100,27 @@ struct RollDiceView: View {
                     self.timer.connect()
                 }
                 .padding(.bottom, 20)
+                
             }
+            .frame(width: fullView.size.width, height: fullView.size.height)
             .navigationBarItems(trailing:
                 Button(action: {
                     self.isShowingEditView.toggle()
                 }, label: {
                     Text("Setting")
                 }))
-                .sheet(isPresented: $isShowingEditView) {
+                .sheet(isPresented: self.$isShowingEditView) {
                     EditDiceView(numberOfDice: self.$numberOfDice, diceType: self.$diceType)
             }
             .navigationBarTitle(Text("Roll Dice"))
-            
+            }
+        }
         }
         .onReceive(timer) { (time) in
             self.runTimer()
             
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func runTimer() {

@@ -54,7 +54,8 @@ struct EditDiceView: View {
         }, label: {
             Text("Done")
         }))
-        }  //
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func dismiss() {
