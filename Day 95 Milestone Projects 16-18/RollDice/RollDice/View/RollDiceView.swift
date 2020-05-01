@@ -9,6 +9,37 @@
 import SwiftUI
 
 
+struct drawText: ViewModifier {
+    let font = Font.system(size: 35, weight: .heavy, design: .default)
+    
+    func body(content: Content) -> some View {
+        content
+            .font(font)
+        
+    }
+}
+struct HorizontalText: View {
+    var text: String
+    var textResult: String
+    var fontSize: Int
+    var resultsWidth: Int
+    
+    var body: some View {
+        HStack {
+           
+            Text(text)
+                .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
+                .foregroundColor(Color.green)
+            
+            Text(textResult)
+                .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
+                .foregroundColor(Color.red)
+                .frame(width: CGFloat(self.resultsWidth))
+            
+        }
+    }
+}
+
 
 
 struct RollDiceView: View {
@@ -29,7 +60,7 @@ struct RollDiceView: View {
     @State private var numberOfCallTimer = 0
     @State private var numberOfCallDispatchQueue = 0
     @State private var timeToRun = 0.0
-    @State private var numberAngle = 0.0
+    @State private var numberOfAngle = 0.0
     
     @State private var isShowingEditView = false
     
@@ -51,25 +82,21 @@ struct RollDiceView: View {
     var body: some View {
         NavigationView {
             VStack {
-                
                 HStack {
-                    
                     ForEach((1...self.numberOfDice), id: \.self){ number in
                         DieView(die: self.selectDie(at: number), width: 100, height: 100, cornerRadius: 25)
-                            .rotationEffect(Angle(degrees: self.numberAngle))
-                           
+                            .rotationEffect(Angle(degrees: self.numberOfAngle))
                         .padding( 10)
                     }
-
                 }
                 .padding(.top, 170)
-               
+                Spacer()
+                HorizontalText(text: "Result:", textResult: "\(self.countTotalResult(at: self.numberOfDice))", fontSize: 35, resultsWidth: 70)
                 Spacer()
                 DiceRollButtonView() {
                     self.timer.connect()
                 }
                 .padding(.bottom, 20)
-                
             }
             .navigationBarItems(trailing:
                 Button(action: {
@@ -99,7 +126,7 @@ struct RollDiceView: View {
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + self.timeToRun) {
             withAnimation {
-                self.numberAngle += 180
+                self.numberOfAngle += 180
             }
             self.firstDie = Int.random(in: 0...self.diceType)
             self.secondDie = Int.random(in: 0...self.diceType)

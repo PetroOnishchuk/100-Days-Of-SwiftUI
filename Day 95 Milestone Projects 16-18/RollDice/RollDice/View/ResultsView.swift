@@ -24,8 +24,8 @@ struct ResultsView: View {
                         ForEach(result.dicesArray, id: \.result) { newDie in
                             DieView(die: newDie.wrappedResult, width: 58, height: 58, cornerRadius: 6)
                         }
-                        Text("Result: \(result.wrappedTotalResult)")
-                            .font(.largeTitle)
+                       Spacer()
+                        HorizontalText(text: "Result:", textResult: "\(result.wrappedTotalResult)", fontSize: 25, resultsWidth: 50)
                     }
                 }
                 .onDelete(perform: removeResult(at:))
