@@ -11,19 +11,18 @@ import SwiftUI
 struct EditDiceView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    @Binding var numberOfDices: Int
-    @State var testNumber = 0
-    let kindNumberOfDices = [1, 2, 3]
+    @Binding var numberOfDice: Int
+    let kindNumberOfDice = [1, 2, 3]
     @Binding var diceType: Int
     let kindOfTypeDice = [4, 8, 16, 32, 64, 128]
     
     var body: some View {
         NavigationView {
         Form {
-            Section(header: Text("Select number of Dice").font(.title)
+            Section(header: Text("Number of dice:").font(.title)
             ) {
-                Picker("Kind of number", selection: $numberOfDices   ) {
-                    ForEach(kindNumberOfDices, id: \.self) {
+                Picker("Kind of number", selection: $numberOfDice   ) {
+                    ForEach(kindNumberOfDice, id: \.self) {
                       
                         Text("\($0) ")
                         
@@ -32,7 +31,7 @@ struct EditDiceView: View {
             .pickerStyle(SegmentedPickerStyle())
                 .colorMultiply(.green)
             }
-            Section(header: Text("Select Type of Dice").font(.title)
+            Section(header: Text("Number of sides per die:").font(.title)
             ) {
                 Picker("Kind of Type", selection: $diceType) {
                     ForEach(kindOfTypeDice, id: \.self) {

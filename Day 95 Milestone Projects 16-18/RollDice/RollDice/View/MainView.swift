@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @FetchRequest(entity: Result.entity(), sortDescriptors: []) var results: FetchedResults<Result>
+
     
     
     var body: some View {
