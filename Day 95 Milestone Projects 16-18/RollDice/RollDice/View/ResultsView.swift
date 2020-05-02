@@ -14,26 +14,46 @@ struct ResultsView: View {
     
     @FetchRequest(entity: Result.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Result.totalResult, ascending: false)]) var results: FetchedResults<Result>
     
+    
+    @State private var countOfDie = 1
    
     
     var body: some View {
+        
+        
         NavigationView {
+            VStack {
+                
             List {
+                
                 ForEach(results, id: \.wrappedId) { result in
                     HStack {
+                        
+                        HStack {
+                            Text("\(self.findDiceIndex(at: result) + 1)")
+                            .frame(width: 20)
                         ForEach(result.dicesArray, id: \.result) { newDie in
+                            
                             DieView(die: newDie.wrappedResult, width: 58, height: 58, cornerRadius: 6)
+                            
                         }
+                        //
+                    }
                        Spacer()
                         VStack {
-                        HorizontalText(text: "Result:", textResult: "\(result.wrappedTotalResult)", fontSize: 20, resultsWidth: 55)
-                            Text("\(result.wrappedDate)")
+                            HorizontalText(text: "Result:", textResult: "\(result.wrappedTotalResult)", fontSize: 20, textResultWidth: 70, resultsWidth: 55, textColor: .green, resultColor: .red)
+                            
+                            HorizontalText(text: "Date:", textResult: result.wrappedDate, fontSize: 10, textResultWidth: 70, resultsWidth: 85, textColor: .black, resultColor: .purple)
                         }
                     }
                 }
                 .onDelete(perform: removeResult(at:))
+                //
             }
-            .navigationBarTitle(Text("Roll Dice Results"))
+           
+                HorizontalText(text: "Number of result:", textResult: "\(results.count)", fontSize: 30, textResultWidth: 300, resultsWidth: 50, textColor: .green, resultColor: .red)
+        }
+             .navigationBarTitle(Text("Roll Dice Results"))
         }
     .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -48,6 +68,14 @@ struct ResultsView: View {
                 print("Error with save after delete Result")
             }
         }
+    }
+    
+    func findDiceIndex(at result: Result) -> Int {
+        guard let index = results.firstIndex(of: result) else { return 0 }
+        let newIndex = results.firstIndex { (rst) -> Bool in
+            rst == result
+        }
+        return index
     }
   
 }

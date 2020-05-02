@@ -14,7 +14,7 @@ struct DieView: View {
      var height: CGFloat
      var cornerRadius: CGFloat = 0
      
-     
+    
      
      var body: some View {
          Text("\(die)")

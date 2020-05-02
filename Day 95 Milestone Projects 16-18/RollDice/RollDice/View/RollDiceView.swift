@@ -9,31 +9,27 @@
 import SwiftUI
 
 
-struct drawText: ViewModifier {
-    let font = Font.system(size: 35, weight: .heavy, design: .default)
-    
-    func body(content: Content) -> some View {
-        content
-            .font(font)
-        
-    }
-}
+
 struct HorizontalText: View {
     var text: String
     var textResult: String
     var fontSize: Int
+    var textResultWidth: Int
     var resultsWidth: Int
+    var textColor: Color
+    var resultColor: Color
     
     var body: some View {
         HStack {
            
             Text(text)
                 .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
-                .foregroundColor(Color.green)
+                .foregroundColor(textColor)
+                .frame(width: CGFloat(self.textResultWidth))
             
             Text(textResult)
                 .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
-                .foregroundColor(Color.red)
+                .foregroundColor(resultColor)
                 .frame(width: CGFloat(self.resultsWidth))
             
         }
@@ -94,7 +90,7 @@ struct RollDiceView: View {
                 }
               
                 Spacer()
-                HorizontalText(text: "Result:", textResult: "\(self.countTotalResult(at: self.numberOfDice))", fontSize: 35, resultsWidth: 70)
+                HorizontalText(text: "Result:", textResult: "\(self.countTotalResult(at: self.numberOfDice))", fontSize: 35, textResultWidth: 120, resultsWidth: 70, textColor: .green, resultColor: .red)
                 Spacer()
                 DiceRollButtonView() {
                     self.timer.connect()

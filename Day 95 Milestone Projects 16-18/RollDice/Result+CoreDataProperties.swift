@@ -26,7 +26,7 @@ extension Result {
     var wrappedDate: String {
         
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
+        formatter.dateStyle = .short
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
         if let  date = date {
             return formatter.string(from: date)
