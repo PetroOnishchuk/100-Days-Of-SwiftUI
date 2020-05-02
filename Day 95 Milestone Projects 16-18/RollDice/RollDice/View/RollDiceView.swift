@@ -35,6 +35,26 @@ struct HorizontalText: View {
     }
 }
 
+struct HorizontalTextV2: View {
+    var text: String
+    var textResult: String
+    
+    var fontSize: Int
+    var textColor: Color
+    var resultColor: Color
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(text)
+                .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
+                .foregroundColor(textColor)
+                + Text(" ")
+             + Text(textResult)
+                .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
+                .foregroundColor(resultColor)
+        }
+    }
+}
 
 
 struct RollDiceView: View {

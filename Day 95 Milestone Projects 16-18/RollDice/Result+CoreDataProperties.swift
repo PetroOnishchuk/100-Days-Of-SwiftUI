@@ -27,7 +27,19 @@ extension Result {
         
         let formatter = DateFormatter()
         formatter.dateStyle = .short
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = "yyyy-MM-dd"
+        if let  date = date {
+            return formatter.string(from: date)
+        } else {
+            return formatter.string(from: Date())
+        }
+        
+    }
+    
+    var wrappedTime: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.dateFormat = "HH:mm"
         if let  date = date {
             return formatter.string(from: date)
         } else {
