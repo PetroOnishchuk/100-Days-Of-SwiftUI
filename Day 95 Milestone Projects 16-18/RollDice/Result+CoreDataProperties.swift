@@ -26,8 +26,8 @@ extension Result {
     var wrappedDate: String {
         
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateStyle = .long
+        formatter.dateFormat = "MMMM dd, yyyy"
         if let  date = date {
             return formatter.string(from: date)
         } else {
@@ -39,7 +39,8 @@ extension Result {
     var wrappedTime: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
-        formatter.dateFormat = "HH:mm"
+       // formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "h:mm a"
         if let  date = date {
             return formatter.string(from: date)
         } else {

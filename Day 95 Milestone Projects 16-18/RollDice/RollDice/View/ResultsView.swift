@@ -31,7 +31,7 @@ struct ResultsView: View {
                         
                         HStack {
                             
-                            DieView(die: self.findDiceIndex(at: result) + 1, width: 25, height: 25, cornerRadius: 6, backgroundColor: .white)
+                            DieView(die: self.findDiceIndex(at: result) + 1, width: 25, height: 25, cornerRadius: 6, backgroundColor: .primary)
                         ForEach(result.dicesArray, id: \.result) { newDie in
                             
                             DieView(die: newDie.wrappedResult, width: 58, height: 58, cornerRadius: 6, backgroundColor: .yellow)
@@ -47,7 +47,7 @@ struct ResultsView: View {
                             
                             HorizontalTextV2(text: "Date: ", textResult: result.wrappedDate, fontSize: 12, textColor: .blue, resultColor: .purple)
                             
-                            HorizontalTextV2(text: "Time: ", textResult: result.wrappedTime, fontSize: 12, textColor: .blue, resultColor: .purple)
+                            HorizontalTextV2(text: "Time: ", textResult: result.wrappedTime, fontSize: 12, textColor: .blue, resultColor: .primary)
                         }
                             
                     }
