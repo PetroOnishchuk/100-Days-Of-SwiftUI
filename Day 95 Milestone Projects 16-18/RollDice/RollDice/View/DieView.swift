@@ -13,18 +13,17 @@ struct DieView: View {
      var width: CGFloat
      var height: CGFloat
      var cornerRadius: CGFloat = 0
-     
+    var backgroundColor: Color
     
      
      var body: some View {
          Text("\(die)")
              .frame(width: self.width, height: self.height)
-             .background(Color.yellow)
+             .background(backgroundColor)
              .foregroundColor(.blue)
              .cornerRadius(cornerRadius)
              .overlay(RoundedRectangle(cornerRadius: cornerRadius).stroke(Color.red, lineWidth: 2))
-
-             .font(.largeTitle)
+            .font(backgroundColor == Color.yellow ? .largeTitle : .headline )
          
      }
 }

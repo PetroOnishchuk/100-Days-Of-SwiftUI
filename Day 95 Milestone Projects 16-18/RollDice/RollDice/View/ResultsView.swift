@@ -30,21 +30,24 @@ struct ResultsView: View {
                     HStack {
                         
                         HStack {
-                            Text("\(self.findDiceIndex(at: result) + 1)")
-                            .frame(width: 20)
+                            
+                            DieView(die: self.findDiceIndex(at: result) + 1, width: 25, height: 25, cornerRadius: 6, backgroundColor: .black)
                         ForEach(result.dicesArray, id: \.result) { newDie in
                             
-                            DieView(die: newDie.wrappedResult, width: 58, height: 58, cornerRadius: 6)
+                            DieView(die: newDie.wrappedResult, width: 58, height: 58, cornerRadius: 6, backgroundColor: .yellow)
                             
                         }
                         //
                     }
                        Spacer()
-                        VStack {
+                        
+                        VStack() {
+                            
                             HorizontalText(text: "Result:", textResult: "\(result.wrappedTotalResult)", fontSize: 20, textResultWidth: 70, resultsWidth: 55, textColor: .green, resultColor: .red)
                             
-                            HorizontalText(text: "Date:", textResult: result.wrappedDate, fontSize: 10, textResultWidth: 70, resultsWidth: 85, textColor: .black, resultColor: .purple)
+                            HorizontalText(text: "Date:", textResult: result.wrappedDate, fontSize: 10, textResultWidth: 30, resultsWidth: 85, textColor: .black, resultColor: .purple)
                         }
+                            
                     }
                 }
                 .onDelete(perform: removeResult(at:))

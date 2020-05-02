@@ -20,8 +20,7 @@ struct HorizontalText: View {
     var resultColor: Color
     
     var body: some View {
-        HStack {
-           
+        HStack() {
             Text(text)
                 .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
                 .foregroundColor(textColor)
@@ -83,7 +82,7 @@ struct RollDiceView: View {
                 Spacer()
                 HStack {
                     ForEach((1...self.numberOfDice), id: \.self){ number in
-                        DieView(die: self.selectDie(at: number), width: 100, height: 100, cornerRadius: 25)
+                        DieView(die: self.selectDie(at: number), width: 100, height: 100, cornerRadius: 25, backgroundColor: .yellow)
                             .rotationEffect(Angle(degrees: self.numberOfAngle))
                         .padding( 10)
                     }
