@@ -12,47 +12,42 @@ struct ResultsView: View {
     
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Result.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Result.totalResult, ascending: false)]) var results: FetchedResults<Result>
-    
+    @FetchRequest(entity: Dice.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Dice.result, ascending: false)]) var dices: FetchedResults<Dice>
     
     @State private var countOfDie = 1
     
     
     var body: some View {
-        
-        
         NavigationView {
             VStack {
-                
                 List {
+                    ForEach(self.dices, id: \.result) { newDie in
+                                                                                    
+                                                                                    DieView(die: newDie.wrappedResult, width: 54, height: 54
+                                                                                        , cornerRadius: 6, backgroundColor: .yellow)
+                                                                                }
                     ForEach(results, id: \.wrappedId) { result in
                         HStack {
                             HStack {
                                 DieView(die: self.findDiceIndex(at: result) + 1, width: 25, height: 25, cornerRadius: 6, backgroundColor: .primary)
                                 ForEach(result.dicesArray, id: \.result) { newDie in
-                                    
+
                                     DieView(die: newDie.wrappedResult, width: 54, height: 54
                                         , cornerRadius: 6, backgroundColor: .yellow)
-                                    
                                 }
-                                //
+                             
                             }
                             Spacer()
                             
                             VStack(alignment: .leading) {
-                                
                                 HorizontalText(text: "Result: ", textResult: "\(result.wrappedTotalResult)",  fontSize: 16, textColor: .green, resultColor: .red)
-                                
                                 HorizontalText(text: "Date : ", textResult: result.wrappedDate, fontSize: 12, textColor: .blue, resultColor: .purple)
-                                
                                 HorizontalText(text: "Time: ", textResult: result.wrappedTime, fontSize: 12, textColor: .blue, resultColor: .primary)
                             }
-                            
                         }
                     }
                     .onDelete(perform: removeResult(at:))
-                    
                 }
-                
                 HorizontalText(text: "Number of results:   ", textResult: "\(results.count)", fontSize: 30,   textColor: .green, resultColor: .red)
             }
             .navigationBarTitle(Text("Roll Dice Results"))
@@ -63,6 +58,13 @@ struct ResultsView: View {
     func removeResult(at offsets: IndexSet) {
         for index in offsets {
             let result = results[index]
+           
+            for die in result.dicesArray {
+                moc.delete(die)
+                for dies2 in dices {
+                    moc.delete(dies2)
+                }
+            }
             moc.delete(result)
             do {
                 try moc.save()

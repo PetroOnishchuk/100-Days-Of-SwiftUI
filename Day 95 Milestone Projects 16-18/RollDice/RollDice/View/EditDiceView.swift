@@ -23,9 +23,7 @@ struct EditDiceView: View {
             ) {
                 Picker("Kind of number", selection: $numberOfDice   ) {
                     ForEach(kindNumberOfDice, id: \.self) {
-                      
                         Text("\($0) ")
-                        
                     }
                 }
             .pickerStyle(SegmentedPickerStyle())
@@ -42,7 +40,6 @@ struct EditDiceView: View {
                 .colorMultiply(.orange)
             }
             Spacer()
-            
         }
         .navigationBarTitle(Text("Setting Screen"))
         .navigationBarItems(trailing: Button(action: {

@@ -12,11 +12,11 @@ import CoreData
 
 
 extension Result {
-
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Result> {
         return NSFetchRequest<Result>(entityName: "Result")
     }
-
+    
     @NSManaged public var date: Date?
     @NSManaged public var id: UUID?
     @NSManaged public var totalResult: Int16
@@ -39,7 +39,7 @@ extension Result {
     var wrappedTime: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
-       // formatter.locale = Locale(identifier: "en_US_POSIX")
+        // formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "h:mm a"
         if let  date = date {
             return formatter.string(from: date)
@@ -68,23 +68,23 @@ extension Result {
         }
         return array
     }
-
-
+    
+    
 }
 
 // MARK: Generated accessors for dices
 extension Result {
-
+    
     @objc(addDicesObject:)
     @NSManaged public func addToDices(_ value: Dice)
-
+    
     @objc(removeDicesObject:)
     @NSManaged public func removeFromDices(_ value: Dice)
-
+    
     @objc(addDices:)
     @NSManaged public func addToDices(_ values: NSSet)
-
+    
     @objc(removeDices:)
     @NSManaged public func removeFromDices(_ values: NSSet)
-
+    
 }

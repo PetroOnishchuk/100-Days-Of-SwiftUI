@@ -14,8 +14,6 @@ struct RollDiceView: View {
     @Environment(\.managedObjectContext) var moc
     
     @State private var timer = Timer.publish(every: 0.5 , on: .main, in: .common)
-    
-    
     @State private var firstDie = 8
     @State private var secondDie = 8
     @State private var thirdDie = 8
@@ -55,18 +53,14 @@ struct RollDiceView: View {
                                     .padding( 10)
                             }
                         }
-                        
                         Spacer()
-                        
                         DynamicHorizontalText(text: "Result:", textResult: "\(self.countTotalResult(at: self.numberOfDice))", fontSize: 35, textColor: .green, resultColor: .red)
                             .frame(width: 210)
-                        
                         Spacer()
                         DiceRollButtonView() {
                             self.timer.connect()
                         }
                         .padding(.bottom, 20)
-                        
                     }
                     .frame(width: fullView.size.width, height: fullView.size.height)
                     .navigationBarItems(trailing:
@@ -84,7 +78,6 @@ struct RollDiceView: View {
         }
         .onReceive(timer) { (time) in
             self.runTimer()
-            
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
