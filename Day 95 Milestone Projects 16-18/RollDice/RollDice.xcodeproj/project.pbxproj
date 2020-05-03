@@ -14,6 +14,7 @@
 		983C90692459C5E00053EE49 /* Dice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90652459C5E00053EE49 /* Dice+CoreDataProperties.swift */; };
 		983C906A2459C5E00053EE49 /* Result+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90662459C5E00053EE49 /* Result+CoreDataClass.swift */; };
 		983C906B2459C5E00053EE49 /* Result+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90672459C5E00053EE49 /* Result+CoreDataProperties.swift */; };
+		9852C457245EF88E00F0A500 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9852C456245EF88E00F0A500 /* TextView.swift */; };
 		986C30DF245720DC00CA3BF7 /* RollDiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C30DE245720DC00CA3BF7 /* RollDiceView.swift */; };
 		986C30E12457210D00CA3BF7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C30E02457210D00CA3BF7 /* MainView.swift */; };
 		986C30E3245721A700CA3BF7 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C30E2245721A700CA3BF7 /* ResultsView.swift */; };
@@ -33,6 +34,7 @@
 		983C90652459C5E00053EE49 /* Dice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dice+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		983C90662459C5E00053EE49 /* Result+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		983C90672459C5E00053EE49 /* Result+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		9852C456245EF88E00F0A500 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		986C30DE245720DC00CA3BF7 /* RollDiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDiceView.swift; sourceTree = "<group>"; };
 		986C30E02457210D00CA3BF7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		986C30E2245721A700CA3BF7 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				986C30E2245721A700CA3BF7 /* ResultsView.swift */,
 				982F3943245C5CFF0015A8C8 /* DieView.swift */,
 				982F3945245C5D5E0015A8C8 /* DiceRollButtonView.swift */,
+				9852C456245EF88E00F0A500 /* TextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				98A0A3AF2455C0DA00282BED /* AppDelegate.swift in Sources */,
 				982F3944245C5CFF0015A8C8 /* DieView.swift in Sources */,
 				986C30E12457210D00CA3BF7 /* MainView.swift in Sources */,
+				9852C457245EF88E00F0A500 /* TextView.swift in Sources */,
 				98A0A3B12455C0DA00282BED /* SceneDelegate.swift in Sources */,
 				983C905B2459C5AC0053EE49 /* RollDice.xcdatamodeld in Sources */,
 				986C30E3245721A700CA3BF7 /* ResultsView.swift in Sources */,

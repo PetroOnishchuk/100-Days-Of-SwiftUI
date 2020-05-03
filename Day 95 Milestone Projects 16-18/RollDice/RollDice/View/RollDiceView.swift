@@ -10,51 +10,8 @@ import SwiftUI
 
 
 
-struct HorizontalText: View {
-    var text: String
-    var textResult: String
-    var fontSize: Int
-    var textResultWidth: Int
-    var resultsWidth: Int
-    var textColor: Color
-    var resultColor: Color
-    
-    var body: some View {
-        HStack() {
-            Text(text)
-                .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
-                .foregroundColor(textColor)
-                .frame(width: CGFloat(self.textResultWidth))
-            
-            Text(textResult)
-                .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
-                .foregroundColor(resultColor)
-                .frame(width: CGFloat(self.resultsWidth))
-            
-        }
-    }
-}
 
-struct HorizontalTextV2: View {
-    var text: String
-    var textResult: String
-    
-    var fontSize: Int
-    var textColor: Color
-    var resultColor: Color
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(text)
-                .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
-                .foregroundColor(textColor)
-                + Text(" ")
-             + Text(textResult)
-                .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
-                .foregroundColor(resultColor)
-        }
-    }
-}
+
 
 
 struct RollDiceView: View {
@@ -109,7 +66,10 @@ struct RollDiceView: View {
                 }
               
                 Spacer()
-                HorizontalText(text: "Result:", textResult: "\(self.countTotalResult(at: self.numberOfDice))", fontSize: 35, textResultWidth: 120, resultsWidth: 70, textColor: .green, resultColor: .red)
+              
+                DynamicHorizontalText(text: "Result:", textResult: "\(self.countTotalResult(at: self.numberOfDice))", fontSize: 35, textColor: .green, resultColor: .red)
+                    .frame(width: 210)
+                    
                 Spacer()
                 DiceRollButtonView() {
                     self.timer.connect()

@@ -23,7 +23,7 @@ struct DieView: View {
              .foregroundColor(.blue)
              .cornerRadius(cornerRadius)
              .overlay(RoundedRectangle(cornerRadius: cornerRadius).stroke(Color.red, lineWidth: 2))
-            .font(backgroundColor == Color.yellow ? .largeTitle : .headline )
+            .font(backgroundColor == Color.yellow ? .title : .headline )
          
      }
 }

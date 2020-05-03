@@ -14,7 +14,7 @@ struct EditDiceView: View {
     @Binding var numberOfDice: Int
     let kindNumberOfDice = [1, 2, 3]
     @Binding var diceType: Int
-    let kindOfTypeDice = [4, 8, 16, 32, 64, 128]
+    let kindOfTypeDice = [4, 8, 16, 32, 64,128]
     
     var body: some View {
         NavigationView {
