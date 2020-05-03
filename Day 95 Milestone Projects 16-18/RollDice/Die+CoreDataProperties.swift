@@ -1,5 +1,5 @@
 //
-//  Dice+CoreDataProperties.swift
+//  Die+CoreDataProperties.swift
 //  RollDice
 //
 //  Created by Petro Onishchuk on 4/29/20.
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension Dice {
+extension Die {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Dice> {
-        return NSFetchRequest<Dice>(entityName: "Dice")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Die> {
+        return NSFetchRequest<Die>(entityName: "Die")
     }
 
     @NSManaged public var date: Date?

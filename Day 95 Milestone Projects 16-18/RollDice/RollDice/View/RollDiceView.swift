@@ -116,7 +116,7 @@ struct RollDiceView: View {
         firstResult.date = Date()
         firstResult.totalResult = self.countTotalResult(at: self.numberOfDice)
         for i in 1...self.numberOfDice {
-            let newDice = Dice(context: self.moc)
+            let newDice = Die(context: self.moc)
             newDice.date = Date()
             newDice.id = UUID()
             newDice.result = Int16(selectDie(at: i))

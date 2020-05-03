@@ -1,5 +1,5 @@
 //
-//  Dice+CoreDataClass.swift
+//  Die+CoreDataClass.swift
 //  RollDice
 //
 //  Created by Petro Onishchuk on 4/29/20.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Dice)
-public class Dice: NSManagedObject {
+@objc(Die)
+public class Die: NSManagedObject {
 
 }

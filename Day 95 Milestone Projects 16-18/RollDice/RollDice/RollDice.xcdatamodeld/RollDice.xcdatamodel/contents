@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F72f" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Dice" representedClassName="Dice" syncable="YES">
+    <entity name="Die" representedClassName="Die" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="result" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" customClassName="[Int16]"/>
@@ -12,10 +12,10 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="numbersOfDice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="totalResult" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="dices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dice" inverseName="results" inverseEntity="Dice"/>
+        <relationship name="dices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Die" inverseName="results" inverseEntity="Die"/>
     </entity>
     <elements>
-        <element name="Dice" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="Result" positionX="-54" positionY="27" width="128" height="118"/>
+        <element name="Die" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Result" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

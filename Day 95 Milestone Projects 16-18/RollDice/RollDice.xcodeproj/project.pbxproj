@@ -10,8 +10,8 @@
 		982F3944245C5CFF0015A8C8 /* DieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982F3943245C5CFF0015A8C8 /* DieView.swift */; };
 		982F3946245C5D5E0015A8C8 /* DiceRollButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982F3945245C5D5E0015A8C8 /* DiceRollButtonView.swift */; };
 		983C905B2459C5AC0053EE49 /* RollDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 983C90592459C5AC0053EE49 /* RollDice.xcdatamodeld */; };
-		983C90682459C5E00053EE49 /* Dice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90642459C5DF0053EE49 /* Dice+CoreDataClass.swift */; };
-		983C90692459C5E00053EE49 /* Dice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90652459C5E00053EE49 /* Dice+CoreDataProperties.swift */; };
+		983C90682459C5E00053EE49 /* Die+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90642459C5DF0053EE49 /* Die+CoreDataClass.swift */; };
+		983C90692459C5E00053EE49 /* Die+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90652459C5E00053EE49 /* Die+CoreDataProperties.swift */; };
 		983C906A2459C5E00053EE49 /* Result+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90662459C5E00053EE49 /* Result+CoreDataClass.swift */; };
 		983C906B2459C5E00053EE49 /* Result+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90672459C5E00053EE49 /* Result+CoreDataProperties.swift */; };
 		9852C457245EF88E00F0A500 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9852C456245EF88E00F0A500 /* TextView.swift */; };
@@ -30,8 +30,8 @@
 		982F3943245C5CFF0015A8C8 /* DieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieView.swift; sourceTree = "<group>"; };
 		982F3945245C5D5E0015A8C8 /* DiceRollButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollButtonView.swift; sourceTree = "<group>"; };
 		983C905A2459C5AC0053EE49 /* RollDice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RollDice.xcdatamodel; sourceTree = "<group>"; };
-		983C90642459C5DF0053EE49 /* Dice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dice+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		983C90652459C5E00053EE49 /* Dice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dice+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		983C90642459C5DF0053EE49 /* Die+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Die+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		983C90652459C5E00053EE49 /* Die+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Die+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		983C90662459C5E00053EE49 /* Result+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		983C90672459C5E00053EE49 /* Result+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		9852C456245EF88E00F0A500 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
@@ -76,8 +76,8 @@
 		989B371124560C4200BE7288 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				983C90642459C5DF0053EE49 /* Dice+CoreDataClass.swift */,
-				983C90652459C5E00053EE49 /* Dice+CoreDataProperties.swift */,
+				983C90642459C5DF0053EE49 /* Die+CoreDataClass.swift */,
+				983C90652459C5E00053EE49 /* Die+CoreDataProperties.swift */,
 				983C90662459C5E00053EE49 /* Result+CoreDataClass.swift */,
 				983C90672459C5E00053EE49 /* Result+CoreDataProperties.swift */,
 			);
@@ -202,8 +202,8 @@
 				98A0A3B12455C0DA00282BED /* SceneDelegate.swift in Sources */,
 				983C905B2459C5AC0053EE49 /* RollDice.xcdatamodeld in Sources */,
 				986C30E3245721A700CA3BF7 /* ResultsView.swift in Sources */,
-				983C90682459C5E00053EE49 /* Dice+CoreDataClass.swift in Sources */,
-				983C90692459C5E00053EE49 /* Dice+CoreDataProperties.swift in Sources */,
+				983C90682459C5E00053EE49 /* Die+CoreDataClass.swift in Sources */,
+				983C90692459C5E00053EE49 /* Die+CoreDataProperties.swift in Sources */,
 				98EBA7212458AE76001FAED4 /* EditDiceView.swift in Sources */,
 				982F3946245C5D5E0015A8C8 /* DiceRollButtonView.swift in Sources */,
 				983C906B2459C5E00053EE49 /* Result+CoreDataProperties.swift in Sources */,

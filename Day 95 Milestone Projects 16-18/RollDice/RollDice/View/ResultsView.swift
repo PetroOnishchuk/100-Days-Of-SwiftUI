@@ -12,7 +12,6 @@ struct ResultsView: View {
     
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Result.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Result.totalResult, ascending: false)]) var results: FetchedResults<Result>
-    @FetchRequest(entity: Dice.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Dice.result, ascending: false)]) var dices: FetchedResults<Dice>
     
     @State private var countOfDie = 1
     
@@ -21,11 +20,6 @@ struct ResultsView: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(self.dices, id: \.result) { newDie in
-                                                                                    
-                                                                                    DieView(die: newDie.wrappedResult, width: 54, height: 54
-                                                                                        , cornerRadius: 6, backgroundColor: .yellow)
-                                                                                }
                     ForEach(results, id: \.wrappedId) { result in
                         HStack {
                             HStack {
@@ -58,12 +52,8 @@ struct ResultsView: View {
     func removeResult(at offsets: IndexSet) {
         for index in offsets {
             let result = results[index]
-           
             for die in result.dicesArray {
                 moc.delete(die)
-                for dies2 in dices {
-                    moc.delete(dies2)
-                }
             }
             moc.delete(result)
             do {

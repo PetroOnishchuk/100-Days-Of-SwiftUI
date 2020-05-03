@@ -61,8 +61,8 @@ extension Result {
         Int(numbersOfDice)
     }
     
-    var dicesArray: [Dice] {
-        let set = dices as? Set<Dice> ?? []
+    var dicesArray: [Die] {
+        let set = dices as? Set<Die> ?? []
         let array = set.sorted { (firstDice, secondDice) -> Bool in
             firstDice.wrappedResult > secondDice.wrappedResult
         }
@@ -76,10 +76,10 @@ extension Result {
 extension Result {
     
     @objc(addDicesObject:)
-    @NSManaged public func addToDices(_ value: Dice)
+    @NSManaged public func addToDices(_ value: Die)
     
     @objc(removeDicesObject:)
-    @NSManaged public func removeFromDices(_ value: Dice)
+    @NSManaged public func removeFromDices(_ value: Die)
     
     @objc(addDices:)
     @NSManaged public func addToDices(_ values: NSSet)
