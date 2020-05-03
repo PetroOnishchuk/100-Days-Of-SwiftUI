@@ -9,26 +9,24 @@
 import SwiftUI
 
 struct DiceRollButtonView: View {
-      var runFunction: (()-> Void)
-     
-      
-      var body: some View {
-          
-          Button(action: {
-              self.runFunction()
-          }) {
-              Text("Roll Dice")
-              
-          }
-          .frame(width: 250, height: 80)
-          .background(Color.purple)
-          .foregroundColor(.black)
-          .cornerRadius(25)
-          .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.blue, lineWidth: 2))
-          .font(.largeTitle)
-          
-          
-      }
+    
+    
+    var runFunction: (()-> Void)
+    var body: some View {
+        
+        Button(action: {
+            self.runFunction()
+        }) {
+            Text("Roll Dice")
+            
+        }
+        .frame(width: 250, height: 80)
+        .background(Color.purple)
+        .foregroundColor(.black)
+        .cornerRadius(25)
+        .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.blue, lineWidth: 2))
+        .font(.largeTitle)
+    }
 }
 
 //struct DiceRollButtonView_Previews: PreviewProvider {

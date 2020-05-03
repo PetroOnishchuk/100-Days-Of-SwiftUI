@@ -40,12 +40,8 @@ struct EditDiceView: View {
                 }
             .pickerStyle(SegmentedPickerStyle())
                 .colorMultiply(.orange)
-            
             }
             Spacer()
-            
-            
-           
             
         }
         .navigationBarTitle(Text("Setting Screen"))

@@ -9,11 +9,6 @@
 import SwiftUI
 
 
-
-
-
-
-
 struct RollDiceView: View {
     
     @Environment(\.managedObjectContext) var moc
@@ -26,16 +21,12 @@ struct RollDiceView: View {
     @State private var thirdDie = 8
     @State private var diceType = 8
     
-    
-    
-    
     @State private var numberOfCallTimer = 0
     @State private var numberOfCallDispatchQueue = 0
     @State private var timeToRun = 0.0
     @State private var numberOfAngle = 0.0
     
     @State private var isShowingEditView = false
-    
     @State private var numberOfDice = 2
     
     func selectDie(at number: Int) -> Int {
@@ -54,42 +45,42 @@ struct RollDiceView: View {
     var body: some View {
         NavigationView {
             GeometryReader { fullView in
-            ScrollView {
-            VStack {
-                Spacer()
-                HStack {
-                    ForEach((1...self.numberOfDice), id: \.self){ number in
-                        DieView(die: self.selectDie(at: number), width: 100, height: 100, cornerRadius: 25, backgroundColor: .yellow)
-                            .rotationEffect(Angle(degrees: self.numberOfAngle))
-                        .padding( 10)
+                ScrollView {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            ForEach((1...self.numberOfDice), id: \.self){ number in
+                                DieView(die: self.selectDie(at: number), width: 100, height: 100, cornerRadius: 25, backgroundColor: .yellow)
+                                    .rotationEffect(Angle(degrees: self.numberOfAngle))
+                                    .padding( 10)
+                            }
+                        }
+                        
+                        Spacer()
+                        
+                        DynamicHorizontalText(text: "Result:", textResult: "\(self.countTotalResult(at: self.numberOfDice))", fontSize: 35, textColor: .green, resultColor: .red)
+                            .frame(width: 210)
+                        
+                        Spacer()
+                        DiceRollButtonView() {
+                            self.timer.connect()
+                        }
+                        .padding(.bottom, 20)
+                        
                     }
+                    .frame(width: fullView.size.width, height: fullView.size.height)
+                    .navigationBarItems(trailing:
+                        Button(action: {
+                            self.isShowingEditView.toggle()
+                        }, label: {
+                            Text("Setting")
+                        }))
+                        .sheet(isPresented: self.$isShowingEditView) {
+                            EditDiceView(numberOfDice: self.$numberOfDice, diceType: self.$diceType)
+                    }
+                    .navigationBarTitle(Text("Roll Dice"))
                 }
-              
-                Spacer()
-              
-                DynamicHorizontalText(text: "Result:", textResult: "\(self.countTotalResult(at: self.numberOfDice))", fontSize: 35, textColor: .green, resultColor: .red)
-                    .frame(width: 210)
-                    
-                Spacer()
-                DiceRollButtonView() {
-                    self.timer.connect()
-                }
-                .padding(.bottom, 20)
-                
             }
-            .frame(width: fullView.size.width, height: fullView.size.height)
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.isShowingEditView.toggle()
-                }, label: {
-                    Text("Setting")
-                }))
-                .sheet(isPresented: self.$isShowingEditView) {
-                    EditDiceView(numberOfDice: self.$numberOfDice, diceType: self.$diceType)
-            }
-            .navigationBarTitle(Text("Roll Dice"))
-            }
-        }
         }
         .onReceive(timer) { (time) in
             self.runTimer()
@@ -139,9 +130,9 @@ struct RollDiceView: View {
             newDice.type = Int16(self.diceType)
             firstResult.addToDices(newDice)
         }
-          
-          firstResult.numbersOfDice = Int16(self.numberOfDice)
-          try? self.moc.save()
+        
+        firstResult.numbersOfDice = Int16(self.numberOfDice)
+        try? self.moc.save()
     }
     
     func countTotalResult(at number: Int) -> Int16 {
@@ -153,7 +144,7 @@ struct RollDiceView: View {
         case 3:
             return Int16(self.firstDie + self.secondDie + self.thirdDie)
         default:
-             return Int16(0)
+            return Int16(0)
         }
     }
 }

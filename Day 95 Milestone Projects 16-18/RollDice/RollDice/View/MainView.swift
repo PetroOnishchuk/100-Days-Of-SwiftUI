@@ -9,22 +9,21 @@
 import SwiftUI
 
 struct MainView: View {
-
+    
     
     
     var body: some View {
         TabView {
-           RollDiceView()
-            .tabItem {
-                Image(systemName: "arkit")
-                Text("Roll Dice")
+            RollDiceView()
+                .tabItem {
+                    Image(systemName: "arkit")
+                    Text("Roll Dice")
             }
             
             ResultsView()
                 .tabItem {
-                     Text("Results")
+                    Text("Results")
                     Image(systemName: "list.number")
-                   
             }
             
         }

@@ -11,7 +11,6 @@ import SwiftUI
 struct HorizontalText: View {
     var text: String
     var textResult: String
-    
     var fontSize: Int
     var textColor: Color
     var resultColor: Color
@@ -22,17 +21,17 @@ struct HorizontalText: View {
                 .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
                 .foregroundColor(textColor)
                 +
-              Text(textResult)
-                .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
-                .foregroundColor(resultColor)
+                Text(textResult)
+                    .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
+                    .foregroundColor(resultColor)
         }
     }
 }
 
 struct DynamicHorizontalText: View {
+    
     var text: String
     var textResult: String
-    
     var fontSize: Int
     var textColor: Color
     var resultColor: Color
@@ -42,8 +41,8 @@ struct DynamicHorizontalText: View {
             Text(text)
                 .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
                 .foregroundColor(textColor)
-               Spacer()
-              Text(textResult)
+            Spacer()
+            Text(textResult)
                 .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
                 .foregroundColor(resultColor)
         }

@@ -11,12 +11,11 @@ import SwiftUI
 struct ResultsView: View {
     
     @Environment(\.managedObjectContext) var moc
-    
     @FetchRequest(entity: Result.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Result.totalResult, ascending: false)]) var results: FetchedResults<Result>
     
     
     @State private var countOfDie = 1
-   
+    
     
     var body: some View {
         
@@ -24,44 +23,41 @@ struct ResultsView: View {
         NavigationView {
             VStack {
                 
-            List {
-                
-                ForEach(results, id: \.wrappedId) { result in
-                    HStack {
-                        
+                List {
+                    ForEach(results, id: \.wrappedId) { result in
                         HStack {
+                            HStack {
+                                DieView(die: self.findDiceIndex(at: result) + 1, width: 25, height: 25, cornerRadius: 6, backgroundColor: .primary)
+                                ForEach(result.dicesArray, id: \.result) { newDie in
+                                    
+                                    DieView(die: newDie.wrappedResult, width: 54, height: 54
+                                        , cornerRadius: 6, backgroundColor: .yellow)
+                                    
+                                }
+                                //
+                            }
+                            Spacer()
                             
-                            DieView(die: self.findDiceIndex(at: result) + 1, width: 25, height: 25, cornerRadius: 6, backgroundColor: .primary)
-                        ForEach(result.dicesArray, id: \.result) { newDie in
-                            
-                            DieView(die: newDie.wrappedResult, width: 54, height: 54
-                                , cornerRadius: 6, backgroundColor: .yellow)
+                            VStack(alignment: .leading) {
+                                
+                                HorizontalText(text: "Result: ", textResult: "\(result.wrappedTotalResult)",  fontSize: 16, textColor: .green, resultColor: .red)
+                                
+                                HorizontalText(text: "Date : ", textResult: result.wrappedDate, fontSize: 12, textColor: .blue, resultColor: .purple)
+                                
+                                HorizontalText(text: "Time: ", textResult: result.wrappedTime, fontSize: 12, textColor: .blue, resultColor: .primary)
+                            }
                             
                         }
-                        //
                     }
-                       Spacer()
-                        
-                        VStack(alignment: .leading) {
-                           
-                            HorizontalText(text: "Result: ", textResult: "\(result.wrappedTotalResult)",  fontSize: 16, textColor: .green, resultColor: .red)
-                            
-                            HorizontalText(text: "Date : ", textResult: result.wrappedDate, fontSize: 12, textColor: .blue, resultColor: .purple)
-                            
-                            HorizontalText(text: "Time: ", textResult: result.wrappedTime, fontSize: 12, textColor: .blue, resultColor: .primary)
-                        }
-                            
-                    }
+                    .onDelete(perform: removeResult(at:))
+                    
                 }
-                .onDelete(perform: removeResult(at:))
-                //
-            }
-           
+                
                 HorizontalText(text: "Number of results:   ", textResult: "\(results.count)", fontSize: 30,   textColor: .green, resultColor: .red)
+            }
+            .navigationBarTitle(Text("Roll Dice Results"))
         }
-             .navigationBarTitle(Text("Roll Dice Results"))
-        }
-    .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func removeResult(at offsets: IndexSet) {
@@ -83,7 +79,7 @@ struct ResultsView: View {
         }
         return index
     }
-  
+    
 }
 
 //struct ResultsView_Previews: PreviewProvider {
