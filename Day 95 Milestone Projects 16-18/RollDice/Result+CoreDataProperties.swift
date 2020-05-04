@@ -2,7 +2,7 @@
 //  Result+CoreDataProperties.swift
 //  RollDice
 //
-//  Created by Petro Onishchuk on 4/29/20.
+//  Created by Petro Onishchuk on 5/4/20.
 //  Copyright © 2020 Petro Onishchuk. All rights reserved.
 //
 //
@@ -12,79 +12,75 @@ import CoreData
 
 
 extension Result {
-    
+
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Result> {
         return NSFetchRequest<Result>(entityName: "Result")
     }
-    
-    @NSManaged public var date: Date?
-    @NSManaged public var id: UUID?
+
     @NSManaged public var totalResult: Int16
-    @NSManaged public var numbersOfDice: Int16
-    @NSManaged public var dices: NSSet?
+    @NSManaged public var numberOfDice: Int16
+    @NSManaged public var id: UUID?
+    @NSManaged public var date: Date?
+    @NSManaged public var dice: NSSet?
     
     var wrappedDate: String {
-        
         let formatter = DateFormatter()
-        formatter.dateStyle = .long
         formatter.dateFormat = "MMMM dd, yyyy"
-        if let  date = date {
-            return formatter.string(from: date)
+        
+        if let wrpDate = date {
+            return formatter.string(from: wrpDate)
         } else {
             return formatter.string(from: Date())
         }
-        
     }
     
     var wrappedTime: String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        // formatter.locale = Locale(identifier: "en_US_POSIX")
+        
         formatter.dateFormat = "h:mm a"
-        if let  date = date {
-            return formatter.string(from: date)
+        if let wrpDate = date {
+            return formatter.string(from: wrpDate)
         } else {
             return formatter.string(from: Date())
         }
-        
-    }
-    
-    var wrappedId: UUID {
-        id ?? UUID()
     }
     
     var wrappedTotalResult: Int {
         Int(totalResult)
     }
     
-    var wrappedNumbersOfDice: Int {
-        Int(numbersOfDice)
+    var wrappedNumberOfDice: Int {
+        Int(numberOfDice)
     }
     
-    var dicesArray: [Die] {
-        let set = dices as? Set<Die> ?? []
-        let array = set.sorted { (firstDice, secondDice) -> Bool in
-            firstDice.wrappedResult > secondDice.wrappedResult
+    var wrappedId: UUID {
+        id ?? UUID()
+    }
+    
+    var diceArray: [Die] {
+        let set = dice as? Set<Die> ?? []
+        let array = set.sorted {(firstDie, secondDie) -> Bool in
+            firstDie.wrappedDieResult > secondDie.wrappedDieResult
         }
+        
         return array
     }
-    
-    
+
 }
 
-// MARK: Generated accessors for dices
+// MARK: Generated accessors for dice
 extension Result {
-    
-    @objc(addDicesObject:)
-    @NSManaged public func addToDices(_ value: Die)
-    
-    @objc(removeDicesObject:)
-    @NSManaged public func removeFromDices(_ value: Die)
-    
-    @objc(addDices:)
-    @NSManaged public func addToDices(_ values: NSSet)
-    
-    @objc(removeDices:)
-    @NSManaged public func removeFromDices(_ values: NSSet)
-    
+
+    @objc(addDiceObject:)
+    @NSManaged public func addToDice(_ value: Die)
+
+    @objc(removeDiceObject:)
+    @NSManaged public func removeFromDice(_ value: Die)
+
+    @objc(addDice:)
+    @NSManaged public func addToDice(_ values: NSSet)
+
+    @objc(removeDice:)
+    @NSManaged public func removeFromDice(_ values: NSSet)
+
 }

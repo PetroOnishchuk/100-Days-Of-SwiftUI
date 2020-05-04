@@ -2,7 +2,7 @@
 //  Die+CoreDataProperties.swift
 //  RollDice
 //
-//  Created by Petro Onishchuk on 4/29/20.
+//  Created by Petro Onishchuk on 5/4/20.
 //  Copyright © 2020 Petro Onishchuk. All rights reserved.
 //
 //
@@ -17,26 +17,26 @@ extension Die {
         return NSFetchRequest<Die>(entityName: "Die")
     }
 
-    @NSManaged public var date: Date?
+    @NSManaged public var numberOfSides: Int16
+    @NSManaged public var dieResult: Int16
     @NSManaged public var id: UUID?
-    @NSManaged public var result: Int16
-    @NSManaged public var type: Int16
-    @NSManaged public var results: Result?
+    @NSManaged public var date: Date?
+    @NSManaged public var mainResult: Result?
     
-    var wrappedDate: Date {
-        date ?? Date()
+    var wrappedNumberOfSides: Int {
+        Int(numberOfSides)
+    }
+    
+    var wrappedDieResult: Int {
+        Int(dieResult)
     }
     
     var wrappedId: UUID {
         id ?? UUID()
     }
     
-    var wrappedResult: Int {
-        Int(result)
-    }
-    
-    var wrappedType: Int {
-        Int(type)
+    var wrappedDate: Date {
+        date ?? Date()
     }
 
 }

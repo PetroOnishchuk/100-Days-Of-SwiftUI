@@ -2,21 +2,23 @@
 //  TextView.swift
 //  RollDice
 //
-//  Created by Petro Onishchuk on 5/3/20.
+//  Created by Petro Onishchuk on 5/4/20.
 //  Copyright © 2020 Petro Onishchuk. All rights reserved.
 //
 
 import SwiftUI
 
-struct HorizontalText: View {
+
+struct HorizontalTextView: View {
     var text: String
     var textResult: String
     var fontSize: Int
     var textColor: Color
     var resultColor: Color
     
+    
     var body: some View {
-        VStack() {
+        VStack {
             Text(text)
                 .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
                 .foregroundColor(textColor)
@@ -28,7 +30,8 @@ struct HorizontalText: View {
     }
 }
 
-struct DynamicHorizontalText: View {
+
+struct DynamicHorizontalTextView: View {
     
     var text: String
     var textResult: String
@@ -37,7 +40,7 @@ struct DynamicHorizontalText: View {
     var resultColor: Color
     
     var body: some View {
-        HStack() {
+        HStack {
             Text(text)
                 .font(Font.system(size: CGFloat(self.fontSize), weight: .heavy, design: .default))
                 .foregroundColor(textColor)
@@ -48,3 +51,4 @@ struct DynamicHorizontalText: View {
         }
     }
 }
+

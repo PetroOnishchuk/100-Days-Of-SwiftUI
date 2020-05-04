@@ -1,18 +1,20 @@
 //
-//  DiceView.swift
+//  DieView.swift
 //  RollDice
 //
-//  Created by Petro Onishchuk on 5/1/20.
+//  Created by Petro Onishchuk on 5/4/20.
 //  Copyright © 2020 Petro Onishchuk. All rights reserved.
 //
 
 import SwiftUI
 
+
 struct DieView: View {
+    
     var die: Int
     var width: CGFloat
     var height: CGFloat
-    var cornerRadius: CGFloat = 0
+    var cornerRadius: CGFloat
     var backgroundColor: Color
     
     
@@ -23,12 +25,15 @@ struct DieView: View {
             .foregroundColor(.blue)
             .cornerRadius(cornerRadius)
             .overlay(RoundedRectangle(cornerRadius: cornerRadius).stroke(Color.red, lineWidth: 2))
-            .font(backgroundColor == Color.yellow ? .title : .headline )
+            .font(backgroundColor == Color.yellow ? .title : .headline)
     }
 }
 
-//struct DiceView_Previews: PreviewProvider {
+
+
+
+//struct DieView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        DiceView()
+//        DieView()
 //    }
 //}

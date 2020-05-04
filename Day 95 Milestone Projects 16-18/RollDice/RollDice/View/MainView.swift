@@ -2,14 +2,13 @@
 //  MainView.swift
 //  RollDice
 //
-//  Created by Petro Onishchuk on 4/27/20.
+//  Created by Petro Onishchuk on 5/4/20.
 //  Copyright © 2020 Petro Onishchuk. All rights reserved.
 //
 
 import SwiftUI
 
 struct MainView: View {
-    
     
     
     var body: some View {
@@ -22,12 +21,10 @@ struct MainView: View {
             
             ResultsView()
                 .tabItem {
-                    Text("Results")
                     Image(systemName: "list.number")
+                    Text("Results")
             }
-            
         }
-        
     }
 }
 

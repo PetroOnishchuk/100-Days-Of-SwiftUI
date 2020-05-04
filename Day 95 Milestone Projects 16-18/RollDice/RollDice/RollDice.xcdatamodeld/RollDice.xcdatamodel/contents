@@ -2,20 +2,20 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F72f" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Die" representedClassName="Die" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dieResult" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="result" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" customClassName="[Int16]"/>
-        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="results" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Result" inverseName="dices" inverseEntity="Result"/>
+        <attribute name="numberOfSides" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="mainResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Result" inverseName="dice" inverseEntity="Result"/>
     </entity>
     <entity name="Result" representedClassName="Result" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="numbersOfDice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="numberOfDice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="totalResult" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="dices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Die" inverseName="results" inverseEntity="Die"/>
+        <relationship name="dice" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Die" inverseName="mainResult" inverseEntity="Die"/>
     </entity>
     <elements>
-        <element name="Die" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Result" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Die" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Result" positionX="-54" positionY="-9" width="128" height="118"/>
     </elements>
 </model>

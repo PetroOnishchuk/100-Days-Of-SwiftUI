@@ -7,49 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		982F3944245C5CFF0015A8C8 /* DieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982F3943245C5CFF0015A8C8 /* DieView.swift */; };
-		982F3946245C5D5E0015A8C8 /* DiceRollButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982F3945245C5D5E0015A8C8 /* DiceRollButtonView.swift */; };
-		983C905B2459C5AC0053EE49 /* RollDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 983C90592459C5AC0053EE49 /* RollDice.xcdatamodeld */; };
-		983C90682459C5E00053EE49 /* Die+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90642459C5DF0053EE49 /* Die+CoreDataClass.swift */; };
-		983C90692459C5E00053EE49 /* Die+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90652459C5E00053EE49 /* Die+CoreDataProperties.swift */; };
-		983C906A2459C5E00053EE49 /* Result+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90662459C5E00053EE49 /* Result+CoreDataClass.swift */; };
-		983C906B2459C5E00053EE49 /* Result+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C90672459C5E00053EE49 /* Result+CoreDataProperties.swift */; };
-		9852C457245EF88E00F0A500 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9852C456245EF88E00F0A500 /* TextView.swift */; };
-		986C30DF245720DC00CA3BF7 /* RollDiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C30DE245720DC00CA3BF7 /* RollDiceView.swift */; };
-		986C30E12457210D00CA3BF7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C30E02457210D00CA3BF7 /* MainView.swift */; };
-		986C30E3245721A700CA3BF7 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C30E2245721A700CA3BF7 /* ResultsView.swift */; };
-		98A0A3AF2455C0DA00282BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A3AE2455C0DA00282BED /* AppDelegate.swift */; };
-		98A0A3B12455C0DA00282BED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A3B02455C0DA00282BED /* SceneDelegate.swift */; };
-		98A0A3B82455C0DD00282BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A0A3B72455C0DD00282BED /* Assets.xcassets */; };
-		98A0A3BB2455C0DD00282BED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A0A3BA2455C0DD00282BED /* Preview Assets.xcassets */; };
-		98A0A3BE2455C0DD00282BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A0A3BC2455C0DD00282BED /* LaunchScreen.storyboard */; };
-		98EBA7212458AE76001FAED4 /* EditDiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EBA7202458AE76001FAED4 /* EditDiceView.swift */; };
+		9873C9802460493C00F0337E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C97F2460493C00F0337E /* AppDelegate.swift */; };
+		9873C9822460493C00F0337E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C9812460493C00F0337E /* SceneDelegate.swift */; };
+		9873C9852460493C00F0337E /* RollDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9873C9832460493C00F0337E /* RollDice.xcdatamodeld */; };
+		9873C9872460493C00F0337E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C9862460493C00F0337E /* ContentView.swift */; };
+		9873C9892460493D00F0337E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9873C9882460493D00F0337E /* Assets.xcassets */; };
+		9873C98C2460493D00F0337E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9873C98B2460493D00F0337E /* Preview Assets.xcassets */; };
+		9873C98F2460493D00F0337E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9873C98D2460493D00F0337E /* LaunchScreen.storyboard */; };
+		9873C99C24604DFC00F0337E /* Die+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C99824604DFC00F0337E /* Die+CoreDataClass.swift */; };
+		9873C99D24604DFC00F0337E /* Die+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C99924604DFC00F0337E /* Die+CoreDataProperties.swift */; };
+		9873C99E24604DFC00F0337E /* Result+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C99A24604DFC00F0337E /* Result+CoreDataClass.swift */; };
+		9873C99F24604DFC00F0337E /* Result+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C99B24604DFC00F0337E /* Result+CoreDataProperties.swift */; };
+		9873C9A12460598A00F0337E /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C9A02460598A00F0337E /* TextView.swift */; };
+		9873C9A324605D6A00F0337E /* DiceRollButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C9A224605D6A00F0337E /* DiceRollButtonView.swift */; };
+		9873C9A524605EA700F0337E /* DieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C9A424605EA700F0337E /* DieView.swift */; };
+		9873C9AB2460625500F0337E /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C9AA2460625500F0337E /* ResultsView.swift */; };
+		9873C9AD246088AF00F0337E /* EditDiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C9AC246088AF00F0337E /* EditDiceView.swift */; };
+		9873C9AF246090DF00F0337E /* RollDiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C9AE246090DF00F0337E /* RollDiceView.swift */; };
+		9873C9B124609BAC00F0337E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873C9B024609BAC00F0337E /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		982F3943245C5CFF0015A8C8 /* DieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieView.swift; sourceTree = "<group>"; };
-		982F3945245C5D5E0015A8C8 /* DiceRollButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollButtonView.swift; sourceTree = "<group>"; };
-		983C905A2459C5AC0053EE49 /* RollDice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RollDice.xcdatamodel; sourceTree = "<group>"; };
-		983C90642459C5DF0053EE49 /* Die+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Die+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		983C90652459C5E00053EE49 /* Die+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Die+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		983C90662459C5E00053EE49 /* Result+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		983C90672459C5E00053EE49 /* Result+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		9852C456245EF88E00F0A500 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
-		986C30DE245720DC00CA3BF7 /* RollDiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDiceView.swift; sourceTree = "<group>"; };
-		986C30E02457210D00CA3BF7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		986C30E2245721A700CA3BF7 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
-		98A0A3AB2455C0DA00282BED /* RollDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		98A0A3AE2455C0DA00282BED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		98A0A3B02455C0DA00282BED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		98A0A3B72455C0DD00282BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		98A0A3BA2455C0DD00282BED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		98A0A3BD2455C0DD00282BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		98A0A3BF2455C0DD00282BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98EBA7202458AE76001FAED4 /* EditDiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDiceView.swift; sourceTree = "<group>"; };
+		9873C97C2460493C00F0337E /* RollDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9873C97F2460493C00F0337E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9873C9812460493C00F0337E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9873C9842460493C00F0337E /* RollDice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RollDice.xcdatamodel; sourceTree = "<group>"; };
+		9873C9862460493C00F0337E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9873C9882460493D00F0337E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9873C98B2460493D00F0337E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9873C98E2460493D00F0337E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9873C9902460493D00F0337E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9873C99824604DFC00F0337E /* Die+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Die+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		9873C99924604DFC00F0337E /* Die+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Die+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		9873C99A24604DFC00F0337E /* Result+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		9873C99B24604DFC00F0337E /* Result+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		9873C9A02460598A00F0337E /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		9873C9A224605D6A00F0337E /* DiceRollButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollButtonView.swift; sourceTree = "<group>"; };
+		9873C9A424605EA700F0337E /* DieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieView.swift; sourceTree = "<group>"; };
+		9873C9AA2460625500F0337E /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		9873C9AC246088AF00F0337E /* EditDiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDiceView.swift; sourceTree = "<group>"; };
+		9873C9AE246090DF00F0337E /* RollDiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDiceView.swift; sourceTree = "<group>"; };
+		9873C9B024609BAC00F0337E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		98A0A3A82455C0DA00282BED /* Frameworks */ = {
+		9873C9792460493C00F0337E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,81 +61,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		986C30DB2457203400CA3BF7 /* View */ = {
+		9873C9732460493C00F0337E = {
 			isa = PBXGroup;
 			children = (
-				986C30E02457210D00CA3BF7 /* MainView.swift */,
-				986C30DE245720DC00CA3BF7 /* RollDiceView.swift */,
-				98EBA7202458AE76001FAED4 /* EditDiceView.swift */,
-				986C30E2245721A700CA3BF7 /* ResultsView.swift */,
-				982F3943245C5CFF0015A8C8 /* DieView.swift */,
-				982F3945245C5D5E0015A8C8 /* DiceRollButtonView.swift */,
-				9852C456245EF88E00F0A500 /* TextView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		989B371124560C4200BE7288 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				983C90642459C5DF0053EE49 /* Die+CoreDataClass.swift */,
-				983C90652459C5E00053EE49 /* Die+CoreDataProperties.swift */,
-				983C90662459C5E00053EE49 /* Result+CoreDataClass.swift */,
-				983C90672459C5E00053EE49 /* Result+CoreDataProperties.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		98A0A3A22455C0DA00282BED = {
-			isa = PBXGroup;
-			children = (
-				98A0A3AD2455C0DA00282BED /* RollDice */,
-				98A0A3AC2455C0DA00282BED /* Products */,
+				9873C97E2460493C00F0337E /* RollDice */,
+				9873C97D2460493C00F0337E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		98A0A3AC2455C0DA00282BED /* Products */ = {
+		9873C97D2460493C00F0337E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				98A0A3AB2455C0DA00282BED /* RollDice.app */,
+				9873C97C2460493C00F0337E /* RollDice.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		98A0A3AD2455C0DA00282BED /* RollDice */ = {
+		9873C97E2460493C00F0337E /* RollDice */ = {
 			isa = PBXGroup;
 			children = (
-				989B371124560C4200BE7288 /* CoreData */,
-				986C30DB2457203400CA3BF7 /* View */,
-				98A0A3AE2455C0DA00282BED /* AppDelegate.swift */,
-				98A0A3B02455C0DA00282BED /* SceneDelegate.swift */,
-				98A0A3B72455C0DD00282BED /* Assets.xcassets */,
-				98A0A3BC2455C0DD00282BED /* LaunchScreen.storyboard */,
-				983C90592459C5AC0053EE49 /* RollDice.xcdatamodeld */,
-				98A0A3BF2455C0DD00282BED /* Info.plist */,
-				98A0A3B92455C0DD00282BED /* Preview Content */,
+				9873C996246049F300F0337E /* Core Data */,
+				9873C99724604A0000F0337E /* View */,
+				9873C97F2460493C00F0337E /* AppDelegate.swift */,
+				9873C9812460493C00F0337E /* SceneDelegate.swift */,
+				9873C9862460493C00F0337E /* ContentView.swift */,
+				9873C9882460493D00F0337E /* Assets.xcassets */,
+				9873C98D2460493D00F0337E /* LaunchScreen.storyboard */,
+				9873C9902460493D00F0337E /* Info.plist */,
+				9873C9832460493C00F0337E /* RollDice.xcdatamodeld */,
+				9873C98A2460493D00F0337E /* Preview Content */,
 			);
 			path = RollDice;
 			sourceTree = "<group>";
 		};
-		98A0A3B92455C0DD00282BED /* Preview Content */ = {
+		9873C98A2460493D00F0337E /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				98A0A3BA2455C0DD00282BED /* Preview Assets.xcassets */,
+				9873C98B2460493D00F0337E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9873C996246049F300F0337E /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				9873C99824604DFC00F0337E /* Die+CoreDataClass.swift */,
+				9873C99924604DFC00F0337E /* Die+CoreDataProperties.swift */,
+				9873C99A24604DFC00F0337E /* Result+CoreDataClass.swift */,
+				9873C99B24604DFC00F0337E /* Result+CoreDataProperties.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		9873C99724604A0000F0337E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9873C9A02460598A00F0337E /* TextView.swift */,
+				9873C9A224605D6A00F0337E /* DiceRollButtonView.swift */,
+				9873C9A424605EA700F0337E /* DieView.swift */,
+				9873C9AA2460625500F0337E /* ResultsView.swift */,
+				9873C9AC246088AF00F0337E /* EditDiceView.swift */,
+				9873C9AE246090DF00F0337E /* RollDiceView.swift */,
+				9873C9B024609BAC00F0337E /* MainView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		98A0A3AA2455C0DA00282BED /* RollDice */ = {
+		9873C97B2460493C00F0337E /* RollDice */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 98A0A3C22455C0DD00282BED /* Build configuration list for PBXNativeTarget "RollDice" */;
+			buildConfigurationList = 9873C9932460493D00F0337E /* Build configuration list for PBXNativeTarget "RollDice" */;
 			buildPhases = (
-				98A0A3A72455C0DA00282BED /* Sources */,
-				98A0A3A82455C0DA00282BED /* Frameworks */,
-				98A0A3A92455C0DA00282BED /* Resources */,
+				9873C9782460493C00F0337E /* Sources */,
+				9873C9792460493C00F0337E /* Frameworks */,
+				9873C97A2460493C00F0337E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -141,25 +144,25 @@
 			);
 			name = RollDice;
 			productName = RollDice;
-			productReference = 98A0A3AB2455C0DA00282BED /* RollDice.app */;
+			productReference = 9873C97C2460493C00F0337E /* RollDice.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		98A0A3A32455C0DA00282BED /* Project object */ = {
+		9873C9742460493C00F0337E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Petro Onishchuk";
 				TargetAttributes = {
-					98A0A3AA2455C0DA00282BED = {
-						CreatedOnToolsVersion = 11.4;
+					9873C97B2460493C00F0337E = {
+						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
-			buildConfigurationList = 98A0A3A62455C0DA00282BED /* Build configuration list for PBXProject "RollDice" */;
+			buildConfigurationList = 9873C9772460493C00F0337E /* Build configuration list for PBXProject "RollDice" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -167,58 +170,59 @@
 				en,
 				Base,
 			);
-			mainGroup = 98A0A3A22455C0DA00282BED;
-			productRefGroup = 98A0A3AC2455C0DA00282BED /* Products */;
+			mainGroup = 9873C9732460493C00F0337E;
+			productRefGroup = 9873C97D2460493C00F0337E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				98A0A3AA2455C0DA00282BED /* RollDice */,
+				9873C97B2460493C00F0337E /* RollDice */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		98A0A3A92455C0DA00282BED /* Resources */ = {
+		9873C97A2460493C00F0337E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98A0A3BE2455C0DD00282BED /* LaunchScreen.storyboard in Resources */,
-				98A0A3BB2455C0DD00282BED /* Preview Assets.xcassets in Resources */,
-				98A0A3B82455C0DD00282BED /* Assets.xcassets in Resources */,
+				9873C98F2460493D00F0337E /* LaunchScreen.storyboard in Resources */,
+				9873C98C2460493D00F0337E /* Preview Assets.xcassets in Resources */,
+				9873C9892460493D00F0337E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		98A0A3A72455C0DA00282BED /* Sources */ = {
+		9873C9782460493C00F0337E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98A0A3AF2455C0DA00282BED /* AppDelegate.swift in Sources */,
-				982F3944245C5CFF0015A8C8 /* DieView.swift in Sources */,
-				986C30E12457210D00CA3BF7 /* MainView.swift in Sources */,
-				9852C457245EF88E00F0A500 /* TextView.swift in Sources */,
-				98A0A3B12455C0DA00282BED /* SceneDelegate.swift in Sources */,
-				983C905B2459C5AC0053EE49 /* RollDice.xcdatamodeld in Sources */,
-				986C30E3245721A700CA3BF7 /* ResultsView.swift in Sources */,
-				983C90682459C5E00053EE49 /* Die+CoreDataClass.swift in Sources */,
-				983C90692459C5E00053EE49 /* Die+CoreDataProperties.swift in Sources */,
-				98EBA7212458AE76001FAED4 /* EditDiceView.swift in Sources */,
-				982F3946245C5D5E0015A8C8 /* DiceRollButtonView.swift in Sources */,
-				983C906B2459C5E00053EE49 /* Result+CoreDataProperties.swift in Sources */,
-				986C30DF245720DC00CA3BF7 /* RollDiceView.swift in Sources */,
-				983C906A2459C5E00053EE49 /* Result+CoreDataClass.swift in Sources */,
+				9873C99D24604DFC00F0337E /* Die+CoreDataProperties.swift in Sources */,
+				9873C9AB2460625500F0337E /* ResultsView.swift in Sources */,
+				9873C9802460493C00F0337E /* AppDelegate.swift in Sources */,
+				9873C9AD246088AF00F0337E /* EditDiceView.swift in Sources */,
+				9873C99E24604DFC00F0337E /* Result+CoreDataClass.swift in Sources */,
+				9873C99C24604DFC00F0337E /* Die+CoreDataClass.swift in Sources */,
+				9873C9AF246090DF00F0337E /* RollDiceView.swift in Sources */,
+				9873C9A324605D6A00F0337E /* DiceRollButtonView.swift in Sources */,
+				9873C9A524605EA700F0337E /* DieView.swift in Sources */,
+				9873C99F24604DFC00F0337E /* Result+CoreDataProperties.swift in Sources */,
+				9873C9822460493C00F0337E /* SceneDelegate.swift in Sources */,
+				9873C9A12460598A00F0337E /* TextView.swift in Sources */,
+				9873C9872460493C00F0337E /* ContentView.swift in Sources */,
+				9873C9B124609BAC00F0337E /* MainView.swift in Sources */,
+				9873C9852460493C00F0337E /* RollDice.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		98A0A3BC2455C0DD00282BED /* LaunchScreen.storyboard */ = {
+		9873C98D2460493D00F0337E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				98A0A3BD2455C0DD00282BED /* Base */,
+				9873C98E2460493D00F0337E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -226,7 +230,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		98A0A3C02455C0DD00282BED /* Debug */ = {
+		9873C9912460493D00F0337E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -276,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -286,7 +290,7 @@
 			};
 			name = Debug;
 		};
-		98A0A3C12455C0DD00282BED /* Release */ = {
+		9873C9922460493D00F0337E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -330,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -340,7 +344,7 @@
 			};
 			name = Release;
 		};
-		98A0A3C32455C0DD00282BED /* Debug */ = {
+		9873C9942460493D00F0337E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -360,7 +364,7 @@
 			};
 			name = Debug;
 		};
-		98A0A3C42455C0DD00282BED /* Release */ = {
+		9873C9952460493D00F0337E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -383,20 +387,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		98A0A3A62455C0DA00282BED /* Build configuration list for PBXProject "RollDice" */ = {
+		9873C9772460493C00F0337E /* Build configuration list for PBXProject "RollDice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98A0A3C02455C0DD00282BED /* Debug */,
-				98A0A3C12455C0DD00282BED /* Release */,
+				9873C9912460493D00F0337E /* Debug */,
+				9873C9922460493D00F0337E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		98A0A3C22455C0DD00282BED /* Build configuration list for PBXNativeTarget "RollDice" */ = {
+		9873C9932460493D00F0337E /* Build configuration list for PBXNativeTarget "RollDice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98A0A3C32455C0DD00282BED /* Debug */,
-				98A0A3C42455C0DD00282BED /* Release */,
+				9873C9942460493D00F0337E /* Debug */,
+				9873C9952460493D00F0337E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -404,17 +408,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		983C90592459C5AC0053EE49 /* RollDice.xcdatamodeld */ = {
+		9873C9832460493C00F0337E /* RollDice.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				983C905A2459C5AC0053EE49 /* RollDice.xcdatamodel */,
+				9873C9842460493C00F0337E /* RollDice.xcdatamodel */,
 			);
-			currentVersion = 983C905A2459C5AC0053EE49 /* RollDice.xcdatamodel */;
+			currentVersion = 9873C9842460493C00F0337E /* RollDice.xcdatamodel */;
 			path = RollDice.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 98A0A3A32455C0DA00282BED /* Project object */;
+	rootObject = 9873C9742460493C00F0337E /* Project object */;
 }
