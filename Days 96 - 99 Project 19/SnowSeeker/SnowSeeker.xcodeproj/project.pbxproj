@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9846611924632AA800026EF6 /* AlertAndSheetOptionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9846611824632AA800026EF6 /* AlertAndSheetOptionals.swift */; };
+		9846611B24633CF100026EF6 /* UsingGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9846611A24633CF100026EF6 /* UsingGroup.swift */; };
+		9846611D24633D5700026EF6 /* resorts.json in Resources */ = {isa = PBXBuildFile; fileRef = 9846611C24633D5700026EF6 /* resorts.json */; };
 		98879CE12462EBC40001C08A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98879CE02462EBC40001C08A /* AppDelegate.swift */; };
 		98879CE32462EBC40001C08A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98879CE22462EBC40001C08A /* SceneDelegate.swift */; };
 		98879CE62462EBC40001C08A /* SnowSeeker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98879CE42462EBC40001C08A /* SnowSeeker.xcdatamodeld */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9846611824632AA800026EF6 /* AlertAndSheetOptionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAndSheetOptionals.swift; sourceTree = "<group>"; };
+		9846611A24633CF100026EF6 /* UsingGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingGroup.swift; sourceTree = "<group>"; };
+		9846611C24633D5700026EF6 /* resorts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resorts.json; sourceTree = "<group>"; };
 		98879CDD2462EBC40001C08A /* SnowSeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowSeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98879CE02462EBC40001C08A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98879CE22462EBC40001C08A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +47,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9846611724632A7B00026EF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98879CF72462EC100001C08A /* WorkingWithTwoSIde.swift */,
+				9846611824632AA800026EF6 /* AlertAndSheetOptionals.swift */,
+				9846611A24633CF100026EF6 /* UsingGroup.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		98879CD42462EBC40001C08A = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +76,7 @@
 		98879CDF2462EBC40001C08A /* SnowSeeker */ = {
 			isa = PBXGroup;
 			children = (
+				9846611724632A7B00026EF6 /* View */,
 				98879CE02462EBC40001C08A /* AppDelegate.swift */,
 				98879CE22462EBC40001C08A /* SceneDelegate.swift */,
 				98879CE72462EBC40001C08A /* ContentView.swift */,
@@ -67,8 +84,8 @@
 				98879CEE2462EBC60001C08A /* LaunchScreen.storyboard */,
 				98879CF12462EBC60001C08A /* Info.plist */,
 				98879CE42462EBC40001C08A /* SnowSeeker.xcdatamodeld */,
+				9846611C24633D5700026EF6 /* resorts.json */,
 				98879CEB2462EBC60001C08A /* Preview Content */,
-				98879CF72462EC100001C08A /* WorkingWithTwoSIde.swift */,
 			);
 			path = SnowSeeker;
 			sourceTree = "<group>";
@@ -141,6 +158,7 @@
 			files = (
 				98879CF02462EBC60001C08A /* LaunchScreen.storyboard in Resources */,
 				98879CED2462EBC60001C08A /* Preview Assets.xcassets in Resources */,
+				9846611D24633D5700026EF6 /* resorts.json in Resources */,
 				98879CEA2462EBC60001C08A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,7 +171,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				98879CE12462EBC40001C08A /* AppDelegate.swift in Sources */,
+				9846611B24633CF100026EF6 /* UsingGroup.swift in Sources */,
 				98879CE62462EBC40001C08A /* SnowSeeker.xcdatamodeld in Sources */,
+				9846611924632AA800026EF6 /* AlertAndSheetOptionals.swift in Sources */,
 				98879CE82462EBC40001C08A /* ContentView.swift in Sources */,
 				98879CE32462EBC40001C08A /* SceneDelegate.swift in Sources */,
 				98879CF82462EC100001C08A /* WorkingWithTwoSIde.swift in Sources */,
