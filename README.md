@@ -59,3 +59,5 @@ Lists of projects:
 ## 24. [LayoutAndGeometry](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2092%20-%2094%20Project%2018/LayoutAndGeometry) Project 18 (Days 92 - 94) 
 
 ## 25. [RollDice](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Day%2095%20Milestone%20Projects%2016-18/RollDice) Milestone: Projects 16 - 18 (Day 95)
+
+## 26. [SnowSeeker](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2096%20-%2099%20Project%2019/SnowSeeker) Project 19 (Days 96 - 99) Not Completed YET!!!
