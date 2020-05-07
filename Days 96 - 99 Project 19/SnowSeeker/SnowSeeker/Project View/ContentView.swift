@@ -26,7 +26,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(resorts) { resort in
-                NavigationLink(destination: Text(resort.name)) {
+                NavigationLink(destination: ResortView(resort: resort)) {
                     Image(resort.country)
                     .resizable()
                     .scaledToFill()
