@@ -8,12 +8,16 @@
 
 import SwiftUI
 
+
+
 struct ResortView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
+    @EnvironmentObject var favorites: Favorites
+    
     
     let resort: Resort
     
-    @State private var selectedFacility: String?
+    @State private var selectedFacility: Facility?
     
     var body: some View {
         ScrollView {
@@ -47,12 +51,13 @@ struct ResortView: View {
                     //Text(resort.facilities.joined(separator: ", "))
 //                        Text(ListFormatter.localizedString(byJoining: resort.facilities))
                     HStack {
-                        ForEach(resort.facilities, id: \.self) { facility in
-                            Facility.icon(for: facility)
+                        ForEach(resort.facilityTypes) { facility in
+                            facility.icon
                                 .font(.title)
                                 .onTapGesture {
                                     self.selectedFacility = facility
                             }
+                           
                         }
                     }
                         .padding(.vertical)
@@ -60,8 +65,21 @@ struct ResortView: View {
                 .padding(.horizontal)
                 
             }
+            Button(action: {
+                if self.favorites.contains(self.resort) {
+                    self.favorites.remove(self.resort)
+                } else {
+                    self.favorites.add(self.resort)
+                }
+            }) {
+                Text(favorites.contains(resort) ? "Remove from Favorites" : "Add to Favorites")
+            }
         }
+            
         .navigationBarTitle(Text("\(resort.name), \(resort.country)"), displayMode: .inline)
+        .alert(item: $selectedFacility) { (facility) -> Alert in
+            facility.alert
+                                   }
     }
 }
 
