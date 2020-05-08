@@ -9,34 +9,52 @@
 import SwiftUI
 
 struct ResortView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
+    
     let resort: Resort
     
+    @State private var selectedFacility: String?
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
                 Image(decorative: resort.id)
-                .resizable()
+                    .resizable()
                     .scaledToFit()
                 
                 Group {
                     HStack {
-                        Spacer()
-                        ResortDetailsView(resort: resort)
-                        SkiDetailsView(resort: resort)
-                        Spacer()
+                        if sizeClass == .compact {
+                            Spacer()
+                            VStack { ResortDetailsView(resort: resort) }
+                            VStack { SkiDetailsView(resort: resort)}
+                            Spacer()
+                        } else {
+                            ResortDetailsView(resort: resort)
+                            Spacer().frame(height: 0)
+                            SkiDetailsView(resort: resort)
+                        }
                     }
                     .font(.headline)
                     .foregroundColor(.secondary)
-                    .padding()
+                    .padding(.top)
                     Text(resort.description)
-                    .padding()
+                        .padding()
                     
                     Text("Facilities")
                         .font(.headline)
                     
-                    Text(resort.facilities.joined(separator: ", "))
-                    //Text(ListFormatter.localizedString(byJoining: resort.facilities))
+                    //Text(resort.facilities.joined(separator: ", "))
+//                        Text(ListFormatter.localizedString(byJoining: resort.facilities))
+                    HStack {
+                        ForEach(resort.facilities, id: \.self) { facility in
+                            Facility.icon(for: facility)
+                                .font(.title)
+                                .onTapGesture {
+                                    self.selectedFacility = facility
+                            }
+                        }
+                    }
                         .padding(.vertical)
                 }
                 .padding(.horizontal)
