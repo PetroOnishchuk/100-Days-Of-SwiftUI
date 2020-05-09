@@ -20,12 +20,18 @@ struct ResortView: View {
     @State private var selectedFacility: Facility?
     
     var body: some View {
+        
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                Image(decorative: resort.id)
+            //MARK: Day 99. Challenge 1.
+                ZStack(alignment:.bottomTrailing) {
+                    Image(decorative: resort.id)
                     .resizable()
                     .scaledToFit()
-                
+                    Text("Photo by:\(resort.imageCredit) ")
+                    .foregroundColor(.black)
+                        .font(Font.system(size: 12, weight: .light, design: .monospaced))
+                    }
                 Group {
                     HStack {
                         if sizeClass == .compact {

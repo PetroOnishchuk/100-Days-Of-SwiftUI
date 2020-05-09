@@ -24,6 +24,7 @@ struct ContentView: View {
     @ObservedObject var favorites = Favorites()
     
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
+    
     var body: some View {
         NavigationView {
             List(resorts) { resort in
@@ -55,10 +56,13 @@ struct ContentView: View {
             }
         .navigationBarTitle("Resorts")
             WelcomeView()
+              
         }
     .environmentObject(favorites)
     //.phoneOnlyStackNavigationView()
     }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
