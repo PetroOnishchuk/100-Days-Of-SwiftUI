@@ -25,9 +25,45 @@ struct ContentView: View {
     
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
     
+   
+    
+    enum SortingType {
+        case none
+        case alphabetical
+        case country
+    }
+    
+    enum FilteringType {
+        case country
+        case size
+        case price
+    }
+    
+     @State private var sortingType = SortingType.country
+    
+    
+    var sortedResorts: [Resort] {
+        switch sortingType {
+        case .none:
+            return resorts
+        case .alphabetical:
+            return resorts.sorted { (firstResort, secondResort) -> Bool in
+                firstResort.id < secondResort.id
+            }
+        case .country:
+            return resorts.sorted { (firstResort, secondResort) -> Bool in
+                firstResort.country > secondResort.country
+            }
+        }
+    }
+    
+    @State private var isShowingSortedSheet = false
+    
+    
+    
     var body: some View {
         NavigationView {
-            List(resorts) { resort in
+            List(sortedResorts) { resort in
                 NavigationLink(destination: ResortView(resort: resort)) {
                     Image(resort.country)
                     .resizable()
@@ -55,6 +91,22 @@ struct ContentView: View {
                 }
             }
         .navigationBarTitle("Resorts")
+            .navigationBarItems(trailing: Button(action: {
+                self.isShowingSortedSheet.toggle()
+            }, label: {
+                Text("Sorting")
+            }))
+            .actionSheet(isPresented: $isShowingSortedSheet) { () -> ActionSheet in
+                ActionSheet(title: Text("Select type of Sorted").font(.title), message: nil, buttons: [.default(Text("Alphabetical"), action: {
+                    self.sortingType = .alphabetical
+                }), .default(Text("By Country"), action: {
+                    self.sortingType = .country
+                }), .default(Text("Default"), action: {
+                    self.sortingType = .none
+                }), .destructive(Text("Cancel"))])
+            }
+           
+         
             WelcomeView()
               
         }
