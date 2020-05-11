@@ -13,7 +13,7 @@ import SwiftUI
 struct FilteringView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    let countriesArray = ["United States", "Italy", "France", "Canada", "Austria"]
+    let countriesArray = ["United States", "Italy", "France", "Canada", "Austria", "All"]
     let sizesArray = ["Small", "Average", "Large"]
     let pricesArray = ["$", "$$", "$$$"]
     
@@ -30,6 +30,11 @@ struct FilteringView: View {
                         ForEach(countriesArray) { country in
                             Text("\(country)")
                         }
+                    }
+                }
+                Section(header: Text("Test Data")) {
+                    VStack {
+                        Text("Country: \(self.countryForFiltering)")
                     }
                 }
             }

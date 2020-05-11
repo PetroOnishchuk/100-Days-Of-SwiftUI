@@ -42,9 +42,9 @@ struct ContentView: View {
     
     
     
-    @State private var countryForFiltering = "United States"
+    @State private var countryForFiltering = "All"
     @State private var sizeForFiltering = 0
-    @State private var priceForFiltering = 3
+    @State private var priceForFiltering = 0
     
     @State private var sortingType = SortingType.country
     
@@ -68,7 +68,7 @@ struct ContentView: View {
         var tempResorts = sortedResorts
         
         tempResorts = tempResorts.filter { (resort) -> Bool in
-            resort.country == self.countryForFiltering || self.countryForFiltering == "all"
+            resort.country == self.countryForFiltering || self.countryForFiltering == "All"
         }
         
         tempResorts = tempResorts.filter { (resort) -> Bool in
@@ -83,8 +83,8 @@ struct ContentView: View {
         return tempResorts
     }
     
-    @State private var isShowingSortedSheet = false
-    
+    @State private var isShowingSortingSheet = false
+    @State private var isShovingFilteringSheet = false
     
     
     var body: some View {
@@ -117,12 +117,19 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle("Resorts")
-            .navigationBarItems(trailing: Button(action: {
-                self.isShowingSortedSheet.toggle()
+            .navigationBarItems(leading: Button(action: {
+                self.isShovingFilteringSheet.toggle()
+            }, label: {
+                Text("Filtering")
+            }), trailing: Button(action: {
+                self.isShowingSortingSheet.toggle()
             }, label: {
                 Text("Sorting")
             }))
-                .actionSheet(isPresented: $isShowingSortedSheet) { () -> ActionSheet in
+                .sheet(isPresented: $isShovingFilteringSheet) {
+                    FilteringView(countryForFiltering: self.$countryForFiltering, sizeForFiltering: self.$sizeForFiltering, priceForFiltering: self.$priceForFiltering)
+                }
+                .actionSheet(isPresented: $isShowingSortingSheet) { () -> ActionSheet in
                     ActionSheet(title: Text("Select type of sorted"), message: nil, buttons: [.default(Text("Alphabetical"), action: {
                         self.sortingType = .alphabetical
                     }), .default(Text("By Country"), action: {
@@ -131,6 +138,7 @@ struct ContentView: View {
                         self.sortingType = .none
                     }), .destructive(Text("Cancel"))])
             }
+            
             //            .alert(isPresented: $isShowingSortedSheet) { () -> Alert in
             //                Alert(title: Text("Text"), message: nil, dismissButton: .cancel())
             //            }
