@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9819E0252469B47200E9B07F /* FilteringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9819E0242469B47200E9B07F /* FilteringView.swift */; };
 		982176A12464468700474F8A /* Resort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982176A02464468700474F8A /* Resort.swift */; };
 		982176A32464486E00474F8A /* Bundle-Decodable.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982176A22464486E00474F8A /* Bundle-Decodable.swift.swift */; };
 		982176A62464524E00474F8A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982176A52464524E00474F8A /* WelcomeView.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9819E0242469B47200E9B07F /* FilteringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringView.swift; sourceTree = "<group>"; };
 		982176A02464468700474F8A /* Resort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resort.swift; sourceTree = "<group>"; };
 		982176A22464486E00474F8A /* Bundle-Decodable.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift.swift"; sourceTree = "<group>"; };
 		982176A52464524E00474F8A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				985A033B24648D66007F31E4 /* SkiDetailsView.swift */,
 				985A033D24648E35007F31E4 /* ResortDetailsView.swift */,
 				983908F52465A38B00622508 /* Facility.swift */,
+				9819E0242469B47200E9B07F /* FilteringView.swift */,
 			);
 			path = "Project View";
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				9846611B24633CF100026EF6 /* UsingGroup.swift in Sources */,
 				985A033E24648E35007F31E4 /* ResortDetailsView.swift in Sources */,
 				985A033A24648A34007F31E4 /* ResortView.swift in Sources */,
+				9819E0252469B47200E9B07F /* FilteringView.swift in Sources */,
 				98879CE62462EBC40001C08A /* SnowSeeker.xcdatamodeld in Sources */,
 				9846611924632AA800026EF6 /* AlertAndSheetOptionals.swift in Sources */,
 				982176A62464524E00474F8A /* WelcomeView.swift in Sources */,

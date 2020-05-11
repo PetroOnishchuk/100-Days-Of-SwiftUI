@@ -40,13 +40,11 @@ struct ContentView: View {
     }
     
     
-    let countries = ["United States", "Italy", "France", "Canada", "Austria"]
-    let sizes = ["Small", "Average", "Large"]
-    let prices = ["$", "$$", "$$$"]
     
-    @State private var countryFiltering = "United States"
-    @State private var sizeFiltering = 0
-    @State private var priceFiltering = 3
+    
+    @State private var countryForFiltering = "United States"
+    @State private var sizeForFiltering = 0
+    @State private var priceForFiltering = 3
     
     @State private var sortingType = SortingType.country
     
@@ -70,15 +68,15 @@ struct ContentView: View {
         var tempResorts = sortedResorts
         
         tempResorts = tempResorts.filter { (resort) -> Bool in
-            resort.country == self.countryFiltering || self.countryFiltering == "all"
+            resort.country == self.countryForFiltering || self.countryForFiltering == "all"
         }
         
         tempResorts = tempResorts.filter { (resort) -> Bool in
-            resort.size == self.sizeFiltering || self.sizeFiltering == 0
+            resort.size == self.sizeForFiltering || self.sizeForFiltering == 0
         }
         
        tempResorts = tempResorts.filter { (resort) -> Bool in
-            resort.price == self.priceFiltering || self.priceFiltering == 0
+            resort.price == self.priceForFiltering || self.priceForFiltering == 0
         }
         
       
