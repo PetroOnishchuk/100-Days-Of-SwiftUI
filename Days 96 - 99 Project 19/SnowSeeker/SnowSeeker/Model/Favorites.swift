@@ -1,5 +1,5 @@
 //
-//  Fovorites.swift
+//  Favorites.swift
 //  SnowSeeker
 //
 //  Created by Petro Onishchuk on 5/8/20.
@@ -18,9 +18,9 @@ class Favorites: ObservableObject {
     //MARK: Challenge 2. Day 99.
     init() {
         // load our saved data
+        //MAKR: Day 99. Challenge 2.1. Load from UserDefaults
         if let items = UserDefaults.standard.data(forKey: saveKey) {
             let decoder = JSONDecoder()
-            
             if let decoded = try? decoder.decode(Set<String>.self, from: items) {
                 print(decoded)
                 self.resorts = decoded
@@ -50,13 +50,13 @@ class Favorites: ObservableObject {
         save()
     }
     
-    //MARK: Challenge 2. Day 99.
+    
     func save() {
         // write out our data
+        //MARK: Day 99. Challenge 2.2. Save to UserDefaults
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(resorts) {
             UserDefaults.standard.set(encoded, forKey: saveKey)
-            print("Save")
         }
     }
 }

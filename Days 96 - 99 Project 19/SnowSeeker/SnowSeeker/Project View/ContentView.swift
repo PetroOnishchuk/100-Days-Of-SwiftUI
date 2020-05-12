@@ -18,37 +18,29 @@ extension View {
     }
 }
 
+//MARK: Day 99. Challenge 3.1. Create enum SortingType
+enum SortingType {
+       case none
+       case alphabetical
+       case country
+   }
+
 
 
 struct ContentView: View {
     @ObservedObject var favorites = Favorites()
     
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
-    
-    
-    
-    enum SortingType {
-        case none
-        case alphabetical
-        case country
-    }
-    
-    enum FilteringType {
-        case country
-        case size
-        case price
-    }
-    
-    
-    
-    
+  
     @State private var countryForFiltering = "All"
     @State private var sizeForFiltering = 0
     @State private var priceForFiltering = 0
     
-    @State private var sortingType = SortingType.country
+    //MARK: Day 99. Challenge 3.2
+    @State private var sortingType = SortingType.none
     
     
+    //MARK: Day 99. Challenge 3.3
     var sortedResorts: [Resort] {
         switch sortingType {
         case .none:
@@ -64,6 +56,7 @@ struct ContentView: View {
         }
     }
     
+    //MARK: Day 99. Challenge 3.4
     var filteredResorts: [Resort] {
         var tempResorts = sortedResorts
         
@@ -83,12 +76,14 @@ struct ContentView: View {
         return tempResorts
     }
     
+    //MARK: Day 99. Challenge 3.5
     @State private var isShowingSortingSheet = false
     @State private var isShovingFilteringSheet = false
     
     
     var body: some View {
         NavigationView {
+            //MARK: Day 99. Challenge 3.6
             List(filteredResorts) { resort in
                 NavigationLink(destination: ResortView(resort: resort)) {
                     Image(resort.country)
@@ -126,9 +121,11 @@ struct ContentView: View {
             }, label: {
                 Text("Sorting")
             }))
+                //MARK: Day 99. Challenge 3.9
                 .sheet(isPresented: $isShovingFilteringSheet) {
                     FilteringView(countryForFiltering: self.$countryForFiltering, sizeForFiltering: self.$sizeForFiltering, priceForFiltering: self.$priceForFiltering)
                 }
+                //MARK: Day 99. Challenge 3.7
                 .actionSheet(isPresented: $isShowingSortingSheet) { () -> ActionSheet in
                     ActionSheet(title: Text("Select type of sorted"), message: nil, buttons: [.default(Text("Alphabetical"), action: {
                         self.sortingType = .alphabetical
@@ -139,10 +136,6 @@ struct ContentView: View {
                     }), .destructive(Text("Cancel"))])
             }
             
-            //            .alert(isPresented: $isShowingSortedSheet) { () -> Alert in
-            //                Alert(title: Text("Text"), message: nil, dismissButton: .cancel())
-            //            }
-            //
             
             WelcomeView()
             

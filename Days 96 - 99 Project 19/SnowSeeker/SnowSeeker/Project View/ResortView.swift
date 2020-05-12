@@ -23,11 +23,12 @@ struct ResortView: View {
         
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-            //MARK: Day 99. Challenge 1.
+            //MARK: Day 99. Challenge 1.1 Add ZStack
                 ZStack(alignment:.bottomTrailing) {
                     Image(decorative: resort.id)
                     .resizable()
                     .scaledToFit()
+                    //MARK: Day 99. Challenge 1.2. Add Text()
                     Text("Photo by:\(resort.imageCredit) ")
                     .foregroundColor(.black)
                         .font(Font.system(size: 12, weight: .light, design: .monospaced))
