@@ -32,11 +32,12 @@ struct ContentView: View {
     
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
   
+    
+    //MARK: Day 99. Challenge 3.2
     @State private var countryForFiltering = "All"
     @State private var sizeForFiltering = 0
     @State private var priceForFiltering = 0
     
-    //MARK: Day 99. Challenge 3.2
     @State private var sortingType = SortingType.none
     
     
@@ -112,6 +113,7 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle("Resorts")
+                //MARK: Day 99. Challenge 3.9
             .navigationBarItems(leading: Button(action: {
                 self.isShovingFilteringSheet.toggle()
             }, label: {
@@ -127,7 +129,7 @@ struct ContentView: View {
                 }
                 //MARK: Day 99. Challenge 3.7
                 .actionSheet(isPresented: $isShowingSortingSheet) { () -> ActionSheet in
-                    ActionSheet(title: Text("Select type of sorted"), message: nil, buttons: [.default(Text("Alphabetical"), action: {
+                    ActionSheet(title: Text("Select type of sorted: "), message: nil, buttons: [.default(Text("Alphabetical"), action: {
                         self.sortingType = .alphabetical
                     }), .default(Text("By Country"), action: {
                         self.sortingType = .country
