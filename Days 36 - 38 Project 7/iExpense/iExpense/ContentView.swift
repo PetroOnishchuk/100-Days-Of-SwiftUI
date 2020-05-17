@@ -73,7 +73,7 @@ class Expenses: ObservableObject {
 
 struct ContentView: View {
     @ObservedObject var expenses = Expenses()
-    
+    @Environment(\.presentationMode) var presentationMode
     @State private var showingAddExpense = false
     
     
