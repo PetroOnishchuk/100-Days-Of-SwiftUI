@@ -62,4 +62,6 @@ Lists of projects:
 
 ## 26. [SnowSeeker](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2096%20-%2099%20Project%2019/SnowSeeker) Project 19 (Days 96 - 99) 
 
-## 27.[Day 100](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Day%20100)
+## 27. [Day 100](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Day%20100)
+
+![100DaysOfSwiftUI](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/blob/master/Day%20100/certificate.jpeg)
