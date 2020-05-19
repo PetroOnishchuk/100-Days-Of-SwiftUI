@@ -6,6 +6,8 @@ Author of course: [Paul Hudson](https://twitter.com/twostraws).
 
 Lot information for learning about Swift [Hacking with Swift](https://www.hackingwithswift.com/)
 
+My YouTube channel with video for this course: [YouTube](https://www.youtube.com/channel/UCnRig_Bxl2PKrdyGjPjA7lA?view_as=subscriber) 
+
 Lists of projects:
 
 ## 1. [WebSplit ](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2016%20-%2018.%20Project%201) Project 1 (Days 16 - 18)
