@@ -7,6 +7,7 @@ Author of course: [Paul Hudson](https://twitter.com/twostraws).
 Lot information for learning about Swift [Hacking with Swift](https://www.hackingwithswift.com/)
 
 My YouTube channel with videos for this course: [YouTube](https://www.youtube.com/channel/UCnRig_Bxl2PKrdyGjPjA7lA?view_as=subscriber) 
+My Twitter account: [Twitter Petro Onishchuk ](https://mobile.twitter.com/petro_onishchuk)
 
 Lists of projects:
 
