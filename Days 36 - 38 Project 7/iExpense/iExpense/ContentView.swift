@@ -63,6 +63,7 @@ class Expenses: ObservableObject {
             if let decoded = try? decoder.decode([ExpenseItem].self, from: items) {
                 print("decoded \(decoded)")
                 self.items = decoded
+                return
             }
         }
         self.items = []
