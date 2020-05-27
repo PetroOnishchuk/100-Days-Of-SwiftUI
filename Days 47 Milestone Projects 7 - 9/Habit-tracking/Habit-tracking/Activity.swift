@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUI
-//import
+
 
 class Activities: ObservableObject {
     @Published var items: [Activity]{
