@@ -56,4 +56,3 @@ struct Activity: Identifiable, Codable {
     }
 }
 
-// Hello
