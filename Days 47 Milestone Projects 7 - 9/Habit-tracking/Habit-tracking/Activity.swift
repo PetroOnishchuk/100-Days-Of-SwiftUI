@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUI
-// test git
+
 
 class Activities: ObservableObject {
     @Published var items: [Activity]{
