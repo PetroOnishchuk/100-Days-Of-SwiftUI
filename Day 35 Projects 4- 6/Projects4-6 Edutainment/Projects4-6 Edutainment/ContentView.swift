@@ -304,6 +304,7 @@ struct ContentView: View {
             remainingQuestions  = arrayOfQuestions.count
             return
         }
+        
         remainingQuestions = count
     }
     
