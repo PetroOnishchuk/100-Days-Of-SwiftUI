@@ -11,23 +11,40 @@ import SwiftUI
 // MARK: v.2 DrawFlagImage for Day 24. Don't have DrawFlagImage on video.
 // 25.July 2020
 struct DrawFlag: ViewModifier {
- var image: String
-
-    func body(content: Content) -> some View {
+    var image: String
+    
+    func body(content: Content) -> some View  {
         Image(image)
-        .renderingMode(.original)
+            .renderingMode(.original)
             .clipShape(Capsule())
             .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-        .shadow(color: .black, radius: 2)
-            
+            .shadow(color: .black, radius: 2)
+        
     }
 }
-
 extension View {
     func drawingFlagImage(_ name: String ) -> some View {
         self.modifier(DrawFlag(image: name))
     }
 }
+
+struct DrawFlagV2: ViewModifier {
+    func body(content: Content) -> some View  {
+        content
+            .clipShape(Capsule())
+            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+            .shadow(color: .black, radius: 2)
+        
+    }
+}
+
+extension View {
+    func drawingFlagImageV2() -> some View {
+        self.modifier(DrawFlagV2())
+    }
+}
+
+
 struct ContentView: View {
     
     @State private var showingScore = false
@@ -48,17 +65,15 @@ struct ContentView: View {
         
         var body: some View {
             Image(image)
-            .renderingMode(.original)
-            .clipShape(Capsule())
-            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-            .shadow(color: .black, radius: 2)
+                .renderingMode(.original)
+                .drawingFlagImageV2()
             
             
         }
     }
     
     var body: some View {
-       
+        
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
@@ -73,30 +88,30 @@ struct ContentView: View {
                         .fontWeight(.black)
                     
                 }
-            
-            ForEach(0 ..< 3) { number in
-                Button(action: {
-                    self.flagTapped(number)
-                }) {
-//MARK: V.1 For day 24.
-                    FlagImage(image: self.countries[number])
-                    // MARK: v.2 DrawFlagImage for Day 24. Don't have DrawFlagImage on video.
-                    // 25.July 2020
-                   // Image(self.countries[number])
-                        .drawingFlagImage(countries[number])
-                }
                 
-            }
+                ForEach(0 ..< 3) { number in
+                    Button(action: {
+                        self.flagTapped(number)
+                    }) {
+                        //MARK: V.1 For day 24.
+                        FlagImage(image: self.countries[number])
+                        // MARK: v.2 DrawFlagImage for Day 24. Don't have DrawFlagImage on video.
+                        // 25.July 2020
+                        // Image(self.countries[number])
+                        //.drawingFlagImage(countries[number])
+                    }
+                    
+                }
                 HStack {
                     Text("Your score is: ")
-                    .foregroundColor(.yellow)
-                    .font(.title)
-                    .fontWeight(.black)
+                        .foregroundColor(.yellow)
+                        .font(.title)
+                        .fontWeight(.black)
                     
                     Text("\(self.score)")
-                    .foregroundColor(.red)
-                    .font(.title)
-                    .fontWeight(.black)
+                        .foregroundColor(.red)
+                        .font(.title)
+                        .fontWeight(.black)
                 }
                 
                 Spacer()
@@ -107,8 +122,8 @@ struct ContentView: View {
                 self.askQuestion()
             })
         }
-    
-}
+        
+    }
     
     func flagTapped(_ number: Int) {
         if number  == correctAnswer {
@@ -131,7 +146,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            
+        
     }
 }
 
