@@ -8,6 +8,26 @@
 
 import SwiftUI
 
+// MARK: v.2 DrawFlagImage for Day 24. Don't have DrawFlagImage on video.
+// 25.July 2020
+struct DrawFlag: ViewModifier {
+ var image: String
+
+    func body(content: Content) -> some View {
+        Image(image)
+        .renderingMode(.original)
+            .clipShape(Capsule())
+            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+        .shadow(color: .black, radius: 2)
+            
+    }
+}
+
+extension View {
+    func drawingFlagImage(_ name: String ) -> some View {
+        self.modifier(DrawFlag(image: name))
+    }
+}
 struct ContentView: View {
     
     @State private var showingScore = false
@@ -16,7 +36,7 @@ struct ContentView: View {
     
     @State private var score = 0
     
-    @State var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "US", "Canada"].shuffled()
+    @State var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "US"].shuffled()
     
     
     @State var correctAnswer = Int.random(in: 0...2)
@@ -58,8 +78,12 @@ struct ContentView: View {
                 Button(action: {
                     self.flagTapped(number)
                 }) {
-//                    
+//MARK: V.1 For day 24.
                     FlagImage(image: self.countries[number])
+                    // MARK: v.2 DrawFlagImage for Day 24. Don't have DrawFlagImage on video.
+                    // 25.July 2020
+                   // Image(self.countries[number])
+                        .drawingFlagImage(countries[number])
                 }
                 
             }

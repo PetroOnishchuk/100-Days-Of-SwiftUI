@@ -109,6 +109,7 @@ struct ContentView: View {
         
         Text("Hacking with Swift")
         .setTitlesView()
+            
         
     
         }
