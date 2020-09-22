@@ -32,9 +32,14 @@ struct MissionView: View {
                             .scaledToFit()
                              //MARK: Day 94.  Challenge 1.3
                             .frame(maxWidth: geometry.size.width)
-                            .scaleEffect(max(0.0, min(1.0, geo.frame(in: .global).minY / (geometry.size.height / 0.8))))
+                            // WRONG VARIANT ON THE YouTube
+                            //.scaleEffect(max(0.0, min(1.0, //geo.frame(in: .global).minY /// (geometry.size.height / //0.8))))
+                            // Update Tuesday September 22. 2020
+                            .scaleEffect(max(0.8, min(1.0, geo.frame(in: .global).minY / (geometry.size.height / 8.8))))
                             .padding(.top)
-                           
+                       
+                        
+                          
                     }
                     Text("\(self.mission.formattedLaunchDate)")
                         // MARK: Day 76. Project 15.  Challenge 3.2
@@ -103,3 +108,6 @@ struct MissionView_Previews: PreviewProvider {
         MissionView(mission: missions[0], astronauts: astronauts, missions: missions)
     }
 }
+
+
+ 
