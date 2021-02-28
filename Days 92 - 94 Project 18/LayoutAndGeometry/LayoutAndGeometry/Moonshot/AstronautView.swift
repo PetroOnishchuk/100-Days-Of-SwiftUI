@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AstronautView: View {
-let astronaut: Astronaut
+    let astronaut: Astronaut
     let font = Font.system(size: 22, weight: .bold, design: .default)
     var missions: [Mission]
     
@@ -17,12 +17,14 @@ let astronaut: Astronaut
         GeometryReader { geometry in
             ScrollView(.vertical) {
                 Image(self.astronaut.id)
-                .resizable()
-                .scaledToFit()
+                    .resizable()
+                    .scaledToFit()
                     .frame(width: geometry.size.width)
                 
+                
                 Text(self.astronaut.description)
-                .padding()
+                    .padding()
+                
                 
                 VStack(alignment: .center) {
                     Text("All missions of this astronaut: ")
@@ -30,24 +32,24 @@ let astronaut: Astronaut
                     
                     List(self.missions) { mission in
                         HStack {
-                        Image(mission.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 44, height: 44)
-                        VStack(alignment: .leading) {
-                            Text(mission.displayName)
-                                .font(.headline)
-                            Text(mission.formattedLaunchDate)
+                            Image(mission.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 44, height: 44)
+                            VStack(alignment: .leading) {
+                                Text(mission.displayName)
+                                    .font(.headline)
+                                Text(mission.formattedLaunchDate)
                             }
                         }
-                            //MARK: Day 76. Project 15. Challenge 3.5
-                            .accessibilityElement(children: .ignore)
+                        //MARK: Day 76. Project 15. Challenge 3.5
+                        .accessibilityElement(children: .ignore)
                         
                         
                     }
                     
                 }
-               
+                
             }
         }
         .navigationBarTitle(Text(astronaut.name), displayMode: .inline)
