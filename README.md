@@ -10,6 +10,10 @@ My YouTube channel with videos for this course: [YouTube](https://www.youtube.co
 
 My Twitter account: [Twitter Petro Onishchuk](https://mobile.twitter.com/petro_onishchuk)
 
+My Telegram channel: [Telegram Petro Onishchuk](https://t.me/petro_onishchuk_dev)
+
+My 👋Clubhouse account: @petro_onishchuk
+
 Lists of projects:
 
 ## 1. [WebSplit ](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Days%2016%20-%2018.%20Project%201) Project 1 (Days 16 - 18)
