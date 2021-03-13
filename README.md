@@ -12,7 +12,7 @@ My Twitter account: [Twitter Petro Onishchuk](https://mobile.twitter.com/petro_o
 
 My Telegram channel: [Telegram Petro Onishchuk](https://t.me/petro_onishchuk_dev)
 
-My 👋Clubhouse account: @petro_onishchuk
+My 👋Clubhouse account: [@petro_onishchuk](https://www.joinclubhouse.com/@petro_onishchuk)
 
 Lists of projects:
 
