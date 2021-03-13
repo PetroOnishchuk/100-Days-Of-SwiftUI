@@ -8,9 +8,9 @@ Lot information for learning about Swift [Hacking with Swift](https://www.hackin
 
 My YouTube channel with videos for this course: [YouTube](https://www.youtube.com/channel/UCnRig_Bxl2PKrdyGjPjA7lA?view_as=subscriber) 
 
-My Twitter account: [Twitter Petro Onishchuk](https://mobile.twitter.com/petro_onishchuk)
+My Twitter account: [@petro_onishchuk](https://mobile.twitter.com/petro_onishchuk)
 
-My Telegram channel: [Telegram Petro Onishchuk](https://t.me/petro_onishchuk_dev)
+My Telegram channel: [@petro_onishchuk_dev](https://t.me/petro_onishchuk_dev)
 
 My 👋Clubhouse account: [@petro_onishchuk](https://www.joinclubhouse.com/@petro_onishchuk)
 
