@@ -73,3 +73,5 @@ Lists of projects:
 ## 27. [Day 100](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/tree/master/Day%20100)
 
 ![100DaysOfSwiftUI](https://github.com/PetroOnishchuk/100-Days-Of-SwiftUI/blob/master/Day%20100/certificate.jpeg)
+
+![visitors](https://visitor-badge.glitch.me/badge?page_id=petroonishchuk)

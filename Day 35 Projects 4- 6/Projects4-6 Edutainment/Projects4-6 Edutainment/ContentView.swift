@@ -289,7 +289,7 @@ struct ContentView: View {
     
     func createArrayOfQuestions() {
         for i in 1 ... multiplicationTable {
-            for j in 1...12 {
+            for j in 1...4 {
                 let newQuestion = Question(text: "How much is: \(i) * \(j) ?", answer: i * j)
                 arrayOfQuestions.append(newQuestion)
             }
